@@ -10,19 +10,35 @@ $non-special-buttons: "";
     width: $triangle-size;
     height: $triangle-size;
     margin: 0 0.5rem;
-    background: $color;
+    background-color: $color;
     clip-path: polygon(50% 15%, 100% 100%, 0% 100%);
   }
+
   &::before {
     transform: rotate(90deg);
   }
   &::after {
     transform: rotate(-90deg);
   }
+
+  &:hover {
+    background-color: lighten($color, 10%);
+    color: $white;
+
+    &::before,
+    &::after {
+      background-color: $black;
+    }
+  }
 }
 
 .button {
   border-radius: 0;
+
+  &--sc {
+    background: $black;
+    color: $white;
+  }
 
   &:not([title="Search"]):not(.expanded) {
     @include caret-wrapped($primary);
@@ -34,10 +50,8 @@ $non-special-buttons: "";
   &.hero-cta {
     @include caret-wrapped($secondary);
   }
-
-  &--sc {
-    background: $black;
-    color: $white;
+  &.card__button.small.button--sc {
+    @include caret-wrapped($green);
   }
 }
 

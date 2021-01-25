@@ -5,10 +5,17 @@
   border-radius: 0.5px;
   padding: 4px;
 }
+
 .card__link {
   color: $card-link;
 
   &:hover {
     color: $card-link-hover;
   }
+}
+
+.card__footer,
+.card__top {
+  background-image: image-url("banner.png");
+  background-size: cover;
 }
