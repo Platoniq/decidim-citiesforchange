@@ -1,0 +1,7 @@
+@import "variables";
+
+.home-section {
+	a.hero-cta.button:hover {
+		filter: brightness(150%);
+	}
+}

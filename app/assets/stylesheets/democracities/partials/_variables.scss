@@ -1,0 +1,82 @@
+// Define custom properties as css color variables
+
+$black: #000000;
+$red: #e30613;
+$red-rgb: 227, 6, 19;
+$white: white;
+
+$yellow: #e6be41;
+$yellow-rgb: 230, 190, 65;
+$pink: #ee7799;
+$pink-rgb: 238, 119, 153;
+$green: #00a767;
+$green-rgb: 0, 167, 103;
+$purple: #8e75b3;
+$purple-rgb: 142, 117, 179;
+$blue: #5f93b1;
+$blue-rgb: 95, 147, 177;
+
+$body-font-color: $black;
+$body-background-color: $white;
+
+// Variables
+
+$primary: $yellow;
+$primary-rgb: $yellow-rgb;
+$secondary: $pink;
+$secondary-rgb: $pink-rgb;
+$success: $green;
+$success-rgb: $green-rgb;
+$warning: #e16c1d;
+$warning-rgb: 225, 108, 29;
+$alert: $red;
+$alert-rgb: $red-rgb;
+
+$highlight: $pink;
+$highlight-rgb: $pink-rgb;
+$highlight-alternative: $purple;
+$highlight-alternative-rgb: $purple-rgb;
+
+$title-bar-bg: $black;
+$card-link: $black;
+$card-link-hover: #494949;
+$link-color: $white;
+$navbar-bg: $white;
+$navbar-fg: $white;
+$navbar-fg-hover: $white;
+$navbar-bg: $black;
+
+// Variables
+
+$twitter: #55acee !default;
+$facebook: #3b5998 !default;
+$google: #4285f4 !default;
+
+$proposals: $blue;
+$actions: $green;
+$debates: $pink;
+$meetings: $purple;
+
+// background colors used in public diff views
+$color-addition: #e6ffed;
+$color-removal: #ffeef0;
+
+:root {
+  --primary: #{$primary};
+  --primary-rgb: #{$primary-rgb};
+  --secondary: #{$secondary};
+  --secondary-rgb: #{$secondary-rgb};
+  --success: #{$success};
+  --success-rgb: #{$success-rgb};
+  --warning: #{$warning};
+  --warning-rgb: #{$warning-rgb};
+  --alert: #{$alert};
+  --alert-rgb: #{$alert-rgb};
+  --proposals: #{$proposals};
+  --actions: #{$actions};
+  --debates: #{$debates};
+  --meetings: #{$meetings};
+  --twitter: #{$twitter};
+  --facebook: #{$facebook};
+  --google: #{$google};
+}

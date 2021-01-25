@@ -1,0 +1,42 @@
+@import "./variables";
+
+$non-special-buttons: "";
+
+$triangle-size: 1rem;
+
+@mixin caret-wrapped($color) {
+  &::before,
+  &::after {
+    content: " ";
+    display: inline-block;
+    width: $triangle-size;
+    height: $triangle-size;
+    background: $color;
+    clip-path: polygon(50% 15%, 100% 100%, 0% 100%);
+  }
+  &::before {
+    transform: rotate(90deg);
+  }
+  &::after {
+    transform: rotate(-90deg);
+  }
+}
+
+.button {
+  border-radius: 0;
+
+  &:not([title="Search"]):not(.expanded) {
+    @include caret-wrapped($primary);
+  }
+
+  &--sc {
+    background: $black;
+    color: $white;
+  }
+}
+
+// Non-buttons
+.sign-up-link,
+.sign-in-link {
+  @include caret-wrapped($primary);
+}
