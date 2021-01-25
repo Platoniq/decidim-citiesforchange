@@ -4,6 +4,8 @@ $black: #000000;
 $red: #e30613;
 $red-rgb: 227, 6, 19;
 $white: white;
+$light-gray: $white;
+$dark-gray: lighten($black, 10%);
 
 $yellow: #e6be41;
 $yellow-rgb: 230, 190, 65;
@@ -39,7 +41,7 @@ $highlight-alternative-rgb: $purple-rgb;
 
 $title-bar-bg: $black;
 $card-link: $black;
-$card-link-hover: #494949;
+$card-link-hover: $primary;
 $link-color: $white;
 $navbar-bg: $white;
 $navbar-fg: $white;
@@ -80,3 +82,5 @@ $color-removal: #ffeef0;
   --facebook: #{$facebook};
   --google: #{$google};
 }
+
+$triangle-size: 1rem;

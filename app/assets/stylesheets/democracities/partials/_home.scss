@@ -1,7 +1,30 @@
-@import "variables";
+@import "./variables";
 
 .home-section {
-	a.hero-cta.button:hover {
-		filter: brightness(150%);
-	}
+  &.upcoming-events {
+    background: $black;
+    color: $white;
+
+    .card {
+      margin-bottom: 60px;
+
+      &::after {
+        content: url("/assets/triangle.svg");
+        display: block;
+        position: absolute;
+        padding-left: 13%;
+        margin-top: -33px;
+      }
+    }
+  }
+}
+
+#highlighted-processes {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3rem;
+    background: $black;
+  }
 }

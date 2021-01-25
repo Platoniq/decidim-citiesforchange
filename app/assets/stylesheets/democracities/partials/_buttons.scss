@@ -2,8 +2,6 @@
 
 $non-special-buttons: "";
 
-$triangle-size: 1rem;
-
 @mixin caret-wrapped($color) {
   &::before,
   &::after {
@@ -11,6 +9,7 @@ $triangle-size: 1rem;
     display: inline-block;
     width: $triangle-size;
     height: $triangle-size;
+    margin: 0 0.5rem;
     background: $color;
     clip-path: polygon(50% 15%, 100% 100%, 0% 100%);
   }
@@ -27,6 +26,13 @@ $triangle-size: 1rem;
 
   &:not([title="Search"]):not(.expanded) {
     @include caret-wrapped($primary);
+  }
+
+  &.home-section__cta {
+    @include caret-wrapped($primary);
+  }
+  &.hero-cta {
+    @include caret-wrapped($secondary);
   }
 
   &--sc {
