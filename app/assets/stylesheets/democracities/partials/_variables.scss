@@ -44,9 +44,8 @@ $card-link: $black;
 $card-link-hover: $primary;
 $link-color: $white;
 $navbar-bg: $white;
-$navbar-fg: $white;
+$navbar-fg: $black;
 $navbar-fg-hover: $white;
-$navbar-bg: $black;
 
 // Variables
 
@@ -84,3 +83,75 @@ $color-removal: #ffeef0;
 }
 
 $triangle-size: 1rem;
+
+@mixin banner-background() {
+  background-image: image-url("banner.png");
+  background-size: cover;
+}
+
+@mixin caret-wrapped($color) {
+  &::before,
+  &::after {
+    content: " ";
+    display: inline-block;
+    width: $triangle-size;
+    height: $triangle-size;
+    margin: 0 0.5rem;
+    background-color: $color;
+    clip-path: polygon(50% 15%, 100% 100%, 0% 100%);
+  }
+
+  &::before {
+    transform: rotate(90deg);
+  }
+  &::after {
+    transform: rotate(-90deg);
+  }
+
+  &:hover {
+    color: lighten($color, 20%);
+
+    &::before,
+    &::after {
+      background-color: lighten($color, 20%);
+    }
+  }
+}
+
+@mixin top-caret($color) {
+  &::before {
+    content: "";
+    display: block;
+    width: $triangle-size;
+    height: $triangle-size;
+    margin: auto;
+    background-color: $color;
+    clip-path: polygon(50% 65%, 0% 0%, 100% 0%);
+  }
+}
+
+@mixin top-circle($color) {
+  &::before {
+    content: "";
+    display: block;
+    width: $triangle-size;
+    height: $triangle-size;
+    margin: auto;
+    background-color: $color;
+    clip-path: circle(50%);
+  }
+}
+
+@mixin slanted($percentage) {
+  clip-path: polygon($percentage 0%, 0% 100%, 100% - $percentage 100%, 100% 0%);
+}
+
+@mixin heading-font() {
+  text-transform: none;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+@mixin title-font() {
+  text-transform: uppercase;
+}

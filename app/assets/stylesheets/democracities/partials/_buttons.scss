@@ -2,46 +2,18 @@
 
 $non-special-buttons: "";
 
-@mixin caret-wrapped($color) {
-  &::before,
-  &::after {
-    content: " ";
-    display: inline-block;
-    width: $triangle-size;
-    height: $triangle-size;
-    margin: 0 0.5rem;
-    background-color: $color;
-    clip-path: polygon(50% 15%, 100% 100%, 0% 100%);
-  }
-
-  &::before {
-    transform: rotate(90deg);
-  }
-  &::after {
-    transform: rotate(-90deg);
-  }
-
-  &:hover {
-    background-color: lighten($color, 10%);
-    color: $white;
-
-    &::before,
-    &::after {
-      background-color: $black;
-    }
-  }
-}
-
 .button {
   border-radius: 0;
 
-  &--sc {
+  &--sc:not([title="Search"]):not(.expanded):not(.button--social) {
     background: $black;
     color: $white;
-  }
 
-  &:not([title="Search"]):not(.expanded) {
     @include caret-wrapped($primary);
+
+    &.hollow {
+      border: none;
+    }
   }
 
   &.home-section__cta {
@@ -56,7 +28,13 @@ $non-special-buttons: "";
 }
 
 // Non-buttons
-.sign-up-link,
-.sign-in-link {
-  @include caret-wrapped($primary);
+
+.topbar__user__login {
+  .sign-in-link,
+  .sign-up-link {
+    background: $black;
+    color: $white;
+    padding: 0.5rem;
+    text-transform: uppercase;
+  }
 }

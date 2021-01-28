@@ -1,0 +1,5 @@
+@import "./variables";
+
+.callout.secondary {
+  background: lighten($secondary, 20%);
+}

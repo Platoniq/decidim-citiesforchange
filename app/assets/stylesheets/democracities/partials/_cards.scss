@@ -4,18 +4,27 @@
   border: 1px solid $black;
   border-radius: 0.5px;
   padding: 4px;
-}
 
-.card__link {
-  color: $card-link;
+  &__link {
+    color: $card-link;
 
-  &:hover {
-    color: $card-link-hover;
+    &:hover {
+      color: $card-link-hover;
+    }
   }
-}
 
-.card__footer,
-.card__top {
-  background-image: image-url("banner.png");
-  background-size: cover;
+  &__label {
+    &::before {
+      background-color: $white;
+    }
+  }
+
+  &__footer,
+  &__top {
+    @include banner-background;
+  }
+
+  &-data__item {
+    border: none;
+  }
 }

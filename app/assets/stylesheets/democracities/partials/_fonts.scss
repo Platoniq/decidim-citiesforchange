@@ -3,9 +3,9 @@
 .section-heading {
   color: $link-color;
   background-color: $black;
-  text-transform: none;
-  font-size: 1.5rem;
   padding: 0.2rem 1rem;
+
+  @include heading-font;
 
   &::before {
     content: none;
@@ -13,7 +13,7 @@
 }
 
 .heading1 .page-title {
-  text-transform: uppercase;
+  @include title-font;
 }
 
 .mini-title {
