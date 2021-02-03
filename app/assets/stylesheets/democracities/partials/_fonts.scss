@@ -1,0 +1,21 @@
+@import "./variables";
+
+.section-heading {
+  color: $link-color;
+  background-color: $black;
+  text-transform: none;
+  font-size: 1.5rem;
+  padding: 0.2rem;
+
+  &::before {
+    content: none;
+  }
+}
+
+.heading1 .page-title {
+  text-transform: uppercase;
+}
+
+.mini-title {
+  color: $black;
+}

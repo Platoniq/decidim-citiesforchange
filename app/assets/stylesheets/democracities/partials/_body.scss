@@ -1,0 +1,46 @@
+@import "./variables";
+
+@font-face {
+  font-family: "Montserrat Regular";
+  src: font-url("catencomu/Montserrat-Regular.woff2") format("woff2"),
+    font-url("catencomu/Montserrat-Regular.woff") format("woff"),
+    font-url("catencomu/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Bold";
+  src: font-url("catencomu/Montserrat-Bold.woff2") format("woff2"),
+    font-url("catencomu/Montserrat-Bold.woff") format("woff"),
+    font-url("catencomu/Montserrat-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Montserrat Regular", sans-serif;
+  background: $body-background-color;
+}
+
+.off-canvas-wrapper {
+  background: $white;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "Montserrat Bold", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  // text-rendering: optimizeLegibility;
+  // letter-spacing: -.5px;
+}

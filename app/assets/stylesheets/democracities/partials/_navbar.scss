@@ -1,0 +1,40 @@
+@import "variables";
+@import "foundation";
+
+.title-bar {
+  padding: 1.5rem 0.5rem;
+  background: $title-bar-bg;
+  background-image: image-url("banner.png");
+  background-size: cover;
+}
+
+.navbar {
+  background: $navbar-bg;
+  font-family: "Montserrat Bold", sans-serif;
+  .main-nav__link {
+    a {
+      color: $navbar-fg;
+    }
+    &--active a {
+      color: $navbar-fg;
+      box-shadow: inset 0 -4px 0 0 var(--primary);
+    }
+  }
+}
+
+.topbar_ {
+  &_search {
+    input,
+    input:focus {
+      background-color: $navbar-bg;
+      color: $navbar-fg-hover;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: $navbar-fg-hover;
+    }
+    svg {
+      color: $navbar-fg-hover;
+    }
+  }
+}

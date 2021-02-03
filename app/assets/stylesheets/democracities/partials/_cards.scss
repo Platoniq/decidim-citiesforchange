@@ -1,0 +1,14 @@
+@import "variables";
+
+.card {
+  border: 1px solid $black;
+  border-radius: 0.5px;
+  padding: 4px;
+}
+.card__link {
+  color: $card-link;
+
+  &:hover {
+    color: $card-link-hover;
+  }
+}
