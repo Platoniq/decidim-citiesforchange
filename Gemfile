@@ -9,9 +9,9 @@ DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/
 gem "decidim", DECIDIM_VERSION
 # gem "decidim-consultations", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-decidim_awesome", "0.6.1"
+gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "temp/0.23"
 
 gem "bootsnap", "~> 1.4"
@@ -23,11 +23,10 @@ gem "faker", "~> 1.9"
 
 gem "wicked_pdf", "~> 1.4"
 
-gem "sentry-ruby"
 gem "sentry-rails"
+gem "sentry-ruby"
 
 gem "whenever", require: false
-
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
@@ -52,9 +51,8 @@ group :development do
   gem "passenger", "~> 6.0"
 end
 
-
 group :production do
-  gem "delayed_job_active_record", "~> 4.1"
   gem "daemons", "~> 1.3"
+  gem "delayed_job_active_record", "~> 4.1"
   gem "figaro", "~> 1.2"
 end
