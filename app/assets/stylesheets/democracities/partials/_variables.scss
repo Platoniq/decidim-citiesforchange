@@ -118,6 +118,19 @@ $triangle-size: 1rem;
   }
 }
 
+@mixin bottom-caret($color) {
+  &::after {
+    content: "";
+    display: block;
+    width: $triangle-size;
+    height: $triangle-size;
+    margin: auto;
+    background-color: $color;
+    clip-path: polygon(50% 65%, 0% 0%, 100% 0%);
+    transform: rotate(180deg);
+  }
+}
+
 @mixin top-caret($color) {
   &::before {
     content: "";
