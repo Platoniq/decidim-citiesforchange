@@ -2,10 +2,10 @@
 
 Decidim.configure do |config|
   # The name of the application
-  config.application_name = "Democracities Decidim"
+  config.application_name = "Cities For Change Decidim"
 
   # The email that will be used as sender in all emails from Decidim
-  config.mailer_sender = "change-me@example.org"
+  config.mailer_sender = "noreply@citiesforchange.org"
 
   # Sets the list of available locales for the whole application.
   #
@@ -228,11 +228,11 @@ Decidim.configure do |config|
   # Only needed if you want to have Etherpad integration with Decidim. See
   # Decidim docs at docs/services/etherpad.md in order to set it up.
   #
-  # config.etherpad = {
-  #   server: Rails.application.secrets.etherpad[:server],
-  #   api_key: Rails.application.secrets.etherpad[:api_key],
-  #   api_version: Rails.application.secrets.etherpad[:api_version]
-  # }
+  config.etherpad = {
+    server: Rails.application.secrets.etherpad[:server],
+    api_key: Rails.application.secrets.etherpad[:api_key],
+    api_version: Rails.application.secrets.etherpad[:api_version]
+  }
 
   # Sets Decidim::Exporters::CSV's default column separator
   # config.default_csv_col_sep = ";"
