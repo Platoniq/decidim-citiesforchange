@@ -33,8 +33,9 @@
 # Ignore public uploads
 public/uploads
 
-# Do not track secrets in GIT
-/config/application.yml
-Capfile
-config/deploy
-decidim_dummy_app
+# Ignore .rbenv-vars
+.rbenv-vars
+
+# Ignore .rspec-failures
+.rspec-failures
+.s3cfg
