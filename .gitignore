@@ -38,3 +38,4 @@ public/uploads
 Capfile
 config/deploy
 decidim_dummy_app
+.vscode
