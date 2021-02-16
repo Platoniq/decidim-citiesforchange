@@ -1,0 +1,20 @@
+@import "./variables";
+
+.process-nav {
+  box-shadow: none;
+
+  &__content {
+    li {
+      color: $black;
+    }
+
+    li:not(.is-active) {
+      padding-bottom: 2rem;
+    }
+
+    li.is-active {
+      box-shadow: none;
+      @include bottom-caret($secondary);
+    }
+  }
+}
