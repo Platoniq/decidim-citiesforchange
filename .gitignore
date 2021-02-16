@@ -44,4 +44,8 @@ public/uploads
 Capfile
 config/application.yml
 config/deploy/*
+config/deploy
 config/deploy.rb
+
+decidim_dummy_app
+.vscode
