@@ -1,5 +1,5 @@
-@import "variables";
-// @import "foundation";
+@import "./variables";
+@import "./mixins";
 
 .title-bar {
   padding: 1.5rem 0.5rem;
@@ -12,22 +12,18 @@
   @include heading-font;
 
   .main-nav {
+    height: 60px;
+
     &__link {
       a {
         color: $navbar-fg;
+        padding: 0.5em 2em;
       }
       &--active a {
         color: $navbar-fg;
         box-shadow: none;
-        @include top-caret($primary);
-        // @include top-circle($primary);
+        @include bottom-caret($primary);
       }
-    }
-
-    ul > li {
-      display: flex;
-      align-items: end;
-      justify-content: center;
     }
   }
 }

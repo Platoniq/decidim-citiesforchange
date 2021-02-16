@@ -1,9 +1,9 @@
 @import "./variables";
-
-$non-special-buttons: "";
+@import "./mixins";
 
 .button {
   border-radius: 0;
+  font-weight: bold;
 
   &--sc:not([title="Search"]):not(.expanded):not(.button--social) {
     background: $black;
