@@ -31,13 +31,13 @@
 
   &__label {
     &::before {
-      background-color: $white;
+      background-color: inherit;
     }
   }
 
   &__footer,
   &__top {
-    background-color: $white;
+    background-color: inherit;
   }
 
   &__footer {
