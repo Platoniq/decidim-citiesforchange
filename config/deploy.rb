@@ -1,1 +1,0 @@
-../../capistrano/config/deploy.rb
