@@ -1,21 +1,19 @@
 @import "./variables";
 @import "./mixins";
 
-$border: 2px solid black;
-
 .card {
-  border: 1px solid $black;
+  border: $border-thin;
   border-radius: 0.5px;
   padding: 4px;
 
   &__header {
     height: 3rem;
-    border-bottom: $border;
+    width: 90%;
     text-align: center;
     display: flex;
     align-items: flex-end;
-    margin-bottom: 1rem;
-    width: 90%;
+    border-bottom: $border-wide;
+    margin: 0.5rem auto;
   }
 
   &__title {
@@ -60,6 +58,11 @@ $border: 2px solid black;
         display: inline;
       }
     }
+  }
+
+  &__image {
+    max-height: none;
+    height: 20rem;
   }
 
   &-data__item {
