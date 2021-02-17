@@ -2,7 +2,7 @@
 
 shopt -s globstar
 
-bundle exec erblint decidim**/app/{cells,views}/**/*.erb
+bundle exec erblint app/views/**/*.erb
 
 # Store the return code of the erblint execution
 EXIT_CODE=$?
