@@ -1,0 +1,14 @@
+@import "./variables";
+
+.topbar {
+  div.logo-wrapper {
+    margin-bottom: -24px;
+
+    img {
+      background: $body-background-color;
+      padding: 16px;
+      max-height: 72px;
+      clip-path: polygon(0% 100%, 1% 0%, 97% 0%, 100% 100%);
+    }
+  }
+}
