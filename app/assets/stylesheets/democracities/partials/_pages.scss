@@ -1,0 +1,25 @@
+@import "./variables";
+
+.pages-controller {
+  .card {
+    &__title a {
+      color: $body-font-color;
+    }
+
+    color: $white;
+
+    ul li a {
+      color: currentColor;
+    }
+
+    &:nth-child(1n) {
+      background-color: $blue;
+    }
+    &:nth-child(2n) {
+      background-color: $green;
+    }
+    &:nth-child(3n) {
+      background-color: $purple;
+    }
+  }
+}
