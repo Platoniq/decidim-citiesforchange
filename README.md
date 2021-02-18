@@ -1,8 +1,8 @@
-# Democracities
+# Cities for change
 
 Free Open-Source participatory democracy, citizen participation and open government for cities and organizations
 
-This is the open-source repository for Democracities, based on [Decidim](https://github.com/decidim/decidim).
+This is the open-source repository for Cities for change, based on [Decidim](https://github.com/decidim/decidim).
 
 ## Setting up the application
 
