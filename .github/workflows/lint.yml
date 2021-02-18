@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  RUBY_VERSION: 2.6.6
+  RUBY_VERSION: 2.7.2
   NODE_VERSION: 12.9.1
     
 jobs:
@@ -35,6 +35,6 @@ jobs:
       - run: bundle exec mdl *.md
         name: Lint Markdown files
 
-      - run: ./.github/run_erblint.sh
+      - run: bundle exec erblint app/views/**/*.erb
         name: Lint ERB files
 
