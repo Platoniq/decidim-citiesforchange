@@ -3,7 +3,8 @@ name: Test
 on:
   push:
     branches:
-      - main
+      - master
+      - staging
   pull_request:
 
 env:
