@@ -1,0 +1,48 @@
+@import "./variables";
+@import "./mixins";
+
+.programme-time {
+  color: $primary;
+
+  &__day {
+  }
+
+  &__time {
+    font-size: 1.5rem;
+  }
+
+  .icon {
+    height: 2rem;
+    width: 2rem;
+    display: block;
+  }
+}
+
+.conference_program-controller {
+  .section-heading {
+    @include font-big-heading;
+  }
+}
+
+.conference-programme .tabs-title:not(.is-active) .button {
+}
+
+#conference-day-tabs {
+  .tabs-title {
+    &:not(.is-active) .button {
+      opacity: 1;
+    }
+    &.is-active .button {
+      background: $primary;
+      color: $body-font-color;
+    }
+  }
+
+  a.button--sc {
+    text-transform: none;
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+}

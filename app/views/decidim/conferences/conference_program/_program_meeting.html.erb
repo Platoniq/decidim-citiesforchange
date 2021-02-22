@@ -1,6 +1,12 @@
 <div class="row programme-header">
   <div class="column medium-2 programme-time">
-    <%= start_time.to_s(:time) %> - <%= end_time.to_s(:time) %>
+    <%= icon("clock", class: "icon", role: "img") %>
+    <div class="programme-time__day">
+      <%= l start_time, format: :weekday %>
+    </div>
+    <div class="programme-time__time">
+      <%= start_time.to_s(:time) %> - <%= end_time.to_s(:time) %>
+    </div>
   </div>
   <div class="column medium-10 programme-title">
       <%= link_to present(meeting).title, resource_locator(meeting).path %>
