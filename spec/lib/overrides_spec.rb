@@ -20,6 +20,7 @@ checksums = [
     files: {
       # views
       "/app/views/decidim/conferences/conference_program/show.html.erb" => "1b8237357754cf519f4e418135f78440",
+      "/app/views/decidim/conferences/conference_program/_program_meeting.html.erb" => "todo",
     }
   }
 ]
