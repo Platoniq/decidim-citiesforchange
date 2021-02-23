@@ -1,20 +1,54 @@
 @import "./variables";
 @import "./mixins";
 
-.programme-time {
-  color: $primary;
+.conference-programme {
+  background-color: $body-background-color;
+  box-shadow: inset 0 2em 0px 0px $primary;
+  padding: 1em 2em;
 
-  &__day {
+  @include small-screen {
+    margin-top: 2em;
   }
 
-  &__time {
-    font-size: 1.5rem;
+  @include big-screen {
+    margin-top: -0.5rem;
   }
 
-  .icon {
-    height: 2rem;
-    width: 2rem;
-    display: block;
+  .programme-day > .row {
+    border-bottom: $border-thin;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .programme {
+    &-time {
+      color: $primary;
+
+      &__time {
+        font-size: 1.5rem;
+      }
+
+      .icon {
+        height: 2rem;
+        width: 2rem;
+        margin-bottom: 1em;
+        display: block;
+      }
+    }
+
+    &-title {
+      a {
+        color: $body-font-color;
+        @include heading-font;
+      }
+    }
+
+    &-extra {
+      color: $body-font-color;
+      font-size: 1rem;
+    }
   }
 }
 
@@ -25,20 +59,6 @@
   .section-heading {
     @include font-big-heading;
     margin-bottom: 0;
-  }
-}
-
-.conference-programme {
-  background-color: $body-background-color;
-  box-shadow: inset 0 1em 0px 0px $primary;
-  padding: 1em 2em;
-
-  @include small-screen {
-    margin-top: 2em;
-  }
-
-  @include big-screen {
-    margin-top: -0.5rem;
   }
 }
 
