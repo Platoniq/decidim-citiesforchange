@@ -10,10 +10,12 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     create(:component, manifest_name: :meetings, participatory_space: conference)
   end
 
-  let!(:meeting_1) { create(:meeting, component: component, start_time: Time.zone.new(2021, 12, 31, 14, 30), end_time: Time.zone.new(2022, 12, 31, 18, 45)) }
-  let!(:meeting_2) { create(:meeting, component: component, start_time: Time.zone.new(2022, 0o3, 0o5, 14, 30), end_time: Time.zone.new(2022, 0o3, 0o5, 18, 45)) }
-  let!(:meeting_3) { create(:meeting, component: component, start_time: Time.zone.new(2022, 0o3, 11, 14, 30), end_time: Time.zone.new(2022, 0o3, 11, 18, 45)) }
-  let!(:meeting_4) { create(:meeting, component: component, start_time: Time.zone.new(2022, 0o5, 11, 14, 30), end_time: Time.zone.new(2022, 0o5, 11, 18, 45)) }
+  # rubocop:disable Rails/TimeZone
+  let!(:meeting_1) { create(:meeting, component: component, start_time: Time.new(2021, 12, 31, 14, 30), end_time: Time.new(2022, 12, 31, 18, 45)) }
+  let!(:meeting_2) { create(:meeting, component: component, start_time: Time.new(2022, 0o3, 0o5, 14, 30), end_time: Time.new(2022, 0o3, 0o5, 18, 45)) }
+  let!(:meeting_3) { create(:meeting, component: component, start_time: Time.new(2022, 0o3, 11, 14, 30), end_time: Time.new(2022, 0o3, 11, 18, 45)) }
+  let!(:meeting_4) { create(:meeting, component: component, start_time: Time.new(2022, 0o5, 11, 14, 30), end_time: Time.new(2022, 0o5, 11, 18, 45)) }
+  # rubocop:enable Rails/TimeZone
 
   before do
     switch_to_host(organization.host)
