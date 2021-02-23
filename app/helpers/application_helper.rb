@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def conference_meeting_months
-    @meeting_months ||= @meetings.map { |m| [m.start_time.beginning_of_month] }.uniq.flatten
+  def conference_meeting_months(meetings)
+    meetings.map { |m| [m.start_time.beginning_of_month] }.uniq.flatten
   end
 
   def conference_meetings_for_month(component, month, user)
