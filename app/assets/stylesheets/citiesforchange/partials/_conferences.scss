@@ -1,0 +1,103 @@
+@import "./variables";
+@import "./mixins";
+
+.conference-programme {
+  background-color: $body-background-color;
+  box-shadow: inset 0 2em 0px 0px $primary;
+  padding: 1em 2em;
+
+  @include small-screen {
+    margin-top: 2em;
+  }
+
+  @include big-screen {
+    margin-top: -0.5rem;
+  }
+
+  .programme {
+    &-day {
+      & > .row {
+        border-bottom: $border-thin;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    &-time {
+      color: $primary;
+
+      &__time {
+        font-size: 1.5rem;
+      }
+
+      .icon {
+        height: 2rem;
+        width: 2rem;
+        margin-bottom: 1em;
+        display: block;
+      }
+    }
+
+    &-title {
+      a {
+        color: $body-font-color;
+        @include heading-font;
+      }
+    }
+
+    &-extra {
+      color: $body-font-color;
+      font-size: 1rem;
+    }
+  }
+}
+
+.conference_program-controller {
+  .off-canvas-wrapper {
+    background-color: $body-background-alt;
+  }
+  .section-heading {
+    @include font-big-heading;
+    margin-bottom: 0;
+  }
+}
+
+#conference-day-tabs.tabs {
+  background: none;
+  border: none;
+
+  @include big-screen {
+    display: flex;
+    gap: 0.2em;
+    justify-content: right;
+    padding-top: 1.5em;
+    margin-right: -0.4em;
+  }
+
+  .tabs-title {
+    margin-right: 0.2em;
+
+    &:not(.is-active) .button {
+      opacity: 1;
+    }
+    &.is-active .button {
+      background: $primary;
+      color: $body-font-color;
+    }
+
+    @include small-screen {
+      font-size: 1rem;
+      margin-bottom: 0.2em;
+    }
+  }
+
+  a.button--sc {
+    text-transform: none;
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+}

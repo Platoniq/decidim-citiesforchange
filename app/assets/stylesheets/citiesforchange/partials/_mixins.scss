@@ -44,6 +44,8 @@
     background-color: $color;
     clip-path: polygon(50% 65%, 0% 0%, 100% 0%);
     transform: rotate(180deg);
+    position: relative;
+    z-index: 999;
   }
 }
 
@@ -83,4 +85,22 @@
 
 @mixin title-font() {
   text-transform: uppercase;
+}
+
+@mixin font-big-heading {
+  @include heading-font;
+  font-size: 3rem;
+  border-bottom: none;
+}
+
+@mixin small-screen {
+  @media print, screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin big-screen {
+  @media print, screen and (min-width: 64em) {
+    @content;
+  }
 }
