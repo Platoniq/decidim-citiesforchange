@@ -19,16 +19,42 @@
 }
 
 .conference_program-controller {
+  .off-canvas-wrapper {
+    background-color: $body-background-alt;
+  }
   .section-heading {
     @include font-big-heading;
+    margin-bottom: 0;
   }
 }
 
-.conference-programme .tabs-title:not(.is-active) .button {
+.conference-programme {
+  background-color: $body-background-color;
+  box-shadow: inset 0 1em 0px 0px $primary;
+  padding: 1em 2em;
+
+  @include small-screen {
+    margin-top: 2em;
+  }
+
+  @include big-screen {
+    margin-top: -0.5rem;
+  }
 }
 
-#conference-day-tabs {
+#conference-day-tabs.tabs {
+  background: none;
+
+  @include big-screen {
+    display: flex;
+    gap: 0.1em;
+  }
+
   .tabs-title {
+    margin-right: 0.1em;
+
+    @include font-big-heading;
+
     &:not(.is-active) .button {
       opacity: 1;
     }

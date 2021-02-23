@@ -20,6 +20,7 @@
         padding: 0.5em 2em;
       }
       &--active a {
+        background: none;
         color: $navbar-fg;
         box-shadow: none;
         @include bottom-caret($primary);

@@ -15,30 +15,26 @@ end
     <h3 class="section-heading"><%= t(".program") %></h3>
   </div>
   <div class="columns mediumlarge-9">
-    <div class="conference-programme">
-      <div class="row collapse programme-selector">
-        <div class="column medium-12">
-          <% if conference_meeting_months.any? %>
-            <ul class="tabs" id="conference-day-tabs"
-              data-deep-link="true"
-              data-update-history="true"
-              data-deep-link-smudge="true"
-              data-deep-link-smudge-delay="500"
-              data-tabs>
-              <% conference_meeting_months.each_with_index do |month, i| %>
-                <li class="tabs-title <%= "is-active" if i == 0 %>">
-                  <!-- Wrap the anchor inside a div to keep correct button styling -->
-                  <div>
-                    <a href="#conference-day-tab-<%= i %>" class="button button--nomargin button--sc hollow">
-                      <%= l month, format: :month_and_year %>
-                    </a>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
+    <div class="row collapse programme-selector">
+      <% if conference_meeting_months.any? %>
+        <ul class="tabs" id="conference-day-tabs"
+          data-deep-link="true"
+          data-update-history="true"
+          data-deep-link-smudge="true"
+          data-deep-link-smudge-delay="500"
+          data-tabs>
+          <% conference_meeting_months.each_with_index do |month, i| %>
+            <li class="tabs-title <%= "is-active" if i == 0 %>">
+              <!-- Wrap the anchor inside a div to keep correct button styling -->
+              <div>
+                <a href="#conference-day-tab-<%= i %>" class="button button--nomargin button--sc hollow">
+                  <%= l month, format: :month_and_year %>
+                </a>
+              </div>
+            </li>
           <% end %>
-        </div>
-      </div>
+        </ul>
+      <% end %>
     </div>
   </div>
   <div class="columns mediumlarge-12">

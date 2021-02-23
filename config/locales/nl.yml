@@ -2,7 +2,7 @@ nl:
   time:
     formats:
       month_and_year: "%B %Y"
-      weekday: "%A %d"
+      weekday: "%A %d %b"
   decidim:
     conferences:
       conference_program:
