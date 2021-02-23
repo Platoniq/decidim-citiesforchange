@@ -14,15 +14,17 @@
     margin-top: -0.5rem;
   }
 
-  .programme-day > .row {
-    border-bottom: $border-thin;
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
   .programme {
+    &-day {
+      & > .row {
+        border-bottom: $border-thin;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
     &-time {
       color: $primary;
 
@@ -64,16 +66,18 @@
 
 #conference-day-tabs.tabs {
   background: none;
+  border: none;
 
   @include big-screen {
     display: flex;
-    gap: 0.1em;
+    gap: 0.2em;
+    justify-content: right;
+    padding-top: 1.5em;
+    margin-right: -0.4em;
   }
 
   .tabs-title {
-    margin-right: 0.1em;
-
-    @include font-big-heading;
+    margin-right: 0.2em;
 
     &:not(.is-active) .button {
       opacity: 1;
@@ -81,6 +85,11 @@
     &.is-active .button {
       background: $primary;
       color: $body-font-color;
+    }
+
+    @include small-screen {
+      font-size: 1rem;
+      margin-bottom: 0.2em;
     }
   }
 
