@@ -85,5 +85,8 @@ $color-removal: #ffeef0;
 $triangle-size: 1rem;
 $triangle-size-bottom: 1.25rem;
 
-$border-thin: 1px solid $black;
-$border-wide: 2px solid $black;
+$border-color: $black;
+$border-thin-width: 1px;
+$border-wide-width: 2px;
+$border-thin: $border-thin-width solid $border-color;
+$border-wide: $border-wide-width solid $border-color;

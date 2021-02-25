@@ -2,20 +2,23 @@
 @import "./mixins";
 
 .process-nav {
-  box-shadow: none;
+  box-shadow: inset 0 (-$border-thin-width) 0 0 $black;
 
   &__content {
     li {
-      color: $black;
-    }
+      a {
+        color: $black;
+        font-size: 1.25rem;
+        font-weight: 400;
+        text-transform: none;
+      }
 
-    li:not(.is-active) {
-      padding-bottom: 2rem;
-    }
-
-    li.is-active {
-      box-shadow: none;
-      @include bottom-caret($secondary);
+      &.is-active {
+        box-shadow: none;
+        a {
+          font-weight: bold;
+        }
+      }
     }
   }
 }
