@@ -1,4 +1,4 @@
-en:
+nl:
   time:
     formats:
       month_and_year: "%B %Y"
@@ -7,4 +7,4 @@ en:
     conferences:
       conference_program:
         show:
-          month: Month
+          month: Maand

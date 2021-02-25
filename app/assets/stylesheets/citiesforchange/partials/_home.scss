@@ -13,9 +13,14 @@
         display: block;
         position: absolute;
         padding-left: 8rem;
-        margin-top: -33px;
+        margin-top: -24px;
         transform: rotate(-3deg);
       }
     }
+  }
+
+  &.extended.hero {
+    width: 90%;
+    margin: 4rem auto 0;
   }
 }

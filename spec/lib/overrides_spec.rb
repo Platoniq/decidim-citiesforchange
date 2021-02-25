@@ -10,7 +10,18 @@ checksums = [
     package: "decidim-core",
     files: {
       # layouts
-      "/app/views/layouts/decidim/_head_extra.html.erb" => "1b8237357754cf519f4e418135f78440"
+      "/app/views/layouts/decidim/_head_extra.html.erb" => "1b8237357754cf519f4e418135f78440",
+      "/app/views/layouts/decidim/_logo.html.erb" => "2713715db652c8107f1fe5f2c4d618b6",
+      "/app/views/layouts/decidim/_mini_footer.html.erb" => "55a9ca723b65b8d9eadb714818a89bb3",
+      "/app/views/layouts/decidim/_organization_colors.html.erb" => "34f0d188a62108e7a57a1c270daed8bb"
+    }
+  },
+  {
+    package: "decidim-conferences",
+    files: {
+      # views
+      "/app/views/decidim/conferences/conference_program/show.html.erb" => "e4d32ccc41adea7d9689b9021ef83694",
+      "/app/views/decidim/conferences/conference_program/_program_meeting.html.erb" => "0b810b92d4a4fe7a47d19b73739b0494"
     }
   }
 ]
