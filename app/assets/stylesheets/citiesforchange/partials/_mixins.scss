@@ -5,6 +5,17 @@
   background-size: cover;
 }
 
+@mixin button {
+  background: $black;
+  color: $white;
+  border-radius: 0;
+  font-weight: bold;
+
+  &.hollow {
+    border: none;
+  }
+}
+
 @mixin caret-wrapped($color) {
   &::before,
   &::after {
