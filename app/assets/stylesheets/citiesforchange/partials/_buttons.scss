@@ -2,28 +2,41 @@
 @import "./mixins";
 
 .button {
-  border-radius: 0;
-  font-weight: bold;
+  @include button;
 
   &--sc:not([title="Search"]):not(.expanded):not(.button--social) {
-    background: $black;
-    color: $white;
-
+    @include button;
     @include caret-wrapped($primary);
-
-    &.hollow {
-      border: none;
-    }
   }
 
   &.home-section__cta {
+    @include button;
     @include caret-wrapped($primary);
+
+    &:hover {
+      @include button-inverted($primary);
+      @include caret-wrapped($black);
+    }
   }
+
   &.hero-cta {
+    @include button;
     @include caret-wrapped($secondary);
+
+    &:hover {
+      @include button-inverted($secondary);
+      @include caret-wrapped($black);
+    }
   }
+
   &.card__button.small.button--sc {
+    @include button;
     @include caret-wrapped($green);
+
+    &:hover {
+      @include button-inverted($green);
+      @include caret-wrapped($black);
+    }
   }
 }
 

@@ -14,6 +14,17 @@
   &.hollow {
     border: none;
   }
+
+  &.hover,
+  &:hover {
+    filter: none;
+  }
+}
+
+@mixin button-inverted($color) {
+  @include button;
+  color: $black;
+  background: $color;
 }
 
 @mixin caret-wrapped($color) {
