@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./mixins";
 
 body {
   background: $body-background-color;
@@ -11,4 +12,10 @@ body {
 
 .callout.secondary {
   background: lighten($secondary, 20%);
+}
+
+.extended.highligted-content-banner.home-section {
+  .button.expanded.button--sc {
+    @include caret-wrapped($secondary);
+  }
 }

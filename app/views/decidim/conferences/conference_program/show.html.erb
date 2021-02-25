@@ -49,3 +49,18 @@ end
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    $(".programme-extra").each(function() {
+      var img = $(this).find("img:not(.programme-image)");
+
+      if (img) {
+        var src = img.attr("src");
+        console.log(src);
+        $(this).parents(".programme-body").find("img.programme-image").attr("src", src);
+        img.remove();
+      }
+    });
+  });
+</script>
