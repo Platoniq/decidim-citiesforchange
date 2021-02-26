@@ -23,4 +23,21 @@
     width: 90%;
     margin: 4rem auto 0;
   }
+
+  &.highligted-content-banner {
+    .text-highlight {
+      font-size: 1.2rem;
+      text-align: center;
+
+      p {
+        margin: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      &.heading1 {
+        margin-bottom: 2rem;
+        @include font-heading-big;
+      }
+    }
+  }
 }
