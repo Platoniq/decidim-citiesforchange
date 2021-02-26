@@ -9,6 +9,9 @@ checksums = [
   {
     package: "decidim-core",
     files: {
+      # cells
+      "/app/cells/decidim/content_blocks/highlighted_content_banner_cell.rb" => "690d34b533d26c9a6f81798fad95c013",
+      "/app/cells/decidim/content_blocks/highlighted_content_banner/show.erb" => "3f6418d3ec970d7abe26bf1b2f012324",
       # layouts
       "/app/views/layouts/decidim/_head_extra.html.erb" => "1b8237357754cf519f4e418135f78440",
       "/app/views/layouts/decidim/_logo.html.erb" => "2713715db652c8107f1fe5f2c4d618b6",
