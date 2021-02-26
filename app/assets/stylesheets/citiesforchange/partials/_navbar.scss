@@ -9,7 +9,7 @@
 
 .navbar {
   background: $navbar-bg;
-  @include heading-font;
+  @include font-heading;
 
   .main-nav {
     height: 60px;

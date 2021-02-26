@@ -4,6 +4,7 @@
 body {
   background: $body-background-color;
   color: $body-font-color;
+  font-family: "Museo Sans", Arial, Helvetica, sans-serif;
 }
 
 .off-canvas-wrapper {
@@ -18,4 +19,20 @@ body {
   .button.expanded.button--sc {
     @include caret-wrapped($secondary);
   }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  @include font-heading;
+  color: inherit;
 }
