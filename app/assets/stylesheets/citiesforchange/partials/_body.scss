@@ -34,7 +34,8 @@ h6,
 a,
 .dropdown.menu > li.is-active > a,
 .side-panel__tabs .tabs-title.is-active > [role="tab"],
-.side-panel__tabs .tabs-title.is-active > a {
+.side-panel__tabs .tabs-title.is-active > a,
+.topbar__dropmenu .is-dropdown-submenu li a {
   color: $link-color;
 
   &:hover,

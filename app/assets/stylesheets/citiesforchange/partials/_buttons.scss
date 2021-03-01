@@ -4,12 +4,13 @@
 .button {
   @include button;
 
-  &--sc:not([title="Search"]):not(.expanded):not(.button--social) {
+  &--sc:not([title="Search"], [title="Zoeken"]):not(.expanded):not(.button--social) {
     @include button;
     @include caret-wrapped($primary);
   }
 
-  &.home-section__cta {
+  &.home-section__cta,
+  &[type="submit"]:not([title="Search"], [title="Zoeken"]) {
     @include button;
     @include caret-wrapped($primary);
 

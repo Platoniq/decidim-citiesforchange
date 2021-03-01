@@ -1,0 +1,54 @@
+@import "./variables";
+@import "./mixins";
+
+.main-container,
+.side-panel {
+  border-color: $body-font-color;
+}
+
+.side-panel {
+  background-color: $black;
+
+  .tabs {
+    background-color: $black;
+  }
+
+  &__tabs {
+    .tabs-title {
+      border: none;
+
+      a,
+      a:hover {
+        background-color: $black;
+        padding: 1rem;
+        color: $white;
+
+        @include caret-wrapped-absolute($primary);
+
+        &::after {
+          content: none;
+        }
+      }
+
+      &.is-active > a {
+        box-shadow: none;
+        background-color: $primary;
+        color: $body-font-color;
+
+        &::before,
+        &::after {
+          background-color: $body-font-color;
+        }
+
+        &:hover {
+          color: $black;
+
+          &::before,
+          &::after {
+            background-color: $black;
+          }
+        }
+      }
+    }
+  }
+}

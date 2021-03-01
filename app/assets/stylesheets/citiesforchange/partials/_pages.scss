@@ -1,5 +1,4 @@
 @import "./variables";
-@import "./mixins";
 
 @mixin help-card($color) {
   background-color: $color;
@@ -26,45 +25,6 @@
 
     ul li a {
       color: currentColor;
-    }
-  }
-
-  .main-container,
-  .side-panel {
-    border-color: $body-font-color;
-  }
-
-  .side-panel {
-    background-color: $black;
-
-    .tabs {
-      background-color: $black;
-    }
-
-    &__tabs {
-      .tabs-title {
-        border: none;
-
-        a,
-        a:hover {
-          background-color: $black;
-          padding: 1rem;
-          color: $white;
-
-          @include caret-wrapped-absolute($primary);
-        }
-
-        &.is-active > a {
-          box-shadow: none;
-          background-color: $primary;
-          color: $body-font-color;
-
-          &::before,
-          &::after {
-            background-color: $body-font-color;
-          }
-        }
-      }
     }
   }
 
