@@ -1,4 +1,20 @@
 @import "./variables";
+@import "./mixins";
+
+@mixin help-card($color) {
+  background-color: $color;
+
+  .card__button {
+    &:hover {
+      background-color: inherit;
+      border: 1px solid $black;
+    }
+    &::before,
+    &::after {
+      background-color: $color;
+    }
+  }
+}
 
 .pages-controller {
   .card {
@@ -11,15 +27,54 @@
     ul li a {
       color: currentColor;
     }
+  }
 
-    &:nth-child(1n) {
-      background-color: $blue;
+  .main-container,
+  .side-panel {
+    border-color: $body-font-color;
+  }
+
+  .side-panel {
+    background-color: $black;
+
+    .tabs {
+      background-color: $black;
     }
-    &:nth-child(2n) {
-      background-color: $green;
+
+    &__tabs {
+      .tabs-title {
+        border: none;
+
+        a,
+        a:hover {
+          background-color: $black;
+          padding: 1rem;
+          color: $white;
+
+          @include caret-wrapped-absolute($primary);
+        }
+
+        &.is-active > a {
+          box-shadow: none;
+          background-color: $primary;
+          color: $body-font-color;
+
+          &::before,
+          &::after {
+            background-color: $body-font-color;
+          }
+        }
+      }
     }
-    &:nth-child(3n) {
-      background-color: $purple;
-    }
+  }
+
+  .column:nth-child(1n) .card {
+    @include help-card($blue);
+  }
+  .column:nth-child(2n) .card {
+    @include help-card($green);
+  }
+  .column:nth-child(3n) .card {
+    @include help-card($purple);
   }
 }

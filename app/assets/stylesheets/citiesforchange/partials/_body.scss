@@ -32,7 +32,9 @@ h6,
 }
 
 a,
-.dropdown.menu > li.is-active > a {
+.dropdown.menu > li.is-active > a,
+.side-panel__tabs .tabs-title.is-active > [role="tab"],
+.side-panel__tabs .tabs-title.is-active > a {
   color: $link-color;
 
   &:hover,

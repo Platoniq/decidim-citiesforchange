@@ -60,8 +60,8 @@
 @mixin caret-wrapped-absolute($color, $size: $triangle-size) {
   @include caret-wrapped($color, $size);
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: $size 1fr $size;
+  grid-template-rows: 1fr;
+  grid-template-columns: ($size * 2) 1fr ($size * 2);
 
   &::before,
   &::after {
