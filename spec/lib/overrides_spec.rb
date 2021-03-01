@@ -9,9 +9,13 @@ checksums = [
   {
     package: "decidim-core",
     files: {
+      # cells
+      "/app/cells/decidim/content_blocks/highlighted_content_banner_cell.rb" => "690d34b533d26c9a6f81798fad95c013",
+      "/app/cells/decidim/content_blocks/highlighted_content_banner/show.erb" => "3f6418d3ec970d7abe26bf1b2f012324",
       # layouts
       "/app/views/layouts/decidim/_head_extra.html.erb" => "1b8237357754cf519f4e418135f78440",
       "/app/views/layouts/decidim/_logo.html.erb" => "2713715db652c8107f1fe5f2c4d618b6",
+      "/app/views/layouts/decidim/_mailer_logo.html.erb" => "8abb593b786423070101ded4ea8140b4",
       "/app/views/layouts/decidim/_mini_footer.html.erb" => "55a9ca723b65b8d9eadb714818a89bb3",
       "/app/views/layouts/decidim/_organization_colors.html.erb" => "34f0d188a62108e7a57a1c270daed8bb"
     }

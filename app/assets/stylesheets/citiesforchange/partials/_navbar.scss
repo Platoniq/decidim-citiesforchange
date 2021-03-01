@@ -9,12 +9,16 @@
 
 .navbar {
   background: $navbar-bg;
-  @include heading-font;
+  @include font-heading;
 
   .main-nav {
-    height: 60px;
+    @include big-screen {
+      height: 60px;
+    }
 
     &__link {
+      text-align: center;
+
       a {
         color: $navbar-fg;
         padding: 0.5em 2em;
@@ -56,5 +60,9 @@
     background: black;
     padding: 0.25rem 1rem;
     margin: 0 1rem;
+  }
+
+  &__user__login a::before {
+    content: none;
   }
 }

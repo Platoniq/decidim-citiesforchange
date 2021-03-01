@@ -43,7 +43,7 @@
     &-title {
       a {
         color: $body-font-color;
-        @include heading-font;
+        @include font-heading;
       }
     }
 
@@ -59,7 +59,7 @@
     background-color: $body-background-alt;
   }
   .section-heading {
-    @include font-big-heading;
+    @include font-heading-big;
     margin-bottom: 0;
   }
 }

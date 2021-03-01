@@ -1,8 +1,10 @@
 @import "./variables";
+@import "./mixins";
 
 body {
   background: $body-background-color;
   color: $body-font-color;
+  font-family: "Museo Sans", Arial, Helvetica, sans-serif;
 }
 
 .off-canvas-wrapper {
@@ -11,4 +13,43 @@ body {
 
 .callout.secondary {
   background: lighten($secondary, 20%);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  @include font-heading;
+  color: inherit;
+}
+
+.card--list__icon,
+.card--list__data__icon:hover .icon,
+.card--list__data__icon--lg:hover .icon {
+  fill: $link-color;
+}
+
+a,
+.dropdown.menu > li.is-active > a,
+.side-panel__tabs .tabs-title.is-active > [role="tab"],
+.side-panel__tabs .tabs-title.is-active > a,
+.topbar__dropmenu .is-dropdown-submenu li a {
+  color: $link-color;
+
+  &:hover,
+  &:focus {
+    color: $link-color-hover;
+  }
+}
+
+input:checked ~ .switch-paddle {
+  background: $secondary;
 }

@@ -1,17 +1,41 @@
 @import "./variables";
 
 @mixin banner-background() {
-  background-image: image-url("banner.png");
+  background-image: asset-url("banner.png");
   background-size: cover;
 }
 
-@mixin caret-wrapped($color) {
+@mixin button {
+  padding: 0.5rem;
+  background: $black;
+  color: $white;
+  border-radius: 0;
+  font-weight: bold;
+
+  &.hollow {
+    border: none;
+  }
+
+  &.hover,
+  &:hover {
+    filter: none;
+  }
+}
+
+@mixin button-inverted($color) {
+  @include button;
+  color: $black;
+  background: $color;
+}
+
+@mixin caret-wrapped($color, $size: $triangle-size) {
   &::before,
   &::after {
     content: " ";
+    transition: all ease-in-out 300ms;
     display: inline-block;
-    width: $triangle-size;
-    height: $triangle-size;
+    width: $size;
+    height: $size;
     margin: -3px 0.5rem;
     background-color: $color;
     clip-path: polygon(50% 15%, 100% 100%, 0% 100%);
@@ -34,6 +58,26 @@
   }
 }
 
+@mixin caret-wrapped-absolute($color, $size: $triangle-size) {
+  @include caret-wrapped($color, $size);
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: ($size * 2) 1fr ($size * 2);
+
+  &::before,
+  &::after {
+    display: block;
+    margin: auto;
+    grid-row: span 2;
+  }
+  &::before {
+    grid-column: 1;
+  }
+  &::after {
+    grid-column: 3;
+  }
+}
+
 @mixin bottom-caret($color) {
   &::after {
     content: "";
@@ -45,7 +89,7 @@
     clip-path: polygon(50% 65%, 0% 0%, 100% 0%);
     transform: rotate(180deg);
     position: relative;
-    z-index: 999;
+    z-index: 700;
   }
 }
 
@@ -75,22 +119,6 @@
 
 @mixin slanted($percentage) {
   clip-path: polygon($percentage 0%, 0% 100%, 100% - $percentage 100%, 100% 0%);
-}
-
-@mixin heading-font() {
-  text-transform: none;
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
-@mixin title-font() {
-  text-transform: uppercase;
-}
-
-@mixin font-big-heading {
-  @include heading-font;
-  font-size: 3rem;
-  border-bottom: none;
 }
 
 @mixin small-screen {

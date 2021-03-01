@@ -1,5 +1,20 @@
 @import "./variables";
 
+@mixin help-card($color) {
+  background-color: $color;
+
+  .card__button {
+    &:hover {
+      background-color: inherit;
+      border: 1px solid $black;
+    }
+    &::before,
+    &::after {
+      background-color: $color;
+    }
+  }
+}
+
 .pages-controller {
   .card {
     &__title a {
@@ -11,15 +26,15 @@
     ul li a {
       color: currentColor;
     }
+  }
 
-    &:nth-child(1n) {
-      background-color: $blue;
-    }
-    &:nth-child(2n) {
-      background-color: $green;
-    }
-    &:nth-child(3n) {
-      background-color: $purple;
-    }
+  .column:nth-child(1n) .card {
+    @include help-card($blue);
+  }
+  .column:nth-child(2n) .card {
+    @include help-card($green);
+  }
+  .column:nth-child(3n) .card {
+    @include help-card($purple);
   }
 }

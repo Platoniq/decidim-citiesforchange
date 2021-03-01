@@ -6,14 +6,14 @@ $white: white;
 $light-gray: $white;
 $dark-gray: lighten($black, 10%);
 
-$yellow: #e6be41;
-$yellow-rgb: 230, 190, 65;
-$pink: #ee7799;
-$pink-rgb: 238, 119, 153;
+$yellow: #e7be41;
+$yellow-rgb: 231, 190, 65;
+$pink: #ee78a0;
+$pink-rgb: 238, 120, 160;
 $green: #00a767;
 $green-rgb: 0, 167, 103;
-$purple: #8e75b3;
-$purple-rgb: 142, 117, 179;
+$purple: #8f74b2;
+$purple-rgb: 143, 116, 178;
 $blue: #5f93b1;
 $blue-rgb: 95, 147, 177;
 
@@ -29,7 +29,7 @@ $secondary: $pink;
 $secondary-rgb: $pink-rgb;
 $success: $green;
 $success-rgb: $green-rgb;
-$warning: #e16c1d;
+$warning: #ee734d;
 $warning-rgb: 225, 108, 29;
 $alert: $red;
 $alert-rgb: $red-rgb;
@@ -47,7 +47,8 @@ $navbar-bg: $black;
 $navbar-fg: $white;
 $navbar-fg-hover: $white;
 
-// Variables
+$link-color: $blue;
+$link-color-hover: lighten($link-color, 10%);
 
 $twitter: #55acee !default;
 $facebook: #3b5998 !default;
@@ -85,5 +86,26 @@ $color-removal: #ffeef0;
 $triangle-size: 1rem;
 $triangle-size-bottom: 1.25rem;
 
-$border-thin: 1px solid $black;
-$border-wide: 2px solid $black;
+$border-color: $black;
+$border-thin-width: 1px;
+$border-wide-width: 2px;
+$border-thin: $border-thin-width solid $border-color;
+$border-wide: $border-wide-width solid $border-color;
+
+@import "./fonts";
+
+.label.primary {
+  background: $primary;
+}
+.label.secondary {
+  background: $secondary;
+}
+.label.success {
+  background: $success;
+}
+.label.warning {
+  background: $warning;
+}
+.label.alert {
+  background: $alert;
+}

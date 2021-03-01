@@ -8,12 +8,10 @@
 
   &__header {
     height: 3rem;
-    width: 90%;
     text-align: center;
     display: flex;
     align-items: flex-end;
     border-bottom: $border-wide;
-    margin: 0.5rem auto;
   }
 
   &__title {
@@ -68,4 +66,9 @@
   &-data__item {
     border: none;
   }
+}
+
+.card--list .card--list__item:not(:last-child),
+.card--list :not(:last-child) .card--list__item {
+  border-bottom: none;
 }
