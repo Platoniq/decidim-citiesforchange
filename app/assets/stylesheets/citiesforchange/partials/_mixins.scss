@@ -27,13 +27,14 @@
   background: $color;
 }
 
-@mixin caret-wrapped($color) {
+@mixin caret-wrapped($color, $size: $triangle-size) {
   &::before,
   &::after {
     content: " ";
+    transition: all ease-in-out 300ms;
     display: inline-block;
-    width: $triangle-size;
-    height: $triangle-size;
+    width: $size;
+    height: $size;
     margin: -3px 0.5rem;
     background-color: $color;
     clip-path: polygon(50% 15%, 100% 100%, 0% 100%);
@@ -53,6 +54,26 @@
     &::after {
       background-color: lighten($color, 20%);
     }
+  }
+}
+
+@mixin caret-wrapped-absolute($color, $size: $triangle-size) {
+  @include caret-wrapped($color, $size);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: $size 1fr $size;
+
+  &::before,
+  &::after {
+    display: block;
+    margin: auto;
+    grid-row: span 2;
+  }
+  &::before {
+    grid-column: 1;
+  }
+  &::after {
+    grid-column: 3;
   }
 }
 
