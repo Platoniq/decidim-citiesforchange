@@ -46,6 +46,10 @@
       padding: 1rem;
       font-size: 1.5rem;
 
+      &:hover {
+        background-color: lighten($green, 20%);
+      }
+
       @include caret-wrapped-absolute($black, 2rem);
 
       .button__cta,
@@ -55,6 +59,10 @@
       .button__info {
         grid-row: 2;
       }
+    }
+    &::after {
+      mix-blend-mode: multiply;
+      background-color: transparentize($black, 0.8);
     }
   }
 }
