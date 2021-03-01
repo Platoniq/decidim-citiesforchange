@@ -1,0 +1,8 @@
+<% if @custom_url_for_mail_root.present? %>
+  <% url = @custom_url_for_mail_root %>
+<% else %>
+  <% url = decidim.root_url(host: organization.host) %>
+<% end %>
+<%= link_to url do %>
+  <%= image_tag asset_path("logo.png"), style: "max-height: 50px", alt: "#{organization.name}" %>
+<% end %>

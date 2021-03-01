@@ -11,10 +11,10 @@ end
 %>
 <% add_decidim_meta_tags(title: t("conference_program.index.title", scope: "decidim")) %>
 <div class="section row">
-  <div class="columns mediumlarge-3">
+  <div class="columns mediumlarge-4">
     <h3 class="section-heading"><%= t(".program") %></h3>
   </div>
-  <div class="columns mediumlarge-9 programme-selector">
+  <div class="columns mediumlarge-8 programme-selector">
     <% if conference_meeting_months(@meetings).any? %>
       <ul class="tabs" id="conference-day-tabs"
         data-deep-link="true"
@@ -49,3 +49,18 @@ end
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    $(".programme-extra").each(function() {
+      var img = $(this).find("img:not(.programme-image)");
+
+      if (img) {
+        var src = img.attr("src");
+        console.log(src);
+        $(this).parents(".programme-body").find("img.programme-image").attr("src", src);
+        img.remove();
+      }
+    });
+  });
+</script>
