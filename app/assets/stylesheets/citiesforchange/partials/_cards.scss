@@ -66,4 +66,9 @@
   &-data__item {
     border: none;
   }
+
+  .card--list .card--list__item:not(:last-child),
+  .card--list :not(:last-child) .card--list__item {
+    border-color: $black;
+  }
 }

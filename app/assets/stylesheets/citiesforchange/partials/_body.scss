@@ -31,6 +31,12 @@ h6,
   color: inherit;
 }
 
+.card--list__icon,
+.card--list__data__icon:hover .icon,
+.card--list__data__icon--lg:hover .icon {
+  fill: $link-color;
+}
+
 a,
 .dropdown.menu > li.is-active > a,
 .side-panel__tabs .tabs-title.is-active > [role="tab"],
@@ -42,4 +48,8 @@ a,
   &:focus {
     color: $link-color-hover;
   }
+}
+
+input:checked ~ .switch-paddle {
+  background: $secondary;
 }

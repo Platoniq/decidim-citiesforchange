@@ -93,3 +93,19 @@ $border-thin: $border-thin-width solid $border-color;
 $border-wide: $border-wide-width solid $border-color;
 
 @import "./fonts";
+
+.label.primary {
+  background: $primary;
+}
+.label.secondary {
+  background: $secondary;
+}
+.label.success {
+  background: $success;
+}
+.label.warning {
+  background: $warning;
+}
+.label.alert {
+  background: $alert;
+}
