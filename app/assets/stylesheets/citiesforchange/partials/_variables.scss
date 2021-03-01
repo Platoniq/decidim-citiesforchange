@@ -47,7 +47,8 @@ $navbar-bg: $black;
 $navbar-fg: $white;
 $navbar-fg-hover: $white;
 
-// Variables
+$link-color: $blue;
+$link-color-hover: lighten($link-color, 10%);
 
 $twitter: #55acee !default;
 $facebook: #3b5998 !default;

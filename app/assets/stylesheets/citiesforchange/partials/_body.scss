@@ -15,12 +15,6 @@ body {
   background: lighten($secondary, 20%);
 }
 
-.extended.highligted-content-banner.home-section {
-  .button.expanded.button--sc {
-    @include caret-wrapped($secondary);
-  }
-}
-
 h1,
 .h1,
 h2,
@@ -35,4 +29,14 @@ h6,
 .h6 {
   @include font-heading;
   color: inherit;
+}
+
+a,
+.dropdown.menu > li.is-active > a {
+  color: $link-color;
+
+  &:hover,
+  &:focus {
+    color: $link-color-hover;
+  }
 }
