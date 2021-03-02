@@ -1,0 +1,61 @@
+<table class="main container">
+  <tr>
+    <td>
+      <table class="header">
+        <tbody>
+          <tr>
+            <td>
+              <% if @custom_url_for_mail_root.present? %>
+                <% url = @custom_url_for_mail_root %>
+              <% else %>
+                <% url = decidim.root_url(host: organization.host) %>
+              <% end %>
+
+              <%= link_to url do %>
+                <%= image_tag "banner-email.png", target: :blank, alt: organization.name %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table class="spacer">
+        <tbody>
+          <tr>
+            <td height="40px" style="font-size:40px;line-height:40px;"> </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="row content">
+        <tr>
+          <th class="small-12 first columns">
+            <%= body %>
+          </th>
+          <th class="expander"></th>
+        </tr>
+      </table>
+
+      <table class="row">
+        <tr>
+          <th class="small-12 first columns">
+          </th>
+          <th class="expander"></th>
+        </tr>
+      </table>
+
+      <table class="row">
+        <tr>
+          <th>
+            <td>
+              <%= image_tag "banner.png", alt: organization.name %>
+            </td>
+          </th>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

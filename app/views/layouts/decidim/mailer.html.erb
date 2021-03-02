@@ -20,40 +20,7 @@
         <td class="float-center" align="center" valign="top">
           <center>
             <table class="main container">
-              <tr class="header" style="background-image: url(<%= asset_path("banner.png") %>)">
-                <td class="decidim-bar">
-                  <table class="row collapse">
-                    <tr>
-                      <th class="small-1 large-1 first columns decidim-bar">
-                        <table>
-                          <tr>
-                            <th>
-                            </th>
-                          </tr>
-                        </table>
-                      </th>
-                      <th class="small-4 large-4 columns decidim-bar">
-                        <table>
-                          <tr>
-                            <th class="logo-wrapper">
-                              <%= render partial: "layouts/decidim/mailer_logo", locals: { organization: @organization } %>
-                            </th>
-                          </tr>
-                        </table>
-                      </th>
-                      <th class="small-7 large-7 last columns decidim-bar">
-                        <table>
-                          <tr>
-                            <th>
-                            </th>
-                          </tr>
-                        </table>
-                      </th>
-                      <th class="expander"></th>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
+              <%= render partial: "layouts/decidim/email_banner", locals: { organization: @organization } %>
               <tr>
                 <td>
                   <table class="spacer">
@@ -83,15 +50,10 @@
 
                   <table class="row">
                     <tr>
-                      <th class="expander"></th>
-                      <th class="small-12 first columns cityhall-bar">
-                        <div class="decidim-logo" style="float: right; text-align: right; padding-right: 16px">
-                          <% if @custom_url_for_mail_root.present? %>
-                            <%= link_to @organization.name.html_safe, @custom_url_for_mail_root %>
-                          <% else %>
-                            <%= link_to @organization.name.html_safe, decidim.root_url(host: @organization.host) %>
-                          <% end %>
-                        </div>
+                      <th>
+                        <td>
+                          <%= image_tag "banner.png", alt: @organization.name %>
+                        </td>
                       </th>
                     </tr>
                   </table>

@@ -61,6 +61,7 @@
   .section-heading {
     @include font-heading-big;
     margin-bottom: 0;
+    border-bottom: none;
   }
 }
 
