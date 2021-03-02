@@ -33,7 +33,8 @@ h6,
 
 .card--list__icon,
 .card--list__data__icon:hover .icon,
-.card--list__data__icon--lg:hover .icon {
+.card--list__data__icon--lg:hover .icon,
+.orgchart .as-text {
   fill: $link-color;
 }
 
@@ -41,7 +42,10 @@ a,
 .dropdown.menu > li.is-active > a,
 .side-panel__tabs .tabs-title.is-active > [role="tab"],
 .side-panel__tabs .tabs-title.is-active > a,
-.topbar__dropmenu .is-dropdown-submenu li a {
+.topbar__dropmenu .is-dropdown-submenu li a,
+.inline-filters button[data-toggle],
+.card__link,
+.author-data .author__name {
   color: $link-color;
 
   &:hover,

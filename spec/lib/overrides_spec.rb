@@ -30,6 +30,13 @@ checksums = [
       "/app/views/decidim/conferences/conference_program/show.html.erb" => "e4d32ccc41adea7d9689b9021ef83694",
       "/app/views/decidim/conferences/conference_program/_program_meeting.html.erb" => "0b810b92d4a4fe7a47d19b73739b0494"
     }
+  },
+  {
+    package: "decidim-admin",
+    files: {
+      # views
+      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "926acd42a72c91263042502bdf50b400"
+    }
   }
 ]
 

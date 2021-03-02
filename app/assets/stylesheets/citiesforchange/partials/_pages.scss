@@ -6,7 +6,7 @@
   .card__button {
     &:hover {
       background-color: inherit;
-      border: 1px solid $black;
+      border: $border-thin;
     }
     &::before,
     &::after {

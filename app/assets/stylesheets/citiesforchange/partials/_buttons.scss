@@ -4,13 +4,13 @@
 .button {
   @include button;
 
-  &--sc:not([title="Search"], [title="Zoeken"]):not(.expanded):not(.button--social) {
+  &--sc:not(.expanded):not(.button--social) {
     @include button;
     @include caret-wrapped($primary);
   }
 
   &.home-section__cta,
-  &[type="submit"]:not([title="Search"], [title="Zoeken"]) {
+  &[type="submit"] {
     @include button;
     @include caret-wrapped($primary);
 
@@ -30,17 +30,46 @@
     }
   }
 
-  &.card__button.small.button--sc {
+  &.card__button.small {
+    &.button--sc {
+      @include button;
+      @include caret-wrapped($green);
+
+      &:hover {
+        @include button-inverted($green);
+        @include caret-wrapped($black);
+      }
+    }
+  }
+
+  &.hollow {
     @include button;
-    @include caret-wrapped($green);
+    @include caret-wrapped($secondary);
 
     &:hover {
-      @include button-inverted($green);
+      @include button-inverted($secondary);
       @include caret-wrapped($black);
+    }
+  }
+
+  &.expanded.button--sc {
+    @include button;
+    @include caret-wrapped-absolute($primary);
+
+    &:hover {
+      @include button-inverted($primary);
+      @include caret-wrapped-absolute($black);
     }
   }
 }
 
+.input-group-button .button,
+.input-group-button .button:hover {
+  &::before,
+  &::after {
+    content: none;
+  }
+}
 // Non-buttons
 
 .topbar__user__login {
