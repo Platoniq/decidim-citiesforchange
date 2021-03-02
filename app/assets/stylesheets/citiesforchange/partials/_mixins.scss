@@ -22,6 +22,12 @@
   }
 }
 
+@mixin button-inverted($color) {
+  @include button;
+  color: $black;
+  background: $color;
+}
+
 @mixin label {
   &::before,
   &::after {
@@ -45,12 +51,6 @@
     color: $link-color;
     cursor: initial;
   }
-}
-
-@mixin button-inverted($color) {
-  @include button;
-  color: $black;
-  background: $color;
 }
 
 @mixin caret-wrapped($color, $size: $triangle-size) {

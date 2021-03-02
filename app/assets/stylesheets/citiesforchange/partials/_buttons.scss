@@ -44,11 +44,19 @@
 
   &.hollow {
     @include button;
-    @include caret-wrapped($secondary);
+    @include caret-wrapped($primary);
 
     &:hover {
-      @include button-inverted($secondary);
+      @include button-inverted($primary);
       @include caret-wrapped($black);
+    }
+
+    &.secondary {
+      @include caret-wrapped($secondary);
+
+      &:hover {
+        @include button-inverted($secondary);
+      }
     }
   }
 
@@ -59,6 +67,43 @@
     &:hover {
       @include button-inverted($primary);
       @include caret-wrapped-absolute($black);
+    }
+
+    &.secondary {
+      @include caret-wrapped($secondary);
+
+      &:hover {
+        @include button-inverted($secondary);
+      }
+    }
+  }
+
+  &.button--shadow.secondary {
+    @include button;
+  }
+}
+
+.hero {
+  .button.hollow.light.expanded:not(.conference--date) {
+    border: none;
+
+    @include button-inverted($primary);
+    @include caret-wrapped-absolute($black);
+
+    &:hover {
+      @include button-inverted($black);
+      @include caret-wrapped-absolute($primary);
+    }
+  }
+
+  .button.hollow.light.expanded.conference--date,
+  .button.hollow.light.expanded.conference--date:hover {
+    border: none;
+    @include button;
+
+    &::before,
+    &::after {
+      content: none;
     }
   }
 }

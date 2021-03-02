@@ -39,13 +39,15 @@ h6,
 }
 
 a,
+.link,
 .dropdown.menu > li.is-active > a,
 .side-panel__tabs .tabs-title.is-active > [role="tab"],
 .side-panel__tabs .tabs-title.is-active > a,
 .topbar__dropmenu .is-dropdown-submenu li a,
 .inline-filters button[data-toggle],
 .card__link,
-.author-data .author__name {
+.author-data .author__name,
+.accountability .categories .categories--group .card__link strong {
   color: $link-color;
 
   &:hover,
