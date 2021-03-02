@@ -65,7 +65,7 @@
 
 .input-group-button .button,
 .input-group-button .button:hover,
-.follow-button {
+.button.hollow.follow-button {
   &::before,
   &::after {
     content: none;

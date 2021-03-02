@@ -57,3 +57,12 @@ a,
 input:checked ~ .switch-paddle {
   background: $secondary;
 }
+
+.tags a {
+  @include label;
+  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

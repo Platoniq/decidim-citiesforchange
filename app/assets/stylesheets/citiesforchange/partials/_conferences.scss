@@ -52,6 +52,10 @@
       font-size: 1rem;
     }
   }
+
+  .button.button--shadow.tiny.hollow {
+    @include label;
+  }
 }
 
 .conference_program-controller {
