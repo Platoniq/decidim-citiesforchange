@@ -4,13 +4,13 @@
 .button {
   @include button;
 
-  &--sc:not([title="Search"], [title="Zoeken"]):not(.expanded):not(.button--social) {
+  &--sc:not(.expanded):not(.button--social) {
     @include button;
     @include caret-wrapped($primary);
   }
 
   &.home-section__cta,
-  &[type="submit"]:not([title="Search"], [title="Zoeken"]) {
+  &[type="submit"] {
     @include button;
     @include caret-wrapped($primary);
 
@@ -30,17 +30,92 @@
     }
   }
 
-  &.card__button.small.button--sc {
+  &.card__button.small {
+    &.button--sc {
+      @include button;
+      @include caret-wrapped($green);
+
+      &:hover {
+        @include button-inverted($green);
+        @include caret-wrapped($black);
+      }
+    }
+  }
+
+  &.hollow {
     @include button;
-    @include caret-wrapped($green);
+    @include caret-wrapped($primary);
 
     &:hover {
-      @include button-inverted($green);
+      @include button-inverted($primary);
       @include caret-wrapped($black);
+    }
+
+    &.secondary {
+      @include caret-wrapped($secondary);
+
+      &:hover {
+        @include button-inverted($secondary);
+      }
+    }
+  }
+
+  &.expanded.button--sc {
+    @include button;
+    @include caret-wrapped-absolute($primary);
+
+    &:hover {
+      @include button-inverted($primary);
+      @include caret-wrapped-absolute($black);
+    }
+
+    &.secondary {
+      @include caret-wrapped($secondary);
+
+      &:hover {
+        @include button-inverted($secondary);
+      }
+    }
+  }
+
+  &.button--shadow.secondary {
+    @include button;
+  }
+}
+
+.hero {
+  .button.hollow.light.expanded:not(.conference--date) {
+    border: none;
+
+    @include button-inverted($primary);
+    @include caret-wrapped-absolute($black);
+
+    &:hover {
+      @include button-inverted($black);
+      @include caret-wrapped-absolute($primary);
+    }
+  }
+
+  .button.hollow.light.expanded.conference--date,
+  .button.hollow.light.expanded.conference--date:hover {
+    border: none;
+    @include button;
+
+    &::before,
+    &::after {
+      content: none;
     }
   }
 }
 
+.input-group-button .button,
+.input-group-button .button:hover,
+.button.hollow.follow-button {
+  &::before,
+  &::after {
+    content: none;
+  }
+}
 // Non-buttons
 
 .topbar__user__login {

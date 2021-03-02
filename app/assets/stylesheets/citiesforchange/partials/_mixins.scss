@@ -28,6 +28,31 @@
   background: $color;
 }
 
+@mixin label {
+  &::before,
+  &::after {
+    content: none;
+  }
+
+  background: none;
+  border: $border-thin;
+  border-color: $link-color;
+  color: $link-color;
+  cursor: initial;
+
+  &:hover {
+    &::before,
+    &::after {
+      content: none;
+    }
+    background: none;
+    border: $border-thin;
+    border-color: $link-color;
+    color: $link-color;
+    cursor: initial;
+  }
+}
+
 @mixin caret-wrapped($color, $size: $triangle-size) {
   &::before,
   &::after {
