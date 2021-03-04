@@ -6,13 +6,6 @@
   padding: 0;
   border-radius: 0;
 
-  //   &__header {
-  //     height: 3rem;
-  //     display: flex;
-  //     align-items: flex-end;
-  //     border-bottom: $border-wide;
-  //   }
-
   &__title {
     color: $card-link;
     font-weight: bold;
@@ -20,6 +13,39 @@
 
   &-data__item {
     border: none;
+  }
+
+  &__footer,
+  &__top {
+    background: none;
+    border-top: $border-wide;
+    margin: 0 1.5rem;
+  }
+
+  &__support > :only-child {
+    margin: auto;
+  }
+
+  &__icondata {
+    .card-data {
+      border: none;
+      border-top: $border-wide;
+      border-bottom: $border-wide;
+    }
+  }
+  &__icondata ul li:not(:first-child),
+  &__block ul li:not(:first-child) {
+    justify-content: center;
+  }
+
+  &--full__image .button.expanded.button--sc {
+    @include button-inverted($primary);
+    @include caret-wrapped($black);
+
+    &:hover {
+      @include button;
+      @include caret-wrapped($primary);
+    }
   }
 }
 
