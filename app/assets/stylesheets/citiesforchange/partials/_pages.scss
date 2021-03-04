@@ -26,6 +26,11 @@
     ul li a {
       color: currentColor;
     }
+
+    &__footer,
+    &__top {
+      margin: 0 1rem;
+    }
   }
 
   .column:nth-child(1n) .card {
