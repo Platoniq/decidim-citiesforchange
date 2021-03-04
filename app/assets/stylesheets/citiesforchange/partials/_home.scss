@@ -27,43 +27,47 @@
 
   &.highligted-content-banner {
     .text-highlight {
-      font-size: 1.2rem;
       text-align: center;
-
-      p {
-        margin: 1rem;
-        margin-bottom: 2rem;
-      }
 
       &.heading1 {
         margin-bottom: 2rem;
         @include font-heading-big;
+        font-size: 6rem;
       }
     }
 
     .button {
-      background-color: $green;
+      @include button;
+      @include caret-wrapped-absolute($green, 2rem);
       padding: 1rem;
       font-size: 1.5rem;
       grid-template-rows: 1fr 1fr;
 
       &:hover {
-        background-color: lighten($green, 20%);
-      }
-
-      @include caret-wrapped-absolute($black, 2rem);
-
-      .button__cta,
-      .button__info {
-        grid-column: 2;
-      }
-      .button__info {
-        grid-row: 2;
+        @include button-inverted($green);
+        @include caret-wrapped-absolute($black, 2rem);
+        padding: 1rem;
+        font-size: 1.5rem;
+        grid-template-rows: 1fr 1fr;
       }
     }
+
     &::after {
-      mix-blend-mode: multiply;
-      background-color: transparentize($black, 0.8);
+      content: none;
+    }
+
+    &.text {
+      background: $body-background-color;
+      color: $body-font-color;
+      text-align: center;
+      font-size: 1.25em;
+      line-height: 1.5em;
+      font-weight: bold;
+      margin: 2em 0;
+
+      p {
+        margin-bottom: 2em;
+      }
     }
   }
 }

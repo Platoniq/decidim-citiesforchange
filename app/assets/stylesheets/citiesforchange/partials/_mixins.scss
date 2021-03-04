@@ -101,6 +101,14 @@
   &::after {
     grid-column: 3;
   }
+
+  .button__cta,
+  .button__info {
+    grid-column: 2;
+  }
+  .button__info {
+    grid-row: 2;
+  }
 }
 
 @mixin bottom-caret($color) {

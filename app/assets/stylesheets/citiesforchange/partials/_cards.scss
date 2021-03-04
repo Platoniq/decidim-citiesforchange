@@ -40,11 +40,11 @@
 
   &--full__image .button.expanded.button--sc {
     @include button-inverted($primary);
-    @include caret-wrapped($black);
+    @include caret-wrapped-absolute($black);
 
     &:hover {
       @include button;
-      @include caret-wrapped($primary);
+      @include caret-wrapped-absolute($primary);
     }
   }
 }
