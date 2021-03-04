@@ -30,25 +30,41 @@
       text-align: center;
 
       &.heading1 {
-        margin-bottom: 2rem;
         @include font-heading-big;
+        margin-bottom: 2rem;
         font-size: 6rem;
+
+        @include small-screen {
+          font-size: 4em;
+        }
       }
     }
 
     .button {
       @include button;
-      @include caret-wrapped-absolute($green, 2rem);
-      padding: 1rem;
+      @include caret-wrapped-absolute($green, 2em);
+      padding: 1em;
       font-size: 1.5rem;
       grid-template-rows: 1fr 1fr;
 
+      @include small-screen {
+        @include caret-wrapped-absolute($green, 1em);
+        padding: 0.5em;
+        font-size: 1.25em;
+      }
+
       &:hover {
         @include button-inverted($green);
-        @include caret-wrapped-absolute($black, 2rem);
-        padding: 1rem;
-        font-size: 1.5rem;
+        @include caret-wrapped-absolute($black, 2em);
+        padding: 1em;
+        font-size: 1.5em;
         grid-template-rows: 1fr 1fr;
+
+        @include small-screen {
+          @include caret-wrapped-absolute($black, 1em);
+          padding: 0.5em;
+          font-size: 1.25em;
+        }
       }
     }
 
@@ -58,15 +74,19 @@
 
     &.text {
       background: $body-background-color;
-      color: $body-font-color;
-      text-align: center;
-      font-size: 1.25em;
-      line-height: 1.5em;
-      font-weight: bold;
-      margin: 2em 0;
+      padding: 2em;
 
       p {
+        color: $body-font-color;
+        text-align: center;
+        line-height: 1.5em;
+        font-weight: bold;
+        font-size: 1.25em;
         margin-bottom: 2em;
+
+        @include small-screen {
+          font-size: 1em;
+        }
       }
     }
   }
