@@ -35,6 +35,14 @@
 .button {
   @include button;
 
+  &.hollow {
+    @include button;
+
+    &:not(.button--icon) {
+      @include is-button-caret($primary);
+    }
+  }
+
   &.primary {
     @include is-button($primary);
   }
