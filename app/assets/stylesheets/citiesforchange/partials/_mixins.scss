@@ -11,6 +11,7 @@
   color: $white;
   border-radius: 0;
   font-weight: bold;
+  text-transform: uppercase;
 
   &.hollow:not(.expanded) {
     border: none;

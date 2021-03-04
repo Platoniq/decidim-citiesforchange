@@ -106,3 +106,15 @@
     }
   }
 }
+
+.conferences-controller {
+  hr {
+    border: none;
+  }
+
+  .card {
+    &__icondata {
+      margin: 0;
+    }
+  }
+}
