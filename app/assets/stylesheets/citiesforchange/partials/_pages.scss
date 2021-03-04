@@ -4,13 +4,18 @@
   background-color: $color;
 
   .card__button {
-    &:hover {
-      background-color: inherit;
-      border: $border-thin;
-    }
     &::before,
     &::after {
       background-color: $color;
+    }
+    &:hover {
+      background-color: inherit;
+      border: $border-thin;
+
+      &::before,
+      &::after {
+        background-color: currentColor;
+      }
     }
   }
 }

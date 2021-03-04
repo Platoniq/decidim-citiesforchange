@@ -22,8 +22,14 @@
     margin: 0 1.5rem;
   }
 
-  &__support > :only-child {
-    margin: auto;
+  &__support {
+    gap: 1em;
+    justify-content: space-around;
+    align-items: center;
+
+    & > :only-child {
+      margin: auto;
+    }
   }
 
   &__status {

@@ -1,120 +1,48 @@
 @import "./variables";
 @import "./mixins";
 
-.button {
+@mixin is-button($color) {
   @include button;
 
-  &--sc:not(.expanded):not(.button--social) {
-    @include button;
-    @include caret-wrapped-absolute($primary);
+  background-color: $black;
+  color: $white;
+
+  &::before,
+  &::after {
+    background-color: $color;
   }
 
-  &.home-section__cta,
-  &[type="submit"] {
-    @include button;
-    @include caret-wrapped-absolute($primary);
-
-    &:hover {
-      @include button-inverted($primary);
-      @include caret-wrapped-absolute($black);
-    }
-  }
-
-  &.hero-cta {
-    @include button;
-    @include caret-wrapped-absolute($secondary);
-
-    &:hover {
-      @include button-inverted($secondary);
-      @include caret-wrapped-absolute($black);
-    }
-  }
-
-  &.hollow {
-    @include button;
-    @include caret-wrapped-absolute($primary);
-
-    &:hover {
-      @include button-inverted($primary);
-      @include caret-wrapped-absolute($black);
-    }
-
-    &.secondary {
-      @include caret-wrapped-absolute($secondary);
-
-      &:hover {
-        @include button-inverted($secondary);
-      }
-    }
-  }
-
-  &.expanded.button--sc {
-    @include button;
-    @include caret-wrapped-absolute($primary);
-
-    &:hover {
-      @include button-inverted($primary);
-      @include caret-wrapped-absolute($black);
-    }
-
-    &.secondary {
-      @include caret-wrapped-absolute($secondary);
-
-      &:hover {
-        @include button-inverted($secondary);
-      }
-    }
-  }
-
-  &.card__button.small.hollow {
-    @include button;
-    @include caret-wrapped-absolute($primary);
-
-    &:hover {
-      @include button-inverted($primary);
-      @include caret-wrapped-absolute($black);
-    }
-  }
-
-  &.card__button.small {
-    &.button--sc {
-      @include button;
-      @include caret-wrapped-absolute($green);
-
-      &:hover {
-        @include button-inverted($green);
-        @include caret-wrapped-absolute($black);
-      }
-    }
-  }
-
-  &.button--shadow.secondary {
-    @include button;
-  }
-}
-
-.hero {
-  .button.hollow.light.expanded:not(.conference--date) {
-    border: none;
-
-    @include button-inverted($primary);
-    @include caret-wrapped-absolute($black);
-
-    &:hover {
-      @include button-inverted($black);
-      @include caret-wrapped-absolute($primary);
-    }
-  }
-
-  .button.hollow.light.expanded.conference--date,
-  .button.hollow.light.expanded.conference--date:hover {
-    border: none;
-    @include button;
+  &:hover {
+    background-color: $color;
+    color: $black;
 
     &::before,
     &::after {
-      content: none;
+      background-color: $black;
     }
+  }
+}
+
+@mixin is-button-caret($color) {
+  @include is-button($color);
+  @include caret-wrapped-absolute($color);
+
+  &:hover {
+    @include caret-wrapped-absolute($black);
+  }
+}
+
+.button {
+  @include button;
+
+  &.primary {
+    @include is-button($primary);
+  }
+  &.secondary {
+    @include is-button($secondary);
+  }
+  &.card__button {
+    @include is-button-caret($green);
   }
 }
 
