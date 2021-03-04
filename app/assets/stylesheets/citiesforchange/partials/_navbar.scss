@@ -60,9 +60,21 @@
     background: black;
     padding: 0.25rem 1rem;
     margin: 0 1rem;
+
+    @include small-screen {
+      padding: 0 1em;
+    }
   }
 
   &__user__login a::before {
     content: none;
+  }
+}
+
+.usermenu-off-canvas-holder {
+  background: $primary;
+
+  .topbar__user__login {
+    margin-top: 0;
   }
 }
