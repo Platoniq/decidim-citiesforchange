@@ -27,43 +27,67 @@
 
   &.highligted-content-banner {
     .text-highlight {
-      font-size: 1.2rem;
       text-align: center;
 
-      p {
-        margin: 1rem;
-        margin-bottom: 2rem;
-      }
-
       &.heading1 {
-        margin-bottom: 2rem;
         @include font-heading-big;
+        margin-bottom: 2rem;
+        font-size: 6rem;
+
+        @include small-screen {
+          font-size: 4em;
+        }
       }
     }
 
     .button {
-      background-color: $green;
-      padding: 1rem;
+      @include button;
+      @include caret-wrapped-absolute($green, 2em);
+      padding: 1em;
       font-size: 1.5rem;
       grid-template-rows: 1fr 1fr;
 
+      @include small-screen {
+        @include caret-wrapped-absolute($green, 1em);
+        padding: 0.5em;
+        font-size: 1.25em;
+      }
+
       &:hover {
-        background-color: lighten($green, 20%);
-      }
+        @include button-inverted($green);
+        @include caret-wrapped-absolute($black, 2em);
+        padding: 1em;
+        font-size: 1.5em;
+        grid-template-rows: 1fr 1fr;
 
-      @include caret-wrapped-absolute($black, 2rem);
-
-      .button__cta,
-      .button__info {
-        grid-column: 2;
-      }
-      .button__info {
-        grid-row: 2;
+        @include small-screen {
+          @include caret-wrapped-absolute($black, 1em);
+          padding: 0.5em;
+          font-size: 1.25em;
+        }
       }
     }
+
     &::after {
-      mix-blend-mode: multiply;
-      background-color: transparentize($black, 0.8);
+      content: none;
+    }
+
+    &.text {
+      background: $body-background-color;
+      padding: 2em;
+
+      p {
+        color: $body-font-color;
+        text-align: center;
+        line-height: 1.5em;
+        font-weight: bold;
+        font-size: 1.25em;
+        margin-bottom: 2em;
+
+        @include small-screen {
+          font-size: 1em;
+        }
+      }
     }
   }
 }

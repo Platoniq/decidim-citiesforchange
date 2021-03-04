@@ -101,6 +101,14 @@
   &::after {
     grid-column: 3;
   }
+
+  .button__cta,
+  .button__info {
+    grid-column: 2;
+  }
+  .button__info {
+    grid-row: 2;
+  }
 }
 
 @mixin bottom-caret($color) {
@@ -148,6 +156,12 @@
 
 @mixin small-screen {
   @media print, screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin mid-screen {
+  @media print, screen and (min-width: 40em) and (max-width: 64em) {
     @content;
   }
 }
