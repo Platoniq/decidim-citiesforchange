@@ -62,7 +62,7 @@ a,
   @include button;
 
   &:hover {
-    @include button-inverted($white);
+    @include button-inverted($primary);
   }
 }
 
