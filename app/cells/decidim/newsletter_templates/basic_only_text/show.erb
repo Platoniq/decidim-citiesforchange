@@ -11,8 +11,8 @@
                 <% url = decidim.root_url(host: organization.host) %>
               <% end %>
 
-              <%= link_to url do %>
-                <%= image_tag "banner-email.png", target: :blank, alt: organization.name %>
+              <%= link_to url, target: :blank do %>
+                <%= image_tag asset_url("banner-email.png", host: url), alt: organization.name %>
               <% end %>
             </td>
           </tr>
@@ -51,7 +51,7 @@
         <tr>
           <th>
             <td>
-              <%= image_tag "banner.png", alt: organization.name %>
+              <%= image_tag asset_url("banner.png", host: url), alt: organization.name %>
             </td>
           </th>
         </tr>

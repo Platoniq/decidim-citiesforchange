@@ -52,7 +52,13 @@
                     <tr>
                       <th>
                         <td>
-                          <%= image_tag "banner.png", alt: @organization.name %>
+                          <% if @custom_url_for_mail_root.present? %>
+                            <% url = @custom_url_for_mail_root %>
+                          <% else %>
+                            <% url = decidim.root_url(host: @organization.host) %>
+                          <% end %>
+
+                          <%= image_tag asset_url("banner.png", host: url), alt: @organization.name %>
                         </td>
                       </th>
                     </tr>
