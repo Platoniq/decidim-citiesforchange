@@ -4,13 +4,18 @@
   background-color: $color;
 
   .card__button {
-    &:hover {
-      background-color: inherit;
-      border: 1px solid $black;
-    }
     &::before,
     &::after {
       background-color: $color;
+    }
+    &:hover {
+      background-color: inherit;
+      border: $border-thin;
+
+      &::before,
+      &::after {
+        background-color: currentColor;
+      }
     }
   }
 }
@@ -25,6 +30,11 @@
 
     ul li a {
       color: currentColor;
+    }
+
+    &__footer,
+    &__top {
+      margin: 0 1rem;
     }
   }
 

@@ -1,46 +1,67 @@
 @import "./variables";
 @import "./mixins";
 
-.button {
+@mixin is-button($color) {
   @include button;
 
-  &--sc:not([title="Search"], [title="Zoeken"]):not(.expanded):not(.button--social) {
-    @include button;
-    @include caret-wrapped($primary);
+  background-color: $black;
+  color: $white;
+
+  &::before,
+  &::after {
+    background-color: $color;
   }
 
-  &.home-section__cta,
-  &[type="submit"]:not([title="Search"], [title="Zoeken"]) {
-    @include button;
-    @include caret-wrapped($primary);
+  &:hover {
+    background-color: $color;
+    color: $black;
 
-    &:hover {
-      @include button-inverted($primary);
-      @include caret-wrapped($black);
-    }
-  }
-
-  &.hero-cta {
-    @include button;
-    @include caret-wrapped($secondary);
-
-    &:hover {
-      @include button-inverted($secondary);
-      @include caret-wrapped($black);
-    }
-  }
-
-  &.card__button.small.button--sc {
-    @include button;
-    @include caret-wrapped($green);
-
-    &:hover {
-      @include button-inverted($green);
-      @include caret-wrapped($black);
+    &::before,
+    &::after {
+      background-color: $black;
     }
   }
 }
 
+@mixin is-button-caret($color) {
+  @include is-button($color);
+  @include caret-wrapped-absolute($color);
+
+  &:hover {
+    @include caret-wrapped-absolute($black);
+  }
+}
+
+.button {
+  @include button;
+
+  &.hollow {
+    @include button;
+
+    &:not(.button--icon) {
+      @include is-button-caret($primary);
+    }
+  }
+
+  &.primary {
+    @include is-button($primary);
+  }
+  &.secondary {
+    @include is-button($secondary);
+  }
+  &.card__button {
+    @include is-button-caret($green);
+  }
+}
+
+.input-group-button .button,
+.input-group-button .button:hover,
+.button.hollow.follow-button {
+  &::before,
+  &::after {
+    content: none;
+  }
+}
 // Non-buttons
 
 .topbar__user__login {

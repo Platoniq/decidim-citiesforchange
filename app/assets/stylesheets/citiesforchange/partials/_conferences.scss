@@ -52,6 +52,10 @@
       font-size: 1rem;
     }
   }
+
+  .button.button--shadow.tiny.hollow {
+    @include label;
+  }
 }
 
 .conference_program-controller {
@@ -99,6 +103,18 @@
     &::before,
     &::after {
       content: none;
+    }
+  }
+}
+
+.conferences-controller {
+  hr {
+    border: none;
+  }
+
+  .card {
+    &__icondata {
+      margin: 0;
     }
   }
 }
