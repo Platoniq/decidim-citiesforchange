@@ -35,8 +35,9 @@
 .button {
   @include button;
 
-  &.hollow {
+  &.hollow:not(.tiny) {
     @include button;
+    border: none;
 
     &:not(.button--icon) {
       @include is-button-caret($primary);
