@@ -29,9 +29,9 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
   it "renders tabs with month names and year" do
     within "#conference-day-tabs" do
       expect(page).to have_selector(".tabs-title", count: 3)
-      expect(page).to have_content("December 2021")
-      expect(page).to have_content("March 2022")
-      expect(page).to have_content("May 2022")
+      expect(page).to have_content("DECEMBER 2021")
+      expect(page).to have_content("MARCH 2022")
+      expect(page).to have_content("MAY 2022")
     end
   end
 
