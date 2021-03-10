@@ -1788,20 +1788,25 @@ td {
 }
 
 .row.content {
-  .email-button {
+  .email-button a {
     @include button;
   }
 
-  .email-button__cta {
+  .email-button__cta a {
     @include button;
     @include font-title;
-    @include caret-wrapped-absolute($green);
+
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+
+    @include caret-wrapped($green);
 
     &.cta-accept {
-      @include caret-wrapped-absolute($blue);
+      @include caret-wrapped($blue);
     }
     &.cta-decline {
-      @include caret-wrapped-absolute($warning);
+      @include caret-wrapped($warning);
     }
   }
   p {
