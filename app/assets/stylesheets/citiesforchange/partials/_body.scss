@@ -56,6 +56,16 @@ a,
   }
 }
 
+.opinion-toggle--meh:hover,
+.opinion-toggle--meh:focus,
+.opinion-toggle--meh.is-active {
+  @include button;
+
+  &:hover {
+    @include button-inverted($primary);
+  }
+}
+
 input:checked ~ .switch-paddle {
   background: $secondary;
 }

@@ -1,7 +1,7 @@
 @import "./variables";
 
 @mixin banner-background() {
-  background-image: image-url("banner.png");
+  background-image: url("/assets/banner.png");
   background-size: cover;
 }
 
