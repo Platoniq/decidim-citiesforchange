@@ -3,7 +3,9 @@
     <div class="programme-time">
       <%= icon("clock", class: "icon", role: "img") %>
       <div class="programme-time__day">
-        <%= l start_time, format: :weekday %>
+        <%= l start_time, format: "%A" %>
+        <br>
+        <%= l start_time, format: "%d %b" %>
       </div>
       <div class="programme-time__time">
         <%= start_time.to_s(:time) %> - <%= end_time.to_s(:time) %>
@@ -12,8 +14,8 @@
   </div>
 
   <div class="programme-image column medium-4">
-    <% if meeting.main_image.present? %>
-    <%= image_tag meeting.main_image.url %>
+    <% if meeting.photo.present? %>
+    <%= image_tag meeting.photo.url %>
     <% end %>
   </div>
 

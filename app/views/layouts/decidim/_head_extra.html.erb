@@ -18,4 +18,12 @@
   $("body").ready(() => {
     $("body").addClass("<%= controller_name %>-controller")
   })
+
+  // Remove body images from blog post cards
+  $(document).ready(() => {
+    $(".card--post .card__content").find("img, iframe").remove()
+    $(".card--post p br:only-child").remove()
+    $(".card--post p:empty").remove()
+  })
+
 </script>

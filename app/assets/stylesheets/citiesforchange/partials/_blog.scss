@@ -1,0 +1,31 @@
+@import "./variables";
+@import "./mixins";
+
+.card--post {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+
+  .card__image {
+    display: block;
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card__content {
+    grid-column: 2;
+
+    &:only-child {
+      grid-column: span 2;
+    }
+  }
+
+  @include small-screen {
+    grid-template-columns: 1fr;
+    .card__image {
+      display: none;
+    }
+  }
+}
