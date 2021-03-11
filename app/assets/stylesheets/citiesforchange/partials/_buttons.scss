@@ -39,7 +39,9 @@
     @include button;
     border: none;
 
-    &:not(.button--icon) {
+    &:not(.button--icon),
+    &:not(.small),
+    &:not(.button--nomargin) {
       @include is-button-caret($primary);
     }
   }
