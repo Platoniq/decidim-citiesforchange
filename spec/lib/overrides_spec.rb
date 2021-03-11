@@ -32,6 +32,13 @@ checksums = [
     }
   },
   {
+    package: "decidim-blogs",
+    files: {
+      # views
+      "/app/views/decidim/blogs/posts/_posts.html.erb" => "59410d0eb3d64abea1e784475f86cebf"
+    }
+  },
+  {
     package: "decidim-admin",
     files: {
       # views
