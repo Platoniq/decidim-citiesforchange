@@ -35,14 +35,29 @@
 .button {
   @include button;
 
-  &.hollow:not(.tiny) {
-    @include button;
-    border: none;
+  &.expanded,
+  &.hollow {
+    &:not(.tiny) {
+      @include button;
+      border: none;
 
-    &:not(.button--icon),
-    &:not(.small),
-    &:not(.button--nomargin) {
-      @include is-button-caret($primary);
+      &.button--icon,
+      &.small,
+      &.compact,
+      &.button--nomargin {
+        @include is-button($primary);
+
+        &.primary {
+          @include is-button($primary);
+        }
+        &.secondary {
+          @include is-button($secondary);
+        }
+      }
+
+      &:not(.button--icon):not(.small):not(.compact):not(.button--nomargin):not([id]) {
+        @include is-button-caret($primary);
+      }
     }
   }
 
