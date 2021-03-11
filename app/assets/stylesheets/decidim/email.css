@@ -1478,18 +1478,18 @@ th,
 td {
   box-sizing: border-box; }
 
-.row.content .email-button {
+.row.content .email-button a {
   padding: 0.5rem;
   background: #000000;
   color: white;
   border-radius: 0;
   font-weight: bold;
   text-transform: uppercase; }
-  .row.content .email-button.hollow:not(.expanded) {
+  .row.content .email-button a.hollow:not(.expanded) {
     border: none; }
-  .row.content .email-button.hover, .row.content .email-button:hover {
+  .row.content .email-button a.hover, .row.content .email-button a:hover {
     filter: none; }
-.row.content .email-button__cta {
+.row.content .email-button__cta a {
   padding: 0.5rem;
   background: #000000;
   color: white;
@@ -1497,14 +1497,14 @@ td {
   font-weight: bold;
   text-transform: uppercase;
   text-transform: uppercase;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 2rem 1fr 2rem; }
-  .row.content .email-button__cta.hollow:not(.expanded) {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-align: center; }
+  .row.content .email-button__cta a.hollow:not(.expanded) {
     border: none; }
-  .row.content .email-button__cta.hover, .row.content .email-button__cta:hover {
+  .row.content .email-button__cta a.hover, .row.content .email-button__cta a:hover {
     filter: none; }
-  .row.content .email-button__cta::before, .row.content .email-button__cta::after {
+  .row.content .email-button__cta a::before, .row.content .email-button__cta a::after {
     content: " ";
     transition: all ease-in-out 300ms;
     display: inline-block;
@@ -1513,95 +1513,48 @@ td {
     margin: -3px 0.5rem;
     background-color: #00a767;
     clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
-  .row.content .email-button__cta::before {
+  .row.content .email-button__cta a::before {
     transform: rotate(90deg); }
-  .row.content .email-button__cta::after {
+  .row.content .email-button__cta a::after {
     transform: rotate(-90deg); }
-  .row.content .email-button__cta:hover {
+  .row.content .email-button__cta a:hover {
     color: #0effa3; }
-    .row.content .email-button__cta:hover::before, .row.content .email-button__cta:hover::after {
+    .row.content .email-button__cta a:hover::before, .row.content .email-button__cta a:hover::after {
       background-color: #0effa3; }
-  .row.content .email-button__cta::before, .row.content .email-button__cta::after {
-    display: block;
-    margin: auto;
-    grid-row: span 2; }
-  .row.content .email-button__cta::before {
-    grid-column: 1; }
-  .row.content .email-button__cta::after {
-    grid-column: 3; }
-  .row.content .email-button__cta .button__cta,
-  .row.content .email-button__cta .button__info {
-    grid-column: 2; }
-  .row.content .email-button__cta .button__info {
-    grid-row: 2; }
-  .row.content .email-button__cta.cta-accept {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 2rem 1fr 2rem; }
-    .row.content .email-button__cta.cta-accept::before, .row.content .email-button__cta.cta-accept::after {
-      content: " ";
-      transition: all ease-in-out 300ms;
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      margin: -3px 0.5rem;
-      background-color: #5f93b1;
-      clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
-    .row.content .email-button__cta.cta-accept::before {
-      transform: rotate(90deg); }
-    .row.content .email-button__cta.cta-accept::after {
-      transform: rotate(-90deg); }
-    .row.content .email-button__cta.cta-accept:hover {
-      color: #a4c1d2; }
-      .row.content .email-button__cta.cta-accept:hover::before, .row.content .email-button__cta.cta-accept:hover::after {
-        background-color: #a4c1d2; }
-    .row.content .email-button__cta.cta-accept::before, .row.content .email-button__cta.cta-accept::after {
-      display: block;
-      margin: auto;
-      grid-row: span 2; }
-    .row.content .email-button__cta.cta-accept::before {
-      grid-column: 1; }
-    .row.content .email-button__cta.cta-accept::after {
-      grid-column: 3; }
-    .row.content .email-button__cta.cta-accept .button__cta,
-    .row.content .email-button__cta.cta-accept .button__info {
-      grid-column: 2; }
-    .row.content .email-button__cta.cta-accept .button__info {
-      grid-row: 2; }
-  .row.content .email-button__cta.cta-decline {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 2rem 1fr 2rem; }
-    .row.content .email-button__cta.cta-decline::before, .row.content .email-button__cta.cta-decline::after {
-      content: " ";
-      transition: all ease-in-out 300ms;
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      margin: -3px 0.5rem;
-      background-color: #ee734d;
-      clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
-    .row.content .email-button__cta.cta-decline::before {
-      transform: rotate(90deg); }
-    .row.content .email-button__cta.cta-decline::after {
-      transform: rotate(-90deg); }
-    .row.content .email-button__cta.cta-decline:hover {
-      color: #f7bcaa; }
-      .row.content .email-button__cta.cta-decline:hover::before, .row.content .email-button__cta.cta-decline:hover::after {
-        background-color: #f7bcaa; }
-    .row.content .email-button__cta.cta-decline::before, .row.content .email-button__cta.cta-decline::after {
-      display: block;
-      margin: auto;
-      grid-row: span 2; }
-    .row.content .email-button__cta.cta-decline::before {
-      grid-column: 1; }
-    .row.content .email-button__cta.cta-decline::after {
-      grid-column: 3; }
-    .row.content .email-button__cta.cta-decline .button__cta,
-    .row.content .email-button__cta.cta-decline .button__info {
-      grid-column: 2; }
-    .row.content .email-button__cta.cta-decline .button__info {
-      grid-row: 2; }
+  .row.content .email-button__cta a.cta-accept::before, .row.content .email-button__cta a.cta-accept::after {
+    content: " ";
+    transition: all ease-in-out 300ms;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin: -3px 0.5rem;
+    background-color: #5f93b1;
+    clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
+  .row.content .email-button__cta a.cta-accept::before {
+    transform: rotate(90deg); }
+  .row.content .email-button__cta a.cta-accept::after {
+    transform: rotate(-90deg); }
+  .row.content .email-button__cta a.cta-accept:hover {
+    color: #a4c1d2; }
+    .row.content .email-button__cta a.cta-accept:hover::before, .row.content .email-button__cta a.cta-accept:hover::after {
+      background-color: #a4c1d2; }
+  .row.content .email-button__cta a.cta-decline::before, .row.content .email-button__cta a.cta-decline::after {
+    content: " ";
+    transition: all ease-in-out 300ms;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin: -3px 0.5rem;
+    background-color: #ee734d;
+    clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
+  .row.content .email-button__cta a.cta-decline::before {
+    transform: rotate(90deg); }
+  .row.content .email-button__cta a.cta-decline::after {
+    transform: rotate(-90deg); }
+  .row.content .email-button__cta a.cta-decline:hover {
+    color: #f7bcaa; }
+    .row.content .email-button__cta a.cta-decline:hover::before, .row.content .email-button__cta a.cta-decline:hover::after {
+      background-color: #f7bcaa; }
 .row.content p {
   margin-bottom: 1.5rem; }
 
