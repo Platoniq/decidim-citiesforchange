@@ -1,12 +1,17 @@
 @import "./variables";
 @import "./mixins";
 
-.main-footer {
+.main-footer,
+.mini-footer {
   background: $title-bar-bg;
+
+  a,
+  a:hover {
+    color: white;
+  }
 }
 
 .mini-footer {
-  background: $title-bar-bg;
   padding-top: 2em;
 }
 
