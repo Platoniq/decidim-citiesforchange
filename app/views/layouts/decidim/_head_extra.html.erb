@@ -21,9 +21,9 @@
 
   // Remove body images from blog post cards
   $(document).ready(() => {
-    $(".card--post .card__content").find("img, iframe").remove()
-    $(".card--post p br:only-child").remove()
-    $(".card--post p:empty").remove()
+    $(".card--post .card__content p").find("img, iframe").remove()
+    $(".card--post .card__content p br:only-child").remove()
+    $(".card--post .card__content p:empty").remove()
   })
 
 </script>

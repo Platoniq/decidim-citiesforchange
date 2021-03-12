@@ -15,7 +15,7 @@
             <%= cell "decidim/author", present(post.author), from: post %>
           </div>
         </div>
-        <%= decidim_sanitize post_description(post, 255) %>
+        <%= decidim_sanitize post_description(post, 180) %>
       </div>
     </div>
   <% end %>
