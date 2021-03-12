@@ -60,10 +60,12 @@
 
   &--full__image .button.expanded.button--sc {
     @include button-inverted($primary);
+    @include button-padding;
     @include caret-wrapped-absolute($black);
 
     &:hover {
       @include button;
+      @include button-padding;
       @include caret-wrapped-absolute($primary);
     }
   }

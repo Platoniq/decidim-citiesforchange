@@ -5,8 +5,11 @@
   background-size: cover;
 }
 
-@mixin button {
+@mixin button-padding {
   padding: 0.5rem;
+}
+
+@mixin button {
   background: $black;
   color: $white;
   border-radius: 0;

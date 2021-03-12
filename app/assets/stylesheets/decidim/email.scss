@@ -1790,10 +1790,12 @@ td {
 .row.content {
   .email-button a {
     @include button;
+    @include button-padding;
   }
 
   .email-button__cta a {
     @include button;
+    @include button-padding;
     @include font-title;
 
     margin-bottom: 1em;

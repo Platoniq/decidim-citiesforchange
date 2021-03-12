@@ -10,13 +10,16 @@
 
   a {
     @include button;
+    @include button-padding;
 
     &:hover {
       @include button-inverted($primary);
+      @include button-padding;
     }
   }
 
   .current {
     @include button-inverted($primary);
+    @include button-padding;
   }
 }
