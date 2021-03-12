@@ -3,6 +3,7 @@
 
 @mixin is-button($color) {
   @include button;
+  @include button-padding;
 
   background-color: $black;
   color: $white;
@@ -63,9 +64,17 @@
 
   &.primary {
     @include is-button($primary);
+
+    &.button--icon.hollow .icon-wrap {
+      border-right: none;
+    }
   }
   &.secondary {
     @include is-button($secondary);
+
+    &.button--icon.hollow .icon-wrap {
+      border-right: none;
+    }
   }
   &.card__button {
     @include is-button-caret($green);
@@ -80,6 +89,7 @@
     content: none;
   }
 }
+
 // Non-buttons
 
 .topbar__user__login {

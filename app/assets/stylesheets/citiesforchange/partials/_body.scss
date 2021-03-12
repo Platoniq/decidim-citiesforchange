@@ -44,7 +44,6 @@ a,
 .side-panel__tabs .tabs-title.is-active > [role="tab"],
 .side-panel__tabs .tabs-title.is-active > a,
 .topbar__dropmenu .is-dropdown-submenu li a,
-.inline-filters button[data-toggle],
 .card__link,
 .author-data .author__name,
 .accountability .categories .categories--group .card__link strong {
@@ -60,8 +59,10 @@ a,
 .opinion-toggle--meh:focus,
 .opinion-toggle--meh.is-active {
   @include button;
+  @include button-padding;
 
   &:hover {
+    @include button-padding;
     @include button-inverted($primary);
   }
 }
@@ -76,5 +77,64 @@ input:checked ~ .switch-paddle {
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+select,
+.inline-filters button[data-toggle],
+.dropdown-pane,
+.picker-prompt,
+.reveal {
+  border: $border-thin;
+  border-radius: 0;
+  color: $body-font-color;
+}
+
+.definition-data {
+  &__item {
+    border: none;
+    border-bottom: $border-wide;
+    margin: 0 1.5em;
+  }
+
+  &__title {
+    color: $secondary;
+    font-weight: bold;
+  }
+}
+
+.inline-filters .dropdown-pane li a,
+.inline-filters .dropdown-pane li a:hover {
+  color: $body-font-color;
+}
+
+.inline-filters .dropdown-pane li:hover {
+  background-color: $primary;
+}
+
+hr.reset {
+  visibility: hidden;
+}
+
+.tooltip.light {
+  background-color: $body-background-color;
+  border: $border-wide;
+  border-radius: 0;
+  box-shadow: none;
+
+  &.top::before {
+    border-color: $border-color transparent transparent;
+  }
+
+  &.bottom::before {
+    border-color: transparent transparent $border-color;
+  }
+
+  &.left::before {
+    border-color: transparent transparent transparent $border-color;
+  }
+
+  &.right::before {
+    border-color: transparent $border-color transparent transparent;
   }
 }

@@ -52,3 +52,25 @@
     }
   }
 }
+
+#profile-tabs.tabs {
+  border-bottom: $border-wide;
+
+  .tabs-title {
+    a,
+    &.is-active a {
+      border-bottom: none;
+      color: $body-font-color;
+
+      &:hover {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+#activities {
+  .row:first-child {
+    background: $body-font-color;
+  }
+}
