@@ -1,0 +1,44 @@
+@import "./variables";
+@import "./mixins";
+
+#html-block {
+  margin: 2em;
+  background: $body-background-color;
+
+  & > hr {
+    border-bottom: $border-wide;
+    margin: 2em auto;
+    max-width: 75em;
+    width: 100%;
+  }
+
+  .cards--kickoff {
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+    margin-top: 2em;
+
+    @include small-screen {
+      flex-direction: column;
+      margin-top: 1em;
+    }
+  }
+
+  .card.card--kickoff {
+    margin: 0;
+
+    .card__title {
+      border-top: $border-wide;
+      margin-top: 1em;
+      padding-top: 1em;
+    }
+  }
+
+  a.button {
+    font-size: 1.5em;
+    margin: 3em auto;
+
+    @include button;
+    @include caret-wrapped-absolute($green);
+  }
+}
