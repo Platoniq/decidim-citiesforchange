@@ -47,4 +47,8 @@
     @include button;
     @include caret-wrapped-absolute($green);
   }
+
+  .row {
+    margin-top: 1.5em;
+  }
 }
