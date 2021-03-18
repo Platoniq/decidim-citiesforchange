@@ -49,3 +49,6 @@ config/deploy.rb
 
 decidim_dummy_app
 .vscode
+
+
+.sass-cache

@@ -1087,7 +1087,7 @@ small {
 }
 
 a {
-  color: #5295ad;
+  color: #5f93b1;
   text-decoration: none;
 }
 
@@ -1100,7 +1100,7 @@ a:active {
 }
 
 a:visited {
-  color: #5295ad;
+  color: #5f93b1;
 }
 
 h1 a,
@@ -1115,7 +1115,7 @@ h5 a,
 h5 a:visited,
 h6 a,
 h6 a:visited {
-  color: #5295ad;
+  color: #5f93b1;
 }
 
 pre {
@@ -1327,54 +1327,54 @@ table.button.secondary table td a:visited {
 }
 
 table.button.success table td {
-  background: #3adb76;
-  border: 0 solid #3adb76;
+  background: #00a767;
+  border: 0 solid #00a767;
 }
 
 table.button.success table a {
-  border: 0 solid #3adb76;
+  border: 0 solid #00a767;
 }
 
 table.button.success:hover table td {
-  background: #23bf5d;
+  background: lighten(#00a767, 10%);
 }
 
 table.button.success:hover table a {
-  border: 0 solid #23bf5d;
+  border: 0 solid lighten(#00a767, 10%);
 }
 
 table.button.alert table td {
-  background: #ec5840;
-  border: 0 solid #ec5840;
+  background: #e30613;
+  border: 0 solid #e30613;
 }
 
 table.button.alert table a {
-  border: 0 solid #ec5840;
+  border: 0 solid #e30613;
 }
 
 table.button.alert:hover table td {
-  background: #e23317;
+  background: lighten(#e30613, 10%);
 }
 
 table.button.alert:hover table a {
-  border: 0 solid #e23317;
+  border: 0 solid lighten(#e30613, 10%);
 }
 
 table.button.warning table td {
-  background: #ffae00;
-  border: 0 solid #ffae00;
+  background: #ee734d;
+  border: 0 solid #ee734d;
 }
 
 table.button.warning table a {
-  border: 0 solid #ffae00;
+  border: 0 solid #ee734d;
 }
 
 table.button.warning:hover table td {
-  background: #cc8b00;
+  background: lighten(#ee734d, 10%);
 }
 
 table.button.warning:hover table a {
-  border: 0 solid #cc8b00;
+  border: 0 solid lighten(#ee734d, 10%);
 }
 
 table.callout {
@@ -1401,20 +1401,20 @@ th.callout-inner.secondary {
 }
 
 th.callout-inner.success {
-  background: #e1faea;
-  border: 1px solid #1b9448;
+  background: lighten(#00a767, 30%);
+  border: 1px solid #00a767;
   color: #fefefe;
 }
 
 th.callout-inner.warning {
-  background: #fff3d9;
-  border: 1px solid #996800;
+  background: lighten(#ee734d, 30%);
+  border: 1px solid #ee734d;
   color: #fefefe;
 }
 
 th.callout-inner.alert {
-  background: #fce6e2;
-  border: 1px solid #b42912;
+  background: lighten(#e30613, 30%);
+  border: 1px solid #e30613;
   color: #fefefe;
 }
 
@@ -1446,7 +1446,7 @@ table.menu th.menu-item {
 
 table.menu td.menu-item a,
 table.menu th.menu-item a {
-  color: #5295ad;
+  color: #5f93b1;
 }
 
 table.menu.vertical td.menu-item,
@@ -1788,10 +1788,28 @@ td {
 }
 
 .row.content {
-  a {
-    @include font-title;
+  .email-button a {
     @include button;
+    @include button-padding;
+  }
+
+  .email-button__cta a {
+    @include button;
+    @include button-padding;
+    @include font-title;
+
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+
     @include caret-wrapped($green);
+
+    &.cta-accept {
+      @include caret-wrapped($blue);
+    }
+    &.cta-decline {
+      @include caret-wrapped($warning);
+    }
   }
   p {
     margin-bottom: 1.5rem;
@@ -1806,8 +1824,4 @@ td {
   }
   padding: 0;
   padding-top: 25px;
-}
-
-.header {
-  @include banner-background;
 }

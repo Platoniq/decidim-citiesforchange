@@ -2,12 +2,12 @@
 @import "./mixins";
 
 .process-nav {
-  box-shadow: inset 0 (-$border-thin-width) 0 0 $black;
+  box-shadow: inset 0 (-$border-thin-width) 0 0 $body-font-color;
 
   &__content {
     li {
       a {
-        color: $black;
+        color: $body-font-color;
         font-size: 1.25rem;
         font-weight: 400;
         text-transform: none;
@@ -21,4 +21,13 @@
       }
     }
   }
+  &__hidden-content__more {
+    background: $body-font-color;
+    color: $white;
+    @include font-title;
+  }
+}
+
+.process-stats__data::after {
+  border-left: $border-wide-width solid purple;
 }

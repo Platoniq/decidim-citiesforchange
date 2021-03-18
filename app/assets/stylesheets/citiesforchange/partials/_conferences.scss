@@ -29,7 +29,7 @@
       color: $primary;
 
       &__time {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
       }
 
       .icon {
@@ -117,4 +117,10 @@
       margin: 0;
     }
   }
+}
+
+.conference-speaker .speaker-bio {
+  border: $border-wide;
+  box-shadow: none;
+  border-radius: 0;
 }

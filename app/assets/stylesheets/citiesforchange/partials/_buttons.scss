@@ -3,6 +3,7 @@
 
 @mixin is-button($color) {
   @include button;
+  @include button-padding;
 
   background-color: $black;
   color: $white;
@@ -35,22 +36,57 @@
 .button {
   @include button;
 
+  &.expanded,
   &.hollow {
-    @include button;
+    &:not(.tiny) {
+      @include button;
+      border: none;
 
-    &:not(.button--icon) {
-      @include is-button-caret($primary);
+      &.button--icon,
+      &.small,
+      &.compact,
+      &.button--nomargin {
+        @include is-button($primary);
+
+        &.primary {
+          @include is-button($primary);
+        }
+        &.secondary {
+          @include is-button($secondary);
+        }
+      }
+
+      &:not(.button--icon):not(.small):not(.compact):not(.button--nomargin):not([id]) {
+        @include is-button-caret($primary);
+      }
     }
   }
 
   &.primary {
     @include is-button($primary);
+
+    &.button--icon.hollow .icon-wrap {
+      border-right: none;
+    }
   }
   &.secondary {
     @include is-button($secondary);
+
+    &.button--icon.hollow .icon-wrap {
+      border-right: none;
+    }
   }
   &.card__button {
     @include is-button-caret($green);
+  }
+}
+
+.input-group-button .button,
+.input-group-button .button:hover,
+.button.hollow.follow-button {
+  &::before,
+  &::after {
+    content: none;
   }
 }
 

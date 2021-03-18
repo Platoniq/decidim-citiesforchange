@@ -20,7 +20,7 @@ table.button table td {
               <% end %>
 
               <%= link_to url, target: :blank do %>
-                <%= image_tag asset_url("banner-email.png", host: url), alt: organization.name %>
+                <%= image_tag asset_url("banner-email.jpg", host: url), alt: organization.name %>
               <% end %>
             </td>
           </tr>
@@ -62,7 +62,9 @@ table.button table td {
                     <table>
                       <tr>
                         <td>
-                          <%= link_to cta_text, cta_url, target: :blank %>
+                          <p class="email-button email-button__cta">
+                            <%= link_to cta_text, cta_url, target: :blank %>
+                          </p>
                         </td>
                       </tr>
                     </table>
@@ -90,7 +92,7 @@ table.button table td {
         <tr>
           <th>
             <td>
-              <%= image_tag asset_url("banner.png", host: url), alt: organization.name %>
+              <%= image_tag asset_url("banner-email-footer.jpg", host: url), alt: organization.name %>
             </td>
           </th>
         </tr>
