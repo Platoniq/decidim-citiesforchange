@@ -2,7 +2,9 @@
   <% paginate_posts.each do |post| %>
     <div class="card card--post">
       <% if post.photo.present? %>
-        <%= image_tag post.photo.url, class: "card__image" %>
+        <%= link_to post do %>
+          <%= image_tag post.photo.url, class: "card__image" %>
+        <% end %>
       <% end %>
       <div class="card__content">
         <div class="card__header">
