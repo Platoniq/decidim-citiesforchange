@@ -90,6 +90,14 @@
   }
 }
 
+.input-group-button .button,
+.input-group-button .button:hover,
+.button.hollow.follow-button {
+  &::before,
+  &::after {
+    content: none;
+  }
+}
 // Non-buttons
 
 .topbar__user__login {
