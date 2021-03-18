@@ -1479,23 +1479,17 @@ td {
   box-sizing: border-box; }
 
 .row.content .email-button a {
-  padding: 0.5rem;
   background: #000000;
   color: white;
-  border-radius: 0;
-  font-weight: bold;
-  text-transform: uppercase; }
-  .row.content .email-button a.hollow:not(.expanded) {
-    border: none; }
-  .row.content .email-button a.hover, .row.content .email-button a:hover {
-    filter: none; }
+  padding: 0.25em 0.5em;
+  margin: 0.5em; }
 .row.content .email-button__cta a {
-  padding: 0.5rem;
   background: #000000;
   color: white;
   border-radius: 0;
   font-weight: bold;
   text-transform: uppercase;
+  padding: 0.5rem;
   text-transform: uppercase;
   margin-bottom: 1em;
   margin-top: 1em;
@@ -1556,7 +1550,8 @@ td {
     .row.content .email-button__cta a.cta-decline:hover::before, .row.content .email-button__cta a.cta-decline:hover::after {
       background-color: #f7bcaa; }
 .row.content p {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  line-height: 2em; }
 
 .logo-wrapper {
   padding: 0;
