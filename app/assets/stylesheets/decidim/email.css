@@ -1426,7 +1426,7 @@ table.body td.decidim-bar {
   padding: 0; }
 
 .main.container > tbody > tr:first-of-type {
-  background-image: url("/assets/banner.png");
+  background-image: url("/assets/banner-email.jpg");
   background-size: cover; }
 
 table.body {
