@@ -36,9 +36,10 @@
 
   &.highligted-content-banner {
     background-color: $black;
-    animation: 60s infinite alternate slider;
+    animation: 90s infinite alternate slider;
 
     .text-highlight {
+      text-shadow: 4px 4px 4px $black;
       text-align: center;
 
       &.heading1 {

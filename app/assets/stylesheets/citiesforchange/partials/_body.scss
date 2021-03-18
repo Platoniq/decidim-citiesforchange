@@ -31,6 +31,10 @@ h6,
   color: inherit;
 }
 
+.unread_message__counter {
+  background-color: $primary;
+}
+
 .card--list__icon,
 .card--list__data__icon:hover .icon,
 .card--list__data__icon--lg:hover .icon,
