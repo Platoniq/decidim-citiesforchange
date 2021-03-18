@@ -35,8 +35,8 @@
 
     .card__image {
       max-height: none;
-      width: 20em;
-      height: 20em;
+      width: 100%;
+      min-height: 20em;
     }
   }
 
