@@ -15,7 +15,9 @@
 
   <div class="programme-image column medium-4">
     <% if meeting.photo.present? %>
-    <%= image_tag meeting.photo.url %>
+      <%= link_to resource_locator(meeting).path do %>
+        <%= image_tag meeting.photo.url %>
+      <% end %>
     <% end %>
   </div>
 
