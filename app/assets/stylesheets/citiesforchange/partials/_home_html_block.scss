@@ -32,6 +32,12 @@
       margin-top: 1em;
       padding-top: 1em;
     }
+
+    .card__image {
+      max-height: none;
+      width: 20em;
+      height: 20em;
+    }
   }
 
   a.button {
