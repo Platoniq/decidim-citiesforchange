@@ -1,6 +1,15 @@
 @import "./variables";
 @import "./mixins";
 
+@keyframes slider {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
 .home-section {
   &.upcoming-events {
     background: $black;
@@ -26,6 +35,9 @@
   }
 
   &.highligted-content-banner {
+    background-color: $black;
+    animation: 60s infinite alternate slider;
+
     .text-highlight {
       text-align: center;
 
