@@ -15,9 +15,17 @@
     </span>
   </div>
   <div class="row">
+    <div class="column small-centered medium-centered small-12 medium-6 large-4">
       <%= link_to current_organization.highlighted_content_banner_action_url,
                   class: "button expanded button--sc", id: "get-involved" do %>
         <span class="button__cta">
+          <%= translated_attribute current_organization.highlighted_content_banner_action_title %>
+        </span>
+        <% if current_organization.highlighted_content_banner_action_subtitle[I18n.locale].present? %>
+          <span class="button__info">
+            <%= translated_attribute current_organization.highlighted_content_banner_action_subtitle %>
+          </span>
+        <% end %>
       <% end %>
     </div>
   </div>

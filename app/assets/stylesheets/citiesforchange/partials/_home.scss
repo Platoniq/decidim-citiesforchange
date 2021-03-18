@@ -45,7 +45,7 @@
       &.heading1 {
         @include font-heading-big;
         margin-bottom: 2rem;
-        font-size: 6rem;
+        font-size: 7rem;
 
         @include small-screen {
           font-size: 4em;
@@ -54,30 +54,13 @@
     }
 
     .button#get-involved {
+      font-size: 1.5em;
       @include button;
-      @include caret-wrapped-absolute($green, 2em);
-      padding: 1em;
-      font-size: 1.5rem;
-      grid-template-rows: 1fr 1fr;
-
-      @include small-screen {
-        @include caret-wrapped-absolute($green, 1em);
-        padding: 0.5em;
-        font-size: 1.25em;
-      }
+      @include caret-wrapped-absolute($green, 1em);
 
       &:hover {
         @include button-inverted($green);
-        @include caret-wrapped-absolute($black, 2em);
-        padding: 1em;
-        font-size: 1.5em;
-        grid-template-rows: 1fr 1fr;
-
-        @include small-screen {
-          @include caret-wrapped-absolute($black, 1em);
-          padding: 0.5em;
-          font-size: 1.25em;
-        }
+        @include caret-wrapped-absolute($black, 1em);
       }
     }
 
@@ -99,6 +82,25 @@
 
         @include small-screen {
           font-size: 1em;
+        }
+
+        &:first-child {
+          font-size: 1.5em;
+          margin-bottom: 0;
+        }
+
+        &:nth-child(5) {
+          font-size: 1.5em;
+          margin-bottom: 0;
+        }
+        &:nth-child(6) {
+          color: $green;
+          font-size: 2em;
+          margin-bottom: 0;
+        }
+        &:nth-child(7) {
+          font-size: 1.5em;
+          font-weight: 400;
         }
       }
     }
