@@ -1789,8 +1789,10 @@ td {
 
 .row.content {
   .email-button a {
-    @include button;
-    @include button-padding;
+    background: $black;
+    color: $white;
+    padding: 0.25em 0.5em;
+    margin: 0.5em;
   }
 
   .email-button__cta a {
@@ -1813,6 +1815,7 @@ td {
   }
   p {
     margin-bottom: 1.5rem;
+    line-height: 2em;
   }
 }
 
