@@ -51,13 +51,34 @@
 
   &__notifications,
   &__conversations {
+    background: $black;
+    padding: 9px 9px 9px 13px;
+    border-radius: 50%;
+
     .icon {
       opacity: 0.8;
+    }
+
+    &.is-active {
+      background: $primary;
+      .icon {
+        fill: $black;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: $white;
+      transition: all ease-in-out 300ms;
+
+      .icon {
+        fill: $black;
+      }
     }
   }
 
   .dropdown.menu {
-    background: black;
+    background: $black;
     padding: 0.25rem 1rem;
     margin: 0 1rem;
 

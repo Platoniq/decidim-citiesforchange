@@ -78,39 +78,6 @@
     border-bottom: $border-wide;
     text-align: center;
   }
-
-  //   &__link {
-  //     &:hover {
-  //       color: $card-link-hover;
-  //     }
-  //   }
-
-  //   &__label {
-  //     &::before {
-  //       background-color: inherit;
-  //     }
-  //   }
-
-  //   &__support {
-  //     display: block;
-  //     text-align: center;
-  //     padding-top: 0;
-  //     padding-bottom: 1rem;
-
-  //     &__data--left {
-  //       text-align: center;
-  //       max-width: none;
-
-  //       & > * {
-  //         display: inline;
-  //       }
-  //     }
-  //   }
-
-  //   &__image {
-  //     max-height: none;
-  //     height: 20rem;
-  //   }
 }
 
 .card--list .card--list__item:not(:last-child),
@@ -134,4 +101,8 @@
 .conference-speaker .muted.speaker-bio,
 .muted.add-message,
 .muted.comment-thread {
+}
+
+.conversations .card-data__item {
+  margin: 0px;
 }

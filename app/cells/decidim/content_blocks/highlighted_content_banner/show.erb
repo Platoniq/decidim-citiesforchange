@@ -1,5 +1,5 @@
 <section class="extended highligted-content-banner home-section"
-          style="background-image:url(<%= current_organization.highlighted_content_banner_image.url %>);">
+          style="background-image:url(<%= asset_path "slider.jpg" %>);">
   <div class="highligted-content-banner__container">
     <div class="row">
       <h1 class="text-highlight heading1 highligted-content-banner-heading">
@@ -15,7 +15,7 @@
     </span>
   </div>
   <div class="row">
-    <div class="columns large-centered large-5 small-8 small-centered">
+    <div class="columns large-centered large-5 small-9 small-centered">
       <%= link_to current_organization.highlighted_content_banner_action_url,
                   class: "button expanded button--sc", id: "get-involved" do %>
         <span class="button__cta">
