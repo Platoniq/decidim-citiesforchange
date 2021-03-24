@@ -31,3 +31,7 @@
 .process-stats__data::after {
   border-left: $border-wide-width solid purple;
 }
+
+#process-nav-content li a {
+  text-transform: capitalize;
+}
