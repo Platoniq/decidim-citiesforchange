@@ -52,12 +52,18 @@
           <% end %>
         </div>
       </div>
+
       <% if meeting.description.present? %>
         <div class="row">
           <div class="column medium-12">
             <strong><%= t(".content") %></strong>
             <br>
-            <%= decidim_sanitize(present(meeting).description(links: true)) %>
+            <%= truncate(decidim_sanitize(present(meeting).description(links: true)), length: 180, omission: "..." , escape: false) %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column small-12 medium-6">
+            <%= link_to t("decidim.pages.index.read_more"), resource_locator(meeting).path, class: "button expanded button--sc" %>
           </div>
         </div>
       <% end %>
@@ -81,6 +87,6 @@
 
 <script>
 $(document).ready(() => {
-  $(".programme-extra").find("img, iframe").remove()
+  $(".programme-extra > :not(.speakers-list)").find("img, iframe").remove()
 })
 </script>
