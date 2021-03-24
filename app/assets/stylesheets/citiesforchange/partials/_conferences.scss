@@ -124,3 +124,9 @@
   box-shadow: none;
   border-radius: 0;
 }
+
+.programme-extra .speakers-list {
+  .author__name {
+    color: $body-font-color;
+  }
+}
