@@ -61,6 +61,11 @@
             <%= truncate(decidim_sanitize(present(meeting).description(links: true)), length: 180, omission: "..." , escape: false) %>
           </div>
         </div>
+        <div class="row">
+          <div class="column small-12 medium-6">
+            <%= link_to t("decidim.pages.index.read_more"), resource_locator(meeting).path, class: "button expanded button--sc" %>
+          </div>
+        </div>
       <% end %>
       <% if meeting.minutes.present? && meeting.minutes.visible? && (meeting.minutes.video_url.presence || meeting.minutes.audio_url.presence) %>
         <div class="row">
