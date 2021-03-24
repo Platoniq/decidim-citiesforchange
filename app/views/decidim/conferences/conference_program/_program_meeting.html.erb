@@ -52,12 +52,13 @@
           <% end %>
         </div>
       </div>
+
       <% if meeting.description.present? %>
         <div class="row">
           <div class="column medium-12">
             <strong><%= t(".content") %></strong>
             <br>
-            <%= decidim_sanitize(present(meeting).description(links: true)) %>
+            <%= truncate(decidim_sanitize(present(meeting).description(links: true)), length: 180, omission: "..." , escape: false) %>
           </div>
         </div>
       <% end %>
