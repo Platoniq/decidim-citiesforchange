@@ -1,13 +1,18 @@
+---
 nl:
-  time:
-    formats:
-      month_and_year: "%B %Y"
-      weekday: "%A %d %b"
   decidim:
-    term_customizer:
-      menu:
-        term_customizer: Term Customizer
     conferences:
       conference_program:
         show:
           month: Maand
+    content_blocks:
+      latest_blog_posts:
+        name: Laatste blogberichten
+        title: Laatste blogberichten
+    term_customizer:
+      menu:
+        term_customizer: Term Customizer
+  time:
+    formats:
+      month_and_year: "%B %Y"
+      weekday: "%A %d %b"

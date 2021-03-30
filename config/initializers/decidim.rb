@@ -274,6 +274,12 @@ Decidim.configure do |config|
   # Defines the name of the cookie used to check if the user allows Decidim to
   # set cookies.
   # config.consent_cookie_name = "decidim-cc"
+
+  Decidim.content_blocks.register(:homepage, :latest_blog_posts) do |content_block|
+    content_block.cell = "decidim/content_blocks/latest_blog_posts"
+    content_block.public_name_key = "decidim.content_blocks.latest_blog_posts.name"
+    content_block.default!
+  end
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
