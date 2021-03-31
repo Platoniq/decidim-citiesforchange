@@ -29,3 +29,44 @@
     }
   }
 }
+
+.latest-blog-posts {
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+
+    @include small-screen {
+      grid-template-columns: 1fr;
+
+      .card--post .card__image {
+        display: block;
+      }
+    }
+  }
+
+  .card--post {
+    min-height: 18em;
+    margin-bottom: 0;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 10em 1fr;
+
+    & > a {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .card__image {
+      // clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    }
+
+    .card__content {
+      grid-column: 1;
+
+      &:not(:only-child) {
+        grid-row: span 2;
+      }
+    }
+  }
+}

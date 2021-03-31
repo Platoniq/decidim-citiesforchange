@@ -5,6 +5,10 @@ en:
       conference_program:
         show:
           month: Month
+    content_blocks:
+      latest_blog_posts:
+        name: Latest blog posts
+        title: Latest blog posts
   time:
     formats:
       month_and_year: "%B %Y"
