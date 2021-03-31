@@ -6,13 +6,16 @@ module Decidim
     # in a Decidim Organization.
     class LatestBlogPostsCell < Decidim::ViewModel
       include Decidim::Core::Engine.routes.url_helpers
-      include Decidim::Blogs::Engine.routes.url_helpers
       include Decidim::Blogs::PostsHelper
 
       def show
         return if posts.empty?
 
         render
+      end
+
+      def post_path(post)
+        Decidim::EngineRouter.main_proxy(post.component).post_path(post)
       end
 
       def posts

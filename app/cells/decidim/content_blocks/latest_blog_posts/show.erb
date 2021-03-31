@@ -5,13 +5,13 @@
       <% posts.each do |post| %>
         <div class="card card--post">
           <% if post.photo.present? %>
-            <%= link_to post do %>
+            <%= link_to post_path(post) do %>
               <%= image_tag post.photo.url, class: "card__image" %>
             <% end %>
           <% end %>
           <div class="card__content">
             <div class="card__header">
-              <%= link_to post, class: "card__link" do %>
+              <%= link_to post_path(post), class: "card__link" do %>
               <h3 class="card__title">
                 <%= translated_attribute post.title %>
               </h3>

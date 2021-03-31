@@ -35,6 +35,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
+
+    @include small-screen {
+      grid-template-columns: 1fr;
+
+      .card--post .card__image {
+        display: block;
+      }
+    }
   }
 
   .card--post {
@@ -47,6 +55,10 @@
     & > a {
       grid-row: 1;
       grid-column: 1;
+    }
+
+    .card__image {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
     }
 
     .card__content {
