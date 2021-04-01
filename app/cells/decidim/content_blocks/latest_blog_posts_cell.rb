@@ -21,7 +21,7 @@ module Decidim
       def posts
         @posts ||= Blogs::Post.where(
           component: blog_components
-        ).limit(posts_to_show).order(updated_at: :desc)
+        ).limit(posts_to_show).order(created_at: :desc)
       end
 
       private

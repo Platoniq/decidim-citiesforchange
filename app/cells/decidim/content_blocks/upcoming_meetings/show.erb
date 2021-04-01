@@ -1,0 +1,42 @@
+<section class="wrapper-home upcoming-meetings home-section">
+  <div class="row">
+    <h3 class="section-heading"><%= t("decidim.content_blocks.upcoming_meetings.title") %></h3>
+    <div class="row small-up-1 medium-up-2 mediumlarge-up-3 large-up-3 card-grid">
+      <% meetings.each do |meeting| %>
+        <div class="column">
+          <div class="card card--meeting">
+            <% if meeting.photo.present? %>
+              <%= link_to resource_locator(meeting).path do %>
+                <%= image_tag meeting.photo.url, class: "card__image" %>
+              <% end %>
+            <% end %>
+            <div class="card__content">
+              <div class="card__icondata">
+                <ul class="card-data">
+                  <li class="card-data__item">
+                    <%= icon "datetime", class: "icon--big" %>
+                  </li>
+                  <li class="card-data__item">
+                    <span class="time">
+                      <%= l meeting.start_time, format: "%a %d %B %H:%M" %>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="card__header">
+                <%= link_to resource_locator(meeting).path, class: "card__link" do %>
+                  <h3 class="card__title">
+                    <%= translated_attribute meeting.title %>
+                  </h3>
+                <% end %>
+              </div>
+              <div class="card__text">
+                <%= truncate(decidim_sanitize(translated_attribute(meeting.description)), length: 140, omission: "..." , escape: false) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
