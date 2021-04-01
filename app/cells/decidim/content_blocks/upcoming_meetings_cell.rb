@@ -7,8 +7,9 @@ module Decidim
     class UpcomingMeetingsCell < Decidim::ViewModel
       include Decidim::Core::Engine.routes.url_helpers
       include Decidim::Meetings::Engine.routes.url_helpers
-      include Decidim::IconHelper
+      include Decidim::ApplicationHelper
       include Decidim::SanitizeHelper
+      include Decidim::IconHelper
 
       def show
         return if meetings.empty?
