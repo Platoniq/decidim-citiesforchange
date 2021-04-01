@@ -38,6 +38,13 @@
     background-color: $black;
     animation: 90s infinite alternate slider;
 
+    .black-background {
+      background-color: $black;
+      color: $white;
+      font-size: 0.9rem;
+      padding: 2em;
+    }
+
     .text-highlight {
       text-shadow: 4px 4px 4px $black;
       text-align: center;
@@ -45,11 +52,6 @@
       &.heading1 {
         @include font-heading-big;
         margin-bottom: 2rem;
-        font-size: 7rem;
-
-        @include small-screen {
-          font-size: 4em;
-        }
       }
     }
 
