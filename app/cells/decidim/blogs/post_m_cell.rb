@@ -5,6 +5,16 @@ module Decidim
     # This cell renders the Medium (:m) post card
     # for an given instance of a Post
     class PostMCell < Decidim::CardMCell
+      include Decidim::Blogs::Engine.routes.url_helpers
+      include Decidim::Blogs::PostsHelper
+
+      def description
+        link = post_path(model)
+        body = translated_attribute(model.body)
+        tail = "... #{link_to(t("read_more", scope: "decidim.blogs"), link)}".html_safe
+        CGI.unescapeHTML html_truncate(body, max_length: has_image? ? 140 : 360, tail: tail)
+      end
+
       private
 
       def has_image?

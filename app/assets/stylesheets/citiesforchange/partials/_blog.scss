@@ -31,20 +31,6 @@
 }
 
 .latest-blog-posts {
-  .posts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
-
-    @include small-screen {
-      grid-template-columns: 1fr;
-
-      .card--post .card__image {
-        display: block;
-      }
-    }
-  }
-
   .card--post {
     min-height: 18em;
     margin-bottom: 0;
@@ -55,6 +41,15 @@
     & > a {
       grid-row: 1;
       grid-column: 1;
+    }
+
+    .card__title {
+      height: 2em;
+      border-bottom: none;
+    }
+
+    .card__image {
+      max-height: 10em;
     }
 
     .card__title {
