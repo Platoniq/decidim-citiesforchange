@@ -31,7 +31,7 @@
                 <% end %>
               </div>
               <div class="card__text">
-                <%= truncate(decidim_sanitize(translated_attribute(meeting.description)), length: 140, omission: "..." , escape: false) %>
+                <%= truncate(decidim_sanitize(present(meeting).description(links: true)), length: 140, omission: "..." , escape: false) %>
               </div>
             </div>
           </div>
@@ -40,3 +40,9 @@
     </div>
   </div>
 </section>
+
+<script>
+$(document).ready(() => {
+  $(".card--meeting .card__text").find("img, iframe").remove()
+})
+</script>
