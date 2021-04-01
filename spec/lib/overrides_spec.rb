@@ -36,7 +36,9 @@ checksums = [
     package: "decidim-blogs",
     files: {
       # views
-      "/app/views/decidim/blogs/posts/_posts.html.erb" => "59410d0eb3d64abea1e784475f86cebf"
+      "/app/views/decidim/blogs/posts/_posts.html.erb" => "59410d0eb3d64abea1e784475f86cebf",
+      # cells
+      "/app/cells/decidim/blogs/post_m_cell.rb" => "19d93f81bff1da401044a3b4fb4d6403"
     }
   },
   {

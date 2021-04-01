@@ -280,6 +280,12 @@ Decidim.configure do |config|
     content_block.public_name_key = "decidim.content_blocks.latest_blog_posts.name"
     content_block.default!
   end
+
+  Decidim.content_blocks.register(:homepage, :upcoming_meetings) do |content_block|
+    content_block.cell = "decidim/content_blocks/upcoming_meetings"
+    content_block.public_name_key = "decidim.content_blocks.upcoming_meetings.name"
+    content_block.default!
+  end
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales

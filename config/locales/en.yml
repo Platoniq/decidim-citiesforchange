@@ -9,6 +9,9 @@ en:
       latest_blog_posts:
         name: Latest blog posts
         title: Latest blog posts
+      upcoming_meetings:
+        name: Upcoming meetings
+        title: Upcoming meetings
   time:
     formats:
       month_and_year: "%B %Y"
