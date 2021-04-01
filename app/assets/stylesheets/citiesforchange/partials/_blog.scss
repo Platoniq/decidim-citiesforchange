@@ -57,8 +57,14 @@
       grid-column: 1;
     }
 
-    .card__image {
-      // clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    .card__title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .card__author {
+      padding-bottom: 0.5rem;
+      border-bottom: $border-wide;
     }
 
     .card__content {
