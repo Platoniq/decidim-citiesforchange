@@ -12,6 +12,9 @@ nl:
       latest_blog_posts:
         name: Laatste blogberichten
         title: Laatste blogberichten
+      upcoming_meetings:
+        name: Aankomende bijeenkomsten
+        title: Aankomende bijeenkomsten
     term_customizer:
       menu:
         term_customizer: Term Customizer

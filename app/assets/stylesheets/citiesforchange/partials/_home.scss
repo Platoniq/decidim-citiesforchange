@@ -29,6 +29,34 @@
     }
   }
 
+  &.upcoming-meetings {
+    .card__icondata {
+      border-top: none;
+      border-bottom: $border-wide;
+      margin: 0;
+      .time {
+        margin-left: -3em;
+      }
+    }
+
+    .card__content {
+      padding-top: 0;
+    }
+
+    .card__title {
+      color: $body-font-color;
+      text-align: center;
+      border-bottom: none;
+      padding-bottom: 0;
+      padding-top: 1em;
+    }
+
+    .card__image {
+      height: 20em;
+      max-height: none;
+    }
+  }
+
   &.extended.hero {
     width: 90%;
     margin: 4rem auto 0;
@@ -38,6 +66,13 @@
     background-color: $black;
     animation: 90s infinite alternate slider;
 
+    .black-background {
+      background-color: $black;
+      color: $white;
+      font-size: 0.8rem;
+      padding: 2em;
+    }
+
     .text-highlight {
       text-shadow: 4px 4px 4px $black;
       text-align: center;
@@ -45,11 +80,6 @@
       &.heading1 {
         @include font-heading-big;
         margin-bottom: 2rem;
-        font-size: 7rem;
-
-        @include small-screen {
-          font-size: 4em;
-        }
       }
     }
 
