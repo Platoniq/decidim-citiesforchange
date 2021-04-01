@@ -31,7 +31,8 @@
                 <% end %>
               </div>
               <div class="card__text">
-                <%= truncate(decidim_sanitize(present(meeting).description(links: true)), length: 140, omission: "..." , escape: false) %>
+                <% meeting_description = strip_tags(present(meeting).description.gsub("<br>", "\s")) %>
+                <%= truncate(meeting_description, length: 140, omission: "..." , escape: false) %>
               </div>
             </div>
           </div>
