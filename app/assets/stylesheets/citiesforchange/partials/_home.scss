@@ -11,6 +11,28 @@
 }
 
 .home-section {
+  .section-heading {
+    border-bottom: $border-thin;
+    font-weight: normal;
+
+    a {
+      float: right;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        background-color: currentColor;
+        clip-path: polygon(50% 65%, 0% 0%, 100% 0%);
+        transform: rotate(-90deg) translate(2px);
+        position: relative;
+        vertical-align: middle;
+      }
+    }
+  }
+
   &.upcoming-events {
     background: $black;
     color: $white;
@@ -30,10 +52,18 @@
   }
 
   &.upcoming-meetings {
+    background-color: $body-background-color;
+    padding-bottom: 1em;
+
+    .section-heading a {
+      color: $green;
+    }
+
     .card__icondata {
       border-top: none;
       border-bottom: $border-wide;
       margin: 0;
+
       .time {
         margin-left: -3em;
       }
@@ -63,14 +93,32 @@
   }
 
   &.highligted-content-banner {
+    border-top: 8px solid $white;
     background-color: $black;
     animation: 90s infinite alternate slider;
 
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    @include small-screen {
+      grid-template-columns: 2em 1fr 2em;
+    }
+
     .black-background {
+      grid-column: 7 / span 5;
+
+      @include small-screen {
+        grid-column: 2;
+      }
+
       background-color: $black;
       color: $white;
       font-size: 0.8rem;
-      padding: 2em;
+      padding: 1em 2em;
+
+      p {
+        margin-bottom: 0.5em;
+      }
     }
 
     .text-highlight {
