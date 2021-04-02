@@ -7,11 +7,17 @@ en:
           month: Month
     content_blocks:
       latest_blog_posts:
+        count: Number of items
+        link_text: Link text
+        link_url: Link URL
         name: Latest blog posts
-        title: Latest blog posts
+        title: Title
       upcoming_meetings:
-        name: Upcoming meetings
-        title: Upcoming meetings
+        count: Number of items
+        link_text: Link text
+        link_url: Link URL
+        name: Programme highlights
+        title: Title
   time:
     formats:
       month_and_year: "%B %Y"
