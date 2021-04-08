@@ -10,11 +10,17 @@ nl:
           month: Maand
     content_blocks:
       latest_blog_posts:
-        name: Laatste blogberichten
-        title: Laatste blogberichten
+        count: Aantal items
+        link_text: Linktekst
+        link_url: Link-URL
+        name: Latest Blogposts
+        title: Titel
       upcoming_meetings:
-        name: Aankomende bijeenkomsten
-        title: Aankomende bijeenkomsten
+        count: Aantal items
+        link_text: Linktekst
+        link_url: Link-URL
+        name: Programma highlights
+        title: Titel
     term_customizer:
       menu:
         term_customizer: Term Customizer

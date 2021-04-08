@@ -9,7 +9,7 @@ module Decidim
       include Decidim::Blogs::PostsHelper
 
       def description
-        link = post_path(model)
+        link = resource_path
         body = translated_attribute(model.body)
         tail = "... #{link_to(t("read_more", scope: "decidim.blogs"), link)}".html_safe
         CGI.unescapeHTML html_truncate(body, max_length: has_image? ? 140 : 360, tail: tail)

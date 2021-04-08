@@ -42,7 +42,17 @@ module Decidim
       end
 
       def posts_to_show
-        options[:posts_count] || 6
+        model.settings.count || 3
+      end
+
+      def section_title
+        translated_attribute model.settings.title
+      end
+
+      def section_link
+        link_to translated_attribute(model.settings.link_url) do
+          translated_attribute(model.settings.link_text)
+        end
       end
     end
   end
