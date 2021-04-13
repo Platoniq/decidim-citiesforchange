@@ -24,6 +24,10 @@ nl:
     term_customizer:
       menu:
         term_customizer: Term Customizer
+  layouts:
+    decidim:
+      footer:
+        made_with_open_source: Website is gemaakt met <a target="_blank" href="https://github.com/Platoniq/decidim-citiesforchange"> open-source software</a>.
   time:
     formats:
       month_and_year: "%B %Y"
