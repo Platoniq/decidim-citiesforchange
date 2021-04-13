@@ -18,6 +18,10 @@ en:
         link_url: Link URL
         name: Programme highlights
         title: Title
+  layouts:
+    decidim:
+      footer:
+        made_with_open_source: Website made with <a target="_blank" href="https://github.com/Platoniq/decidim-citiesforchange">free software</a>.
   time:
     formats:
       month_and_year: "%B %Y"
