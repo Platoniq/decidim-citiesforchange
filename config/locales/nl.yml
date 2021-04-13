@@ -1,6 +1,9 @@
 ---
 nl:
   decidim:
+    term_customizer:
+      menu:
+        term_customizer: Term Customizer
     conferences:
       conference_program:
         show:
