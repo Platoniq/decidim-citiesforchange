@@ -4,6 +4,10 @@ Free Open-Source participatory democracy, citizen participation and open governm
 
 This is the open-source repository for Cities for change, based on [Decidim](https://github.com/decidim/decidim).
 
+![Build](https://github.com/Platoniq/decidim-citiesforchange/workflows/Test/badge.svg?branch=master)
+
+![Cities For Change Homepage](app/assets/images/screenshot.png)
+
 ## Setting up the application
 
 You will need to do some steps before having the app working properly once you've deployed it:
