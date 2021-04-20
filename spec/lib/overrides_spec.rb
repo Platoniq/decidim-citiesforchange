@@ -38,14 +38,14 @@ checksums = [
       # views
       "/app/views/decidim/blogs/posts/_posts.html.erb" => "59410d0eb3d64abea1e784475f86cebf",
       # cells
-      "/app/cells/decidim/blogs/post_m_cell.rb" => "19d93f81bff1da401044a3b4fb4d6403"
+      "/app/cells/decidim/blogs/post_m_cell.rb" => "acf00828f5bca944ec03b9b188582e3d"
     }
   },
   {
     package: "decidim-admin",
     files: {
       # views
-      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "926acd42a72c91263042502bdf50b400"
+      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "725fc77b4c80f885b7b4191a75a06949"
     }
   }
 ]

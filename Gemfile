@@ -4,27 +4,29 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/Platoniq/decidim", branch: "temp/0.23-images" }.freeze
+DECIDIM_VERSION = { git: "https://github.com/Platoniq/decidim", branch: "temp/0.24" }.freeze
 
 gem "decidim", DECIDIM_VERSION
 # gem "decidim-consultations", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
-gem "decidim-decidim_awesome", "~> 0.6.3"
+gem "decidim-decidim_awesome", "~> 0.7.0"
 gem "decidim-templates", DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "temp/0.23"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer"
 
 gem "bootsnap", "~> 1.4"
-
-gem "puma", ">= 4.3.5"
-gem "uglifier", "~> 4.1"
-
-gem "faker", "~> 1.9"
-
-gem "wicked_pdf", "~> 1.4"
-
+gem "health_check"
 gem "sentry-rails"
 gem "sentry-ruby"
+
+gem "puma", ">= 5.0.0"
+gem "uglifier", "~> 4.1"
+
+gem "faker", "~> 2.14"
+gem "rspec"
+gem "rubocop-faker"
+
+gem "wicked_pdf", "~> 1.4"
 
 gem "whenever", require: false
 
