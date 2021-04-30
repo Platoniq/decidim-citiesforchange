@@ -58,7 +58,7 @@
           <div class="column medium-12">
             <strong><%= t(".content") %></strong>
             <br>
-            <%= truncate(decidim_sanitize(present(meeting).description(links: true)), length: 180, omission: "..." , escape: false) %>
+            <%= html_truncate(decidim_sanitize(present(meeting).description(links: true)), max_length: 180).html_safe %>
           </div>
         </div>
         <div class="row">
