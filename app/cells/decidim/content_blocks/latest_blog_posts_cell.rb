@@ -20,7 +20,7 @@ module Decidim
 
       def posts
         @posts ||= Blogs::Post.where(
-          component: blog_components
+          component: blog_components.find_by(id: model.settings.blog_id) || blog_components
         ).limit(posts_to_show).order(created_at: :desc)
       end
 

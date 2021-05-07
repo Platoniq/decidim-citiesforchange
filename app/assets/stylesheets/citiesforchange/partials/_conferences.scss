@@ -10,10 +10,6 @@
     margin-top: 2em;
   }
 
-  @include big-screen {
-    margin-top: -0.5rem;
-  }
-
   .programme {
     &-day {
       & > .row {
