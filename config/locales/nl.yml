@@ -1,16 +1,17 @@
 ---
 nl:
   decidim:
-    term_customizer:
-      menu:
-        term_customizer: Term Customizer
     conferences:
       conference_program:
         show:
           month: Maand
     content_blocks:
       latest_blog_posts:
+        blog_id: Blog ID
         count: Aantal items
+        info: Alleen posts van '%{blog}' in '%{space}' worden getoond. U kunt het
+          wijzigen met het veld 'ID' hieronder. (De blog-ID is het nummer achter het
+          '/f'-gedeelte in de URL)
         link_text: Linktekst
         link_url: Link-URL
         name: Latest Blogposts
@@ -27,8 +28,9 @@ nl:
   layouts:
     decidim:
       footer:
-        made_with_open_source: Website is gemaakt met <a target="_blank" href="https://github.com/Platoniq/decidim-citiesforchange"> open-source software</a>.
+        made_with_open_source: Website is gemaakt met <a target="_blank" href="https://github.com/Platoniq/decidim-citiesforchange">
+          open-source software</a>.
   time:
     formats:
-      month_and_year: "%B %Y"
+      month_and_year: "%B<br>%Y"
       weekday: "%A %d %b"
