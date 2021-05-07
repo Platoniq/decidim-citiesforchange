@@ -42,6 +42,13 @@ checksums = [
     }
   },
   {
+    package: "decidim-meetings",
+    files: {
+      # helpers
+      "/app/helpers/decidim/meetings/map_helper.rb" => "9f204fb413c5ae1e0c9ef276ab0ff3ba"
+    }
+  },
+  {
     package: "decidim-admin",
     files: {
       # views
