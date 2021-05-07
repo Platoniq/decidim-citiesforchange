@@ -46,7 +46,8 @@ checksums = [
     package: "decidim-meetings",
     files: {
       # helpers
-      "/app/helpers/decidim/meetings/map_helper.rb" => "9f204fb413c5ae1e0c9ef276ab0ff3ba"
+      "/app/helpers/decidim/meetings/map_helper.rb" => "9f204fb413c5ae1e0c9ef276ab0ff3ba",
+      "/app/models/decidim/meetings/meeting.rb" => "92ec0cc608c342bfdd95eeeceb9cf749"
     }
   },
   {

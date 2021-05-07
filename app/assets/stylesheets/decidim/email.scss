@@ -1184,8 +1184,6 @@ table.button {
 table.button table td {
   text-align: left;
   color: #fefefe;
-  background: $primary;
-  border: 2px solid $primary;
 }
 
 table.button table td a {
@@ -1258,7 +1256,7 @@ table.button.expanded > tr > td {
 
 table.button.expand table,
 table.button.expanded table {
-  width: 50%;
+  width: auto;
   margin: auto;
 }
 
@@ -1284,7 +1282,6 @@ table.button.expanded center {
 table.button:hover table td,
 table.button:visited table td,
 table.button:active table td {
-  background: $primary;
   color: #fefefe;
 }
 
