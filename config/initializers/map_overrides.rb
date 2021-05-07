@@ -18,4 +18,10 @@ Rails.application.config.to_prepare do
       end
     end
   end
+
+  Decidim::Meetings::Meeting.class_eval do
+    def geocoded?
+      latitude.present? && longitude.present? && !latitude.nan? && !longitude.nan?
+    end
+  end
 end
