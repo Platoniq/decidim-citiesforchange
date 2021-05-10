@@ -213,7 +213,7 @@ GIT
 
 GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
-  revision: aa5b5a7140dd4a0a48295b03b02a87f7d468b1a0
+  revision: 7d1628eb0f0ac36b896f2adb50650b93b652c603
   branch: feature/awesome-map-block
   specs:
     decidim-decidim_awesome (0.7.0)
