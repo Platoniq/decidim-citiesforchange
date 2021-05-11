@@ -10,6 +10,10 @@
   }
 }
 
+.wrapper-home {
+  padding: 2rem 1rem;
+}
+
 .home-section {
   .section-heading {
     border-bottom: $border-thin;
@@ -180,6 +184,24 @@
           font-weight: 400;
         }
       }
+    }
+  }
+}
+
+.buttons-row-block {
+  .button.button--sc.expanded,
+  .button.button--sc.expanded:not(.tiny):not(.button--icon):not(.small):not(.compact):not(.button--nomargin):not([id]) {
+    @include button;
+    @include caret-wrapped-absolute($green);
+    color: $white;
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      @include button-inverted($green);
+      @include caret-wrapped-absolute($black);
+      color: $white;
     }
   }
 }

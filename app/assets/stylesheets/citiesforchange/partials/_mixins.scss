@@ -92,6 +92,7 @@
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: ($size * 2) 1fr ($size * 2);
+  align-items: center;
 
   &::before,
   &::after {

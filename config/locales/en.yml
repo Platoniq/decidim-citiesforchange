@@ -7,7 +7,11 @@ en:
           month: Month
     content_blocks:
       latest_blog_posts:
+        blog_id: Blog ID
         count: Number of items
+        info: Only posts from '%{blog}' in '%{space}' will be shown. You can change
+          it with the 'ID' field below. (The blog ID is the number after the '/f'
+          part in the URL)
         link_text: Link text
         link_url: Link URL
         name: Latest blog posts
@@ -21,8 +25,9 @@ en:
   layouts:
     decidim:
       footer:
-        made_with_open_source: Website made with <a target="_blank" href="https://github.com/Platoniq/decidim-citiesforchange">free software</a>.
+        made_with_open_source: Website made with <a target="_blank" href="https://github.com/Platoniq/decidim-citiesforchange">free
+          software</a>.
   time:
     formats:
-      month_and_year: "%B %Y"
+      month_and_year: "%B<br>%Y"
       weekday: "%A %d %b"

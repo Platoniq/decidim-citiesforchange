@@ -15,4 +15,14 @@ module ApplicationHelper
     end
     meetings_by_time
   end
+
+  def default_month?(months, month)
+    return current_month?(month) if months.include?(Time.now.utc.beginning_of_month)
+
+    months.select(&:future?).first.eql?(month)
+  end
+
+  def current_month?(month)
+    Time.now.utc.beginning_of_month.eql?(month)
+  end
 end

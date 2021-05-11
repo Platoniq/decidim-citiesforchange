@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.config.to_prepare do
+  Decidim::Meetings::Meeting.class_eval do
+    def geocoded?
+      latitude.present? && longitude.present? && !latitude.nan? && !longitude.nan?
+    end
+  end
+
   Decidim::Meetings::MapHelper.class_eval do
     def meetings_data_for_map(meetings)
       geocoded_meetings = meetings.select(&:geocoded?)
@@ -16,12 +22,6 @@ Rails.application.config.to_prepare do
                                                              locationHints: decidim_html_escape(translated_attribute(meeting.location_hints)),
                                                              link: resource_locator(meeting).path)
       end
-    end
-  end
-
-  Decidim::Meetings::Meeting.class_eval do
-    def geocoded?
-      latitude.present? && longitude.present? && !latitude.nan? && !longitude.nan?
     end
   end
 end

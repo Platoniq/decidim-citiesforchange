@@ -15,19 +15,17 @@ end
     <h3 class="section-heading"><%= t(".program") %></h3>
   </div>
   <div class="columns mediumlarge-8 programme-selector">
-    <% if conference_meeting_months(@meetings).any? %>
+
+    <% months = conference_meeting_months(@meetings) %>
+    <% if months.any? %>
       <ul class="tabs" id="conference-day-tabs"
-        data-deep-link="true"
-        data-update-history="true"
-        data-deep-link-smudge="true"
-        data-deep-link-smudge-delay="500"
         data-tabs>
-        <% conference_meeting_months(@meetings).each_with_index do |month, i| %>
-          <li class="tabs-title <%= "is-active" if i == 0 %>">
+        <% months.each_with_index do |month, i| %>
+          <li class="tabs-title <%= "is-active" if default_month?(months, month) %>">
             <!-- Wrap the anchor inside a div to keep correct button styling -->
             <div>
               <a href="#conference-day-tab-<%= i %>" class="button button--nomargin">
-                <%= l month, format: :month_and_year %>
+                <%== l month, format: :month_and_year %>
               </a>
             </div>
           </li>
@@ -38,8 +36,8 @@ end
   <div class="columns mediumlarge-12">
     <div class="conference-programme">
       <div class="tabs-content" data-tabs-content="conference-day-tabs">
-        <% conference_meeting_months(@meetings).each_with_index do |month, i| %>
-          <div class="programme-day tabs-panel<%= " is-active" if i == 0 %>" id="conference-day-tab-<%= i %>">
+        <% months.each_with_index do |month, i| %>
+          <div class="programme-day tabs-panel<%= " is-active" if default_month?(months, month) %>" id="conference-day-tab-<%= i %>">
             <% conference_meetings_for_month(meeting_component, month, current_user).each do |meeting, meetings| %>
               <%= render partial: "program_item", locals: { start_time: meeting[:start_time], end_time: meeting[:end_time], meetings: meetings.pluck(:meeting) } %>
             <% end %>
