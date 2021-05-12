@@ -56,15 +56,6 @@ checksums = [
       # views
       "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "725fc77b4c80f885b7b4191a75a06949"
     }
-  },
-  {
-    package: "decidim-decidim_awesome",
-    files: {
-      # javascripts
-      "/app/assets/javascripts/decidim/decidim_awesome/awesome_map/map.js.es6" => "0e51689f0123e836f8e33a7ebaef2f97",
-      "/app/assets/javascripts/decidim/decidim_awesome/awesome_map/layers.js.es6" => "496fc00ec2c836ed0683c034cabf4b65",
-      "/app/assets/javascripts/decidim/decidim_awesome/awesome_map/meetings.js.es6" => "266bf0cfaed5c4eb98e24031a77b97ff"
-    }
   }
 ]
 
