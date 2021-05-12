@@ -17,12 +17,13 @@ module ApplicationHelper
   end
 
   def default_month?(months, month)
-    return current_month?(month) if months.include?(Time.now.utc.beginning_of_month)
+    return current_month?(month) if months.include?(Time.current.beginning_of_month)
 
-    months.select(&:future?).first.eql?(month)
+    available_months = months.select(&:future?).presence || months
+    available_months.first.eql?(month)
   end
 
   def current_month?(month)
-    Time.now.utc.beginning_of_month.eql?(month)
+    Time.current.beginning_of_month.eql?(month)
   end
 end
