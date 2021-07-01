@@ -4,5 +4,9 @@
   <% url = decidim.root_url(host: organization.host) %>
 <% end %>
 <%= link_to url do %>
-  <%= image_tag asset_path("logo.png"), style: "max-height: 50px", alt: "#{organization.name}" %>
+  <% if organization.logo.present? %>
+    <%= image_tag organization.logo.medium.url, alt: t("logo", scope: "decidim.accessibility", organization: organization.name), style: "max-height: 50px" %>
+  <% else %>
+    <span><%= organization.name %></span>
+  <% end %>
 <% end %>
