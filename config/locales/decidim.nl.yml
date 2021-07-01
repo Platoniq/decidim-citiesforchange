@@ -1,0 +1,12 @@
+
+---
+nl:
+  decidim:
+    admin:
+      menu:
+        moderations: Moderations
+      titles:
+        panel: Admin Panel
+    system:
+      menu:
+        oauth_applications: OAuth Applications
