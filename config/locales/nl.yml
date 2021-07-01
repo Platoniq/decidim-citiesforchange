@@ -1,6 +1,11 @@
 ---
 nl:
   decidim:
+    admin:
+      menu:
+        moderations: Moderations
+      titles:
+        panel: Admin Panel
     conferences:
       conference_program:
         show:
@@ -22,6 +27,9 @@ nl:
         link_url: Link-URL
         name: Programma highlights
         title: Titel
+    system:
+      menu:
+        oauth_applications: OAuth Applications
     term_customizer:
       menu:
         term_customizer: Term Customizer
