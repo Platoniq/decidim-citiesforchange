@@ -58,7 +58,12 @@
                             <% url = decidim.root_url(host: @organization.host) %>
                           <% end %>
 
-                          <%= image_tag asset_url("banner-email-footer.jpg", host: url), alt: @organization.name %>
+                          <% if organization.host.match? "degrowth" %>
+                            <%= image_tag asset_url("degrowth/banner-email-footer.jpg", host: url), alt: @organization.name %>
+                          <% else %>
+                            <%= image_tag asset_url("banner-email-footer.jpg", host: url), alt: @organization.name %>
+                          <% end %>
+
                         </td>
                       </th>
                     </tr>

@@ -11,8 +11,13 @@
             <% end %>
 
             <%= link_to url, target: :blank do %>
-              <%= image_tag asset_url("banner-email.jpg", host: url), alt: organization.name %>
+              <% if organization.host.match? "degrowth" %>
+                <%= image_tag asset_url("degrowth/banner-email.jpg", host: url), alt: organization.name %>
+              <% else %>
+                <%= image_tag asset_url("banner-email.jpg", host: url), alt: organization.name %>
+              <% end %>
             <% end %>
+
           </td>
         </tr>
       </tbody>
