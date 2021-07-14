@@ -1,0 +1,18 @@
+@import "./variables";
+@import "./mixins";
+
+.topbar {
+  div.logo-wrapper {
+    margin-bottom: 0;
+
+    img {
+      background: none;
+      padding: 0;
+      max-height: 72px;
+
+      @include small-screen {
+        max-height: 60px;
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+// Define custom properties as css color variables
+$black: #000000;
+$white: white;
+$light-gray: $white;
+$dark-gray: lighten($black, 10%);
+
+$orange: #e19614;
+$orange-rgb: 225, 150, 20;
+$yellow: #f0d05c;
+$yellow-rgb: 240, 208, 92;
+$cream: #d7c69b;
+$cream-rgb: 215, 198, 155;
+$pale-green: #dce1ce;
+$pale-green-rgb: 220, 225, 206;
+$green: #6b9e93;
+$green-rgb: 107, 158, 147;
+$dark-teal: #677877;
+$dark-teal-rgb: 103, 120, 119;
+$blue: #5f93b1;
+$blue-rgb: 95, 147, 177;
+$red: #ec5840;
+$red-rgb: 236, 88, 64;
+
+$body-font-color: $black;
+$body-background-color: $pale-green;
+$body-background-alt: $pale-green;
+
+// Variables
+
+$primary: $green;
+$primary-rgb: $green-rgb;
+$secondary: $dark-teal;
+$secondary-rgb: $dark-teal-rgb;
+$success: $yellow;
+$success-rgb: $yellow-rgb;
+$warning: $orange;
+$warning-rgb: $orange-rgb;
+$alert: $red;
+$alert-rgb: $red-rgb;
+
+$highlight: $cream;
+$highlight-rgb: $cream-rgb;
+$highlight-alternative: $white;
+$highlight-alternative-rgb: 255, 255, 255;
+
+$title-bar-bg: $black;
+$card-link: $black;
+$card-link-hover: $primary;
+$navbar-bg: none;
+$navbar-fg: $black;
+$navbar-fg-hover: $black;
+
+$link-color: $orange;
+$link-color-hover: lighten($link-color, 10%);
+
+$twitter: #55acee !default;
+$facebook: #3b5998 !default;
+$google: #4285f4 !default;
+
+$actions: $green;
+$debates: $pale-green;
+$meetings: $dark-teal;
+$proposals: $blue;
+
+// background colors used in public diff views
+$color-addition: #e6ffed;
+$color-removal: #ffeef0;
+
+:root {
+  --primary: #{$primary};
+  --primary-rgb: #{$primary-rgb};
+  --secondary: #{$secondary};
+  --secondary-rgb: #{$secondary-rgb};
+  --success: #{$success};
+  --success-rgb: #{$success-rgb};
+  --warning: #{$warning};
+  --warning-rgb: #{$warning-rgb};
+  --alert: #{$alert};
+  --alert-rgb: #{$alert-rgb};
+  --proposals: #{$proposals};
+  --actions: #{$actions};
+  --debates: #{$debates};
+  --meetings: #{$meetings};
+  --twitter: #{$twitter};
+  --facebook: #{$facebook};
+  --google: #{$google};
+}
+
+$triangle-size: 1rem;
+$triangle-size-bottom: 1.25rem;
+
+$border-color: $black;
+$border-thin-width: 1px;
+$border-wide-width: 2px;
+$border-thin: $border-thin-width solid $border-color;
+$border-wide: $border-wide-width solid $border-color;
+
+@import "./fonts";
+
+.label.primary {
+  background: $primary;
+}
+.label.secondary {
+  background: $secondary;
+}
+.label.success {
+  background: $success;
+}
+.label.warning {
+  background: $warning;
+}
+.label.alert {
+  background: $alert;
+}

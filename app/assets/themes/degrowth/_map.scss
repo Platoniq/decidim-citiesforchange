@@ -1,0 +1,71 @@
+@import "./variables";
+@import "./mixins";
+
+.map-block {
+  background-color: $dark-teal;
+
+  .section-heading {
+    color: $white;
+    border-color: $white;
+  }
+
+  .button.button--sc.expanded,
+  .button.button--sc.expanded:not(.tiny):not(.button--icon):not(.small):not(.compact):not(.button--nomargin):not([id]) {
+    @include button-inverted($green);
+    @include caret-wrapped-absolute($black);
+    color: $white;
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      @include button-inverted(lighten($green, 5%));
+      color: $white;
+    }
+  }
+}
+
+$map-point-size: 20px;
+
+@mixin map-thingy {
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 6px;
+  color: $white;
+  border: 3px solid $black;
+
+  &::after {
+    content: "";
+    background-color: $black;
+    display: block;
+    width: 10px;
+    height: 20px;
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+  }
+}
+
+.map-cluster {
+  @include map-thingy;
+  width: $map-point-size * 2;
+  height: $map-point-size * 2;
+  background-color: $secondary;
+
+  &::after {
+    margin-left: 12px;
+    margin-top: 5px;
+  }
+}
+
+.map-point {
+  @include map-thingy;
+  width: $map-point-size;
+  height: $map-point-size;
+  background-color: $yellow;
+
+  &::after {
+    margin-left: 2px;
+    margin-top: 8px;
+  }
+}

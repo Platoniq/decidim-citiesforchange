@@ -1,0 +1,128 @@
+@import "./variables";
+@import "./mixins";
+
+.title-bar {
+  background: $title-bar-bg;
+  background: $navbar-bg;
+}
+
+.navbar {
+  background: $navbar-bg;
+  @include font-body;
+
+  .main-nav {
+    height: 40px;
+
+    ul {
+      gap: 1rem;
+    }
+    &__link {
+      flex: 0 1 auto;
+
+      a {
+        color: $navbar-fg;
+        padding: 0;
+        font-size: 1.25rem;
+        font-weight: normal;
+      }
+      &--active a {
+        background: $navbar-bg;
+        color: $navbar-fg;
+        @include bottom-caret($primary);
+      }
+    }
+  }
+}
+
+.topbar {
+  &__search {
+    input,
+    input:focus {
+      background-color: transparentize($white, 0.7);
+      color: $navbar-fg-hover;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: $navbar-fg-hover;
+    }
+    svg {
+      color: $navbar-fg-hover;
+    }
+    &:not(:focus-within) button,
+    &:focus-within button {
+      background-color: transparentize($white, 0.3);
+    }
+  }
+
+  &__notifications,
+  &__conversations {
+    background: $navbar-bg;
+    padding: 9px 9px 9px 13px;
+    border-radius: 50%;
+
+    margin-right: 0;
+
+    .icon {
+      opacity: 0.8;
+    }
+
+    &.is-active {
+      background: $primary;
+      .icon {
+        fill: $navbar-fg;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: $white;
+      transition: all ease-in-out 300ms;
+
+      .icon {
+        fill: $navbar-fg;
+      }
+    }
+  }
+
+  .dropdown.menu {
+    background: $navbar-bg;
+    padding: 0.25rem 1rem;
+    margin: 0;
+
+    @include small-screen {
+      padding: 0 1em;
+    }
+  }
+
+  &__user__login a::before {
+    content: none;
+  }
+
+  &__dropmenu {
+    margin-left: 1rem;
+
+    & > ul > li > a {
+      color: $navbar-fg;
+
+      &::after {
+        border-top-color: $navbar-fg !important;
+      }
+    }
+  }
+
+  &__admin__link a {
+    color: $navbar-fg;
+  }
+
+  .icon {
+    fill: $navbar-fg;
+  }
+}
+
+.usermenu-off-canvas-holder {
+  background: $primary;
+
+  .topbar__user__login {
+    margin-top: 0;
+  }
+}

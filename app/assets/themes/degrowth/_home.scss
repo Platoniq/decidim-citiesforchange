@@ -1,0 +1,186 @@
+@import "./variables";
+@import "./mixins";
+
+@keyframes slider {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.wrapper-home {
+  padding: 2rem 1rem;
+}
+
+.home-section {
+  &:nth-of-type(2n + 1) {
+    background-color: $secondary;
+  }
+
+  .section-heading {
+    border-bottom: $border-thin;
+    font-weight: bold;
+
+    a {
+      float: right;
+      color: $body-font-color;
+      text-decoration: underline;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &.upcoming-events {
+    background: none;
+
+    .card {
+      margin-bottom: 60px;
+
+      &::after {
+        content: url("/assets/triangle.svg");
+        display: block;
+        position: absolute;
+        padding-left: 8rem;
+        margin-top: -24px;
+        transform: rotate(-3deg);
+      }
+    }
+  }
+
+  &.upcoming-meetings {
+    background: none;
+    padding-bottom: 1em;
+
+    .section-heading a {
+      color: $body-font-color;
+    }
+
+    .card__icondata {
+      border-top: none;
+      border-bottom: $border-wide;
+      margin: 0;
+      .time {
+        margin-left: -3em;
+      }
+    }
+
+    .card__content {
+      padding-top: 0;
+    }
+
+    .card__title {
+      color: $body-font-color;
+      text-align: center;
+      border-bottom: none;
+      padding-bottom: 0;
+      padding-top: 1em;
+    }
+
+    .card__image {
+      height: 20em;
+      max-height: none;
+    }
+  }
+
+  &.extended.hero {
+    width: 90%;
+    margin: 4rem auto 0;
+  }
+
+  &.highligted-content-banner {
+    background-image: none;
+    background-color: $dark-teal;
+    animation: none;
+    border-top: none;
+
+    .black-background {
+      background: none;
+      color: $white;
+      font-size: 1rem;
+    }
+
+    .text-highlight {
+      text-shadow: 4px 4px 4px $dark-teal;
+      text-align: center;
+
+      &.heading1 {
+        @include font-heading-big;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .button#get-involved {
+      font-size: 1.5em;
+      @include button;
+      @include caret-wrapped-absolute($green, 1em);
+
+      &:hover {
+        @include button-inverted($green);
+        @include caret-wrapped-absolute($black, 1em);
+      }
+    }
+
+    &::after {
+      content: none;
+    }
+
+    &.text {
+      background: $body-background-color;
+      padding: 2em;
+
+      p {
+        color: $body-font-color;
+        text-align: center;
+        line-height: 1.5em;
+        font-weight: bold;
+        font-size: 1.25em;
+        margin-bottom: 2em;
+
+        @include small-screen {
+          font-size: 1em;
+        }
+
+        &:first-child {
+          font-size: 1.5em;
+          margin-bottom: 0;
+        }
+
+        &:nth-child(5) {
+          font-size: 1.5em;
+          margin-bottom: 0;
+        }
+        &:nth-child(6) {
+          color: $green;
+          font-size: 2em;
+          margin-bottom: 0;
+        }
+        &:nth-child(7) {
+          font-size: 1.5em;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.buttons-row-block {
+  .button.button--sc.expanded,
+  .button.button--sc.expanded:not(.tiny):not(.button--icon):not(.small):not(.compact):not(.button--nomargin):not([id]) {
+    @include button;
+    @include caret-wrapped-absolute($green);
+    color: $white;
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      @include button-inverted($green);
+      @include caret-wrapped-absolute($black);
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "./variables";
+@import "./mixins";
+
+.pagination {
+  li,
+  a,
+  .current {
+    border-radius: 0;
+  }
+
+  a {
+    @include button;
+    @include button-padding;
+
+    &:hover {
+      @include button-inverted($primary);
+      @include button-padding;
+    }
+  }
+
+  .current {
+    @include button-inverted($primary);
+    @include button-padding;
+  }
+}

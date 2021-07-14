@@ -1,0 +1,9 @@
+@import "variables";
+
+.data-picker.picker-single .picker-values div a,
+.data-picker .picker-prompt a,
+select,
+.inline-filters button[data-toggle],
+.inline-filters .dropdown-pane {
+  background-color: $body-background-color;
+}

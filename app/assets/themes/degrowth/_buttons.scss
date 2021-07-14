@@ -1,0 +1,112 @@
+@import "./variables";
+@import "./mixins";
+
+@mixin is-button($color) {
+  @include button;
+  @include button-padding;
+
+  background-color: $black;
+  color: $white;
+
+  &::before,
+  &::after {
+    background-color: $color;
+  }
+
+  &:hover {
+    background-color: $color;
+    color: $black;
+
+    &::before,
+    &::after {
+      background-color: $black;
+    }
+  }
+}
+
+@mixin is-button-caret($color) {
+  @include is-button($color);
+  @include caret-wrapped-absolute($color);
+
+  &:hover {
+    @include caret-wrapped-absolute($black);
+  }
+}
+
+.button {
+  @include button;
+  @include font-button;
+
+  &.expanded,
+  &.hollow {
+    &:not(.tiny) {
+      @include button;
+      border: none;
+
+      &.button--icon,
+      &.small,
+      &.compact,
+      &.button--nomargin {
+        @include is-button($primary);
+
+        &.primary {
+          @include is-button($primary);
+        }
+        &.secondary {
+          @include is-button($secondary);
+        }
+      }
+
+      &:not(.button--icon):not(.small):not(.compact):not(.button--nomargin):not([id]) {
+        @include is-button-caret($primary);
+      }
+    }
+  }
+
+  &.primary {
+    @include is-button($primary);
+
+    &.button--icon.hollow .icon-wrap {
+      border-right: none;
+    }
+  }
+  &.secondary {
+    @include is-button($secondary);
+
+    &.button--icon.hollow .icon-wrap {
+      border-right: none;
+    }
+  }
+  &.card__button {
+    @include is-button-caret($green);
+  }
+}
+
+.input-group-button .button,
+.input-group-button .button:hover,
+.button.hollow.follow-button {
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
+.input-group-button .button,
+.input-group-button .button:hover,
+.button.hollow.follow-button {
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+// Non-buttons
+
+.topbar__user__login {
+  .sign-in-link,
+  .sign-up-link {
+    background: $black;
+    color: $white;
+    padding: 0.5rem;
+    text-transform: uppercase;
+  }
+}

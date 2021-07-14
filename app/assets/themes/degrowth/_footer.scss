@@ -1,0 +1,38 @@
+@import "./variables";
+@import "./mixins";
+
+.main-footer,
+.mini-footer {
+  background: $body-background-color;
+  color: $body-font-color;
+
+  a,
+  a:hover {
+    color: $link-color;
+  }
+
+  img {
+    filter: brightness(50%) sepia() saturate(4);
+  }
+}
+
+.mini-footer {
+  padding-top: 2em;
+}
+
+.custom-footer {
+  background: $white;
+
+  .custom-logos {
+    padding: 2em;
+    display: block;
+    margin: auto;
+
+    img {
+      display: block;
+      margin: auto;
+      height: 80px;
+      width: auto;
+    }
+  }
+}

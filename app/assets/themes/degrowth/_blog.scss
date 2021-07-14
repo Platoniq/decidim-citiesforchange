@@ -1,0 +1,77 @@
+@import "./variables";
+@import "./mixins";
+
+.card--post {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+
+  .card__image {
+    display: block;
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card__content {
+    grid-column: 2;
+
+    &:only-child {
+      grid-column: span 2;
+    }
+  }
+
+  @include small-screen {
+    grid-template-columns: 1fr;
+    .card__image {
+      display: none;
+    }
+  }
+}
+
+.latest-blog-posts {
+  background-color: #f4f4f4;
+  padding-top: 2em;
+
+  .card--post {
+    min-height: 18em;
+    margin-bottom: 0;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 10em 1fr;
+
+    & > a {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .card__title {
+      height: 2em;
+      border-bottom: none;
+    }
+
+    .card__image {
+      max-height: 10em;
+    }
+
+    .card__title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .author-data {
+      padding-left: 32px;
+      padding-bottom: 0.5rem;
+      border-bottom: $border-wide;
+    }
+
+    .card__content {
+      grid-column: 1;
+
+      &:not(:only-child) {
+        grid-row: span 2;
+      }
+    }
+  }
+}
