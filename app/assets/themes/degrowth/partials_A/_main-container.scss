@@ -1,0 +1,78 @@
+@import "../settings";
+@import "mixins";
+
+.main-container {
+    background: none;
+    border: none;
+}
+
+.main-container__content {
+    background: $white;
+
+    @include breakpoint(medium) {
+        margin-left: 30px;
+    }
+
+    .static__content b,
+    u,
+    p,
+    i,
+    ul,
+    li,
+    ol,
+    li,
+    strong {
+        font-size: hattr(h5, "font-size");
+    }
+
+    ul {
+        list-style: none;
+
+        li:before {
+            content: "↗";
+            margin-left: -20px;
+            margin-right: 10px;
+            color: $primary-color;
+        }
+    }
+}
+
+.main-container--side-panel {
+    @include breakpoint(medium) {
+        display: flex;
+    }
+}
+
+.side-panel {
+    background: none;
+    border: none;
+}
+
+.side-panel__tabs {
+    background: none;
+
+    .tabs-title {
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        background-color: $white;
+
+        > [role="tab"],
+        > a {
+            border: 1px solid $primary-color;
+            color: $anchor-color;
+            box-shadow: inset 6px 0 0 $white, inset 7px 0 0 $primary-color;
+
+            &:hover {
+                color: $anchor-color;
+            }
+        }
+
+        &.is-active > [role="tab"],
+        &.is-active > a {
+            font-weight: 500;
+            border: 2px solid $primary-color;
+            color: $body-font-color;
+            box-shadow: inset 6px 0 0 $primary-color;
+        }
+    }
+}

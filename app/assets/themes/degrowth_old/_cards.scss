@@ -1,0 +1,62 @@
+@import "./variables";
+@import "./mixins";
+
+.card {
+  border: $border-thin;
+  padding: 0;
+  border-radius: 0;
+
+  &__title {
+    color: $card-link;
+    @include font-heading;
+  }
+
+  &__footer,
+  &__top {
+    background: none;
+  }
+
+  &__footer {
+    border-top-color: $body-font-color;
+  }
+
+  &-data {
+    &__item {
+      border-right-color: $body-font-color;
+      border-left-color: $body-font-color;
+      border-top-color: $body-font-color;
+      border-bottom-color: $body-font-color;
+    }
+  }
+
+  &__block ul {
+    border: $border-thin;
+  }
+}
+
+.card-grid .card {
+  &__title {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: $border-wide;
+  }
+}
+
+.card--list .card--list__item:not(:last-child),
+.card--list :not(:last-child) .card--list__item {
+  border-bottom: $border-thin;
+}
+
+.card--stack,
+.card--stack::after,
+.card--stack::before {
+  box-shadow: none;
+}
+
+.card--process__column .card--full__image {
+  right: 0;
+}
+
+.conversations .card-data__item {
+  margin: 0px;
+}

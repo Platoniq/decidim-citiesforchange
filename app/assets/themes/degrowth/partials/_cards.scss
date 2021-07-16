@@ -1,0 +1,54 @@
+@import "../settings";
+
+.card {
+  &__footer,
+  &__top {
+    background-color: $light-gray;
+  }
+
+  &__footer {
+    border-top: $border-thin;
+  }
+
+  &__header {
+    border-bottom: $border-thin;
+  }
+
+  &__title {
+    @include font-heading;
+  }
+
+  &-data {
+    &__item {
+      border-right-color: $body-font-color;
+      border-left-color: $body-font-color;
+      border-top-color: $body-font-color;
+      border-bottom-color: $body-font-color;
+    }
+  }
+
+  &__icondata ul,
+  &__block ul {
+    border: $border-thin;
+  }
+}
+
+.card__link {
+  color: $primary-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.card--list__icon {
+  fill: $primary-color;
+}
+
+.card--list__data__icon {
+  &:hover {
+    .icon {
+      fill: $primary-color;
+    }
+  }
+}
