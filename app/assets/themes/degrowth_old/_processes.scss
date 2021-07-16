@@ -3,7 +3,6 @@
 
 .process-nav {
   box-shadow: inset 0 (-$border-thin-width) 0 0 $body-font-color;
-  background-color: $body-background-color;
 
   &__content {
     li {
@@ -23,14 +22,12 @@
     }
   }
   &__hidden-content__more {
-    background: $body-font-color;
-    color: $white;
-    @include font-title;
+    @include button;
   }
 }
 
 .process-stats__data::after {
-  border-left: $border-wide-width solid dark-teal;
+  border-left: $border-wide-width solid $dark-teal;
 }
 
 #process-nav-content li a {

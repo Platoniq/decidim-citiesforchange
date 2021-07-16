@@ -67,11 +67,9 @@ a,
 .opinion-toggle--meh:focus,
 .opinion-toggle--meh.is-active {
   @include button;
-  @include button-padding;
 
   &:hover {
-    @include button-padding;
-    @include button-inverted($primary);
+    @include button;
   }
 }
 
@@ -81,11 +79,6 @@ input:checked ~ .switch-paddle {
 
 .tags a {
   @include label;
-  cursor: pointer;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 select,

@@ -2,26 +2,11 @@
 @import "./mixins";
 
 .map-block {
-  background-color: $dark-teal;
+  background: none;
 
   .section-heading {
-    color: $white;
-    border-color: $white;
-  }
-
-  .button.button--sc.expanded,
-  .button.button--sc.expanded:not(.tiny):not(.button--icon):not(.small):not(.compact):not(.button--nomargin):not([id]) {
-    @include button-inverted($green);
-    @include caret-wrapped-absolute($black);
-    color: $white;
-
-    &:hover,
-    &.hover,
-    &:focus,
-    &.focus {
-      @include button-inverted(lighten($green, 5%));
-      color: $white;
-    }
+    color: $body-font-color;
+    border-color: $body-font-color;
   }
 }
 

@@ -22,11 +22,11 @@
 
 .pages-controller .card-grid {
   .card {
-    &__title a {
-      color: $white;
-    }
+    color: $body-font-color;
 
-    color: $white;
+    &__title a {
+      color: $link-color;
+    }
 
     ul li a {
       color: currentColor;
@@ -42,7 +42,7 @@
   .column:nth-child(2n),
   .column:nth-child(3n) {
     .card {
-      @include help-card($dark-teal);
+      @include help-card($white);
     }
   }
 }

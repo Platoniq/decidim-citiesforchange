@@ -1,11 +1,10 @@
 // Define custom properties as css color variables
 $black: #000000;
-$white: #ffffff;
-$white-transparent: rgba(255, 255, 255, 0.7);
+$white: white;
+$light-gray: $white;
 $dark-gray: lighten($black, 10%);
 
 $orange: #e19614;
-$orange-light: lighten(#e19614, 20%);
 $orange-rgb: 225, 150, 20;
 $yellow: #f0d05c;
 $yellow-rgb: 240, 208, 92;
@@ -50,10 +49,8 @@ $card-link-hover: $primary;
 $navbar-bg: none;
 $navbar-fg: $black;
 $navbar-fg-hover: $black;
-$footer-bg: $body-background-color;
-$footer-fg: $body-font-color;
 
-$link-color: darken($orange, 5%);
+$link-color: $orange;
 $link-color-hover: lighten($link-color, 10%);
 
 $twitter: #55acee !default;
@@ -89,26 +86,29 @@ $color-removal: #ffeef0;
   --google: #{$google};
 }
 
+$triangle-size: 1rem;
+$triangle-size-bottom: 1.25rem;
+
 $border-color: $black;
 $border-thin-width: 1px;
 $border-wide-width: 2px;
 $border-thin: $border-thin-width solid $border-color;
 $border-wide: $border-wide-width solid $border-color;
 
-// .label.primary {
-//   background: $primary;
-// }
-// .label.secondary {
-//   background: $secondary;
-// }
-// .label.success {
-//   background: $success;
-// }
-// .label.warning {
-//   background: $warning;
-// }
-// .label.alert {
-//   background: $alert;
-// }
+@import "./fonts";
 
-@import "partials/fonts";
+.label.primary {
+  background: $primary;
+}
+.label.secondary {
+  background: $secondary;
+}
+.label.success {
+  background: $success;
+}
+.label.warning {
+  background: $warning;
+}
+.label.alert {
+  background: $alert;
+}

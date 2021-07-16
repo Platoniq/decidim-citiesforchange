@@ -28,10 +28,12 @@
       &--active a {
         background: $navbar-bg;
         color: $navbar-fg;
-        @include bottom-caret($primary);
+        box-shadow: none;
       }
     }
   }
+
+  border-bottom: $border-thin;
 }
 
 .topbar {

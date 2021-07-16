@@ -1,0 +1,95 @@
+@import "fonts";
+@import "../settings";
+
+@function hattr($heading, $attr, $breakpoint: medium) {
+    @return map-get(map-get(map-get($header-styles, $breakpoint), $heading), $attr);
+}
+
+@mixin heading($heading) {
+    font-size: hattr($heading, "font-size", small);
+
+    @include breakpoint(medium) {
+        font-size: hattr($heading, "font-size");
+        line-height: hattr($heading, "line-height");
+        font-weight: hattr($heading, "font-weight");
+    }
+}
+
+@mixin body-background-image() {
+    background-image: asset-url("degrowth/background.jpg");
+    background-size: cover;
+}
+
+// @mixin button {
+//     border-radius: 0;
+//     background-color: $link-color;
+//     color: $white;
+//     @include font-button;
+// }
+
+@mixin button {
+    border: $border-thin;
+    color: $body-font-color;
+    background-color: $orange-light;
+
+    &:hover {
+        border: $border-thin;
+        color: $body-font-color;
+        background-color: lighten($orange-light, 20%);
+    }
+}
+
+// @mixin button-hover {
+//     @include button;
+//     background-color: $success;
+// }
+
+@mixin button-hollow {
+    border-color: $link-color;
+    color: $link-color;
+
+    &:hover,
+    &:focus {
+        border-color: $link-color-hover;
+        color: $link-color-hover;
+    }
+}
+
+// @mixin label {
+//     &::before,
+//     &::after {
+//         content: none;
+//     }
+
+//     background: none;
+//     border: $border-thin;
+//     border-color: $link-color;
+//     color: $link-color;
+//     cursor: pointer;
+
+//     &:hover {
+//         background: none;
+//         border: $border-thin;
+//         border-color: $link-color;
+//         color: $link-color;
+//         cursor: pointer;
+//     }
+// }
+
+@mixin small-screen {
+    @media print, screen and (max-width: 40em) {
+        @content;
+    }
+}
+
+@mixin mid-screen {
+    @media print, screen and (min-width: 40em) and (max-width: 64em) {
+        @content;
+    }
+}
+
+@mixin big-screen {
+    @media print, screen and (min-width: 64em) {
+        @content;
+    }
+}

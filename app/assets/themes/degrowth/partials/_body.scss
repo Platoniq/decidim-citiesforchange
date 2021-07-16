@@ -1,0 +1,12 @@
+@import "../settings";
+@import "mixins";
+
+body {
+  background: $body-background-color;
+  color: $body-font-color;
+  @include font-body;
+}
+
+.off-canvas-wrapper {
+  @include body-background-image;
+}

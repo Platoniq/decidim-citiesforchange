@@ -1,0 +1,41 @@
+@import "../variables";
+@import "./mixins";
+
+.process-nav {
+  box-shadow: inset 0 (-$border-thin-width) 0 0 $body-font-color;
+
+  &__content {
+    li {
+      a {
+        color: $body-font-color;
+        font-size: 1.25rem;
+        font-weight: 400;
+        text-transform: none;
+      }
+
+      &.is-active {
+        box-shadow: none;
+        a {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &__more.button.tiny {
+    font-size: 1rem;
+  }
+
+  &__hidden-content__more {
+    @include button;
+    font-size: 1rem;
+  }
+}
+
+.process-stats__data::after {
+  border-left: $border-wide-width solid $dark-teal;
+}
+
+#process-nav-content li a {
+  text-transform: capitalize;
+}

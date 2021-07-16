@@ -1,0 +1,44 @@
+@import "../variables";
+@import "./mixins";
+
+.main-footer,
+.mini-footer {
+  background: $footer-bg;
+  color: $footer-fg;
+  border-top: $border-thin;
+
+  a,
+  a:hover {
+    color: $link-color;
+  }
+
+  .decidim-logo img {
+    filter: brightness(44%) sepia() saturate(4);
+  }
+}
+
+.main-footer {
+  background-color: $white-transparent;
+}
+
+.mini-footer {
+  padding-top: 2em;
+}
+
+.custom-footer {
+  background: $white;
+  border-top: $border-thin;
+
+  .custom-logos {
+    padding: 2em;
+    display: block;
+    margin: auto;
+
+    img {
+      display: block;
+      margin: auto;
+      height: 80px;
+      width: auto;
+    }
+  }
+}

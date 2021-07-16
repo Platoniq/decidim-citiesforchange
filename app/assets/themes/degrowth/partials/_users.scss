@@ -1,0 +1,5 @@
+@import "../variables";
+
+.register__separator::before {
+  background: $body-font-color;
+}

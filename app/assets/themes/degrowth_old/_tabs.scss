@@ -23,8 +23,6 @@
         padding: 1rem;
         color: $white;
 
-        @include caret-wrapped-absolute($primary);
-
         &::after {
           content: none;
         }
