@@ -23,15 +23,15 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
   end
 
   it "renders the program page" do
-    expect(page).to have_content("Program")
+    expect(page).to have_content(/Program/i)
   end
 
   it "renders tabs with month names and year" do
     within "#conference-day-tabs" do
       expect(page).to have_selector(".tabs-title", count: 3)
-      expect(page).to have_content("DECEMBER\n2021")
-      expect(page).to have_content("MARCH\n2022")
-      expect(page).to have_content("MAY\n2022")
+      expect(page).to have_content(/DECEMBER\n2021/i)
+      expect(page).to have_content(/MARCH\n2022/i)
+      expect(page).to have_content(/MAY\n2022/i)
     end
   end
 
