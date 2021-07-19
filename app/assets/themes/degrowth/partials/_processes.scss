@@ -1,0 +1,65 @@
+@import "../variables";
+@import "./mixins";
+
+.process-nav {
+  box-shadow: inset 0 (-$border-thin-width) 0 0 $body-font-color;
+  padding-top: 0.5rem;
+  background: $white-transparent;
+
+  &__content {
+    li {
+      a {
+        color: $body-font-color;
+        font-size: 1.25rem;
+        font-weight: 400;
+        text-transform: none;
+      }
+
+      &.is-active {
+        box-shadow: none;
+
+        a {
+          border-bottom: $border-thin;
+        }
+      }
+    }
+  }
+
+  &__more.button.tiny {
+    font-size: 1rem;
+  }
+
+  &__hidden-content {
+    background-color: $white-less-transparent;
+    border: $border-thin;
+
+    &__more {
+      @include button;
+      font-size: 1rem;
+      border: none;
+      border-bottom: $border-thin;
+
+      &:hover {
+        border: none;
+        border-bottom: $border-thin;
+      }
+    }
+  }
+
+  .process-nav__more i,
+  .process-nav__hidden-content__more i {
+    background-color: $body-font-color;
+  }
+}
+
+.process-stats__data::after {
+  border-left: $border-wide-width solid $dark-teal;
+}
+
+#process-nav-content li a {
+  text-transform: capitalize;
+}
+
+.process-header__hashtag {
+  @extend .link;
+}

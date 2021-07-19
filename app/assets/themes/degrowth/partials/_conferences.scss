@@ -1,0 +1,140 @@
+@import "../variables";
+@import "./mixins";
+
+.conference-programme {
+  background-color: $white-transparent;
+  padding: 1em 2em;
+  border: $border-thin;
+
+  @include small-screen {
+    margin-top: 2em;
+  }
+
+  .tabs-title .button {
+    margin-bottom: 0;
+  }
+
+  .programme {
+    &-day {
+      & > .row {
+        border-bottom: $border-thin;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    &-time {
+      color: $primary;
+
+      &__time {
+        font-size: 1.25rem;
+      }
+
+      .icon {
+        height: 2rem;
+        width: 2rem;
+        margin-bottom: 1em;
+        display: block;
+      }
+    }
+
+    &-title {
+      a {
+        color: $body-font-color;
+        @include font-heading;
+      }
+    }
+
+    &-extra {
+      color: $body-font-color;
+      font-size: 1rem;
+    }
+  }
+
+  .button.button--shadow.tiny.hollow {
+    @include label;
+  }
+}
+
+.conference_program-controller {
+  .section-heading {
+    @include font-heading-big;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+#conference-day-tabs.tabs {
+  background: none;
+  border: none;
+
+  @include big-screen {
+    display: flex;
+    gap: 0.2em;
+    justify-content: right;
+    padding-top: 1.5em;
+    margin-right: -0.4em;
+  }
+
+  .tabs-title {
+    .button {
+      margin: 0;
+      margin-bottom: -1px;
+    }
+
+    &.is-active .button {
+      background-color: $white-transparent;
+      border-bottom-color: $white-transparent;
+      border-bottom-style: dashed;
+    }
+
+    @include small-screen {
+      font-size: 1rem;
+      margin-bottom: 0.2em;
+    }
+  }
+
+  a.button--sc {
+    text-transform: none;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.conferences-controller {
+  hr {
+    border-color: $body-font-color;
+  }
+
+  .card {
+    &__icondata {
+      margin: 0;
+    }
+  }
+}
+
+.conference-speaker .speaker-bio {
+  border: $border-wide;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.programme-extra .speakers-list {
+  .author__name {
+    color: $body-font-color;
+  }
+}
+
+.hero {
+  border-top: $border-thin;
+  border-bottom: $border-thin;
+
+  .button.hollow.light {
+    @include button;
+  }
+}

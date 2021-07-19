@@ -1,0 +1,163 @@
+@import "../settings";
+@import "./mixins";
+
+.title-bar {
+  background: $navbar-bg;
+  color: $navbar-fg;
+}
+
+.navbar {
+  background: $navbar-bg;
+  @include font-body;
+
+  .main-nav {
+    ul {
+      gap: 1rem;
+      display: flex;
+      padding: 1rem;
+    }
+
+    &__link {
+      flex: 0 1 auto;
+
+      a {
+        color: $navbar-fg;
+        padding: 0;
+        padding-bottom: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: normal;
+      }
+      &--active a {
+        background: $navbar-bg;
+        color: $navbar-fg;
+        box-shadow: none;
+        border-bottom: $border-thin;
+      }
+    }
+
+    @include small-screen {
+      ul {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.off-canvas {
+  background-color: $body-background-color;
+  border-left: $border-thin;
+
+  .close-button {
+    color: $navbar-fg;
+  }
+
+  &.position-right.is-transition-push {
+    box-shadow: none;
+  }
+}
+
+.topbar {
+  &__search {
+    input,
+    input:focus {
+      background-color: $white-transparent;
+      color: $navbar-fg-hover;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: $navbar-fg-hover;
+    }
+    svg {
+      color: $navbar-fg-hover;
+    }
+    &:not(:focus-within) button,
+    &:focus-within button {
+      background-color: $orange-light;
+    }
+
+    input {
+      border-radius: 0px;
+    }
+
+    button {
+      border-radius: 0px;
+      &:hover {
+        background-color: $orange-lighter;
+      }
+    }
+  }
+
+  &__notifications,
+  &__conversations {
+    .icon {
+      opacity: 0.8;
+    }
+
+    &.is-active {
+      .icon {
+        fill: $navbar-fg;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      .icon {
+        fill: $link-color;
+      }
+    }
+  }
+
+  &__user a {
+    @extend .button;
+    margin: 0;
+  }
+
+  &__dropmenu {
+    padding: 0.25rem 1rem;
+
+    .dropdown.menu > li.is-active > a {
+      color: $link-color;
+
+      &:hover,
+      &:focus {
+        color: $link-color-hover;
+      }
+    }
+
+    .is-dropdown-submenu {
+      background-color: $white-transparent;
+      border-radius: 0;
+      border: $border-thin;
+    }
+
+    ul > li > a {
+      color: $navbar-fg;
+
+      &:hover,
+      &:focus {
+        color: $link-color-hover;
+      }
+
+      &::after {
+        border-top-color: $navbar-fg !important;
+      }
+    }
+  }
+
+  &__admin__link a {
+    @extend .link;
+
+    &:hover {
+      @extend .link:hover;
+    }
+  }
+}
+
+.usermenu-off-canvas-holder {
+  background: $primary;
+
+  .topbar__user__login {
+    margin-top: 0;
+  }
+}

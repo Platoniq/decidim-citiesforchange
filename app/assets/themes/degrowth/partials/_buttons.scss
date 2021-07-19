@@ -1,0 +1,29 @@
+@import "../variables";
+@import "./mixins";
+
+.button {
+  // @include button;
+
+  // &.hover,
+  // &:hover,
+  // &.focus,
+  // &:focus {
+  //   @include button-hover;
+  // }
+
+  &.hollow,
+  &.hollow.hover,
+  &.hollow:hover,
+  &.hollow.focus,
+  &.hollow:focus {
+    @include button-hollow;
+  }
+}
+
+.button--social {
+  display: block;
+
+  &__icon {
+    font-size: 1.5rem;
+  }
+}

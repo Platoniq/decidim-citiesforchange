@@ -1,0 +1,84 @@
+@import "../variables";
+@import "./mixins";
+
+.main-container {
+  background: none;
+
+  &__content {
+    background-color: $white-transparent;
+
+    .tabs-content {
+      background: none;
+    }
+  }
+}
+
+.main-container,
+.side-panel {
+  border-color: $border-color;
+}
+
+.side-panel {
+  background-color: $body-background-color;
+
+  .tabs {
+    background: none;
+  }
+
+  &__tabs {
+    .tabs-title {
+      border-color: $border-color;
+      margin: -$border-thin-width;
+      background-color: $orange-lighter;
+
+      &:not(:first-child) {
+        a {
+          border-top: $border-thin;
+        }
+      }
+
+      a,
+      a:hover {
+        border-color: $border-color;
+        color: $body-font-color;
+        box-shadow: none;
+      }
+
+      a:hover {
+        background-color: $orange-light;
+      }
+
+      &.is-active > a {
+        color: $body-font-color;
+        background-color: $orange-light;
+        box-shadow: none;
+
+        &:hover {
+          background-color: $orange-light;
+        }
+      }
+    }
+  }
+}
+
+#profile-tabs.tabs {
+  border-bottom: $border-wide;
+
+  .tabs-title {
+    a,
+    &.is-active a {
+      border-bottom: none;
+      color: $body-font-color;
+
+      &:hover {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+#activities {
+  .row:first-child {
+    background: $body-font-color;
+  }
+}

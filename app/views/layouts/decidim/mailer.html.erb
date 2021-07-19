@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag "decidim/email" %>
   </head>
 
-  <body>
+  <body class="email-<%= @organization.instance_name %>">
     <!-- <style> -->
     <table class="body">
       <% if content_for?(:see_on_website) %>
@@ -58,7 +58,7 @@
                             <% url = decidim.root_url(host: @organization.host) %>
                           <% end %>
 
-                          <%= image_tag asset_url("banner-email-footer.jpg", host: url), alt: @organization.name %>
+                          <%= image_tag asset_url(@organization.instance_prefix_path("banner-email-footer.jpg"), host: url), alt: @organization.name %>
                         </td>
                       </th>
                     </tr>

@@ -1,0 +1,123 @@
+@import "../variables";
+@import "./mixins";
+
+@keyframes slider {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.home-section:nth-of-type(2n + 1) {
+  background: none;
+}
+
+.highligted-content-banner {
+  animation: 90s infinite alternate slider;
+  background-color: #b2ccc7;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+
+  border-top: $border-thin;
+  border-bottom: $border-thin;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  @include small-screen {
+    grid-template-columns: 2em 1fr 2em;
+  }
+
+  .black-background {
+    border: $border-thin;
+    grid-column: 7 / span 5;
+    margin: -$border-thin-width;
+
+    @include small-screen {
+      grid-column: 2;
+    }
+
+    background-color: $body-background-color;
+    color: $body-font-color;
+    padding: 1em 2em;
+
+    p {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .text-highlight {
+    text-align: center;
+
+    &.heading1 {
+      @include font-heading-big;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &::after {
+    content: none;
+  }
+
+  &.text {
+    background: $body-background-color;
+    padding: 2em;
+
+    p {
+      color: $body-font-color;
+      text-align: center;
+      line-height: 1.5em;
+      font-weight: bold;
+      font-size: 1.25em;
+      margin-bottom: 2em;
+
+      @include small-screen {
+        font-size: 1em;
+      }
+
+      &:first-child {
+        font-size: 1.5em;
+        margin-bottom: 0;
+      }
+
+      &:nth-child(5) {
+        font-size: 1.5em;
+        margin-bottom: 0;
+      }
+      &:nth-child(6) {
+        color: $green;
+        font-size: 2em;
+        margin-bottom: 0;
+      }
+      &:nth-child(7) {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.home-section {
+  .section-heading {
+    border-bottom: $border-thin;
+
+    a {
+      float: right;
+
+      &::before {
+        content: ">";
+        margin-right: 6px;
+        position: relative;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &.upcoming-meetings {
+    .card__header {
+      margin-top: 1rem;
+    }
+  }
+}

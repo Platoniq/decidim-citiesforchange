@@ -1,1562 +1,2514 @@
-/* Index:
+
+.email-degrowth {
+  background-color: #dce1ce;
+  /* Index:
   1 - Foundation settings
   2 - Custom styles
 */
-/* 1 - Foundation settings --------- */
-.wrapper {
-  width: 100%; }
-
-#outlook a {
-  padding: 0; }
-
-body {
-  width: 100% !important;
-  min-width: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  margin: 0;
-  padding: 0;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.ExternalClass {
-  width: 100%; }
-
-.ExternalClass,
-.ExternalClass p,
-.ExternalClass span,
-.ExternalClass font,
-.ExternalClass td,
-.ExternalClass div {
-  line-height: 100%; }
-
-#backgroundTable {
-  margin: 0;
-  padding: 0;
-  width: 100% !important;
-  line-height: 100% !important; }
-
-img {
-  outline: none;
-  text-decoration: none;
-  -ms-interpolation-mode: bicubic;
-  width: auto;
-  max-width: 100%;
-  clear: both;
-  display: block; }
-
-center {
-  width: 100%;
-  min-width: 580px; }
-
-a img {
-  border: none; }
-
-p {
-  margin: 0 0 0 10px; }
-
-table {
-  border-spacing: 0;
-  border-collapse: collapse; }
-
-td {
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-  border-collapse: collapse !important; }
-
-table,
-tr,
-td {
-  padding: 0;
-  vertical-align: top;
-  text-align: left; }
-
-@media only screen {
-  html {
-    min-height: 100%;
-    background: #f3f3f3; } }
-table.body {
-  background: #f3f3f3;
-  height: 100%;
-  width: 100%; }
-
-table.container {
-  width: 580px;
-  margin: 0 auto;
-  text-align: inherit; }
-
-table.row {
-  padding: 0;
-  width: 100%;
-  position: relative; }
-
-table.spacer {
-  width: 100%; }
-
-/* stylelint-disable property-no-unknown */
-table.spacer td {
-  mso-line-height-rule: exactly; }
-
-/* stylelint-enable property-no-unknown */
-table.container table.row {
-  display: table; }
-
-td.columns,
-td.column,
-th.columns,
-th.column {
-  margin: 0 auto;
-  padding-right: 16px;
-  padding-left: 16px;
-  padding-bottom: 16px; }
-
-td.columns .column,
-td.columns .columns,
-td.column .column,
-td.column .columns,
-th.columns .column,
-th.columns .columns,
-th.column .column,
-th.column .columns {
-  padding-left: 0 !important;
-  padding-right: 0 !important; }
-
-td.columns .column center,
-td.columns .columns center,
-td.column .column center,
-td.column .columns center,
-th.columns .column center,
-th.columns .columns center,
-th.column .column center,
-th.column .columns center {
-  min-width: none !important; }
-
-td.columns.last,
-td.column.last,
-th.columns.last,
-th.column.last {
-  padding-right: 16px; }
-
-td.columns table:not(.button),
-td.column table:not(.button),
-th.columns table:not(.button),
-th.column table:not(.button) {
-  width: 100%; }
-
-td.large-1,
-th.large-1 {
-  width: 32.33333px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-1.first,
-th.large-1.first {
-  padding-left: 16px; }
-
-td.large-1.last,
-th.large-1.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-1,
-.collapse > tbody > tr > th.large-1 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 48.33333px; }
-
-.collapse td.large-1.first,
-.collapse th.large-1.first,
-.collapse td.large-1.last,
-.collapse th.large-1.last {
-  width: 56.33333px; }
-
-td.large-1 center,
-th.large-1 center {
-  min-width: 0.33333px; }
-
-.body .columns td.large-1,
-.body .column td.large-1,
-.body .columns th.large-1,
-.body .column th.large-1 {
-  width: 8.33333%; }
-
-td.large-2,
-th.large-2 {
-  width: 80.66667px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-2.first,
-th.large-2.first {
-  padding-left: 16px; }
-
-td.large-2.last,
-th.large-2.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-2,
-.collapse > tbody > tr > th.large-2 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 96.66667px; }
-
-.collapse td.large-2.first,
-.collapse th.large-2.first,
-.collapse td.large-2.last,
-.collapse th.large-2.last {
-  width: 104.66667px; }
-
-td.large-2 center,
-th.large-2 center {
-  min-width: 48.66667px; }
-
-.body .columns td.large-2,
-.body .column td.large-2,
-.body .columns th.large-2,
-.body .column th.large-2 {
-  width: 16.66667%; }
-
-td.large-3,
-th.large-3 {
-  width: 129px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-3.first,
-th.large-3.first {
-  padding-left: 16px; }
-
-td.large-3.last,
-th.large-3.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-3,
-.collapse > tbody > tr > th.large-3 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 145px; }
-
-.collapse td.large-3.first,
-.collapse th.large-3.first,
-.collapse td.large-3.last,
-.collapse th.large-3.last {
-  width: 153px; }
-
-td.large-3 center,
-th.large-3 center {
-  min-width: 97px; }
-
-.body .columns td.large-3,
-.body .column td.large-3,
-.body .columns th.large-3,
-.body .column th.large-3 {
-  width: 25%; }
-
-td.large-4,
-th.large-4 {
-  width: 177.33333px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-4.first,
-th.large-4.first {
-  padding-left: 16px; }
-
-td.large-4.last,
-th.large-4.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-4,
-.collapse > tbody > tr > th.large-4 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 193.33333px; }
-
-.collapse td.large-4.first,
-.collapse th.large-4.first,
-.collapse td.large-4.last,
-.collapse th.large-4.last {
-  width: 201.33333px; }
-
-td.large-4 center,
-th.large-4 center {
-  min-width: 145.33333px; }
-
-.body .columns td.large-4,
-.body .column td.large-4,
-.body .columns th.large-4,
-.body .column th.large-4 {
-  width: 33.33333%; }
-
-td.large-5,
-th.large-5 {
-  width: 225.66667px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-5.first,
-th.large-5.first {
-  padding-left: 16px; }
-
-td.large-5.last,
-th.large-5.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-5,
-.collapse > tbody > tr > th.large-5 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 241.66667px; }
-
-.collapse td.large-5.first,
-.collapse th.large-5.first,
-.collapse td.large-5.last,
-.collapse th.large-5.last {
-  width: 249.66667px; }
-
-td.large-5 center,
-th.large-5 center {
-  min-width: 193.66667px; }
-
-.body .columns td.large-5,
-.body .column td.large-5,
-.body .columns th.large-5,
-.body .column th.large-5 {
-  width: 41.66667%; }
-
-td.large-6,
-th.large-6 {
-  width: 274px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-6.first,
-th.large-6.first {
-  padding-left: 16px; }
-
-td.large-6.last,
-th.large-6.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-6,
-.collapse > tbody > tr > th.large-6 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 290px; }
-
-.collapse td.large-6.first,
-.collapse th.large-6.first,
-.collapse td.large-6.last,
-.collapse th.large-6.last {
-  width: 298px; }
-
-td.large-6 center,
-th.large-6 center {
-  min-width: 242px; }
-
-.body .columns td.large-6,
-.body .column td.large-6,
-.body .columns th.large-6,
-.body .column th.large-6 {
-  width: 50%; }
-
-td.large-7,
-th.large-7 {
-  width: 322.33333px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-7.first,
-th.large-7.first {
-  padding-left: 16px; }
-
-td.large-7.last,
-th.large-7.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-7,
-.collapse > tbody > tr > th.large-7 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 338.33333px; }
-
-.collapse td.large-7.first,
-.collapse th.large-7.first,
-.collapse td.large-7.last,
-.collapse th.large-7.last {
-  width: 346.33333px; }
-
-td.large-7 center,
-th.large-7 center {
-  min-width: 290.33333px; }
-
-.body .columns td.large-7,
-.body .column td.large-7,
-.body .columns th.large-7,
-.body .column th.large-7 {
-  width: 58.33333%; }
-
-td.large-8,
-th.large-8 {
-  width: 370.66667px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-8.first,
-th.large-8.first {
-  padding-left: 16px; }
-
-td.large-8.last,
-th.large-8.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-8,
-.collapse > tbody > tr > th.large-8 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 386.66667px; }
-
-.collapse td.large-8.first,
-.collapse th.large-8.first,
-.collapse td.large-8.last,
-.collapse th.large-8.last {
-  width: 394.66667px; }
-
-td.large-8 center,
-th.large-8 center {
-  min-width: 338.66667px; }
-
-.body .columns td.large-8,
-.body .column td.large-8,
-.body .columns th.large-8,
-.body .column th.large-8 {
-  width: 66.66667%; }
-
-td.large-9,
-th.large-9 {
-  width: 419px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-9.first,
-th.large-9.first {
-  padding-left: 16px; }
-
-td.large-9.last,
-th.large-9.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-9,
-.collapse > tbody > tr > th.large-9 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 435px; }
-
-.collapse td.large-9.first,
-.collapse th.large-9.first,
-.collapse td.large-9.last,
-.collapse th.large-9.last {
-  width: 443px; }
-
-td.large-9 center,
-th.large-9 center {
-  min-width: 387px; }
-
-.body .columns td.large-9,
-.body .column td.large-9,
-.body .columns th.large-9,
-.body .column th.large-9 {
-  width: 75%; }
-
-td.large-10,
-th.large-10 {
-  width: 467.33333px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-10.first,
-th.large-10.first {
-  padding-left: 16px; }
-
-td.large-10.last,
-th.large-10.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-10,
-.collapse > tbody > tr > th.large-10 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 483.33333px; }
-
-.collapse td.large-10.first,
-.collapse th.large-10.first,
-.collapse td.large-10.last,
-.collapse th.large-10.last {
-  width: 491.33333px; }
-
-td.large-10 center,
-th.large-10 center {
-  min-width: 435.33333px; }
-
-.body .columns td.large-10,
-.body .column td.large-10,
-.body .columns th.large-10,
-.body .column th.large-10 {
-  width: 83.33333%; }
-
-td.large-11,
-th.large-11 {
-  width: 515.66667px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-11.first,
-th.large-11.first {
-  padding-left: 16px; }
-
-td.large-11.last,
-th.large-11.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-11,
-.collapse > tbody > tr > th.large-11 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 531.66667px; }
-
-.collapse td.large-11.first,
-.collapse th.large-11.first,
-.collapse td.large-11.last,
-.collapse th.large-11.last {
-  width: 539.66667px; }
-
-td.large-11 center,
-th.large-11 center {
-  min-width: 483.66667px; }
-
-.body .columns td.large-11,
-.body .column td.large-11,
-.body .columns th.large-11,
-.body .column th.large-11 {
-  width: 91.66667%; }
-
-td.large-12,
-th.large-12 {
-  width: 564px;
-  padding-left: 8px;
-  padding-right: 8px; }
-
-td.large-12.first,
-th.large-12.first {
-  padding-left: 16px; }
-
-td.large-12.last,
-th.large-12.last {
-  padding-right: 16px; }
-
-.collapse > tbody > tr > td.large-12,
-.collapse > tbody > tr > th.large-12 {
-  padding-right: 0;
-  padding-left: 0;
-  width: 580px; }
-
-.collapse td.large-12.first,
-.collapse th.large-12.first,
-.collapse td.large-12.last,
-.collapse th.large-12.last {
-  width: 588px; }
-
-td.large-12 center,
-th.large-12 center {
-  min-width: 532px; }
-
-.body .columns td.large-12,
-.body .column td.large-12,
-.body .columns th.large-12,
-.body .column th.large-12 {
-  width: 100%; }
-
-td.large-offset-1,
-td.large-offset-1.first,
-td.large-offset-1.last,
-th.large-offset-1,
-th.large-offset-1.first,
-th.large-offset-1.last {
-  padding-left: 64.33333px; }
-
-td.large-offset-2,
-td.large-offset-2.first,
-td.large-offset-2.last,
-th.large-offset-2,
-th.large-offset-2.first,
-th.large-offset-2.last {
-  padding-left: 112.66667px; }
-
-td.large-offset-3,
-td.large-offset-3.first,
-td.large-offset-3.last,
-th.large-offset-3,
-th.large-offset-3.first,
-th.large-offset-3.last {
-  padding-left: 161px; }
-
-td.large-offset-4,
-td.large-offset-4.first,
-td.large-offset-4.last,
-th.large-offset-4,
-th.large-offset-4.first,
-th.large-offset-4.last {
-  padding-left: 209.33333px; }
-
-td.large-offset-5,
-td.large-offset-5.first,
-td.large-offset-5.last,
-th.large-offset-5,
-th.large-offset-5.first,
-th.large-offset-5.last {
-  padding-left: 257.66667px; }
-
-td.large-offset-6,
-td.large-offset-6.first,
-td.large-offset-6.last,
-th.large-offset-6,
-th.large-offset-6.first,
-th.large-offset-6.last {
-  padding-left: 306px; }
-
-td.large-offset-7,
-td.large-offset-7.first,
-td.large-offset-7.last,
-th.large-offset-7,
-th.large-offset-7.first,
-th.large-offset-7.last {
-  padding-left: 354.33333px; }
-
-td.large-offset-8,
-td.large-offset-8.first,
-td.large-offset-8.last,
-th.large-offset-8,
-th.large-offset-8.first,
-th.large-offset-8.last {
-  padding-left: 402.66667px; }
-
-td.large-offset-9,
-td.large-offset-9.first,
-td.large-offset-9.last,
-th.large-offset-9,
-th.large-offset-9.first,
-th.large-offset-9.last {
-  padding-left: 451px; }
-
-td.large-offset-10,
-td.large-offset-10.first,
-td.large-offset-10.last,
-th.large-offset-10,
-th.large-offset-10.first,
-th.large-offset-10.last {
-  padding-left: 499.33333px; }
-
-td.large-offset-11,
-td.large-offset-11.first,
-td.large-offset-11.last,
-th.large-offset-11,
-th.large-offset-11.first,
-th.large-offset-11.last {
-  padding-left: 547.66667px; }
-
-td.expander,
-th.expander {
-  visibility: hidden;
-  width: 0;
-  padding: 0 !important; }
-
-table.container.radius {
-  border-radius: 0;
-  border-collapse: separate; }
-
-.block-grid {
-  width: 100%;
-  max-width: 580px; }
-
-.block-grid td {
-  display: inline-block;
-  padding: 8px; }
-
-.up-2 td {
-  width: 274px !important; }
-
-.up-3 td {
-  width: 177px !important; }
-
-.up-4 td {
-  width: 129px !important; }
-
-.up-5 td {
-  width: 100px !important; }
-
-.up-6 td {
-  width: 80px !important; }
-
-.up-7 td {
-  width: 66px !important; }
-
-.up-8 td {
-  width: 56px !important; }
-
-table.text-center,
-th.text-center,
-td.text-center,
-h1.text-center,
-h2.text-center,
-h3.text-center,
-h4.text-center,
-h5.text-center,
-h6.text-center,
-p.text-center,
-span.text-center {
-  text-align: center; }
-
-table.text-left,
-th.text-left,
-td.text-left,
-h1.text-left,
-h2.text-left,
-h3.text-left,
-h4.text-left,
-h5.text-left,
-h6.text-left,
-p.text-left,
-span.text-left {
-  text-align: left; }
-
-table.text-right,
-th.text-right,
-td.text-right,
-h1.text-right,
-h2.text-right,
-h3.text-right,
-h4.text-right,
-h5.text-right,
-h6.text-right,
-p.text-right,
-span.text-right {
-  text-align: right; }
-
-span.text-center {
-  display: block;
-  width: 100%;
-  text-align: center; }
-
-@media only screen and (max-width: 596px) {
-  .small-float-center {
-    margin: 0 auto !important;
-    float: none !important;
-    text-align: center !important; }
-
-  .small-text-center {
-    text-align: center !important; }
-
-  .small-text-left {
-    text-align: left !important; }
-
-  .small-text-right {
-    text-align: right !important; } }
-img.float-left {
-  float: left;
-  text-align: left; }
-
-img.float-right {
-  float: right;
-  text-align: right; }
-
-img.float-center,
-img.text-center {
-  margin: 0 auto;
-  float: none;
-  text-align: center; }
-
-table.float-center,
-td.float-center,
-th.float-center {
-  margin: 0 auto;
-  float: none;
-  text-align: center; }
-
-th.float-right {
-  margin: 0 auto;
-  float: right;
-  text-align: center; }
-
-/* stylelint-disable property-no-unknown */
-.hide-for-large {
-  display: none !important;
-  mso-hide: all;
-  overflow: hidden;
-  max-height: 0;
-  font-size: 0;
-  width: 0;
-  line-height: 0; }
-
-/* stylelint-enable property-no-unknown */
-@media only screen and (max-width: 596px) {
-  .hide-for-large {
-    display: block !important;
-    width: auto !important;
-    overflow: visible !important;
-    max-height: none !important;
-    font-size: inherit !important;
-    line-height: inherit !important; } }
-/* stylelint-disable property-no-unknown */
-table.body table.container .hide-for-large * {
-  mso-hide: all; }
-
-/* stylelint-enable property-no-unknown */
-@media only screen and (max-width: 596px) {
-  table.body table.container .hide-for-large,
-  table.body table.container .row.hide-for-large {
-    display: table !important;
-    width: 100% !important; } }
-@media only screen and (max-width: 596px) {
-  table.body table.container .callout-inner.hide-for-large {
-    display: table-cell !important;
-    width: 100% !important; } }
-/* stylelint-disable property-no-unknown */
-@media only screen and (max-width: 596px) {
-  table.body table.container .show-for-large {
-    display: none !important;
-    width: 0;
-    mso-hide: all;
-    overflow: hidden; } }
-/* stylelint-enable property-no-unknown */
-body,
-table.body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-td,
-th,
-a {
-  color: #0a0a0a;
-  font-family: "Museo Sans", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  line-height: 1.3; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: inherit;
-  word-wrap: normal;
-  font-family: "Museo Sans", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  margin-bottom: 10px; }
-
-h1 {
-  font-size: 34px; }
-
-h2 {
-  font-size: 30px; }
-
-h3 {
-  font-size: 28px; }
-
-h4 {
-  font-size: 24px; }
-
-h5 {
-  font-size: 20px; }
-
-h6 {
-  font-size: 18px; }
-
-body,
-table.body,
-p,
-td,
-th {
-  font-size: 16px;
-  line-height: 1.3; }
-
-p {
-  margin-bottom: 10px; }
-
-p.lead {
-  font-size: 20px;
-  line-height: 1.6; }
-
-p.subheader {
-  margin-top: 4px;
-  margin-bottom: 8px;
-  font-weight: normal;
-  line-height: 1.4;
-  color: #8a8a8a; }
-
-small {
-  font-size: 80%;
-  color: #cacaca; }
-
-a {
-  color: #5f93b1;
-  text-decoration: none; }
-
-a:hover {
-  color: var(--secondary); }
-
-a:active {
-  color: #147dc2; }
-
-a:visited {
-  color: #5f93b1; }
-
-h1 a,
-h1 a:visited,
-h2 a,
-h2 a:visited,
-h3 a,
-h3 a:visited,
-h4 a,
-h4 a:visited,
-h5 a,
-h5 a:visited,
-h6 a,
-h6 a:visited {
-  color: #5f93b1; }
-
-pre {
-  background: #f3f3f3;
-  margin: 30px 0; }
-
-pre code {
-  color: #cacaca; }
-
-pre code span.callout {
-  color: #8a8a8a;
-  font-weight: bold; }
-
-pre code span.callout-strong {
-  color: #ff6908;
-  font-weight: bold; }
-
-table.hr {
-  width: 100%; }
-
-table.hr th {
-  height: 0;
-  max-width: 580px;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 1px solid #0a0a0a;
-  border-left: 0;
-  margin: 20px auto;
-  clear: both; }
-
-.stat {
-  font-size: 40px;
-  line-height: 1; }
-
-p + .stat {
-  margin-top: -16px; }
-
-/* stylelint-disable property-no-unknown */
-span.preheader {
-  display: none !important;
-  visibility: hidden;
-  mso-hide: all !important;
-  font-size: 1px;
-  color: #f3f3f3;
-  line-height: 1px;
-  max-height: 0;
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden; }
-
-/* stylelint-enable property-no-unknown */
-table.button {
-  width: auto;
-  margin: 0 0 16px; }
-
-table.button table td {
-  text-align: left;
-  color: #fefefe;
-}
-
-table.button table td a {
-  font-family: "Museo Sans", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  color: #fefefe;
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-  border: 0 solid #e7be41;
-  border-radius: 3px; }
-
-table.button.radius table td {
-  border-radius: 4px;
-  border: none; }
-
-table.button.rounded table td {
-  border-radius: 500px;
-  border: none; }
-
-table.button:hover table tr td a,
-table.button:active table tr td a,
-table.button table tr td a:visited,
-table.button.tiny:hover table tr td a,
-table.button.tiny:active table tr td a,
-table.button.tiny table tr td a:visited,
-table.button.small:hover table tr td a,
-table.button.small:active table tr td a,
-table.button.small table tr td a:visited,
-table.button.large:hover table tr td a,
-table.button.large:active table tr td a,
-table.button.large table tr td a:visited {
-  color: #fefefe; }
-
-table.button.tiny table td,
-table.button.tiny table a {
-  padding: 4px 8px; }
-
-table.button.tiny table a {
-  font-size: 10px;
-  font-weight: normal; }
-
-table.button.small table td,
-table.button.small table a {
-  padding: 5px 10px;
-  font-size: 12px; }
-
-table.button.large table a {
-  padding: 10px 20px;
-  font-size: 20px; }
-
-table.button.expand,
-table.button.expanded {
-  width: 100%; }
-
-table.button.expand > tr > td,
-table.button.expanded > tr > td {
-  text-align: center; }
-
-table.button.expand table,
-table.button.expanded table {
-  width: auto;
-  margin: auto; }
-
-table.button.expand table > tr > td,
-table.button.expanded table > tr > td {
-  text-align: center; }
-
-table.button.expand table a,
-table.button.expanded table a {
-  text-align: center;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0; }
-
-table.button.expand center,
-table.button.expanded center {
-  min-width: 0; }
-
-table.button:hover table td,
-table.button:visited table td,
-table.button:active table td {
-  color: #fefefe; }
-
-table.button:hover table a,
-table.button:visited table a,
-table.button:active table a {
-  border: 0 solid #147dc2; }
-
-table.button.secondary table td {
-  background: #777;
-  color: #fefefe;
-  border: 0 solid #777; }
-
-table.button.secondary table a {
-  color: #fefefe;
-  border: 0 solid #777; }
-
-table.button.secondary:hover table td {
-  background: #919191;
-  color: #fefefe; }
-
-table.button.secondary:hover table a {
-  border: 0 solid #919191; }
-
-table.button.secondary:hover table td a {
-  color: #fefefe; }
-
-table.button.secondary:active table td a {
-  color: #fefefe; }
-
-table.button.secondary table td a:visited {
-  color: #fefefe; }
-
-table.button.success table td {
-  background: #00a767;
-  border: 0 solid #00a767; }
-
-table.button.success table a {
-  border: 0 solid #00a767; }
-
-table.button.success:hover table td {
-  background: #00da86; }
-
-table.button.success:hover table a {
-  border: 0 solid #00da86; }
-
-table.button.alert table td {
-  background: #e30613;
-  border: 0 solid #e30613; }
-
-table.button.alert table a {
-  border: 0 solid #e30613; }
-
-table.button.alert:hover table td {
-  background: #f9232f; }
-
-table.button.alert:hover table a {
-  border: 0 solid #f9232f; }
-
-table.button.warning table td {
-  background: #ee734d;
-  border: 0 solid #ee734d; }
-
-table.button.warning table a {
-  border: 0 solid #ee734d; }
-
-table.button.warning:hover table td {
-  background: #f2987c; }
-
-table.button.warning:hover table a {
-  border: 0 solid #f2987c; }
-
-table.callout {
-  margin-bottom: 16px; }
-
-th.callout-inner {
-  width: 100%;
-  border: 1px solid #cbcbcb;
-  padding: 10px;
-  background: #fefefe; }
-
-th.callout-inner.primary {
-  background: #def0fc;
-  border: 1px solid #444;
-  color: #0a0a0a; }
-
-th.callout-inner.secondary {
-  background: #ebebeb;
-  border: 1px solid #444;
-  color: #0a0a0a; }
-
-th.callout-inner.success {
-  background: #41ffb6;
-  border: 1px solid #00a767;
-  color: #fefefe; }
-
-th.callout-inner.warning {
-  background: #fbe1d9;
-  border: 1px solid #ee734d;
-  color: #fefefe; }
-
-th.callout-inner.alert {
-  background: #fc868d;
-  border: 1px solid #e30613;
-  color: #fefefe; }
-
-.thumbnail {
-  border: solid 4px #fefefe;
-  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
-  display: inline-block;
-  line-height: 0;
-  max-width: 100%;
-  transition: box-shadow 200ms ease-out;
-  border-radius: 3px;
-  margin-bottom: 16px; }
-
-.thumbnail:hover,
-.thumbnail:focus {
-  box-shadow: 0 0 6px 1px rgba(33, 153, 232, 0.5); }
-
-table.menu {
-  width: 580px; }
-
-table.menu td.menu-item,
-table.menu th.menu-item {
-  padding: 10px;
-  padding-right: 10px; }
-
-table.menu td.menu-item a,
-table.menu th.menu-item a {
-  color: #5f93b1; }
-
-table.menu.vertical td.menu-item,
-table.menu.vertical th.menu-item {
-  padding: 10px;
-  padding-right: 0;
-  display: block; }
-
-table.menu.vertical td.menu-item a,
-table.menu.vertical th.menu-item a {
-  width: 100%; }
-
-table.menu.vertical td.menu-item table.menu.vertical td.menu-item,
-table.menu.vertical td.menu-item table.menu.vertical th.menu-item,
-table.menu.vertical th.menu-item table.menu.vertical td.menu-item,
-table.menu.vertical th.menu-item table.menu.vertical th.menu-item {
-  padding-left: 10px; }
-
-table.menu.text-center a {
-  text-align: center; }
-
-.menu[align="center"] {
-  width: auto !important; }
-
-body.outlook p {
-  display: inline !important; }
-
-@media only screen and (max-width: 596px) {
-  table.body img {
-    width: auto;
-    height: auto; }
-
-  table.body center {
-    min-width: 0 !important; }
-
-  table.body .container {
-    width: 95% !important; }
-
-  table.body .columns,
-  table.body .column {
-    height: auto !important;
+  /* 1 - Foundation settings --------- */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* 2 - Custom styles --------- */ }
+  .email-degrowth .wrapper {
+    width: 100%; }
+  .email-degrowth #outlook a {
+    padding: 0; }
+  .email-degrowth body {
+    width: 100% !important;
+    min-width: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding-left: 16px !important;
-    padding-right: 16px !important; }
-
-  table.body .columns .column,
-  table.body .columns .columns,
-  table.body .column .column,
-  table.body .column .columns {
-    padding-left: 0 !important;
-    padding-right: 0 !important; }
-
-  table.body .collapse .columns,
-  table.body .collapse .column {
-    padding-left: 0 !important;
-    padding-right: 0 !important; }
-
-  td.small-1,
-  th.small-1 {
-    display: inline-block !important;
-    width: 8.33333% !important; }
-
-  td.small-2,
-  th.small-2 {
-    display: inline-block !important;
-    width: 16.66667% !important; }
-
-  td.small-3,
-  th.small-3 {
-    display: inline-block !important;
-    width: 25% !important; }
-
-  td.small-4,
-  th.small-4 {
-    display: inline-block !important;
-    width: 33.33333% !important; }
-
-  td.small-5,
-  th.small-5 {
-    display: inline-block !important;
-    width: 41.66667% !important; }
-
-  td.small-6,
-  th.small-6 {
-    display: inline-block !important;
-    width: 50% !important; }
-
-  td.small-7,
-  th.small-7 {
-    display: inline-block !important;
-    width: 58.33333% !important; }
-
-  td.small-8,
-  th.small-8 {
-    display: inline-block !important;
-    width: 66.66667% !important; }
-
-  td.small-9,
-  th.small-9 {
-    display: inline-block !important;
-    width: 75% !important; }
-
-  td.small-10,
-  th.small-10 {
-    display: inline-block !important;
-    width: 83.33333% !important; }
-
-  td.small-11,
-  th.small-11 {
-    display: inline-block !important;
-    width: 91.66667% !important; }
-
-  td.small-12,
-  th.small-12 {
-    display: inline-block !important;
-    width: 100% !important; }
-
-  .columns td.small-12,
-  .column td.small-12,
-  .columns th.small-12,
-  .column th.small-12 {
-    display: block !important;
-    width: 100% !important; }
-
-  table.body td.small-offset-1,
-  table.body th.small-offset-1 {
-    margin-left: 8.33333% !important; }
-
-  table.body td.small-offset-2,
-  table.body th.small-offset-2 {
-    margin-left: 16.66667% !important; }
-
-  table.body td.small-offset-3,
-  table.body th.small-offset-3 {
-    margin-left: 25% !important; }
-
-  table.body td.small-offset-4,
-  table.body th.small-offset-4 {
-    margin-left: 33.33333% !important; }
-
-  table.body td.small-offset-5,
-  table.body th.small-offset-5 {
-    margin-left: 41.66667% !important; }
-
-  table.body td.small-offset-6,
-  table.body th.small-offset-6 {
-    margin-left: 50% !important; }
-
-  table.body td.small-offset-7,
-  table.body th.small-offset-7 {
-    margin-left: 58.33333% !important; }
-
-  table.body td.small-offset-8,
-  table.body th.small-offset-8 {
-    margin-left: 66.66667% !important; }
-
-  table.body td.small-offset-9,
-  table.body th.small-offset-9 {
-    margin-left: 75% !important; }
-
-  table.body td.small-offset-10,
-  table.body th.small-offset-10 {
-    margin-left: 83.33333% !important; }
-
-  table.body td.small-offset-11,
-  table.body th.small-offset-11 {
-    margin-left: 91.66667% !important; }
-
-  table.body table.columns td.expander,
-  table.body table.columns th.expander {
-    display: none !important; }
-
-  table.body .right-text-pad,
-  table.body .text-pad-right {
-    padding-left: 10px !important; }
-
-  table.body .left-text-pad,
-  table.body .text-pad-left {
-    padding-right: 10px !important; }
-
-  table.menu {
-    width: 100% !important; }
-
-  table.menu td,
-  table.menu th {
-    width: auto !important;
-    display: inline-block !important; }
-
-  table.menu.vertical td,
-  table.menu.vertical th,
-  table.menu.small-vertical td,
-  table.menu.small-vertical th {
-    display: block !important; }
-
-  table.menu[align="center"] {
-    width: auto !important; }
-
-  table.button.small-expand,
-  table.button.small-expanded {
-    width: 100% !important; }
-
-  table.button.small-expand table,
-  table.button.small-expanded table {
+    box-sizing: border-box; }
+  .email-degrowth .ExternalClass {
     width: 100%; }
-
-  table.button.small-expand table a,
-  table.button.small-expanded table a {
-    text-align: center !important;
+  .email-degrowth .ExternalClass,
+  .email-degrowth .ExternalClass p,
+  .email-degrowth .ExternalClass span,
+  .email-degrowth .ExternalClass font,
+  .email-degrowth .ExternalClass td,
+  .email-degrowth .ExternalClass div {
+    line-height: 100%; }
+  .email-degrowth #backgroundTable {
+    margin: 0;
+    padding: 0;
     width: 100% !important;
+    line-height: 100% !important; }
+  .email-degrowth img {
+    outline: none;
+    text-decoration: none;
+    -ms-interpolation-mode: bicubic;
+    width: auto;
+    max-width: 100%;
+    clear: both;
+    display: block; }
+  .email-degrowth center {
+    width: 100%;
+    min-width: 580px; }
+  .email-degrowth a img {
+    border: none; }
+  .email-degrowth p {
+    margin: 0 0 0 10px; }
+  .email-degrowth table {
+    border-spacing: 0;
+    border-collapse: collapse; }
+  .email-degrowth td {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important; }
+  .email-degrowth table,
+  .email-degrowth tr,
+  .email-degrowth td {
+    padding: 0;
+    vertical-align: top;
+    text-align: left; }
+  @media only screen {
+    .email-degrowth html {
+      min-height: 100%;
+      background: #f3f3f3; } }
+  .email-degrowth table.body {
+    background: #f3f3f3;
+    height: 100%;
+    width: 100%; }
+  .email-degrowth table.container {
+    width: 580px;
+    margin: 0 auto;
+    text-align: inherit; }
+  .email-degrowth table.row {
+    padding: 0;
+    width: 100%;
+    position: relative; }
+  .email-degrowth table.spacer {
+    width: 100%; }
+  .email-degrowth table.spacer td {
+    mso-line-height-rule: exactly; }
+  .email-degrowth table.container table.row {
+    display: table; }
+  .email-degrowth td.columns,
+  .email-degrowth td.column,
+  .email-degrowth th.columns,
+  .email-degrowth th.column {
+    margin: 0 auto;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px; }
+  .email-degrowth td.columns .column,
+  .email-degrowth td.columns .columns,
+  .email-degrowth td.column .column,
+  .email-degrowth td.column .columns,
+  .email-degrowth th.columns .column,
+  .email-degrowth th.columns .columns,
+  .email-degrowth th.column .column,
+  .email-degrowth th.column .columns {
     padding-left: 0 !important;
     padding-right: 0 !important; }
-
-  table.button.small-expand center,
-  table.button.small-expanded center {
-    min-width: 0; } }
-/* 2 - Custom styles --------- */
-table.body th.decidim-bar,
-table.body td.decidim-bar {
-  background-color: none;
-  padding: 0; }
-
-.main.container > tbody > tr:first-of-type {
-  background-image: url("/assets/banner-email.jpg");
-  background-size: cover; }
-
-table.body {
-  background-color: #ededed;
-  margin: 20px 0; }
-
-.decidim-logo {
-  margin-top: 16px; }
-
-.decidim-logo a {
-  display: inline-block;
-  height: 30px; }
-
-.cityhall-bar {
-  background-color: #000000; }
-
-.cityhall-logo {
-  width: 150px;
-  margin-top: 16px; }
-
-.footnote,
-.headnote {
-  padding-top: 10px;
-  color: #666;
-  font-size: 12px; }
-
-table.container.main {
-  background: white; }
-
-.custom-button {
-  display: block;
-  text-align: center;
-  border-radius: 4px;
-  line-height: 1;
-  padding: 0.58em 1em;
-  background: red; }
-
-.button--sc {
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  text-transform: uppercase; }
-  .button--sc.large {
-    font-size: 1rem; }
-
-table.content.image img {
-  width: 100%; }
-
-th,
-td {
-  box-sizing: border-box; }
-
-.row.content .email-button a {
-  background: #000000;
-  color: white;
-  padding: 0.25em 0.5em;
-  margin: 0.5em; }
-.row.content .email-button__cta a {
-  background: #000000;
-  color: white;
-  border-radius: 0;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 0.5rem;
-  text-transform: uppercase;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  text-align: center; }
-  .row.content .email-button__cta a.hollow:not(.expanded) {
+  .email-degrowth td.columns .column center,
+  .email-degrowth td.columns .columns center,
+  .email-degrowth td.column .column center,
+  .email-degrowth td.column .columns center,
+  .email-degrowth th.columns .column center,
+  .email-degrowth th.columns .columns center,
+  .email-degrowth th.column .column center,
+  .email-degrowth th.column .columns center {
+    min-width: none !important; }
+  .email-degrowth td.columns.last,
+  .email-degrowth td.column.last,
+  .email-degrowth th.columns.last,
+  .email-degrowth th.column.last {
+    padding-right: 16px; }
+  .email-degrowth td.columns table:not(.button),
+  .email-degrowth td.column table:not(.button),
+  .email-degrowth th.columns table:not(.button),
+  .email-degrowth th.column table:not(.button) {
+    width: 100%; }
+  .email-degrowth td.large-1,
+  .email-degrowth th.large-1 {
+    width: 32.33333px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-1.first,
+  .email-degrowth th.large-1.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-1.last,
+  .email-degrowth th.large-1.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-1,
+  .email-degrowth .collapse > tbody > tr > th.large-1 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 48.33333px; }
+  .email-degrowth .collapse td.large-1.first,
+  .email-degrowth .collapse th.large-1.first,
+  .email-degrowth .collapse td.large-1.last,
+  .email-degrowth .collapse th.large-1.last {
+    width: 56.33333px; }
+  .email-degrowth td.large-1 center,
+  .email-degrowth th.large-1 center {
+    min-width: 0.33333px; }
+  .email-degrowth .body .columns td.large-1,
+  .email-degrowth .body .column td.large-1,
+  .email-degrowth .body .columns th.large-1,
+  .email-degrowth .body .column th.large-1 {
+    width: 8.33333%; }
+  .email-degrowth td.large-2,
+  .email-degrowth th.large-2 {
+    width: 80.66667px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-2.first,
+  .email-degrowth th.large-2.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-2.last,
+  .email-degrowth th.large-2.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-2,
+  .email-degrowth .collapse > tbody > tr > th.large-2 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 96.66667px; }
+  .email-degrowth .collapse td.large-2.first,
+  .email-degrowth .collapse th.large-2.first,
+  .email-degrowth .collapse td.large-2.last,
+  .email-degrowth .collapse th.large-2.last {
+    width: 104.66667px; }
+  .email-degrowth td.large-2 center,
+  .email-degrowth th.large-2 center {
+    min-width: 48.66667px; }
+  .email-degrowth .body .columns td.large-2,
+  .email-degrowth .body .column td.large-2,
+  .email-degrowth .body .columns th.large-2,
+  .email-degrowth .body .column th.large-2 {
+    width: 16.66667%; }
+  .email-degrowth td.large-3,
+  .email-degrowth th.large-3 {
+    width: 129px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-3.first,
+  .email-degrowth th.large-3.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-3.last,
+  .email-degrowth th.large-3.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-3,
+  .email-degrowth .collapse > tbody > tr > th.large-3 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 145px; }
+  .email-degrowth .collapse td.large-3.first,
+  .email-degrowth .collapse th.large-3.first,
+  .email-degrowth .collapse td.large-3.last,
+  .email-degrowth .collapse th.large-3.last {
+    width: 153px; }
+  .email-degrowth td.large-3 center,
+  .email-degrowth th.large-3 center {
+    min-width: 97px; }
+  .email-degrowth .body .columns td.large-3,
+  .email-degrowth .body .column td.large-3,
+  .email-degrowth .body .columns th.large-3,
+  .email-degrowth .body .column th.large-3 {
+    width: 25%; }
+  .email-degrowth td.large-4,
+  .email-degrowth th.large-4 {
+    width: 177.33333px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-4.first,
+  .email-degrowth th.large-4.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-4.last,
+  .email-degrowth th.large-4.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-4,
+  .email-degrowth .collapse > tbody > tr > th.large-4 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 193.33333px; }
+  .email-degrowth .collapse td.large-4.first,
+  .email-degrowth .collapse th.large-4.first,
+  .email-degrowth .collapse td.large-4.last,
+  .email-degrowth .collapse th.large-4.last {
+    width: 201.33333px; }
+  .email-degrowth td.large-4 center,
+  .email-degrowth th.large-4 center {
+    min-width: 145.33333px; }
+  .email-degrowth .body .columns td.large-4,
+  .email-degrowth .body .column td.large-4,
+  .email-degrowth .body .columns th.large-4,
+  .email-degrowth .body .column th.large-4 {
+    width: 33.33333%; }
+  .email-degrowth td.large-5,
+  .email-degrowth th.large-5 {
+    width: 225.66667px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-5.first,
+  .email-degrowth th.large-5.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-5.last,
+  .email-degrowth th.large-5.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-5,
+  .email-degrowth .collapse > tbody > tr > th.large-5 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 241.66667px; }
+  .email-degrowth .collapse td.large-5.first,
+  .email-degrowth .collapse th.large-5.first,
+  .email-degrowth .collapse td.large-5.last,
+  .email-degrowth .collapse th.large-5.last {
+    width: 249.66667px; }
+  .email-degrowth td.large-5 center,
+  .email-degrowth th.large-5 center {
+    min-width: 193.66667px; }
+  .email-degrowth .body .columns td.large-5,
+  .email-degrowth .body .column td.large-5,
+  .email-degrowth .body .columns th.large-5,
+  .email-degrowth .body .column th.large-5 {
+    width: 41.66667%; }
+  .email-degrowth td.large-6,
+  .email-degrowth th.large-6 {
+    width: 274px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-6.first,
+  .email-degrowth th.large-6.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-6.last,
+  .email-degrowth th.large-6.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-6,
+  .email-degrowth .collapse > tbody > tr > th.large-6 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 290px; }
+  .email-degrowth .collapse td.large-6.first,
+  .email-degrowth .collapse th.large-6.first,
+  .email-degrowth .collapse td.large-6.last,
+  .email-degrowth .collapse th.large-6.last {
+    width: 298px; }
+  .email-degrowth td.large-6 center,
+  .email-degrowth th.large-6 center {
+    min-width: 242px; }
+  .email-degrowth .body .columns td.large-6,
+  .email-degrowth .body .column td.large-6,
+  .email-degrowth .body .columns th.large-6,
+  .email-degrowth .body .column th.large-6 {
+    width: 50%; }
+  .email-degrowth td.large-7,
+  .email-degrowth th.large-7 {
+    width: 322.33333px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-7.first,
+  .email-degrowth th.large-7.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-7.last,
+  .email-degrowth th.large-7.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-7,
+  .email-degrowth .collapse > tbody > tr > th.large-7 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 338.33333px; }
+  .email-degrowth .collapse td.large-7.first,
+  .email-degrowth .collapse th.large-7.first,
+  .email-degrowth .collapse td.large-7.last,
+  .email-degrowth .collapse th.large-7.last {
+    width: 346.33333px; }
+  .email-degrowth td.large-7 center,
+  .email-degrowth th.large-7 center {
+    min-width: 290.33333px; }
+  .email-degrowth .body .columns td.large-7,
+  .email-degrowth .body .column td.large-7,
+  .email-degrowth .body .columns th.large-7,
+  .email-degrowth .body .column th.large-7 {
+    width: 58.33333%; }
+  .email-degrowth td.large-8,
+  .email-degrowth th.large-8 {
+    width: 370.66667px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-8.first,
+  .email-degrowth th.large-8.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-8.last,
+  .email-degrowth th.large-8.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-8,
+  .email-degrowth .collapse > tbody > tr > th.large-8 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 386.66667px; }
+  .email-degrowth .collapse td.large-8.first,
+  .email-degrowth .collapse th.large-8.first,
+  .email-degrowth .collapse td.large-8.last,
+  .email-degrowth .collapse th.large-8.last {
+    width: 394.66667px; }
+  .email-degrowth td.large-8 center,
+  .email-degrowth th.large-8 center {
+    min-width: 338.66667px; }
+  .email-degrowth .body .columns td.large-8,
+  .email-degrowth .body .column td.large-8,
+  .email-degrowth .body .columns th.large-8,
+  .email-degrowth .body .column th.large-8 {
+    width: 66.66667%; }
+  .email-degrowth td.large-9,
+  .email-degrowth th.large-9 {
+    width: 419px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-9.first,
+  .email-degrowth th.large-9.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-9.last,
+  .email-degrowth th.large-9.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-9,
+  .email-degrowth .collapse > tbody > tr > th.large-9 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 435px; }
+  .email-degrowth .collapse td.large-9.first,
+  .email-degrowth .collapse th.large-9.first,
+  .email-degrowth .collapse td.large-9.last,
+  .email-degrowth .collapse th.large-9.last {
+    width: 443px; }
+  .email-degrowth td.large-9 center,
+  .email-degrowth th.large-9 center {
+    min-width: 387px; }
+  .email-degrowth .body .columns td.large-9,
+  .email-degrowth .body .column td.large-9,
+  .email-degrowth .body .columns th.large-9,
+  .email-degrowth .body .column th.large-9 {
+    width: 75%; }
+  .email-degrowth td.large-10,
+  .email-degrowth th.large-10 {
+    width: 467.33333px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-10.first,
+  .email-degrowth th.large-10.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-10.last,
+  .email-degrowth th.large-10.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-10,
+  .email-degrowth .collapse > tbody > tr > th.large-10 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 483.33333px; }
+  .email-degrowth .collapse td.large-10.first,
+  .email-degrowth .collapse th.large-10.first,
+  .email-degrowth .collapse td.large-10.last,
+  .email-degrowth .collapse th.large-10.last {
+    width: 491.33333px; }
+  .email-degrowth td.large-10 center,
+  .email-degrowth th.large-10 center {
+    min-width: 435.33333px; }
+  .email-degrowth .body .columns td.large-10,
+  .email-degrowth .body .column td.large-10,
+  .email-degrowth .body .columns th.large-10,
+  .email-degrowth .body .column th.large-10 {
+    width: 83.33333%; }
+  .email-degrowth td.large-11,
+  .email-degrowth th.large-11 {
+    width: 515.66667px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-11.first,
+  .email-degrowth th.large-11.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-11.last,
+  .email-degrowth th.large-11.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-11,
+  .email-degrowth .collapse > tbody > tr > th.large-11 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 531.66667px; }
+  .email-degrowth .collapse td.large-11.first,
+  .email-degrowth .collapse th.large-11.first,
+  .email-degrowth .collapse td.large-11.last,
+  .email-degrowth .collapse th.large-11.last {
+    width: 539.66667px; }
+  .email-degrowth td.large-11 center,
+  .email-degrowth th.large-11 center {
+    min-width: 483.66667px; }
+  .email-degrowth .body .columns td.large-11,
+  .email-degrowth .body .column td.large-11,
+  .email-degrowth .body .columns th.large-11,
+  .email-degrowth .body .column th.large-11 {
+    width: 91.66667%; }
+  .email-degrowth td.large-12,
+  .email-degrowth th.large-12 {
+    width: 564px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-degrowth td.large-12.first,
+  .email-degrowth th.large-12.first {
+    padding-left: 16px; }
+  .email-degrowth td.large-12.last,
+  .email-degrowth th.large-12.last {
+    padding-right: 16px; }
+  .email-degrowth .collapse > tbody > tr > td.large-12,
+  .email-degrowth .collapse > tbody > tr > th.large-12 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 580px; }
+  .email-degrowth .collapse td.large-12.first,
+  .email-degrowth .collapse th.large-12.first,
+  .email-degrowth .collapse td.large-12.last,
+  .email-degrowth .collapse th.large-12.last {
+    width: 588px; }
+  .email-degrowth td.large-12 center,
+  .email-degrowth th.large-12 center {
+    min-width: 532px; }
+  .email-degrowth .body .columns td.large-12,
+  .email-degrowth .body .column td.large-12,
+  .email-degrowth .body .columns th.large-12,
+  .email-degrowth .body .column th.large-12 {
+    width: 100%; }
+  .email-degrowth td.large-offset-1,
+  .email-degrowth td.large-offset-1.first,
+  .email-degrowth td.large-offset-1.last,
+  .email-degrowth th.large-offset-1,
+  .email-degrowth th.large-offset-1.first,
+  .email-degrowth th.large-offset-1.last {
+    padding-left: 64.33333px; }
+  .email-degrowth td.large-offset-2,
+  .email-degrowth td.large-offset-2.first,
+  .email-degrowth td.large-offset-2.last,
+  .email-degrowth th.large-offset-2,
+  .email-degrowth th.large-offset-2.first,
+  .email-degrowth th.large-offset-2.last {
+    padding-left: 112.66667px; }
+  .email-degrowth td.large-offset-3,
+  .email-degrowth td.large-offset-3.first,
+  .email-degrowth td.large-offset-3.last,
+  .email-degrowth th.large-offset-3,
+  .email-degrowth th.large-offset-3.first,
+  .email-degrowth th.large-offset-3.last {
+    padding-left: 161px; }
+  .email-degrowth td.large-offset-4,
+  .email-degrowth td.large-offset-4.first,
+  .email-degrowth td.large-offset-4.last,
+  .email-degrowth th.large-offset-4,
+  .email-degrowth th.large-offset-4.first,
+  .email-degrowth th.large-offset-4.last {
+    padding-left: 209.33333px; }
+  .email-degrowth td.large-offset-5,
+  .email-degrowth td.large-offset-5.first,
+  .email-degrowth td.large-offset-5.last,
+  .email-degrowth th.large-offset-5,
+  .email-degrowth th.large-offset-5.first,
+  .email-degrowth th.large-offset-5.last {
+    padding-left: 257.66667px; }
+  .email-degrowth td.large-offset-6,
+  .email-degrowth td.large-offset-6.first,
+  .email-degrowth td.large-offset-6.last,
+  .email-degrowth th.large-offset-6,
+  .email-degrowth th.large-offset-6.first,
+  .email-degrowth th.large-offset-6.last {
+    padding-left: 306px; }
+  .email-degrowth td.large-offset-7,
+  .email-degrowth td.large-offset-7.first,
+  .email-degrowth td.large-offset-7.last,
+  .email-degrowth th.large-offset-7,
+  .email-degrowth th.large-offset-7.first,
+  .email-degrowth th.large-offset-7.last {
+    padding-left: 354.33333px; }
+  .email-degrowth td.large-offset-8,
+  .email-degrowth td.large-offset-8.first,
+  .email-degrowth td.large-offset-8.last,
+  .email-degrowth th.large-offset-8,
+  .email-degrowth th.large-offset-8.first,
+  .email-degrowth th.large-offset-8.last {
+    padding-left: 402.66667px; }
+  .email-degrowth td.large-offset-9,
+  .email-degrowth td.large-offset-9.first,
+  .email-degrowth td.large-offset-9.last,
+  .email-degrowth th.large-offset-9,
+  .email-degrowth th.large-offset-9.first,
+  .email-degrowth th.large-offset-9.last {
+    padding-left: 451px; }
+  .email-degrowth td.large-offset-10,
+  .email-degrowth td.large-offset-10.first,
+  .email-degrowth td.large-offset-10.last,
+  .email-degrowth th.large-offset-10,
+  .email-degrowth th.large-offset-10.first,
+  .email-degrowth th.large-offset-10.last {
+    padding-left: 499.33333px; }
+  .email-degrowth td.large-offset-11,
+  .email-degrowth td.large-offset-11.first,
+  .email-degrowth td.large-offset-11.last,
+  .email-degrowth th.large-offset-11,
+  .email-degrowth th.large-offset-11.first,
+  .email-degrowth th.large-offset-11.last {
+    padding-left: 547.66667px; }
+  .email-degrowth td.expander,
+  .email-degrowth th.expander {
+    visibility: hidden;
+    width: 0;
+    padding: 0 !important; }
+  .email-degrowth table.container.radius {
+    border-radius: 0;
+    border-collapse: separate; }
+  .email-degrowth .block-grid {
+    width: 100%;
+    max-width: 580px; }
+  .email-degrowth .block-grid td {
+    display: inline-block;
+    padding: 8px; }
+  .email-degrowth .up-2 td {
+    width: 274px !important; }
+  .email-degrowth .up-3 td {
+    width: 177px !important; }
+  .email-degrowth .up-4 td {
+    width: 129px !important; }
+  .email-degrowth .up-5 td {
+    width: 100px !important; }
+  .email-degrowth .up-6 td {
+    width: 80px !important; }
+  .email-degrowth .up-7 td {
+    width: 66px !important; }
+  .email-degrowth .up-8 td {
+    width: 56px !important; }
+  .email-degrowth table.text-center,
+  .email-degrowth th.text-center,
+  .email-degrowth td.text-center,
+  .email-degrowth h1.text-center,
+  .email-degrowth h2.text-center,
+  .email-degrowth h3.text-center,
+  .email-degrowth h4.text-center,
+  .email-degrowth h5.text-center,
+  .email-degrowth h6.text-center,
+  .email-degrowth p.text-center,
+  .email-degrowth span.text-center {
+    text-align: center; }
+  .email-degrowth table.text-left,
+  .email-degrowth th.text-left,
+  .email-degrowth td.text-left,
+  .email-degrowth h1.text-left,
+  .email-degrowth h2.text-left,
+  .email-degrowth h3.text-left,
+  .email-degrowth h4.text-left,
+  .email-degrowth h5.text-left,
+  .email-degrowth h6.text-left,
+  .email-degrowth p.text-left,
+  .email-degrowth span.text-left {
+    text-align: left; }
+  .email-degrowth table.text-right,
+  .email-degrowth th.text-right,
+  .email-degrowth td.text-right,
+  .email-degrowth h1.text-right,
+  .email-degrowth h2.text-right,
+  .email-degrowth h3.text-right,
+  .email-degrowth h4.text-right,
+  .email-degrowth h5.text-right,
+  .email-degrowth h6.text-right,
+  .email-degrowth p.text-right,
+  .email-degrowth span.text-right {
+    text-align: right; }
+  .email-degrowth span.text-center {
+    display: block;
+    width: 100%;
+    text-align: center; }
+  @media only screen and (max-width: 596px) {
+    .email-degrowth .small-float-center {
+      margin: 0 auto !important;
+      float: none !important;
+      text-align: center !important; }
+    .email-degrowth .small-text-center {
+      text-align: center !important; }
+    .email-degrowth .small-text-left {
+      text-align: left !important; }
+    .email-degrowth .small-text-right {
+      text-align: right !important; } }
+  .email-degrowth img.float-left {
+    float: left;
+    text-align: left; }
+  .email-degrowth img.float-right {
+    float: right;
+    text-align: right; }
+  .email-degrowth img.float-center,
+  .email-degrowth img.text-center {
+    margin: 0 auto;
+    float: none;
+    text-align: center; }
+  .email-degrowth table.float-center,
+  .email-degrowth td.float-center,
+  .email-degrowth th.float-center {
+    margin: 0 auto;
+    float: none;
+    text-align: center; }
+  .email-degrowth th.float-right {
+    margin: 0 auto;
+    float: right;
+    text-align: center; }
+  .email-degrowth .hide-for-large {
+    display: none !important;
+    mso-hide: all;
+    overflow: hidden;
+    max-height: 0;
+    font-size: 0;
+    width: 0;
+    line-height: 0; }
+  @media only screen and (max-width: 596px) {
+    .email-degrowth .hide-for-large {
+      display: block !important;
+      width: auto !important;
+      overflow: visible !important;
+      max-height: none !important;
+      font-size: inherit !important;
+      line-height: inherit !important; } }
+  .email-degrowth table.body table.container .hide-for-large * {
+    mso-hide: all; }
+  @media only screen and (max-width: 596px) {
+    .email-degrowth table.body table.container .hide-for-large,
+    .email-degrowth table.body table.container .row.hide-for-large {
+      display: table !important;
+      width: 100% !important; } }
+  @media only screen and (max-width: 596px) {
+    .email-degrowth table.body table.container .callout-inner.hide-for-large {
+      display: table-cell !important;
+      width: 100% !important; } }
+  @media only screen and (max-width: 596px) {
+    .email-degrowth table.body table.container .show-for-large {
+      display: none !important;
+      width: 0;
+      mso-hide: all;
+      overflow: hidden; } }
+  .email-degrowth body,
+  .email-degrowth table.body,
+  .email-degrowth h1,
+  .email-degrowth h2,
+  .email-degrowth h3,
+  .email-degrowth h4,
+  .email-degrowth h5,
+  .email-degrowth h6,
+  .email-degrowth p,
+  .email-degrowth td,
+  .email-degrowth th,
+  .email-degrowth a {
+    color: #0a0a0a;
+    font-family: "Museo Sans", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    line-height: 1.3; }
+  .email-degrowth h1,
+  .email-degrowth h2,
+  .email-degrowth h3,
+  .email-degrowth h4,
+  .email-degrowth h5,
+  .email-degrowth h6 {
+    color: inherit;
+    word-wrap: normal;
+    font-family: "Museo Sans", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    margin-bottom: 10px; }
+  .email-degrowth h1 {
+    font-size: 34px; }
+  .email-degrowth h2 {
+    font-size: 30px; }
+  .email-degrowth h3 {
+    font-size: 28px; }
+  .email-degrowth h4 {
+    font-size: 24px; }
+  .email-degrowth h5 {
+    font-size: 20px; }
+  .email-degrowth h6 {
+    font-size: 18px; }
+  .email-degrowth body,
+  .email-degrowth table.body,
+  .email-degrowth p,
+  .email-degrowth td,
+  .email-degrowth th {
+    font-size: 16px;
+    line-height: 1.3; }
+  .email-degrowth p {
+    margin-bottom: 10px; }
+  .email-degrowth p.lead {
+    font-size: 20px;
+    line-height: 1.6; }
+  .email-degrowth p.subheader {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-weight: normal;
+    line-height: 1.4;
+    color: #8a8a8a; }
+  .email-degrowth small {
+    font-size: 80%;
+    color: #cacaca; }
+  .email-degrowth a {
+    color: #5f93b1;
+    text-decoration: none; }
+  .email-degrowth a:hover {
+    color: var(--secondary); }
+  .email-degrowth a:active {
+    color: #147dc2; }
+  .email-degrowth a:visited {
+    color: #5f93b1; }
+  .email-degrowth h1 a,
+  .email-degrowth h1 a:visited,
+  .email-degrowth h2 a,
+  .email-degrowth h2 a:visited,
+  .email-degrowth h3 a,
+  .email-degrowth h3 a:visited,
+  .email-degrowth h4 a,
+  .email-degrowth h4 a:visited,
+  .email-degrowth h5 a,
+  .email-degrowth h5 a:visited,
+  .email-degrowth h6 a,
+  .email-degrowth h6 a:visited {
+    color: #5f93b1; }
+  .email-degrowth pre {
+    background: #f3f3f3;
+    margin: 30px 0; }
+  .email-degrowth pre code {
+    color: #cacaca; }
+  .email-degrowth pre code span.callout {
+    color: #8a8a8a;
+    font-weight: bold; }
+  .email-degrowth pre code span.callout-strong {
+    color: #ff6908;
+    font-weight: bold; }
+  .email-degrowth table.hr {
+    width: 100%; }
+  .email-degrowth table.hr th {
+    height: 0;
+    max-width: 580px;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #0a0a0a;
+    border-left: 0;
+    margin: 20px auto;
+    clear: both; }
+  .email-degrowth .stat {
+    font-size: 40px;
+    line-height: 1; }
+  .email-degrowth p + .stat {
+    margin-top: -16px; }
+  .email-degrowth span.preheader {
+    display: none !important;
+    visibility: hidden;
+    mso-hide: all !important;
+    font-size: 1px;
+    color: #f3f3f3;
+    line-height: 1px;
+    max-height: 0;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden; }
+  .email-degrowth table.button {
+    width: auto;
+    margin: 0 0 16px; }
+  .email-degrowth table.button table td {
+    text-align: left;
+    color: #fefefe; }
+  .email-degrowth table.button table td a {
+    font-family: "Museo Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #fefefe;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 0 solid #6b9e93;
+    border-radius: 3px; }
+  .email-degrowth table.button.radius table td {
+    border-radius: 4px;
     border: none; }
-  .row.content .email-button__cta a.hover, .row.content .email-button__cta a:hover {
-    filter: none; }
-  .row.content .email-button__cta a::before, .row.content .email-button__cta a::after {
-    content: " ";
-    transition: all ease-in-out 300ms;
+  .email-degrowth table.button.rounded table td {
+    border-radius: 500px;
+    border: none; }
+  .email-degrowth table.button:hover table tr td a,
+  .email-degrowth table.button:active table tr td a,
+  .email-degrowth table.button table tr td a:visited,
+  .email-degrowth table.button.tiny:hover table tr td a,
+  .email-degrowth table.button.tiny:active table tr td a,
+  .email-degrowth table.button.tiny table tr td a:visited,
+  .email-degrowth table.button.small:hover table tr td a,
+  .email-degrowth table.button.small:active table tr td a,
+  .email-degrowth table.button.small table tr td a:visited,
+  .email-degrowth table.button.large:hover table tr td a,
+  .email-degrowth table.button.large:active table tr td a,
+  .email-degrowth table.button.large table tr td a:visited {
+    color: #fefefe; }
+  .email-degrowth table.button.tiny table td,
+  .email-degrowth table.button.tiny table a {
+    padding: 4px 8px; }
+  .email-degrowth table.button.tiny table a {
+    font-size: 10px;
+    font-weight: normal; }
+  .email-degrowth table.button.small table td,
+  .email-degrowth table.button.small table a {
+    padding: 5px 10px;
+    font-size: 12px; }
+  .email-degrowth table.button.large table a {
+    padding: 10px 20px;
+    font-size: 20px; }
+  .email-degrowth table.button.expand,
+  .email-degrowth table.button.expanded {
+    width: 100%; }
+  .email-degrowth table.button.expand > tr > td,
+  .email-degrowth table.button.expanded > tr > td {
+    text-align: center; }
+  .email-degrowth table.button.expand table,
+  .email-degrowth table.button.expanded table {
+    width: auto;
+    margin: auto; }
+  .email-degrowth table.button.expand table > tr > td,
+  .email-degrowth table.button.expanded table > tr > td {
+    text-align: center; }
+  .email-degrowth table.button.expand table a,
+  .email-degrowth table.button.expanded table a {
+    text-align: center;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0; }
+  .email-degrowth table.button.expand center,
+  .email-degrowth table.button.expanded center {
+    min-width: 0; }
+  .email-degrowth table.button:hover table td,
+  .email-degrowth table.button:visited table td,
+  .email-degrowth table.button:active table td {
+    color: #fefefe; }
+  .email-degrowth table.button:hover table a,
+  .email-degrowth table.button:visited table a,
+  .email-degrowth table.button:active table a {
+    border: 0 solid #147dc2; }
+  .email-degrowth table.button.secondary table td {
+    background: #777;
+    color: #fefefe;
+    border: 0 solid #777; }
+  .email-degrowth table.button.secondary table a {
+    color: #fefefe;
+    border: 0 solid #777; }
+  .email-degrowth table.button.secondary:hover table td {
+    background: #919191;
+    color: #fefefe; }
+  .email-degrowth table.button.secondary:hover table a {
+    border: 0 solid #919191; }
+  .email-degrowth table.button.secondary:hover table td a {
+    color: #fefefe; }
+  .email-degrowth table.button.secondary:active table td a {
+    color: #fefefe; }
+  .email-degrowth table.button.secondary table td a:visited {
+    color: #fefefe; }
+  .email-degrowth table.button.success table td {
+    background: #00a767;
+    border: 0 solid #00a767; }
+  .email-degrowth table.button.success table a {
+    border: 0 solid #00a767; }
+  .email-degrowth table.button.success:hover table td {
+    background: #00da86; }
+  .email-degrowth table.button.success:hover table a {
+    border: 0 solid #00da86; }
+  .email-degrowth table.button.alert table td {
+    background: #e30613;
+    border: 0 solid #e30613; }
+  .email-degrowth table.button.alert table a {
+    border: 0 solid #e30613; }
+  .email-degrowth table.button.alert:hover table td {
+    background: #f9232f; }
+  .email-degrowth table.button.alert:hover table a {
+    border: 0 solid #f9232f; }
+  .email-degrowth table.button.warning table td {
+    background: #ee734d;
+    border: 0 solid #ee734d; }
+  .email-degrowth table.button.warning table a {
+    border: 0 solid #ee734d; }
+  .email-degrowth table.button.warning:hover table td {
+    background: #f2987c; }
+  .email-degrowth table.button.warning:hover table a {
+    border: 0 solid #f2987c; }
+  .email-degrowth table.callout {
+    margin-bottom: 16px; }
+  .email-degrowth th.callout-inner {
+    width: 100%;
+    border: 1px solid #cbcbcb;
+    padding: 10px;
+    background: #fefefe; }
+  .email-degrowth th.callout-inner.primary {
+    background: #def0fc;
+    border: 1px solid #444;
+    color: #0a0a0a; }
+  .email-degrowth th.callout-inner.secondary {
+    background: #ebebeb;
+    border: 1px solid #444;
+    color: #0a0a0a; }
+  .email-degrowth th.callout-inner.success {
+    background: #41ffb6;
+    border: 1px solid #00a767;
+    color: #fefefe; }
+  .email-degrowth th.callout-inner.warning {
+    background: #fbe1d9;
+    border: 1px solid #ee734d;
+    color: #fefefe; }
+  .email-degrowth th.callout-inner.alert {
+    background: #fc868d;
+    border: 1px solid #e30613;
+    color: #fefefe; }
+  .email-degrowth .thumbnail {
+    border: solid 4px #fefefe;
+    box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
     display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    margin: -3px 0.5rem;
-    background-color: #00a767;
-    clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
-  .row.content .email-button__cta a::before {
-    transform: rotate(90deg); }
-  .row.content .email-button__cta a::after {
-    transform: rotate(-90deg); }
-  .row.content .email-button__cta a:hover {
-    color: #0effa3; }
-    .row.content .email-button__cta a:hover::before, .row.content .email-button__cta a:hover::after {
-      background-color: #0effa3; }
-  .row.content .email-button__cta a.cta-accept::before, .row.content .email-button__cta a.cta-accept::after {
-    content: " ";
-    transition: all ease-in-out 300ms;
+    line-height: 0;
+    max-width: 100%;
+    transition: box-shadow 200ms ease-out;
+    border-radius: 3px;
+    margin-bottom: 16px; }
+  .email-degrowth .thumbnail:hover,
+  .email-degrowth .thumbnail:focus {
+    box-shadow: 0 0 6px 1px rgba(33, 153, 232, 0.5); }
+  .email-degrowth table.menu {
+    width: 580px; }
+  .email-degrowth table.menu td.menu-item,
+  .email-degrowth table.menu th.menu-item {
+    padding: 10px;
+    padding-right: 10px; }
+  .email-degrowth table.menu td.menu-item a,
+  .email-degrowth table.menu th.menu-item a {
+    color: #5f93b1; }
+  .email-degrowth table.menu.vertical td.menu-item,
+  .email-degrowth table.menu.vertical th.menu-item {
+    padding: 10px;
+    padding-right: 0;
+    display: block; }
+  .email-degrowth table.menu.vertical td.menu-item a,
+  .email-degrowth table.menu.vertical th.menu-item a {
+    width: 100%; }
+  .email-degrowth table.menu.vertical td.menu-item table.menu.vertical td.menu-item,
+  .email-degrowth table.menu.vertical td.menu-item table.menu.vertical th.menu-item,
+  .email-degrowth table.menu.vertical th.menu-item table.menu.vertical td.menu-item,
+  .email-degrowth table.menu.vertical th.menu-item table.menu.vertical th.menu-item {
+    padding-left: 10px; }
+  .email-degrowth table.menu.text-center a {
+    text-align: center; }
+  .email-degrowth .menu[align="center"] {
+    width: auto !important; }
+  .email-degrowth body.outlook p {
+    display: inline !important; }
+  @media only screen and (max-width: 596px) {
+    .email-degrowth table.body img {
+      width: auto;
+      height: auto; }
+    .email-degrowth table.body center {
+      min-width: 0 !important; }
+    .email-degrowth table.body .container {
+      width: 95% !important; }
+    .email-degrowth table.body .columns,
+    .email-degrowth table.body .column {
+      height: auto !important;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-left: 16px !important;
+      padding-right: 16px !important; }
+    .email-degrowth table.body .columns .column,
+    .email-degrowth table.body .columns .columns,
+    .email-degrowth table.body .column .column,
+    .email-degrowth table.body .column .columns {
+      padding-left: 0 !important;
+      padding-right: 0 !important; }
+    .email-degrowth table.body .collapse .columns,
+    .email-degrowth table.body .collapse .column {
+      padding-left: 0 !important;
+      padding-right: 0 !important; }
+    .email-degrowth td.small-1,
+    .email-degrowth th.small-1 {
+      display: inline-block !important;
+      width: 8.33333% !important; }
+    .email-degrowth td.small-2,
+    .email-degrowth th.small-2 {
+      display: inline-block !important;
+      width: 16.66667% !important; }
+    .email-degrowth td.small-3,
+    .email-degrowth th.small-3 {
+      display: inline-block !important;
+      width: 25% !important; }
+    .email-degrowth td.small-4,
+    .email-degrowth th.small-4 {
+      display: inline-block !important;
+      width: 33.33333% !important; }
+    .email-degrowth td.small-5,
+    .email-degrowth th.small-5 {
+      display: inline-block !important;
+      width: 41.66667% !important; }
+    .email-degrowth td.small-6,
+    .email-degrowth th.small-6 {
+      display: inline-block !important;
+      width: 50% !important; }
+    .email-degrowth td.small-7,
+    .email-degrowth th.small-7 {
+      display: inline-block !important;
+      width: 58.33333% !important; }
+    .email-degrowth td.small-8,
+    .email-degrowth th.small-8 {
+      display: inline-block !important;
+      width: 66.66667% !important; }
+    .email-degrowth td.small-9,
+    .email-degrowth th.small-9 {
+      display: inline-block !important;
+      width: 75% !important; }
+    .email-degrowth td.small-10,
+    .email-degrowth th.small-10 {
+      display: inline-block !important;
+      width: 83.33333% !important; }
+    .email-degrowth td.small-11,
+    .email-degrowth th.small-11 {
+      display: inline-block !important;
+      width: 91.66667% !important; }
+    .email-degrowth td.small-12,
+    .email-degrowth th.small-12 {
+      display: inline-block !important;
+      width: 100% !important; }
+    .email-degrowth .columns td.small-12,
+    .email-degrowth .column td.small-12,
+    .email-degrowth .columns th.small-12,
+    .email-degrowth .column th.small-12 {
+      display: block !important;
+      width: 100% !important; }
+    .email-degrowth table.body td.small-offset-1,
+    .email-degrowth table.body th.small-offset-1 {
+      margin-left: 8.33333% !important; }
+    .email-degrowth table.body td.small-offset-2,
+    .email-degrowth table.body th.small-offset-2 {
+      margin-left: 16.66667% !important; }
+    .email-degrowth table.body td.small-offset-3,
+    .email-degrowth table.body th.small-offset-3 {
+      margin-left: 25% !important; }
+    .email-degrowth table.body td.small-offset-4,
+    .email-degrowth table.body th.small-offset-4 {
+      margin-left: 33.33333% !important; }
+    .email-degrowth table.body td.small-offset-5,
+    .email-degrowth table.body th.small-offset-5 {
+      margin-left: 41.66667% !important; }
+    .email-degrowth table.body td.small-offset-6,
+    .email-degrowth table.body th.small-offset-6 {
+      margin-left: 50% !important; }
+    .email-degrowth table.body td.small-offset-7,
+    .email-degrowth table.body th.small-offset-7 {
+      margin-left: 58.33333% !important; }
+    .email-degrowth table.body td.small-offset-8,
+    .email-degrowth table.body th.small-offset-8 {
+      margin-left: 66.66667% !important; }
+    .email-degrowth table.body td.small-offset-9,
+    .email-degrowth table.body th.small-offset-9 {
+      margin-left: 75% !important; }
+    .email-degrowth table.body td.small-offset-10,
+    .email-degrowth table.body th.small-offset-10 {
+      margin-left: 83.33333% !important; }
+    .email-degrowth table.body td.small-offset-11,
+    .email-degrowth table.body th.small-offset-11 {
+      margin-left: 91.66667% !important; }
+    .email-degrowth table.body table.columns td.expander,
+    .email-degrowth table.body table.columns th.expander {
+      display: none !important; }
+    .email-degrowth table.body .right-text-pad,
+    .email-degrowth table.body .text-pad-right {
+      padding-left: 10px !important; }
+    .email-degrowth table.body .left-text-pad,
+    .email-degrowth table.body .text-pad-left {
+      padding-right: 10px !important; }
+    .email-degrowth table.menu {
+      width: 100% !important; }
+    .email-degrowth table.menu td,
+    .email-degrowth table.menu th {
+      width: auto !important;
+      display: inline-block !important; }
+    .email-degrowth table.menu.vertical td,
+    .email-degrowth table.menu.vertical th,
+    .email-degrowth table.menu.small-vertical td,
+    .email-degrowth table.menu.small-vertical th {
+      display: block !important; }
+    .email-degrowth table.menu[align="center"] {
+      width: auto !important; }
+    .email-degrowth table.button.small-expand,
+    .email-degrowth table.button.small-expanded {
+      width: 100% !important; }
+    .email-degrowth table.button.small-expand table,
+    .email-degrowth table.button.small-expanded table {
+      width: 100%; }
+    .email-degrowth table.button.small-expand table a,
+    .email-degrowth table.button.small-expanded table a {
+      text-align: center !important;
+      width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important; }
+    .email-degrowth table.button.small-expand center,
+    .email-degrowth table.button.small-expanded center {
+      min-width: 0; } }
+  .email-degrowth table.body th.decidim-bar,
+  .email-degrowth table.body td.decidim-bar {
+    background-color: none;
+    padding: 0; }
+  .email-degrowth .main.container > tbody > tr:first-of-type {
+    background-image: url("/assets/degrowth/background.jpg");
+    background-size: cover; }
+  .email-degrowth table.body {
+    background-color: #dce1ce;
+    margin: 20px 0; }
+  .email-degrowth .decidim-logo {
+    margin-top: 16px; }
+  .email-degrowth .decidim-logo a {
     display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    margin: -3px 0.5rem;
-    background-color: #5f93b1;
-    clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
-  .row.content .email-button__cta a.cta-accept::before {
-    transform: rotate(90deg); }
-  .row.content .email-button__cta a.cta-accept::after {
-    transform: rotate(-90deg); }
-  .row.content .email-button__cta a.cta-accept:hover {
-    color: #a4c1d2; }
-    .row.content .email-button__cta a.cta-accept:hover::before, .row.content .email-button__cta a.cta-accept:hover::after {
-      background-color: #a4c1d2; }
-  .row.content .email-button__cta a.cta-decline::before, .row.content .email-button__cta a.cta-decline::after {
-    content: " ";
-    transition: all ease-in-out 300ms;
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    margin: -3px 0.5rem;
-    background-color: #ee734d;
-    clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
-  .row.content .email-button__cta a.cta-decline::before {
-    transform: rotate(90deg); }
-  .row.content .email-button__cta a.cta-decline::after {
-    transform: rotate(-90deg); }
-  .row.content .email-button__cta a.cta-decline:hover {
-    color: #f7bcaa; }
-    .row.content .email-button__cta a.cta-decline:hover::before, .row.content .email-button__cta a.cta-decline:hover::after {
-      background-color: #f7bcaa; }
-.row.content p {
-  margin-bottom: 1.5rem;
-  line-height: 2em; }
+    height: 30px; }
+  .email-degrowth .cityhall-bar {
+    background-color: #000000; }
+  .email-degrowth .cityhall-logo {
+    width: 150px;
+    margin-top: 16px; }
+  .email-degrowth .footnote,
+  .email-degrowth .headnote {
+    padding-top: 10px;
+    color: #666;
+    font-size: 12px; }
+  .email-degrowth table.container.main {
+    background: #ffffff; }
+  .email-degrowth .custom-button {
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 1;
+    padding: 0.58em 1em;
+    background: red; }
+  .email-degrowth .button--sc {
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-transform: uppercase; }
+    .email-degrowth .button--sc.large {
+      font-size: 1rem; }
+  .email-degrowth table.content.image img {
+    width: 100%; }
+  .email-degrowth th,
+  .email-degrowth td {
+    box-sizing: border-box; }
+  .email-degrowth .row.content .email-button a {
+    color: #ca8612; }
+    .email-degrowth .row.content .email-button a:hover, .email-degrowth .row.content .email-button a:focus {
+      color: #eba223; }
+  .email-degrowth .row.content .email-button__cta a {
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: #f2c069;
+    padding: 1rem;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center; }
+    .email-degrowth .row.content .email-button__cta a:hover {
+      border: 1px solid #000000;
+      color: #000000;
+      background-color: #fae7c7; }
+    .email-degrowth .row.content .email-button__cta a.cta-accept {
+      background-color: #f0d05c; }
+    .email-degrowth .row.content .email-button__cta a.cta-decline {
+      background-color: #ec5840; }
+  .email-degrowth .row.content p {
+    margin-bottom: 1.5rem;
+    line-height: 2em; }
+  .email-degrowth .logo-wrapper {
+    padding: 0;
+    padding-top: 25px; }
+    .email-degrowth .logo-wrapper img {
+      background: #dce1ce;
+      padding: 8px;
+      max-height: 72px; }
 
-.logo-wrapper {
-  padding: 0;
-  padding-top: 25px; }
-  .logo-wrapper img {
-    background: white;
-    padding: 8px;
-    max-height: 72px; }
+.email-citiesforchange {
+  /* Index:
+  1 - Foundation settings
+  2 - Custom styles
+*/
+  /* 1 - Foundation settings --------- */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* stylelint-disable property-no-unknown */
+  /* stylelint-enable property-no-unknown */
+  /* 2 - Custom styles --------- */ }
+  .email-citiesforchange .wrapper {
+    width: 100%; }
+  .email-citiesforchange #outlook a {
+    padding: 0; }
+  .email-citiesforchange body {
+    width: 100% !important;
+    min-width: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  .email-citiesforchange .ExternalClass {
+    width: 100%; }
+  .email-citiesforchange .ExternalClass,
+  .email-citiesforchange .ExternalClass p,
+  .email-citiesforchange .ExternalClass span,
+  .email-citiesforchange .ExternalClass font,
+  .email-citiesforchange .ExternalClass td,
+  .email-citiesforchange .ExternalClass div {
+    line-height: 100%; }
+  .email-citiesforchange #backgroundTable {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    line-height: 100% !important; }
+  .email-citiesforchange img {
+    outline: none;
+    text-decoration: none;
+    -ms-interpolation-mode: bicubic;
+    width: auto;
+    max-width: 100%;
+    clear: both;
+    display: block; }
+  .email-citiesforchange center {
+    width: 100%;
+    min-width: 580px; }
+  .email-citiesforchange a img {
+    border: none; }
+  .email-citiesforchange p {
+    margin: 0 0 0 10px; }
+  .email-citiesforchange table {
+    border-spacing: 0;
+    border-collapse: collapse; }
+  .email-citiesforchange td {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important; }
+  .email-citiesforchange table,
+  .email-citiesforchange tr,
+  .email-citiesforchange td {
+    padding: 0;
+    vertical-align: top;
+    text-align: left; }
+  @media only screen {
+    .email-citiesforchange html {
+      min-height: 100%;
+      background: #f3f3f3; } }
+  .email-citiesforchange table.body {
+    background: #f3f3f3;
+    height: 100%;
+    width: 100%; }
+  .email-citiesforchange table.container {
+    width: 580px;
+    margin: 0 auto;
+    text-align: inherit; }
+  .email-citiesforchange table.row {
+    padding: 0;
+    width: 100%;
+    position: relative; }
+  .email-citiesforchange table.spacer {
+    width: 100%; }
+  .email-citiesforchange table.spacer td {
+    mso-line-height-rule: exactly; }
+  .email-citiesforchange table.container table.row {
+    display: table; }
+  .email-citiesforchange td.columns,
+  .email-citiesforchange td.column,
+  .email-citiesforchange th.columns,
+  .email-citiesforchange th.column {
+    margin: 0 auto;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px; }
+  .email-citiesforchange td.columns .column,
+  .email-citiesforchange td.columns .columns,
+  .email-citiesforchange td.column .column,
+  .email-citiesforchange td.column .columns,
+  .email-citiesforchange th.columns .column,
+  .email-citiesforchange th.columns .columns,
+  .email-citiesforchange th.column .column,
+  .email-citiesforchange th.column .columns {
+    padding-left: 0 !important;
+    padding-right: 0 !important; }
+  .email-citiesforchange td.columns .column center,
+  .email-citiesforchange td.columns .columns center,
+  .email-citiesforchange td.column .column center,
+  .email-citiesforchange td.column .columns center,
+  .email-citiesforchange th.columns .column center,
+  .email-citiesforchange th.columns .columns center,
+  .email-citiesforchange th.column .column center,
+  .email-citiesforchange th.column .columns center {
+    min-width: none !important; }
+  .email-citiesforchange td.columns.last,
+  .email-citiesforchange td.column.last,
+  .email-citiesforchange th.columns.last,
+  .email-citiesforchange th.column.last {
+    padding-right: 16px; }
+  .email-citiesforchange td.columns table:not(.button),
+  .email-citiesforchange td.column table:not(.button),
+  .email-citiesforchange th.columns table:not(.button),
+  .email-citiesforchange th.column table:not(.button) {
+    width: 100%; }
+  .email-citiesforchange td.large-1,
+  .email-citiesforchange th.large-1 {
+    width: 32.33333px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-1.first,
+  .email-citiesforchange th.large-1.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-1.last,
+  .email-citiesforchange th.large-1.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-1,
+  .email-citiesforchange .collapse > tbody > tr > th.large-1 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 48.33333px; }
+  .email-citiesforchange .collapse td.large-1.first,
+  .email-citiesforchange .collapse th.large-1.first,
+  .email-citiesforchange .collapse td.large-1.last,
+  .email-citiesforchange .collapse th.large-1.last {
+    width: 56.33333px; }
+  .email-citiesforchange td.large-1 center,
+  .email-citiesforchange th.large-1 center {
+    min-width: 0.33333px; }
+  .email-citiesforchange .body .columns td.large-1,
+  .email-citiesforchange .body .column td.large-1,
+  .email-citiesforchange .body .columns th.large-1,
+  .email-citiesforchange .body .column th.large-1 {
+    width: 8.33333%; }
+  .email-citiesforchange td.large-2,
+  .email-citiesforchange th.large-2 {
+    width: 80.66667px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-2.first,
+  .email-citiesforchange th.large-2.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-2.last,
+  .email-citiesforchange th.large-2.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-2,
+  .email-citiesforchange .collapse > tbody > tr > th.large-2 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 96.66667px; }
+  .email-citiesforchange .collapse td.large-2.first,
+  .email-citiesforchange .collapse th.large-2.first,
+  .email-citiesforchange .collapse td.large-2.last,
+  .email-citiesforchange .collapse th.large-2.last {
+    width: 104.66667px; }
+  .email-citiesforchange td.large-2 center,
+  .email-citiesforchange th.large-2 center {
+    min-width: 48.66667px; }
+  .email-citiesforchange .body .columns td.large-2,
+  .email-citiesforchange .body .column td.large-2,
+  .email-citiesforchange .body .columns th.large-2,
+  .email-citiesforchange .body .column th.large-2 {
+    width: 16.66667%; }
+  .email-citiesforchange td.large-3,
+  .email-citiesforchange th.large-3 {
+    width: 129px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-3.first,
+  .email-citiesforchange th.large-3.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-3.last,
+  .email-citiesforchange th.large-3.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-3,
+  .email-citiesforchange .collapse > tbody > tr > th.large-3 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 145px; }
+  .email-citiesforchange .collapse td.large-3.first,
+  .email-citiesforchange .collapse th.large-3.first,
+  .email-citiesforchange .collapse td.large-3.last,
+  .email-citiesforchange .collapse th.large-3.last {
+    width: 153px; }
+  .email-citiesforchange td.large-3 center,
+  .email-citiesforchange th.large-3 center {
+    min-width: 97px; }
+  .email-citiesforchange .body .columns td.large-3,
+  .email-citiesforchange .body .column td.large-3,
+  .email-citiesforchange .body .columns th.large-3,
+  .email-citiesforchange .body .column th.large-3 {
+    width: 25%; }
+  .email-citiesforchange td.large-4,
+  .email-citiesforchange th.large-4 {
+    width: 177.33333px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-4.first,
+  .email-citiesforchange th.large-4.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-4.last,
+  .email-citiesforchange th.large-4.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-4,
+  .email-citiesforchange .collapse > tbody > tr > th.large-4 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 193.33333px; }
+  .email-citiesforchange .collapse td.large-4.first,
+  .email-citiesforchange .collapse th.large-4.first,
+  .email-citiesforchange .collapse td.large-4.last,
+  .email-citiesforchange .collapse th.large-4.last {
+    width: 201.33333px; }
+  .email-citiesforchange td.large-4 center,
+  .email-citiesforchange th.large-4 center {
+    min-width: 145.33333px; }
+  .email-citiesforchange .body .columns td.large-4,
+  .email-citiesforchange .body .column td.large-4,
+  .email-citiesforchange .body .columns th.large-4,
+  .email-citiesforchange .body .column th.large-4 {
+    width: 33.33333%; }
+  .email-citiesforchange td.large-5,
+  .email-citiesforchange th.large-5 {
+    width: 225.66667px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-5.first,
+  .email-citiesforchange th.large-5.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-5.last,
+  .email-citiesforchange th.large-5.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-5,
+  .email-citiesforchange .collapse > tbody > tr > th.large-5 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 241.66667px; }
+  .email-citiesforchange .collapse td.large-5.first,
+  .email-citiesforchange .collapse th.large-5.first,
+  .email-citiesforchange .collapse td.large-5.last,
+  .email-citiesforchange .collapse th.large-5.last {
+    width: 249.66667px; }
+  .email-citiesforchange td.large-5 center,
+  .email-citiesforchange th.large-5 center {
+    min-width: 193.66667px; }
+  .email-citiesforchange .body .columns td.large-5,
+  .email-citiesforchange .body .column td.large-5,
+  .email-citiesforchange .body .columns th.large-5,
+  .email-citiesforchange .body .column th.large-5 {
+    width: 41.66667%; }
+  .email-citiesforchange td.large-6,
+  .email-citiesforchange th.large-6 {
+    width: 274px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-6.first,
+  .email-citiesforchange th.large-6.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-6.last,
+  .email-citiesforchange th.large-6.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-6,
+  .email-citiesforchange .collapse > tbody > tr > th.large-6 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 290px; }
+  .email-citiesforchange .collapse td.large-6.first,
+  .email-citiesforchange .collapse th.large-6.first,
+  .email-citiesforchange .collapse td.large-6.last,
+  .email-citiesforchange .collapse th.large-6.last {
+    width: 298px; }
+  .email-citiesforchange td.large-6 center,
+  .email-citiesforchange th.large-6 center {
+    min-width: 242px; }
+  .email-citiesforchange .body .columns td.large-6,
+  .email-citiesforchange .body .column td.large-6,
+  .email-citiesforchange .body .columns th.large-6,
+  .email-citiesforchange .body .column th.large-6 {
+    width: 50%; }
+  .email-citiesforchange td.large-7,
+  .email-citiesforchange th.large-7 {
+    width: 322.33333px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-7.first,
+  .email-citiesforchange th.large-7.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-7.last,
+  .email-citiesforchange th.large-7.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-7,
+  .email-citiesforchange .collapse > tbody > tr > th.large-7 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 338.33333px; }
+  .email-citiesforchange .collapse td.large-7.first,
+  .email-citiesforchange .collapse th.large-7.first,
+  .email-citiesforchange .collapse td.large-7.last,
+  .email-citiesforchange .collapse th.large-7.last {
+    width: 346.33333px; }
+  .email-citiesforchange td.large-7 center,
+  .email-citiesforchange th.large-7 center {
+    min-width: 290.33333px; }
+  .email-citiesforchange .body .columns td.large-7,
+  .email-citiesforchange .body .column td.large-7,
+  .email-citiesforchange .body .columns th.large-7,
+  .email-citiesforchange .body .column th.large-7 {
+    width: 58.33333%; }
+  .email-citiesforchange td.large-8,
+  .email-citiesforchange th.large-8 {
+    width: 370.66667px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-8.first,
+  .email-citiesforchange th.large-8.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-8.last,
+  .email-citiesforchange th.large-8.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-8,
+  .email-citiesforchange .collapse > tbody > tr > th.large-8 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 386.66667px; }
+  .email-citiesforchange .collapse td.large-8.first,
+  .email-citiesforchange .collapse th.large-8.first,
+  .email-citiesforchange .collapse td.large-8.last,
+  .email-citiesforchange .collapse th.large-8.last {
+    width: 394.66667px; }
+  .email-citiesforchange td.large-8 center,
+  .email-citiesforchange th.large-8 center {
+    min-width: 338.66667px; }
+  .email-citiesforchange .body .columns td.large-8,
+  .email-citiesforchange .body .column td.large-8,
+  .email-citiesforchange .body .columns th.large-8,
+  .email-citiesforchange .body .column th.large-8 {
+    width: 66.66667%; }
+  .email-citiesforchange td.large-9,
+  .email-citiesforchange th.large-9 {
+    width: 419px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-9.first,
+  .email-citiesforchange th.large-9.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-9.last,
+  .email-citiesforchange th.large-9.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-9,
+  .email-citiesforchange .collapse > tbody > tr > th.large-9 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 435px; }
+  .email-citiesforchange .collapse td.large-9.first,
+  .email-citiesforchange .collapse th.large-9.first,
+  .email-citiesforchange .collapse td.large-9.last,
+  .email-citiesforchange .collapse th.large-9.last {
+    width: 443px; }
+  .email-citiesforchange td.large-9 center,
+  .email-citiesforchange th.large-9 center {
+    min-width: 387px; }
+  .email-citiesforchange .body .columns td.large-9,
+  .email-citiesforchange .body .column td.large-9,
+  .email-citiesforchange .body .columns th.large-9,
+  .email-citiesforchange .body .column th.large-9 {
+    width: 75%; }
+  .email-citiesforchange td.large-10,
+  .email-citiesforchange th.large-10 {
+    width: 467.33333px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-10.first,
+  .email-citiesforchange th.large-10.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-10.last,
+  .email-citiesforchange th.large-10.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-10,
+  .email-citiesforchange .collapse > tbody > tr > th.large-10 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 483.33333px; }
+  .email-citiesforchange .collapse td.large-10.first,
+  .email-citiesforchange .collapse th.large-10.first,
+  .email-citiesforchange .collapse td.large-10.last,
+  .email-citiesforchange .collapse th.large-10.last {
+    width: 491.33333px; }
+  .email-citiesforchange td.large-10 center,
+  .email-citiesforchange th.large-10 center {
+    min-width: 435.33333px; }
+  .email-citiesforchange .body .columns td.large-10,
+  .email-citiesforchange .body .column td.large-10,
+  .email-citiesforchange .body .columns th.large-10,
+  .email-citiesforchange .body .column th.large-10 {
+    width: 83.33333%; }
+  .email-citiesforchange td.large-11,
+  .email-citiesforchange th.large-11 {
+    width: 515.66667px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-11.first,
+  .email-citiesforchange th.large-11.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-11.last,
+  .email-citiesforchange th.large-11.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-11,
+  .email-citiesforchange .collapse > tbody > tr > th.large-11 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 531.66667px; }
+  .email-citiesforchange .collapse td.large-11.first,
+  .email-citiesforchange .collapse th.large-11.first,
+  .email-citiesforchange .collapse td.large-11.last,
+  .email-citiesforchange .collapse th.large-11.last {
+    width: 539.66667px; }
+  .email-citiesforchange td.large-11 center,
+  .email-citiesforchange th.large-11 center {
+    min-width: 483.66667px; }
+  .email-citiesforchange .body .columns td.large-11,
+  .email-citiesforchange .body .column td.large-11,
+  .email-citiesforchange .body .columns th.large-11,
+  .email-citiesforchange .body .column th.large-11 {
+    width: 91.66667%; }
+  .email-citiesforchange td.large-12,
+  .email-citiesforchange th.large-12 {
+    width: 564px;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .email-citiesforchange td.large-12.first,
+  .email-citiesforchange th.large-12.first {
+    padding-left: 16px; }
+  .email-citiesforchange td.large-12.last,
+  .email-citiesforchange th.large-12.last {
+    padding-right: 16px; }
+  .email-citiesforchange .collapse > tbody > tr > td.large-12,
+  .email-citiesforchange .collapse > tbody > tr > th.large-12 {
+    padding-right: 0;
+    padding-left: 0;
+    width: 580px; }
+  .email-citiesforchange .collapse td.large-12.first,
+  .email-citiesforchange .collapse th.large-12.first,
+  .email-citiesforchange .collapse td.large-12.last,
+  .email-citiesforchange .collapse th.large-12.last {
+    width: 588px; }
+  .email-citiesforchange td.large-12 center,
+  .email-citiesforchange th.large-12 center {
+    min-width: 532px; }
+  .email-citiesforchange .body .columns td.large-12,
+  .email-citiesforchange .body .column td.large-12,
+  .email-citiesforchange .body .columns th.large-12,
+  .email-citiesforchange .body .column th.large-12 {
+    width: 100%; }
+  .email-citiesforchange td.large-offset-1,
+  .email-citiesforchange td.large-offset-1.first,
+  .email-citiesforchange td.large-offset-1.last,
+  .email-citiesforchange th.large-offset-1,
+  .email-citiesforchange th.large-offset-1.first,
+  .email-citiesforchange th.large-offset-1.last {
+    padding-left: 64.33333px; }
+  .email-citiesforchange td.large-offset-2,
+  .email-citiesforchange td.large-offset-2.first,
+  .email-citiesforchange td.large-offset-2.last,
+  .email-citiesforchange th.large-offset-2,
+  .email-citiesforchange th.large-offset-2.first,
+  .email-citiesforchange th.large-offset-2.last {
+    padding-left: 112.66667px; }
+  .email-citiesforchange td.large-offset-3,
+  .email-citiesforchange td.large-offset-3.first,
+  .email-citiesforchange td.large-offset-3.last,
+  .email-citiesforchange th.large-offset-3,
+  .email-citiesforchange th.large-offset-3.first,
+  .email-citiesforchange th.large-offset-3.last {
+    padding-left: 161px; }
+  .email-citiesforchange td.large-offset-4,
+  .email-citiesforchange td.large-offset-4.first,
+  .email-citiesforchange td.large-offset-4.last,
+  .email-citiesforchange th.large-offset-4,
+  .email-citiesforchange th.large-offset-4.first,
+  .email-citiesforchange th.large-offset-4.last {
+    padding-left: 209.33333px; }
+  .email-citiesforchange td.large-offset-5,
+  .email-citiesforchange td.large-offset-5.first,
+  .email-citiesforchange td.large-offset-5.last,
+  .email-citiesforchange th.large-offset-5,
+  .email-citiesforchange th.large-offset-5.first,
+  .email-citiesforchange th.large-offset-5.last {
+    padding-left: 257.66667px; }
+  .email-citiesforchange td.large-offset-6,
+  .email-citiesforchange td.large-offset-6.first,
+  .email-citiesforchange td.large-offset-6.last,
+  .email-citiesforchange th.large-offset-6,
+  .email-citiesforchange th.large-offset-6.first,
+  .email-citiesforchange th.large-offset-6.last {
+    padding-left: 306px; }
+  .email-citiesforchange td.large-offset-7,
+  .email-citiesforchange td.large-offset-7.first,
+  .email-citiesforchange td.large-offset-7.last,
+  .email-citiesforchange th.large-offset-7,
+  .email-citiesforchange th.large-offset-7.first,
+  .email-citiesforchange th.large-offset-7.last {
+    padding-left: 354.33333px; }
+  .email-citiesforchange td.large-offset-8,
+  .email-citiesforchange td.large-offset-8.first,
+  .email-citiesforchange td.large-offset-8.last,
+  .email-citiesforchange th.large-offset-8,
+  .email-citiesforchange th.large-offset-8.first,
+  .email-citiesforchange th.large-offset-8.last {
+    padding-left: 402.66667px; }
+  .email-citiesforchange td.large-offset-9,
+  .email-citiesforchange td.large-offset-9.first,
+  .email-citiesforchange td.large-offset-9.last,
+  .email-citiesforchange th.large-offset-9,
+  .email-citiesforchange th.large-offset-9.first,
+  .email-citiesforchange th.large-offset-9.last {
+    padding-left: 451px; }
+  .email-citiesforchange td.large-offset-10,
+  .email-citiesforchange td.large-offset-10.first,
+  .email-citiesforchange td.large-offset-10.last,
+  .email-citiesforchange th.large-offset-10,
+  .email-citiesforchange th.large-offset-10.first,
+  .email-citiesforchange th.large-offset-10.last {
+    padding-left: 499.33333px; }
+  .email-citiesforchange td.large-offset-11,
+  .email-citiesforchange td.large-offset-11.first,
+  .email-citiesforchange td.large-offset-11.last,
+  .email-citiesforchange th.large-offset-11,
+  .email-citiesforchange th.large-offset-11.first,
+  .email-citiesforchange th.large-offset-11.last {
+    padding-left: 547.66667px; }
+  .email-citiesforchange td.expander,
+  .email-citiesforchange th.expander {
+    visibility: hidden;
+    width: 0;
+    padding: 0 !important; }
+  .email-citiesforchange table.container.radius {
+    border-radius: 0;
+    border-collapse: separate; }
+  .email-citiesforchange .block-grid {
+    width: 100%;
+    max-width: 580px; }
+  .email-citiesforchange .block-grid td {
+    display: inline-block;
+    padding: 8px; }
+  .email-citiesforchange .up-2 td {
+    width: 274px !important; }
+  .email-citiesforchange .up-3 td {
+    width: 177px !important; }
+  .email-citiesforchange .up-4 td {
+    width: 129px !important; }
+  .email-citiesforchange .up-5 td {
+    width: 100px !important; }
+  .email-citiesforchange .up-6 td {
+    width: 80px !important; }
+  .email-citiesforchange .up-7 td {
+    width: 66px !important; }
+  .email-citiesforchange .up-8 td {
+    width: 56px !important; }
+  .email-citiesforchange table.text-center,
+  .email-citiesforchange th.text-center,
+  .email-citiesforchange td.text-center,
+  .email-citiesforchange h1.text-center,
+  .email-citiesforchange h2.text-center,
+  .email-citiesforchange h3.text-center,
+  .email-citiesforchange h4.text-center,
+  .email-citiesforchange h5.text-center,
+  .email-citiesforchange h6.text-center,
+  .email-citiesforchange p.text-center,
+  .email-citiesforchange span.text-center {
+    text-align: center; }
+  .email-citiesforchange table.text-left,
+  .email-citiesforchange th.text-left,
+  .email-citiesforchange td.text-left,
+  .email-citiesforchange h1.text-left,
+  .email-citiesforchange h2.text-left,
+  .email-citiesforchange h3.text-left,
+  .email-citiesforchange h4.text-left,
+  .email-citiesforchange h5.text-left,
+  .email-citiesforchange h6.text-left,
+  .email-citiesforchange p.text-left,
+  .email-citiesforchange span.text-left {
+    text-align: left; }
+  .email-citiesforchange table.text-right,
+  .email-citiesforchange th.text-right,
+  .email-citiesforchange td.text-right,
+  .email-citiesforchange h1.text-right,
+  .email-citiesforchange h2.text-right,
+  .email-citiesforchange h3.text-right,
+  .email-citiesforchange h4.text-right,
+  .email-citiesforchange h5.text-right,
+  .email-citiesforchange h6.text-right,
+  .email-citiesforchange p.text-right,
+  .email-citiesforchange span.text-right {
+    text-align: right; }
+  .email-citiesforchange span.text-center {
+    display: block;
+    width: 100%;
+    text-align: center; }
+  @media only screen and (max-width: 596px) {
+    .email-citiesforchange .small-float-center {
+      margin: 0 auto !important;
+      float: none !important;
+      text-align: center !important; }
+    .email-citiesforchange .small-text-center {
+      text-align: center !important; }
+    .email-citiesforchange .small-text-left {
+      text-align: left !important; }
+    .email-citiesforchange .small-text-right {
+      text-align: right !important; } }
+  .email-citiesforchange img.float-left {
+    float: left;
+    text-align: left; }
+  .email-citiesforchange img.float-right {
+    float: right;
+    text-align: right; }
+  .email-citiesforchange img.float-center,
+  .email-citiesforchange img.text-center {
+    margin: 0 auto;
+    float: none;
+    text-align: center; }
+  .email-citiesforchange table.float-center,
+  .email-citiesforchange td.float-center,
+  .email-citiesforchange th.float-center {
+    margin: 0 auto;
+    float: none;
+    text-align: center; }
+  .email-citiesforchange th.float-right {
+    margin: 0 auto;
+    float: right;
+    text-align: center; }
+  .email-citiesforchange .hide-for-large {
+    display: none !important;
+    mso-hide: all;
+    overflow: hidden;
+    max-height: 0;
+    font-size: 0;
+    width: 0;
+    line-height: 0; }
+  @media only screen and (max-width: 596px) {
+    .email-citiesforchange .hide-for-large {
+      display: block !important;
+      width: auto !important;
+      overflow: visible !important;
+      max-height: none !important;
+      font-size: inherit !important;
+      line-height: inherit !important; } }
+  .email-citiesforchange table.body table.container .hide-for-large * {
+    mso-hide: all; }
+  @media only screen and (max-width: 596px) {
+    .email-citiesforchange table.body table.container .hide-for-large,
+    .email-citiesforchange table.body table.container .row.hide-for-large {
+      display: table !important;
+      width: 100% !important; } }
+  @media only screen and (max-width: 596px) {
+    .email-citiesforchange table.body table.container .callout-inner.hide-for-large {
+      display: table-cell !important;
+      width: 100% !important; } }
+  @media only screen and (max-width: 596px) {
+    .email-citiesforchange table.body table.container .show-for-large {
+      display: none !important;
+      width: 0;
+      mso-hide: all;
+      overflow: hidden; } }
+  .email-citiesforchange body,
+  .email-citiesforchange table.body,
+  .email-citiesforchange h1,
+  .email-citiesforchange h2,
+  .email-citiesforchange h3,
+  .email-citiesforchange h4,
+  .email-citiesforchange h5,
+  .email-citiesforchange h6,
+  .email-citiesforchange p,
+  .email-citiesforchange td,
+  .email-citiesforchange th,
+  .email-citiesforchange a {
+    color: #0a0a0a;
+    font-family: "Museo Sans", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    line-height: 1.3; }
+  .email-citiesforchange h1,
+  .email-citiesforchange h2,
+  .email-citiesforchange h3,
+  .email-citiesforchange h4,
+  .email-citiesforchange h5,
+  .email-citiesforchange h6 {
+    color: inherit;
+    word-wrap: normal;
+    font-family: "Museo Sans", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    margin-bottom: 10px; }
+  .email-citiesforchange h1 {
+    font-size: 34px; }
+  .email-citiesforchange h2 {
+    font-size: 30px; }
+  .email-citiesforchange h3 {
+    font-size: 28px; }
+  .email-citiesforchange h4 {
+    font-size: 24px; }
+  .email-citiesforchange h5 {
+    font-size: 20px; }
+  .email-citiesforchange h6 {
+    font-size: 18px; }
+  .email-citiesforchange body,
+  .email-citiesforchange table.body,
+  .email-citiesforchange p,
+  .email-citiesforchange td,
+  .email-citiesforchange th {
+    font-size: 16px;
+    line-height: 1.3; }
+  .email-citiesforchange p {
+    margin-bottom: 10px; }
+  .email-citiesforchange p.lead {
+    font-size: 20px;
+    line-height: 1.6; }
+  .email-citiesforchange p.subheader {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-weight: normal;
+    line-height: 1.4;
+    color: #8a8a8a; }
+  .email-citiesforchange small {
+    font-size: 80%;
+    color: #cacaca; }
+  .email-citiesforchange a {
+    color: #5f93b1;
+    text-decoration: none; }
+  .email-citiesforchange a:hover {
+    color: var(--secondary); }
+  .email-citiesforchange a:active {
+    color: #147dc2; }
+  .email-citiesforchange a:visited {
+    color: #5f93b1; }
+  .email-citiesforchange h1 a,
+  .email-citiesforchange h1 a:visited,
+  .email-citiesforchange h2 a,
+  .email-citiesforchange h2 a:visited,
+  .email-citiesforchange h3 a,
+  .email-citiesforchange h3 a:visited,
+  .email-citiesforchange h4 a,
+  .email-citiesforchange h4 a:visited,
+  .email-citiesforchange h5 a,
+  .email-citiesforchange h5 a:visited,
+  .email-citiesforchange h6 a,
+  .email-citiesforchange h6 a:visited {
+    color: #5f93b1; }
+  .email-citiesforchange pre {
+    background: #f3f3f3;
+    margin: 30px 0; }
+  .email-citiesforchange pre code {
+    color: #cacaca; }
+  .email-citiesforchange pre code span.callout {
+    color: #8a8a8a;
+    font-weight: bold; }
+  .email-citiesforchange pre code span.callout-strong {
+    color: #ff6908;
+    font-weight: bold; }
+  .email-citiesforchange table.hr {
+    width: 100%; }
+  .email-citiesforchange table.hr th {
+    height: 0;
+    max-width: 580px;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #0a0a0a;
+    border-left: 0;
+    margin: 20px auto;
+    clear: both; }
+  .email-citiesforchange .stat {
+    font-size: 40px;
+    line-height: 1; }
+  .email-citiesforchange p + .stat {
+    margin-top: -16px; }
+  .email-citiesforchange span.preheader {
+    display: none !important;
+    visibility: hidden;
+    mso-hide: all !important;
+    font-size: 1px;
+    color: #f3f3f3;
+    line-height: 1px;
+    max-height: 0;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden; }
+  .email-citiesforchange table.button {
+    width: auto;
+    margin: 0 0 16px; }
+  .email-citiesforchange table.button table td {
+    text-align: left;
+    color: #fefefe; }
+  .email-citiesforchange table.button table td a {
+    font-family: "Museo Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #fefefe;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 0 solid #e7be41;
+    border-radius: 3px; }
+  .email-citiesforchange table.button.radius table td {
+    border-radius: 4px;
+    border: none; }
+  .email-citiesforchange table.button.rounded table td {
+    border-radius: 500px;
+    border: none; }
+  .email-citiesforchange table.button:hover table tr td a,
+  .email-citiesforchange table.button:active table tr td a,
+  .email-citiesforchange table.button table tr td a:visited,
+  .email-citiesforchange table.button.tiny:hover table tr td a,
+  .email-citiesforchange table.button.tiny:active table tr td a,
+  .email-citiesforchange table.button.tiny table tr td a:visited,
+  .email-citiesforchange table.button.small:hover table tr td a,
+  .email-citiesforchange table.button.small:active table tr td a,
+  .email-citiesforchange table.button.small table tr td a:visited,
+  .email-citiesforchange table.button.large:hover table tr td a,
+  .email-citiesforchange table.button.large:active table tr td a,
+  .email-citiesforchange table.button.large table tr td a:visited {
+    color: #fefefe; }
+  .email-citiesforchange table.button.tiny table td,
+  .email-citiesforchange table.button.tiny table a {
+    padding: 4px 8px; }
+  .email-citiesforchange table.button.tiny table a {
+    font-size: 10px;
+    font-weight: normal; }
+  .email-citiesforchange table.button.small table td,
+  .email-citiesforchange table.button.small table a {
+    padding: 5px 10px;
+    font-size: 12px; }
+  .email-citiesforchange table.button.large table a {
+    padding: 10px 20px;
+    font-size: 20px; }
+  .email-citiesforchange table.button.expand,
+  .email-citiesforchange table.button.expanded {
+    width: 100%; }
+  .email-citiesforchange table.button.expand > tr > td,
+  .email-citiesforchange table.button.expanded > tr > td {
+    text-align: center; }
+  .email-citiesforchange table.button.expand table,
+  .email-citiesforchange table.button.expanded table {
+    width: auto;
+    margin: auto; }
+  .email-citiesforchange table.button.expand table > tr > td,
+  .email-citiesforchange table.button.expanded table > tr > td {
+    text-align: center; }
+  .email-citiesforchange table.button.expand table a,
+  .email-citiesforchange table.button.expanded table a {
+    text-align: center;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0; }
+  .email-citiesforchange table.button.expand center,
+  .email-citiesforchange table.button.expanded center {
+    min-width: 0; }
+  .email-citiesforchange table.button:hover table td,
+  .email-citiesforchange table.button:visited table td,
+  .email-citiesforchange table.button:active table td {
+    color: #fefefe; }
+  .email-citiesforchange table.button:hover table a,
+  .email-citiesforchange table.button:visited table a,
+  .email-citiesforchange table.button:active table a {
+    border: 0 solid #147dc2; }
+  .email-citiesforchange table.button.secondary table td {
+    background: #777;
+    color: #fefefe;
+    border: 0 solid #777; }
+  .email-citiesforchange table.button.secondary table a {
+    color: #fefefe;
+    border: 0 solid #777; }
+  .email-citiesforchange table.button.secondary:hover table td {
+    background: #919191;
+    color: #fefefe; }
+  .email-citiesforchange table.button.secondary:hover table a {
+    border: 0 solid #919191; }
+  .email-citiesforchange table.button.secondary:hover table td a {
+    color: #fefefe; }
+  .email-citiesforchange table.button.secondary:active table td a {
+    color: #fefefe; }
+  .email-citiesforchange table.button.secondary table td a:visited {
+    color: #fefefe; }
+  .email-citiesforchange table.button.success table td {
+    background: #00a767;
+    border: 0 solid #00a767; }
+  .email-citiesforchange table.button.success table a {
+    border: 0 solid #00a767; }
+  .email-citiesforchange table.button.success:hover table td {
+    background: #00da86; }
+  .email-citiesforchange table.button.success:hover table a {
+    border: 0 solid #00da86; }
+  .email-citiesforchange table.button.alert table td {
+    background: #e30613;
+    border: 0 solid #e30613; }
+  .email-citiesforchange table.button.alert table a {
+    border: 0 solid #e30613; }
+  .email-citiesforchange table.button.alert:hover table td {
+    background: #f9232f; }
+  .email-citiesforchange table.button.alert:hover table a {
+    border: 0 solid #f9232f; }
+  .email-citiesforchange table.button.warning table td {
+    background: #ee734d;
+    border: 0 solid #ee734d; }
+  .email-citiesforchange table.button.warning table a {
+    border: 0 solid #ee734d; }
+  .email-citiesforchange table.button.warning:hover table td {
+    background: #f2987c; }
+  .email-citiesforchange table.button.warning:hover table a {
+    border: 0 solid #f2987c; }
+  .email-citiesforchange table.callout {
+    margin-bottom: 16px; }
+  .email-citiesforchange th.callout-inner {
+    width: 100%;
+    border: 1px solid #cbcbcb;
+    padding: 10px;
+    background: #fefefe; }
+  .email-citiesforchange th.callout-inner.primary {
+    background: #def0fc;
+    border: 1px solid #444;
+    color: #0a0a0a; }
+  .email-citiesforchange th.callout-inner.secondary {
+    background: #ebebeb;
+    border: 1px solid #444;
+    color: #0a0a0a; }
+  .email-citiesforchange th.callout-inner.success {
+    background: #41ffb6;
+    border: 1px solid #00a767;
+    color: #fefefe; }
+  .email-citiesforchange th.callout-inner.warning {
+    background: #fbe1d9;
+    border: 1px solid #ee734d;
+    color: #fefefe; }
+  .email-citiesforchange th.callout-inner.alert {
+    background: #fc868d;
+    border: 1px solid #e30613;
+    color: #fefefe; }
+  .email-citiesforchange .thumbnail {
+    border: solid 4px #fefefe;
+    box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
+    display: inline-block;
+    line-height: 0;
+    max-width: 100%;
+    transition: box-shadow 200ms ease-out;
+    border-radius: 3px;
+    margin-bottom: 16px; }
+  .email-citiesforchange .thumbnail:hover,
+  .email-citiesforchange .thumbnail:focus {
+    box-shadow: 0 0 6px 1px rgba(33, 153, 232, 0.5); }
+  .email-citiesforchange table.menu {
+    width: 580px; }
+  .email-citiesforchange table.menu td.menu-item,
+  .email-citiesforchange table.menu th.menu-item {
+    padding: 10px;
+    padding-right: 10px; }
+  .email-citiesforchange table.menu td.menu-item a,
+  .email-citiesforchange table.menu th.menu-item a {
+    color: #5f93b1; }
+  .email-citiesforchange table.menu.vertical td.menu-item,
+  .email-citiesforchange table.menu.vertical th.menu-item {
+    padding: 10px;
+    padding-right: 0;
+    display: block; }
+  .email-citiesforchange table.menu.vertical td.menu-item a,
+  .email-citiesforchange table.menu.vertical th.menu-item a {
+    width: 100%; }
+  .email-citiesforchange table.menu.vertical td.menu-item table.menu.vertical td.menu-item,
+  .email-citiesforchange table.menu.vertical td.menu-item table.menu.vertical th.menu-item,
+  .email-citiesforchange table.menu.vertical th.menu-item table.menu.vertical td.menu-item,
+  .email-citiesforchange table.menu.vertical th.menu-item table.menu.vertical th.menu-item {
+    padding-left: 10px; }
+  .email-citiesforchange table.menu.text-center a {
+    text-align: center; }
+  .email-citiesforchange .menu[align="center"] {
+    width: auto !important; }
+  .email-citiesforchange body.outlook p {
+    display: inline !important; }
+  @media only screen and (max-width: 596px) {
+    .email-citiesforchange table.body img {
+      width: auto;
+      height: auto; }
+    .email-citiesforchange table.body center {
+      min-width: 0 !important; }
+    .email-citiesforchange table.body .container {
+      width: 95% !important; }
+    .email-citiesforchange table.body .columns,
+    .email-citiesforchange table.body .column {
+      height: auto !important;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-left: 16px !important;
+      padding-right: 16px !important; }
+    .email-citiesforchange table.body .columns .column,
+    .email-citiesforchange table.body .columns .columns,
+    .email-citiesforchange table.body .column .column,
+    .email-citiesforchange table.body .column .columns {
+      padding-left: 0 !important;
+      padding-right: 0 !important; }
+    .email-citiesforchange table.body .collapse .columns,
+    .email-citiesforchange table.body .collapse .column {
+      padding-left: 0 !important;
+      padding-right: 0 !important; }
+    .email-citiesforchange td.small-1,
+    .email-citiesforchange th.small-1 {
+      display: inline-block !important;
+      width: 8.33333% !important; }
+    .email-citiesforchange td.small-2,
+    .email-citiesforchange th.small-2 {
+      display: inline-block !important;
+      width: 16.66667% !important; }
+    .email-citiesforchange td.small-3,
+    .email-citiesforchange th.small-3 {
+      display: inline-block !important;
+      width: 25% !important; }
+    .email-citiesforchange td.small-4,
+    .email-citiesforchange th.small-4 {
+      display: inline-block !important;
+      width: 33.33333% !important; }
+    .email-citiesforchange td.small-5,
+    .email-citiesforchange th.small-5 {
+      display: inline-block !important;
+      width: 41.66667% !important; }
+    .email-citiesforchange td.small-6,
+    .email-citiesforchange th.small-6 {
+      display: inline-block !important;
+      width: 50% !important; }
+    .email-citiesforchange td.small-7,
+    .email-citiesforchange th.small-7 {
+      display: inline-block !important;
+      width: 58.33333% !important; }
+    .email-citiesforchange td.small-8,
+    .email-citiesforchange th.small-8 {
+      display: inline-block !important;
+      width: 66.66667% !important; }
+    .email-citiesforchange td.small-9,
+    .email-citiesforchange th.small-9 {
+      display: inline-block !important;
+      width: 75% !important; }
+    .email-citiesforchange td.small-10,
+    .email-citiesforchange th.small-10 {
+      display: inline-block !important;
+      width: 83.33333% !important; }
+    .email-citiesforchange td.small-11,
+    .email-citiesforchange th.small-11 {
+      display: inline-block !important;
+      width: 91.66667% !important; }
+    .email-citiesforchange td.small-12,
+    .email-citiesforchange th.small-12 {
+      display: inline-block !important;
+      width: 100% !important; }
+    .email-citiesforchange .columns td.small-12,
+    .email-citiesforchange .column td.small-12,
+    .email-citiesforchange .columns th.small-12,
+    .email-citiesforchange .column th.small-12 {
+      display: block !important;
+      width: 100% !important; }
+    .email-citiesforchange table.body td.small-offset-1,
+    .email-citiesforchange table.body th.small-offset-1 {
+      margin-left: 8.33333% !important; }
+    .email-citiesforchange table.body td.small-offset-2,
+    .email-citiesforchange table.body th.small-offset-2 {
+      margin-left: 16.66667% !important; }
+    .email-citiesforchange table.body td.small-offset-3,
+    .email-citiesforchange table.body th.small-offset-3 {
+      margin-left: 25% !important; }
+    .email-citiesforchange table.body td.small-offset-4,
+    .email-citiesforchange table.body th.small-offset-4 {
+      margin-left: 33.33333% !important; }
+    .email-citiesforchange table.body td.small-offset-5,
+    .email-citiesforchange table.body th.small-offset-5 {
+      margin-left: 41.66667% !important; }
+    .email-citiesforchange table.body td.small-offset-6,
+    .email-citiesforchange table.body th.small-offset-6 {
+      margin-left: 50% !important; }
+    .email-citiesforchange table.body td.small-offset-7,
+    .email-citiesforchange table.body th.small-offset-7 {
+      margin-left: 58.33333% !important; }
+    .email-citiesforchange table.body td.small-offset-8,
+    .email-citiesforchange table.body th.small-offset-8 {
+      margin-left: 66.66667% !important; }
+    .email-citiesforchange table.body td.small-offset-9,
+    .email-citiesforchange table.body th.small-offset-9 {
+      margin-left: 75% !important; }
+    .email-citiesforchange table.body td.small-offset-10,
+    .email-citiesforchange table.body th.small-offset-10 {
+      margin-left: 83.33333% !important; }
+    .email-citiesforchange table.body td.small-offset-11,
+    .email-citiesforchange table.body th.small-offset-11 {
+      margin-left: 91.66667% !important; }
+    .email-citiesforchange table.body table.columns td.expander,
+    .email-citiesforchange table.body table.columns th.expander {
+      display: none !important; }
+    .email-citiesforchange table.body .right-text-pad,
+    .email-citiesforchange table.body .text-pad-right {
+      padding-left: 10px !important; }
+    .email-citiesforchange table.body .left-text-pad,
+    .email-citiesforchange table.body .text-pad-left {
+      padding-right: 10px !important; }
+    .email-citiesforchange table.menu {
+      width: 100% !important; }
+    .email-citiesforchange table.menu td,
+    .email-citiesforchange table.menu th {
+      width: auto !important;
+      display: inline-block !important; }
+    .email-citiesforchange table.menu.vertical td,
+    .email-citiesforchange table.menu.vertical th,
+    .email-citiesforchange table.menu.small-vertical td,
+    .email-citiesforchange table.menu.small-vertical th {
+      display: block !important; }
+    .email-citiesforchange table.menu[align="center"] {
+      width: auto !important; }
+    .email-citiesforchange table.button.small-expand,
+    .email-citiesforchange table.button.small-expanded {
+      width: 100% !important; }
+    .email-citiesforchange table.button.small-expand table,
+    .email-citiesforchange table.button.small-expanded table {
+      width: 100%; }
+    .email-citiesforchange table.button.small-expand table a,
+    .email-citiesforchange table.button.small-expanded table a {
+      text-align: center !important;
+      width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important; }
+    .email-citiesforchange table.button.small-expand center,
+    .email-citiesforchange table.button.small-expanded center {
+      min-width: 0; } }
+  .email-citiesforchange table.body th.decidim-bar,
+  .email-citiesforchange table.body td.decidim-bar {
+    background-color: none;
+    padding: 0; }
+  .email-citiesforchange .main.container > tbody > tr:first-of-type {
+    background-image: url("/assets//banner.jpg");
+    background-size: cover; }
+  .email-citiesforchange table.body {
+    background-color: #ededed;
+    margin: 20px 0; }
+  .email-citiesforchange .decidim-logo {
+    margin-top: 16px; }
+  .email-citiesforchange .decidim-logo a {
+    display: inline-block;
+    height: 30px; }
+  .email-citiesforchange .cityhall-bar {
+    background-color: #000000; }
+  .email-citiesforchange .cityhall-logo {
+    width: 150px;
+    margin-top: 16px; }
+  .email-citiesforchange .footnote,
+  .email-citiesforchange .headnote {
+    padding-top: 10px;
+    color: #666;
+    font-size: 12px; }
+  .email-citiesforchange table.container.main {
+    background: white; }
+  .email-citiesforchange .custom-button {
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 1;
+    padding: 0.58em 1em;
+    background: red; }
+  .email-citiesforchange .button--sc {
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-transform: uppercase; }
+    .email-citiesforchange .button--sc.large {
+      font-size: 1rem; }
+  .email-citiesforchange table.content.image img {
+    width: 100%; }
+  .email-citiesforchange th,
+  .email-citiesforchange td {
+    box-sizing: border-box; }
+  .email-citiesforchange .row.content .email-button a {
+    background: #000000;
+    color: white;
+    padding: 0.25em 0.5em;
+    margin: 0.5em; }
+  .email-citiesforchange .row.content .email-button__cta a {
+    background: #000000;
+    color: white;
+    border-radius: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center; }
+    .email-citiesforchange .row.content .email-button__cta a.hollow:not(.expanded) {
+      border: none; }
+    .email-citiesforchange .row.content .email-button__cta a.hover, .email-citiesforchange .row.content .email-button__cta a:hover {
+      filter: none; }
+    .email-citiesforchange .row.content .email-button__cta a::before, .email-citiesforchange .row.content .email-button__cta a::after {
+      content: " ";
+      transition: all ease-in-out 300ms;
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin: -3px 0.5rem;
+      background-color: #00a767;
+      clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
+    .email-citiesforchange .row.content .email-button__cta a::before {
+      transform: rotate(90deg); }
+    .email-citiesforchange .row.content .email-button__cta a::after {
+      transform: rotate(-90deg); }
+    .email-citiesforchange .row.content .email-button__cta a:hover {
+      color: #0effa3; }
+      .email-citiesforchange .row.content .email-button__cta a:hover::before, .email-citiesforchange .row.content .email-button__cta a:hover::after {
+        background-color: #0effa3; }
+    .email-citiesforchange .row.content .email-button__cta a.cta-accept::before, .email-citiesforchange .row.content .email-button__cta a.cta-accept::after {
+      content: " ";
+      transition: all ease-in-out 300ms;
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin: -3px 0.5rem;
+      background-color: #5f93b1;
+      clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
+    .email-citiesforchange .row.content .email-button__cta a.cta-accept::before {
+      transform: rotate(90deg); }
+    .email-citiesforchange .row.content .email-button__cta a.cta-accept::after {
+      transform: rotate(-90deg); }
+    .email-citiesforchange .row.content .email-button__cta a.cta-accept:hover {
+      color: #a4c1d2; }
+      .email-citiesforchange .row.content .email-button__cta a.cta-accept:hover::before, .email-citiesforchange .row.content .email-button__cta a.cta-accept:hover::after {
+        background-color: #a4c1d2; }
+    .email-citiesforchange .row.content .email-button__cta a.cta-decline::before, .email-citiesforchange .row.content .email-button__cta a.cta-decline::after {
+      content: " ";
+      transition: all ease-in-out 300ms;
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin: -3px 0.5rem;
+      background-color: #ee734d;
+      clip-path: polygon(50% 15%, 100% 100%, 0% 100%); }
+    .email-citiesforchange .row.content .email-button__cta a.cta-decline::before {
+      transform: rotate(90deg); }
+    .email-citiesforchange .row.content .email-button__cta a.cta-decline::after {
+      transform: rotate(-90deg); }
+    .email-citiesforchange .row.content .email-button__cta a.cta-decline:hover {
+      color: #f7bcaa; }
+      .email-citiesforchange .row.content .email-button__cta a.cta-decline:hover::before, .email-citiesforchange .row.content .email-button__cta a.cta-decline:hover::after {
+        background-color: #f7bcaa; }
+  .email-citiesforchange .row.content p {
+    margin-bottom: 1.5rem;
+    line-height: 2em; }
+  .email-citiesforchange .logo-wrapper {
+    padding: 0;
+    padding-top: 25px; }
+    .email-citiesforchange .logo-wrapper img {
+      background: white;
+      padding: 8px;
+      max-height: 72px; }
 
 /*# sourceMappingURL=email.css.map */
