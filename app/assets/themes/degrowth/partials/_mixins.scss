@@ -20,13 +20,6 @@
     background-size: cover;
 }
 
-// @mixin button {
-//     border-radius: 0;
-//     background-color: $link-color;
-//     color: $white;
-//     @include font-button;
-// }
-
 @mixin button {
     border: $border-thin;
     color: $body-font-color;
@@ -39,11 +32,6 @@
     }
 }
 
-// @mixin button-hover {
-//     @include button;
-//     background-color: $success;
-// }
-
 @mixin button-hollow {
     border-color: $link-color;
     color: $link-color;
@@ -54,27 +42,6 @@
         color: $link-color-hover;
     }
 }
-
-// @mixin label {
-//     &::before,
-//     &::after {
-//         content: none;
-//     }
-
-//     background: none;
-//     border: $border-thin;
-//     border-color: $link-color;
-//     color: $link-color;
-//     cursor: pointer;
-
-//     &:hover {
-//         background: none;
-//         border: $border-thin;
-//         border-color: $link-color;
-//         color: $link-color;
-//         cursor: pointer;
-//     }
-// }
 
 @mixin small-screen {
     @media print, screen and (max-width: 40em) {
