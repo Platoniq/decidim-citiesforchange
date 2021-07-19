@@ -1,5 +1,18 @@
 @import "../settings";
-@import "mixins";
+
+@function hattr($heading, $attr, $breakpoint: medium) {
+    @return map-get(map-get(map-get($header-styles, $breakpoint), $heading), $attr);
+}
+
+@mixin heading($heading) {
+    font-size: hattr($heading, "font-size", small);
+
+    @include breakpoint(medium) {
+        font-size: hattr($heading, "font-size");
+        line-height: hattr($heading, "line-height");
+        font-weight: hattr($heading, "font-weight");
+    }
+}
 
 a,
 .link {

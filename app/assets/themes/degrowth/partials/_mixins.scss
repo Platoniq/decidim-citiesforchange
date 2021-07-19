@@ -1,23 +1,16 @@
 @import "fonts";
-@import "../settings";
-
-@function hattr($heading, $attr, $breakpoint: medium) {
-    @return map-get(map-get(map-get($header-styles, $breakpoint), $heading), $attr);
-}
-
-@mixin heading($heading) {
-    font-size: hattr($heading, "font-size", small);
-
-    @include breakpoint(medium) {
-        font-size: hattr($heading, "font-size");
-        line-height: hattr($heading, "line-height");
-        font-weight: hattr($heading, "font-weight");
-    }
-}
 
 @mixin body-background-image() {
     background-image: asset-url("degrowth/background.jpg");
     background-size: cover;
+}
+
+@mixin link {
+    color: $link-color;
+    &:hover,
+    &:focus {
+        color: $link-color-hover;
+    }
 }
 
 @mixin button {

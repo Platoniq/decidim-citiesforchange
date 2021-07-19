@@ -1,9 +1,9 @@
 <div class="custom-footer">
-  <div class="row custom-logos custom-logos-<%= instance_name %>">
-    <% if citiesforchange? %>
+  <div class="row custom-logos custom-logos-<%= current_organization.instance_name %>">
+    <% if current_organization.citiesforchange? %>
       <%= image_tag("GA_logo.jpg") %>
       <%= image_tag("logo_amsterdam_cityhall_1.png") %>
-    <% elsif degrowth? %>
+    <% elsif current_organization.degrowth? %>
       <%= image_tag("degrowth/footer_logos_1.png") %>
       <%= image_tag("degrowth/footer_logos_2.jpg") %>
     <% end %>

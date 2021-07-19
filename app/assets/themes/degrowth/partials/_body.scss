@@ -19,9 +19,9 @@ iframe {
 
 @mixin callout($color) {
   background-color: $white-transparent;
-  border: 8rem solid $color;
-  border-top: none;
-  border-bottom: none;
+  border-top: $border-thin;
+  border-bottom: $border-thin;
+  border-left-color: $color;
 }
 
 .callout {

@@ -1,4 +1,4 @@
-<% if citiesforchange? %>
+<% if current_organization.citiesforchange? %>
 
 <style media="all">
 :root{
@@ -19,7 +19,7 @@
 }
 </style>
 
-<% elsif degrowth? %>
+<% elsif current_organization.degrowth? %>
 
 <style media="all">
 :root{
