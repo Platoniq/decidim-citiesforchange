@@ -59,3 +59,7 @@
 #process-nav-content li a {
   text-transform: capitalize;
 }
+
+.process-header__hashtag {
+  @extend .link;
+}

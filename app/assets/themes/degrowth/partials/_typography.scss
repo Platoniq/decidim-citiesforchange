@@ -2,8 +2,7 @@
 @import "mixins";
 
 a,
-.link,
-.card__link {
+.link {
     color: $link-color;
     &:hover,
     &.hover {

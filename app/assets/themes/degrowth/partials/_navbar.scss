@@ -41,8 +41,6 @@
       }
     }
   }
-
-  border-bottom: $border-thin;
 }
 
 .off-canvas {
@@ -55,7 +53,6 @@
 
   &.position-right.is-transition-push {
     box-shadow: none;
-    border-bottom: $border-thin;
   }
 }
 
@@ -90,7 +87,6 @@
     }
   }
 
-<<<<<<< HEAD
   &__notifications,
   &__conversations {
     .icon {
@@ -111,46 +107,6 @@
       }
     }
   }
-=======
-  // &__notifications,
-  // &__conversations {
-  //   background: $navbar-bg;
-  //   padding: 9px 9px 9px 13px;
-  //   border-radius: 50%;
-
-  //   margin-right: 0;
-
-  //   .icon {
-  //     opacity: 0.8;
-  //   }
-
-  //   &.is-active {
-  //     background: $primary;
-  //     .icon {
-  //       fill: $navbar-fg;
-  //     }
-  //   }
-
-  //   &:hover {
-  //     text-decoration: none;
-  //     background: $white;
-  //     transition: all ease-in-out 300ms;
-
-  //     .icon {
-  //       fill: $navbar-fg;
-  //     }
-  //   }
-  // }
-
-  // .dropdown.menu {
-  //   background: $navbar-bg;
-  //   margin: 0;
-
-  //   @include small-screen {
-  //     padding: 0 1em;
-  //   }
-  // }
->>>>>>> 4413a5378ea931c7e3b8ef793d53243d37311ede
 
   &__user a {
     @extend .button;
@@ -189,7 +145,6 @@
     }
   }
 
-<<<<<<< HEAD
   &__admin__link a {
     @extend .link;
 
@@ -197,27 +152,6 @@
       @extend .link:hover;
     }
   }
-=======
-  // &__dropmenu {
-  //   margin-left: 1rem;
-
-  //   & > ul > li > a {
-  //     color: $navbar-fg;
-
-  //     &::after {
-  //       border-top-color: $navbar-fg !important;
-  //     }
-  //   }
-  // }
-
-  // &__admin__link a {
-  //   color: $navbar-fg;
-  // }
-
-  // .icon {
-  //   fill: $navbar-fg;
-  // }
->>>>>>> 4413a5378ea931c7e3b8ef793d53243d37311ede
 }
 
 .usermenu-off-canvas-holder {
