@@ -11,13 +11,8 @@
             <% end %>
 
             <%= link_to url, target: :blank do %>
-              <% if degrowth? %>
-                <%= image_tag asset_url("degrowth/banner-email.jpg", host: url), alt: organization.name %>
-              <% else %>
-                <%= image_tag asset_url("banner-email.jpg", host: url), alt: organization.name %>
-              <% end %>
+              <%= image_tag asset_url(instance_prefix_path("banner-email.jpg"), host: url), alt: organization.name %>
             <% end %>
-
           </td>
         </tr>
       </tbody>

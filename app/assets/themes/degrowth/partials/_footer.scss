@@ -1,19 +1,24 @@
-@import "./variables";
+@import "../variables";
 @import "./mixins";
 
 .main-footer,
 .mini-footer {
-  background: $body-background-color;
-  color: $body-font-color;
+  background: $footer-bg;
+  color: $footer-fg;
+  border-top: $border-thin;
 
   a,
   a:hover {
     color: $link-color;
   }
 
-  img {
-    filter: brightness(50%) sepia() saturate(4);
+  .decidim-logo img {
+    filter: brightness(44%) sepia() saturate(4);
   }
+}
+
+.main-footer {
+  background-color: $white-transparent;
 }
 
 .mini-footer {
@@ -22,6 +27,7 @@
 
 .custom-footer {
   background: $white;
+  border-top: $border-thin;
 
   .custom-logos {
     padding: 2em;

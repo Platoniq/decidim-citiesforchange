@@ -9,6 +9,14 @@ module InstanceHelper
     end
   end
 
+  def instance_prefix_path(path)
+    if citiesforchange?
+      path
+    else
+      "#{instance_name}/#{path}"
+    end
+  end
+
   def citiesforchange?
     if try(:organization)
       organization.host.match?("citiesforchange")

@@ -1,0 +1,6 @@
+@import "../variables";
+@import "./mixins";
+
+input:checked ~ .switch-paddle {
+  background-color: $success;
+}

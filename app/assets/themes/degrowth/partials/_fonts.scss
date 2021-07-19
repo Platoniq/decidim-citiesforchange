@@ -91,24 +91,24 @@
     U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+$font-family-heading: "Poppins", Arial, Helvetica, sans-serif;
+$font-family-body: "Esteban", Georgia, "Times New Roman", Times, serif;
+$font-family-button: $font-family-body;
+
 @mixin font-heading() {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: $font-family-heading;
   text-transform: none;
   font-size: 1.5rem;
   font-weight: 900;
 }
 
 @mixin font-button() {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: $font-family-button;
   font-weight: 700;
 }
 
 @mixin font-body() {
-  font-family: "Esteban", Georgia, "Times New Roman", Times, serif;
-}
-
-@mixin font-title() {
-  text-transform: uppercase;
+  font-family: $font-family-body;
 }
 
 @mixin font-heading-big {

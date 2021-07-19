@@ -1,13 +1,17 @@
-@import "./variables";
+@import "../variables";
 @import "./mixins";
 
 .conference-programme {
-  background-color: $body-background-color;
-  box-shadow: inset 0 2em 0px 0px $primary;
+  background-color: $white-transparent;
   padding: 1em 2em;
+  border: $border-thin;
 
   @include small-screen {
     margin-top: 2em;
+  }
+
+  .tabs-title .button {
+    margin-bottom: 0;
   }
 
   .programme {
@@ -55,9 +59,6 @@
 }
 
 .conference_program-controller {
-  .off-canvas-wrapper {
-    background-color: $body-background-alt;
-  }
   .section-heading {
     @include font-heading-big;
     margin-bottom: 0;
@@ -78,14 +79,15 @@
   }
 
   .tabs-title {
-    margin-right: 0.2em;
-
-    &:not(.is-active) .button {
-      opacity: 1;
+    .button {
+      margin: 0;
+      margin-bottom: -1px;
     }
+
     &.is-active .button {
-      background: $primary;
-      color: $body-font-color;
+      background-color: $white-transparent;
+      border-bottom-color: $white-transparent;
+      border-bottom-style: dashed;
     }
 
     @include small-screen {
@@ -96,6 +98,7 @@
 
   a.button--sc {
     text-transform: none;
+
     &::before,
     &::after {
       content: none;
@@ -105,7 +108,7 @@
 
 .conferences-controller {
   hr {
-    border: none;
+    border-color: $body-font-color;
   }
 
   .card {
@@ -124,5 +127,14 @@
 .programme-extra .speakers-list {
   .author__name {
     color: $body-font-color;
+  }
+}
+
+.hero {
+  border-top: $border-thin;
+  border-bottom: $border-thin;
+
+  .button.hollow.light {
+    @include button;
   }
 }
