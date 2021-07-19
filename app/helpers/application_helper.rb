@@ -1,14 +1,6 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def citiesforchange?
-    organization.host.match?("citiesforchange")
-  end
-
-  def degrowth?
-    organization.host.match?("degrowth") || organization.host.match?("localhost") # DEBUG
-  end
-
   def conference_meeting_months(meetings)
     meetings.map { |m| [m.start_time.beginning_of_month] }.uniq.flatten
   end

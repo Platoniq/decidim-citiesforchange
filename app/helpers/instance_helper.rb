@@ -18,18 +18,21 @@ module InstanceHelper
   end
 
   def citiesforchange?
-    if try(:organization)
-      organization.host.match?("citiesforchange")
-    elsif try(:current_organization)
-      current_organization.host.match?("citiesforchange")
-    end
+    return if instance_organization.blank?
+    
+    instance_organization.host.match?("citiesforchange")
   end
-
+  
   def degrowth?
-    if try(:organization)
-      organization.host.match?("degrowth") || organization.host.match?("localhost") # DEBUG
-    elsif try(:current_organization)
-      current_organization.host.match?("degrowth") || current_organization.host.match?("localhost") # DEBUG
-    end
+    return if instance_organization.blank?
+    
+    instance_organization.host.match?("degrowth") || instance_organization.host.match?("localhost") # DEBUG
+  end
+  
+  def instance_organization
+    try(:organization) ||
+    try(:current_organization) ||
+    try(:@organization) ||
+    try(:@current_organization)
   end
 end
