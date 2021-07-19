@@ -1,3 +1,5 @@
+<% if citiesforchange? %>
+
 <style media="all">
 :root{
   --primary: #e7be41;
@@ -16,3 +18,26 @@
   --highlight-alternative-rgb: 143, 116, 178;
 }
 </style>
+
+<% elsif degrowth? %>
+
+<style media="all">
+:root{
+  --primary: #6b9e93;
+  --primary-rgb: 107, 158, 147;
+  --secondary: #677877;
+  --secondary-rgb: 103, 120, 119;
+  --success: #f0d05c;
+  --success-rgb: 240, 208, 92;
+  --warning: #e19614;
+  --warning-rgb: 225, 150, 20;
+  --alert: #ec5840;
+  --alert-rgb: 236, 88, 64;
+  --highlight: #d7c69b;
+  --highlight-rgb: 215, 198, 155;
+  --highlight-alternative: #ffffff;
+  --highlight-alternative-rgb: 255, 255, 255;
+}
+</style>
+
+<% end %>

@@ -16,3 +16,32 @@ body {
 iframe {
   border: $border-thin;
 }
+
+@mixin callout($color) {
+  background-color: $white-transparent;
+  border: 8rem solid $color;
+  border-top: none;
+  border-bottom: none;
+}
+
+.callout {
+  &.primary {
+    @include callout($primary);
+  }
+
+  &.secondary {
+    @include callout($secondary);
+  }
+
+  &.success {
+    @include callout($success);
+  }
+
+  &.warning {
+    @include callout($warning);
+  }
+
+  &.alert {
+    @include callout($alert);
+  }
+}
