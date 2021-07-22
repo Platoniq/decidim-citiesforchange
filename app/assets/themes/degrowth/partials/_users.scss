@@ -3,3 +3,70 @@
 .register__separator::before {
   background: $body-font-color;
 }
+
+#activities .row:first-child {
+  border: $border-thin;
+  background-color: $body-background-color;
+  margin-bottom: 1rem;
+}
+
+.conversation .conversation-header {
+  border-bottom-color: $body-font-color;
+}
+
+.conversation-reply button {
+  margin-top: 1rem;
+}
+
+.profile--sidebar {
+  .card__image {
+    border-bottom: $border-thin;
+  }
+
+  .card__footer:nth-child(2n) {
+    background-color: $white-transparent;
+  }
+}
+
+#profile-tabs.tabs {
+  border: none;
+  justify-content: right;
+
+  .tabs-title {
+    border: none;
+
+    a,
+    a:focus {
+      border: none;
+      font-weight: normal;
+      color: $body-font-color;
+    }
+
+    a:focus {
+      text-decoration: underline;
+    }
+
+    &.is-active {
+      border-bottom: $border-thin;
+
+      a {
+        border: none;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.tabs-panel {
+  border: $border-thin;
+  padding: 2rem;
+}
+
+.card--badge {
+  .card__header {
+    border: none;
+  }
+  .badge-level > div {
+    border: $border-thin;
+  }
+}
