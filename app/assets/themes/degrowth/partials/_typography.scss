@@ -23,6 +23,10 @@ a,
     }
 }
 
+::placeholder {
+    color: black;
+}
+
 .text-primary {
     color: $primary-color;
 }

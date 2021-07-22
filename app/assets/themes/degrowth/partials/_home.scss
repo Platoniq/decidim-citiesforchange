@@ -16,7 +16,7 @@
 
 .highligted-content-banner {
   animation: 90s infinite alternate slider;
-  background-color: #b2ccc7;
+  background-color: $body-background-color;
   background-size: cover !important;
   background-repeat: no-repeat !important;
 
@@ -25,6 +25,17 @@
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background-color: $body-background-color;
+    position: absolute;
+    opacity: 0.5;
+    z-index: -1;
+  }
 
   @include small-screen {
     grid-template-columns: 2em 1fr 2em;

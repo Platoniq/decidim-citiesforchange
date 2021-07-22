@@ -126,9 +126,37 @@
     }
 
     .is-dropdown-submenu {
-      background-color: $white-transparent;
+      background-color: $orange-lighter;
       border-radius: 0;
       border: $border-thin;
+
+      &::before {
+        border-bottom-color: $navbar-fg;
+      }
+
+      &::after {
+        border-bottom-color: $orange-lighter;
+      }
+
+      li {
+        background-color: $orange-lighter;
+
+        a {
+          color: $navbar-fg;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: $orange-light;
+          a {
+            color: $navbar-fg;
+          }
+        }
+
+        &:not(:last-child) {
+          border-bottom-color: $navbar-fg;
+        }
+      }
     }
 
     ul > li > a {
