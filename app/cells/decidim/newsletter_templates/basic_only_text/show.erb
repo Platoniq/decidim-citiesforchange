@@ -1,10 +1,10 @@
-<table class="main container">
+<table class="main container email-<%= organization.instance_name %>">
   <tr>
     <td>
       <table class="header">
         <tbody>
           <tr>
-            <td>
+             <td>
               <% if @custom_url_for_mail_root.present? %>
                 <% url = @custom_url_for_mail_root %>
               <% else %>
@@ -12,7 +12,7 @@
               <% end %>
 
               <%= link_to url, target: :blank do %>
-                <%= image_tag asset_url("banner-email.jpg", host: url), alt: organization.name %>
+                <%= image_tag asset_url(organization.instance_prefix_path("banner-email.jpg"), host: url), alt: organization.name %>
               <% end %>
             </td>
           </tr>
@@ -51,7 +51,7 @@
         <tr>
           <th>
             <td>
-              <%= image_tag asset_url("banner-email-footer.jpg", host: url), alt: organization.name %>
+              <%= image_tag asset_url(organization.instance_prefix_path("banner-email-footer.jpg"), host: url), alt: organization.name %>
             </td>
           </th>
         </tr>
