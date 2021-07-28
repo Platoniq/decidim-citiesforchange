@@ -35,10 +35,22 @@
     margin: auto;
 
     img {
-      display: block;
-      margin: auto;
-      height: 80px;
+      display: inline-block;
+      height: 36px;
       width: auto;
+    }
+
+    .grid-x {
+      justify-content: center;
+      gap: 1rem;
+
+      &:first-child {
+        margin-bottom: 1rem;
+
+        img {
+          height: 56px;
+        }
+      }
     }
   }
 }
