@@ -2389,7 +2389,7 @@
     background-color: none;
     padding: 0; }
   .email-citiesforchange .main.container > tbody > tr:first-of-type {
-    background-image: url("/assets//banner.jpg");
+    background-image: url("/assets/banner.jpg");
     background-size: cover; }
   .email-citiesforchange table.body {
     background-color: #ededed;
