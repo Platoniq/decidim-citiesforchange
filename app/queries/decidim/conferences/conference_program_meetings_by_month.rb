@@ -17,3 +17,17 @@ module Decidim
     end
   end
 end
+
+
+# def conference_meetings_by_months
+#   meetings = filtered_meetings? ? filtered_collection : collection
+#   meetings_by_month = Decidim::Conferences::ConferenceProgramMeetingsByMonth.new(meetings, months).query
+
+#   meetings_months
+#   meetings_by_time = {}
+#   meetings_by_month.each do |meeting|
+#     meetings_by_time[start_time: meeting.start_time, end_time: meeting.end_time] ||= []
+#     meetings_by_time[start_time: meeting.start_time, end_time: meeting.end_time] << { meeting: meeting }
+#   end
+#   meetings_by_time
+# end

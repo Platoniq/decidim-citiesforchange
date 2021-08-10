@@ -3,10 +3,11 @@
 Rails.application.config.to_prepare do
   Decidim::Conferences::ConferenceProgramController.class_eval do
     include Decidim::FilterResource
+
     helper Decidim::FiltersHelper
     helper Decidim::Meetings::ApplicationHelper
 
-    helper_method :filtered_collection, :meetings_months
+    helper_method :filtered_collection, :meetings_by_month, :meetings_months
 
     private
 
@@ -20,7 +21,7 @@ Rails.application.config.to_prepare do
 
     def default_search_params
       {
-        scope: collection
+        scope: meetings
       }
     end
 
@@ -62,6 +63,10 @@ Rails.application.config.to_prepare do
 
     def meetings_months
       @meetings_months ||= meetings.map { |m| [m.start_time.beginning_of_month] }.uniq.flatten
+    end
+
+    def meetings_by_month
+      Decidim::Conferences::ConferenceProgramMeetingsByMonth.new(meetings, months).query
     end
   end
 end

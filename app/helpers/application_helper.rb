@@ -5,15 +5,25 @@ module ApplicationHelper
     current_organization.degrowth?
   end
 
-  def conference_meetings_for_month(month)
-    collection = filtered_meetings? ? filtered_collection : collection
-    meetings = Decidim::Conferences::ConferenceProgramMeetingsByMonth.new(collection, month).query
-
+  def conference_meetings_by_months
+    meetings = filtered_meetings? ? filtered_collection : collection
     meetings_by_time = {}
-    meetings.each do |meeting|
-      meetings_by_time[start_time: meeting.start_time, end_time: meeting.end_time] ||= []
-      meetings_by_time[start_time: meeting.start_time, end_time: meeting.end_time] << { meeting: meeting }
+
+    meetings_months.each do |month|
+      meetings_by_month = Decidim::Conferences::ConferenceProgramMeetingsByMonth.new(meetings, month).query
+
+      meetings_by_month.each do |meeting|
+        key = {
+          start_time: meeting.start_time,
+          end_time: meeting.end_time,
+          month: meeting.start_time.beginning_of_month
+        }
+
+        meetings_by_time[key] ||= []
+        meetings_by_time[key] << { meeting: meeting }
+      end
     end
+
     meetings_by_time
   end
 

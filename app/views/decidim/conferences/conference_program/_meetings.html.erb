@@ -1,9 +1,9 @@
-<div class="tabs-content" data-tabs-content="conference-day-tabs">
-  <% meetings_months.each_with_index do |month, i| %>
-    <div class="programme-day tabs-panel<%= " is-active" if default_month?(month) %>" id="conference-day-tab-<%= i %>">
-      <% conference_meetings_for_month(month).each do |meeting, meetings| %>
-        <%= render partial: "program_item", locals: { start_time: meeting[:start_time], end_time: meeting[:end_time], meetings: meetings.pluck(:meeting) } %>
-      <% end %>
-    </div>
-  <% end %>
+<div class="conference-programme">
+  <div class="tabs-content" data-tabs-content="conference-day-tabs">
+    <% conference_meetings_by_months.each_with_index do |(time, meetings), index| %>
+      <div class="programme-day tabs-panel<%= " is-active" if default_month?(time[:month]) %>" id="conference-day-tab-<%= index %>">
+        <%= render partial: "program_item", locals: { start_time: time[:start_time], end_time: time[:end_time], meetings: meetings.pluck(:meeting) } %>
+      </div>
+    <% end %>
+  </div>
 </div>
