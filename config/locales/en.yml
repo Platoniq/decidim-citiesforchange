@@ -43,6 +43,8 @@ en:
       footer:
         made_with_open_source: Website made with <a target="_blank" href="https://github.com/Platoniq/decidim-citiesforchange">free
           software</a>.
+  scopes:
+    global: Global scope
   time:
     formats:
       month_and_year: "%B<br>%Y"

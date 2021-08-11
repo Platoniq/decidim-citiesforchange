@@ -3,7 +3,20 @@
 module Decidim
   module Conferences
     # This query class filters meetings by period
-    # Returns a Hash
+    # Returns the following data structure:
+    #   {
+    #     #<Range> => {
+    #       {
+    #         start_time: #<ActiveSupport::TimeWithZone>,
+    #         end_time: #<ActiveSupport::TimeWithZone>
+    #       } => [
+    #         { meeting: #<Decidim::Meetings::Meeting> },
+    #         ...
+    #       ]
+    #       ...
+    #     },
+    #     ...
+    #   }
     class ConferenceProgramMeetingsByPeriod < Rectify::Query
       def initialize(relation, periods)
         @relation = relation
