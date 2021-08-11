@@ -28,12 +28,13 @@ end
   <div class="columns mediumlarge-8 programme-selector">
     <ul class="tabs" id="conference-day-tabs"
       data-tabs>
-      <% meetings_months.each_with_index do |month, i| %>
-        <li class="tabs-title <%= "is-active" if default_month?(meetings_months, month) %>">
+      <% time_periods.each_with_index do |period, index| %>
+        <li class="tabs-title <%= "is-active" if default_period?(time_periods, period) %>">
           <!-- Wrap the anchor inside a div to keep correct button styling -->
           <div>
-            <a data-tabs-target="conference-day-tab-<%= i %>" href="#conference-day-tab-<%= i %>" class="button button--nomargin">
-              <%== l month, format: :month_and_year %>
+            <a data-tabs-target="conference-day-tab-<%= index %>" href="#conference-day-tab-<%= index %>" class="button button--nomargin">
+              <% # HANDLE FORMAT! %>
+              <%== l period, format: period_localization_format(period) %>
             </a>
           </div>
         </li>
@@ -44,9 +45,9 @@ end
   <div class="columns mediumlarge-12">
     <div class="conference-programme">
       <div class="tabs-content" data-tabs-content="conference-day-tabs">
-        <% meetings_months.each_with_index do |month, index| %>
-          <div class="programme-day tabs-panel<%= " is-active" if default_month?(meetings_months, month) %>" id="conference-day-tab-<%= index %>">
-            <% meetings_by_time(month).each do |time, meetings| %>
+        <% time_periods.each_with_index do |period, index| %>
+          <div class="programme-day tabs-panel<%= " is-active" if default_period?(time_periods, period) %>" id="conference-day-tab-<%= index %>">
+            <% meetings_by_time(period).each do |time, meetings| %>
               <%= render partial: "program_item", locals: { start_time: time[:start_time], end_time: time[:end_time], meetings: meetings.pluck(:meeting) } %>
             <% end %>
           </div>

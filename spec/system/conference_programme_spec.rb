@@ -16,10 +16,26 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
   let!(:meeting_3) { create(:meeting, component: component, start_time: Time.new(2022, 0o3, 11, 14, 30), end_time: Time.new(2022, 0o3, 11, 18, 45)) }
   let!(:meeting_4) { create(:meeting, component: component, start_time: Time.new(2022, 0o5, 11, 14, 30), end_time: Time.new(2022, 0o5, 11, 18, 45)) }
   # rubocop:enable Rails/TimeZone
+  let(:meetings) do
+    [
+      meeting_1,
+      meeting_2,
+      meeting_3,
+      meeting_4
+    ]
+  end
 
+  let(:stubs) { nil }
   let(:setup) { nil }
 
+  # rubocop:disable RSpec/AnyInstance
+  def stub_organization(method, value)
+    allow_any_instance_of(Decidim::Organization).to receive(method).and_return(value)
+  end
+  # rubocop:enable RSpec/AnyInstance
+
   before do
+    stubs
     setup
     switch_to_host(organization.host)
     visit decidim_conferences.conference_conference_program_path(conference, component)
@@ -29,53 +45,23 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     expect(page).to have_content(/Program/i)
   end
 
-  it "renders tabs with month names and year" do
-    within "#conference-day-tabs" do
-      expect(page).to have_selector(".tabs-title", count: 3)
-      expect(page).to have_content(/DECEMBER\n2021/i)
-      expect(page).to have_content(/MARCH\n2022/i)
-      expect(page).to have_content(/MAY\n2022/i)
+  shared_examples "showing filtered program meetings" do
+    it "shows only filtered meetings", :slow do
+      expect(page).to have_content translated(filtered_meeting.title)
+
+      meetings.without(filtered_meeting).each do |unfiltered_meeting|
+        expect(page).not_to have_content translated(unfiltered_meeting.title)
+      end
     end
   end
 
-  context "when clicking on a tab with a month name" do
-    before do
-      page.find("#conference-day-tab-1-label").click
+  shared_examples "filtering program meetings" do
+    let(:stubs) do
+      super() # run stubs from parent context
+      stub_organization(:filtered_conference_program_meetings?, true)
     end
 
-    it "renders only meetings for that month" do
-      expect(page).to have_content translated(meeting_2.title)
-      expect(page).to have_content translated(meeting_3.title)
-
-      expect(page).not_to have_content translated(meeting_1.title)
-      expect(page).not_to have_content translated(meeting_4.title)
-    end
-  end
-
-  context "when filtering" do
-    # rubocop:disable RSpec/AnyInstance
-    let(:stub_organization_method) do
-      allow_any_instance_of(Decidim::Organization).to receive(:filtered_conference_program_meetings?).and_return(true)
-    end
-    # rubocop:enable RSpec/AnyInstance
-
-    shared_examples "filtering program meetings" do
-      it "shows only filtered meetings", :slow do
-        page.find("#conference-day-tab-1-label").click
-
-        expect(page).to have_content translated(meeting_2.title)
-
-        expect(page).not_to have_content translated(meeting_3.title)
-        expect(page).not_to have_content translated(meeting_1.title)
-        expect(page).not_to have_content translated(meeting_4.title)
-      end
-    end
-
-    context "when searching by text" do
-      let(:setup) do
-        stub_organization_method
-      end
-
+    context "when searching by TEXT" do
       before do
         within ".filters" do
           find(:css, "#content form.new_filter [name='filter[search_text]']").set(translated(meeting_2.title))
@@ -83,12 +69,11 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
         end
       end
 
-      include_examples "filtering program meetings"
+      include_examples "showing filtered program meetings"
     end
 
-    context "when filtering by type" do
+    context "when filtering by TYPE" do
       let(:setup) do
-        stub_organization_method
         meeting_2.update(type_of_meeting: "in_person")
         meeting_3.update(type_of_meeting: "online")
       end
@@ -100,12 +85,11 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
         end
       end
 
-      include_examples "filtering program meetings"
+      include_examples "showing filtered program meetings"
     end
 
-    context "when filtering by scope" do
+    context "when filtering by SCOPE" do
       let(:setup) do
-        stub_organization_method
         meeting_2.update(decidim_scope_id: scope_1.id)
         meeting_3.update(decidim_scope_id: scope_2.id)
       end
@@ -126,12 +110,11 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
         end
       end
 
-      include_examples "filtering program meetings"
+      include_examples "showing filtered program meetings"
     end
 
-    context "when filtering by category" do
+    context "when filtering by CATEGORY" do
       let(:setup) do
-        stub_organization_method
         meeting_2.category = category_1
         meeting_2.save
         meeting_3.category = category_2
@@ -154,7 +137,82 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
         end
       end
 
-      include_examples "filtering program meetings"
+      include_examples "showing filtered program meetings"
+    end
+  end
+
+  context "when grouping by MONTH" do
+    let(:stubs) do
+      stub_organization(:conference_program_meetings_group_by, :month)
+    end
+
+    it "renders tabs with months" do
+      within "#conference-day-tabs" do
+        expect(page).to have_selector(".tabs-title", count: 3)
+        expect(page).to have_content(/DECEMBER\n2021/i)
+        expect(page).to have_content(/MARCH\n2022/i)
+        expect(page).to have_content(/MAY\n2022/i)
+      end
+    end
+
+    context "when clicking on a tab with a month" do
+      before do
+        page.find("#conference-day-tab-1-label").click
+      end
+
+      it "renders only meetings for that month" do
+        expect(page).to have_content translated(meeting_2.title)
+        expect(page).to have_content translated(meeting_3.title)
+
+        expect(page).not_to have_content translated(meeting_1.title)
+        expect(page).not_to have_content translated(meeting_4.title)
+      end
+    end
+
+    it_behaves_like "filtering program meetings" do
+      before do
+        page.find("#conference-day-tab-1-label").click
+      end
+
+      let(:filtered_meeting) { meeting_2 }
+    end
+  end
+
+  context "when grouping by DAY" do
+    let(:stubs) do
+      stub_organization(:conference_program_meetings_group_by, :day)
+    end
+
+    it "renders tabs with days" do
+      within "#conference-day-tabs" do
+        expect(page).to have_selector(".tabs-title", count: 4)
+        expect(page).to have_content(/11 May/i)
+        expect(page).to have_content(/11 Mar/i)
+        expect(page).to have_content(/05 Mar/i)
+        expect(page).to have_content(/31 Dec/i)
+      end
+    end
+
+    context "when clicking on a tab with a day" do
+      before do
+        page.find("#conference-day-tab-1-label").click
+      end
+
+      it "renders only meetings for that day" do
+        expect(page).to have_content translated(meeting_2.title)
+
+        expect(page).not_to have_content translated(meeting_3.title)
+        expect(page).not_to have_content translated(meeting_1.title)
+        expect(page).not_to have_content translated(meeting_4.title)
+      end
+    end
+
+    it_behaves_like "filtering program meetings" do
+      before do
+        page.find("#conference-day-tab-1-label").click
+      end
+
+      let(:filtered_meeting) { meeting_2 }
     end
   end
 end

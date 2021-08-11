@@ -4,7 +4,7 @@ Rails.application.config.to_prepare do
   Decidim::Conferences::ConferenceProgramController.class_eval do
     include Decidim::FilterResource
 
-    helper_method :meetings_months, :meetings_by_period
+    helper_method :meetings_group_by_period, :time_periods, :meetings_by_period
 
     private
 
@@ -20,6 +20,12 @@ Rails.application.config.to_prepare do
       return unless meeting_component.published? || !meeting_component.presence
 
       @meetings ||= Decidim::Meetings::Meeting.where(component: meeting_component).visible_meeting_for(current_user)
+    end
+
+    # Method overrided
+    # We need to map #collection instead, since #meetings is unordered now.
+    def meeting_days
+      @meeting_days ||= collection.map { |meeting| meeting.start_time.to_date }.uniq
     end
 
     def order(relation)
@@ -76,14 +82,24 @@ Rails.application.config.to_prepare do
       }
     end
 
-    def meetings_months
-      @meetings_months ||= collection.map { |month| month.start_time.beginning_of_month }.uniq
+    def meetings_group_by_period
+      current_organization.conference_program_meetings_group_by
+    end
+
+    def time_periods
+      send("meeting_#{meetings_group_by_period}s")
+    end
+
+    def meeting_months
+      @meeting_months ||= collection.map { |meeting| meeting.start_time.beginning_of_month }.uniq
     end
 
     def meetings_by_period
       @meetings_by_period ||= begin
         relation = current_organization.filtered_conference_program_meetings? ? filtered_collection : collection
-        periods = meetings_months.map { |month| month.beginning_of_month..month.end_of_month }
+        periods = time_periods.map do |time_period|
+          time_period.send("beginning_of_#{meetings_group_by_period}")..time_period.send("end_of_#{meetings_group_by_period}")
+        end
 
         Decidim::Conferences::ConferenceProgramMeetingsByPeriod.new(relation, periods).query
       end
