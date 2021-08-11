@@ -7,7 +7,7 @@ Rails.application.config.to_prepare do
     helper Decidim::FiltersHelper
     helper Decidim::Meetings::ApplicationHelper
 
-    helper_method :filtered_collection, :meetings_by_month, :meetings_months
+    helper_method :meetings_months, :meetings_by_time
 
     private
 
@@ -80,8 +80,22 @@ Rails.application.config.to_prepare do
       @meetings_months ||= collection.map { |m| [m.start_time.beginning_of_month] }.uniq.flatten
     end
 
-    def meetings_by_month
-      Decidim::Conferences::ConferenceProgramMeetingsByMonth.new(meetings, months).query
+    def meetings_by_time
+      meetings = current_organization.filtered_conference_program_meetings? ? filtered_collection : collection
+
+      meetings_months.each_with_object({}) do |month, hash|
+        meetings_by_month = Decidim::Conferences::ConferenceProgramMeetingsByMonth.new(meetings, month).query
+
+        if meetings_by_month.any?
+          meetings_by_month.each do |meeting|
+            key = { start_time: meeting.start_time, end_time: meeting.end_time }
+            hash[key] ||= []
+            hash[key] << { meeting: meeting }
+          end
+        else
+          hash[{ no_meetings_for_month: month }] = []
+        end
+      end.to_a
     end
   end
 end

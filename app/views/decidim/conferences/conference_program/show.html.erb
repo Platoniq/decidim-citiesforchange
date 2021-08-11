@@ -16,7 +16,8 @@ end
     <h3 class="section-heading"><%= t(".program") %></h3>
   </div>
 
-  <% if filtered_meetings? %>
+
+  <% if current_organization.filtered_conference_program_meetings? %>
     <div class="columns mediumlarge-4 large-3">
       <%= render partial: "filters_small_view" %>
       <div class="card card--secondary show-for-mediumlarge">
@@ -25,12 +26,33 @@ end
     </div>
   <% end %>
 
-  <div id="tabs" class="columns mediumlarge-8 programme-selector">
-    <%= render partial: "tabs" %>
+  <div class="columns mediumlarge-8 programme-selector">
+    <ul class="tabs" id="conference-day-tabs"
+      data-tabs>
+      <% meetings_months.each_with_index do |month, i| %>
+        <li class="tabs-title <%= "is-active" if default_month?(meetings_months, month) %>">
+          <!-- Wrap the anchor inside a div to keep correct button styling -->
+          <div>
+            <a data-tabs-target="conference-day-tab-<%= i %>" href="#conference-day-tab-<%= i %>" class="button button--nomargin">
+              <%== l month, format: :month_and_year %>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
-  <div id="meetings"class="columns mediumlarge-12">
-    <%= render partial: "meetings" %>
+  <div class="columns mediumlarge-12">
+    <div class="conference-programme">
+      <div class="tabs-content" data-tabs-content="conference-day-tabs">
+        <% meetings_months.each_with_index do |month, index| %>
+          <div class="programme-day tabs-panel<%= " is-active" if default_month?(meetings_months, month) %>" id="conference-day-tab-<%= index %>">
+            <% time, meetings = meetings_by_time[index] %>
+            <%= render partial: "program_item", locals: { start_time: time[:start_time], end_time: time[:end_time], meetings: meetings.pluck(:meeting) } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
