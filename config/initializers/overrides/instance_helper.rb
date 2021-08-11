@@ -24,4 +24,8 @@ Decidim::Organization.class_eval do
   def degrowth?
     host.match?("degrowth") || host.match?("localhost") # DEBUG
   end
+
+  def filtered_conference_program_meetings?
+    degrowth?
+  end
 end

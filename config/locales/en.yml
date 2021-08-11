@@ -5,6 +5,22 @@ en:
       conference_program:
         show:
           month: Month
+        filters:
+          all: All
+          category: Session type
+          scope: Thematic stream
+          search: Search
+          type: Type
+          type_values:
+            all: All
+            hybrid: Both
+            in_person: In-person
+            online: Online
+        filters_small_view:
+          close_modal: Close modal
+          filter: Filter
+          filter_by: Filter by
+          unfold: Unfold
     content_blocks:
       latest_blog_posts:
         blog_id: Blog ID

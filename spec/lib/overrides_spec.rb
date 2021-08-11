@@ -27,6 +27,10 @@ checksums = [
   {
     package: "decidim-conferences",
     files: {
+      # controllers
+      "/app/controllers/decidim/conferences/conference_program_controller.rb" => "ebb11d8c033ff71547d30311ea764f61",
+      # helpers
+      "/app/helpers/decidim/conferences/conference_program_helper.rb" => "78922c5feb50ed0f514cf713a993b297",
       # views
       "/app/views/decidim/conferences/conference_program/show.html.erb" => "e4d32ccc41adea7d9689b9021ef83694",
       "/app/views/decidim/conferences/conference_program/_program_meeting.html.erb" => "0b810b92d4a4fe7a47d19b73739b0494",
@@ -47,6 +51,7 @@ checksums = [
     files: {
       # helpers
       "/app/helpers/decidim/meetings/map_helper.rb" => "66522037a27b89459bbc00f74cba98b6",
+      # models
       "/app/models/decidim/meetings/meeting.rb" => "92ec0cc608c342bfdd95eeeceb9cf749"
     }
   },
