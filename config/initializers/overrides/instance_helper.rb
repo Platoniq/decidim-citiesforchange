@@ -28,4 +28,8 @@ Decidim::Organization.class_eval do
   def filtered_conference_program_meetings?
     degrowth?
   end
+
+  def conference_program_meetings_group_by
+    degrowth? ? :day : :month
+  end
 end

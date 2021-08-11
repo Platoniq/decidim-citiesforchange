@@ -44,15 +44,19 @@ Rails.application.config.to_prepare do
       )
     end
 
-    def default_month?(months, month)
-      return current_month?(month) if months.include?(Time.current.beginning_of_month)
+    def default_period?(periods, period)
+      return current_period.eql?(period) if periods.include?(current_period)
 
-      available_months = months.select(&:future?).presence || months
-      available_months.first.eql?(month)
+      available_periods = periods.select(&:future?).presence || periods
+      available_periods.first.eql?(period)
     end
 
-    def current_month?(month)
-      Time.current.beginning_of_month.eql?(month)
+    def current_period
+      Time.current.send("beginning_of_#{meetings_group_by_period}")
+    end
+
+    def period_localization_format(_period)
+      meetings_group_by_period == :month ? :month_and_year : "%d %b"
     end
 
     # Returns the following data structure:
