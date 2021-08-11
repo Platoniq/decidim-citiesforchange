@@ -1,8 +1,8 @@
-<% meetings_months.count.times do |index| %>
-  <% time, meetings = meetings_by_time[index] %>
+<% meetings_months.each_with_index do |month, index| %>
+  <% meetings_by_time(month).each do |time, meetings| %>
+    var id = '<%= "#conference-day-tab-#{index}" %>';
+    var html = '<%= j(render partial: "program_item", locals: { start_time: time[:start_time], end_time: time[:end_time], meetings: meetings.pluck(:meeting) }).strip.html_safe if meetings %>';
 
-  var id = '<%= "#conference-day-tab-#{index}" %>';
-  var html = '<%= j(render partial: "program_item", locals: { start_time: time[:start_time], end_time: time[:end_time], meetings: meetings.pluck(:meeting) }).strip.html_safe if meetings %>';
-
-  $(id).html(html);
+    $(id).html(html);
+  <% end %>
 <% end %>

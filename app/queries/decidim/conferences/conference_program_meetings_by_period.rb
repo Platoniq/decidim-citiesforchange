@@ -12,16 +12,17 @@ module Decidim
 
       def query
         @periods.each_with_object({}) do |period, hash|
+          hash[period] = {}
           meetings = meetings_for_period(@relation, period)
 
           if meetings.any?
             meetings.each do |meeting|
               key = { start_time: meeting.start_time, end_time: meeting.end_time }
-              hash[key] ||= []
-              hash[key] << { meeting: meeting }
+              hash[period][key] ||= []
+              hash[period][key] << { meeting: meeting }
             end
           else
-            hash[{ no_meetings_for_period: period }] = []
+            hash[period][{ no_meetings_for_period: period }] = []
           end
         end
       end

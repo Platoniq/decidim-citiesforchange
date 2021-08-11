@@ -4,7 +4,7 @@ Rails.application.config.to_prepare do
   Decidim::Conferences::ConferenceProgramController.class_eval do
     include Decidim::FilterResource
 
-    helper_method :meetings_months, :meetings_by_time
+    helper_method :meetings_months, :meetings_by_period
 
     private
 
@@ -77,13 +77,16 @@ Rails.application.config.to_prepare do
     end
 
     def meetings_months
-      @meetings_months ||= collection.map { |m| [m.start_time.beginning_of_month] }.uniq.flatten
+      @meetings_months ||= collection.map { |month| month.start_time.beginning_of_month }.uniq
     end
 
-    def meetings_by_time
-      relation = current_organization.filtered_conference_program_meetings? ? filtered_collection : collection
-      periods = meetings_months.map { |month| [month.beginning_of_month..month.end_of_month] }
-      Decidim::Conferences::ConferenceProgramMeetingsByPeriod.new(relation, periods).query.to_a
+    def meetings_by_period
+      @meetings_by_period ||= begin
+        relation = current_organization.filtered_conference_program_meetings? ? filtered_collection : collection
+        periods = meetings_months.map { |month| month.beginning_of_month..month.end_of_month }
+
+        Decidim::Conferences::ConferenceProgramMeetingsByPeriod.new(relation, periods).query
+      end
     end
   end
 end

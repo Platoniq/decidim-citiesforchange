@@ -47,8 +47,9 @@ end
       <div class="tabs-content" data-tabs-content="conference-day-tabs">
         <% meetings_months.each_with_index do |month, index| %>
           <div class="programme-day tabs-panel<%= " is-active" if default_month?(meetings_months, month) %>" id="conference-day-tab-<%= index %>">
-            <% time, meetings = meetings_by_time[index] %>
-            <%= render partial: "program_item", locals: { start_time: time[:start_time], end_time: time[:end_time], meetings: meetings.pluck(:meeting) } %>
+            <% meetings_by_time(month).each do |time, meetings| %>
+              <%= render partial: "program_item", locals: { start_time: time[:start_time], end_time: time[:end_time], meetings: meetings.pluck(:meeting) } %>
+            <% end %>
           </div>
         <% end %>
       </div>

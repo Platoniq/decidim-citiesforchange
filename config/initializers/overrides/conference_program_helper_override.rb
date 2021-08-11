@@ -54,5 +54,20 @@ Rails.application.config.to_prepare do
     def current_month?(month)
       Time.current.beginning_of_month.eql?(month)
     end
+
+    # Returns the following data structure:
+    #   [
+    #     [
+    #       { start_time: #<ActiveSupport::TimeWithZone>, end_time: #<ActiveSupport::TimeWithZone> },
+    #       [
+    #         { meeting: #<Decidim::Meetings::Meeting> },
+    #         ...
+    #       ]
+    #     ],
+    #     ...
+    #   ]
+    def meetings_by_time(time)
+      meetings_by_period.find { |period, _| period.include?(time) }.last
+    end
   end
 end
