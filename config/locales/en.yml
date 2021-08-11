@@ -6,22 +6,9 @@ en:
         show:
           month: Month
         filters:
-          activity: My activity
           all: All
-          category: Category
-          date: Date
-          date_values:
-            all: All
-            past: Past
-            upcoming: Upcoming
-          my_meetings: My meetings
-          origin: Origin
-          origin_values:
-            all: All
-            citizens: Citizens
-            official: Official
-            user_groups: Groups
-          scope: Scope
+          category: Session type
+          scope: Thematic stream
           search: Search
           type: Type
           type_values:

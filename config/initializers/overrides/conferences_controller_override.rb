@@ -4,18 +4,18 @@ Rails.application.config.to_prepare do
   Decidim::Conferences::ConferenceProgramController.class_eval do
     include Decidim::FilterResource
 
-    helper Decidim::FiltersHelper
-    helper Decidim::Meetings::ApplicationHelper
-
     helper_method :meetings_months, :meetings_by_time
 
     private
 
+    # Method overrided
+    # Same scope but with order
     def collection
       order(meetings)
     end
 
-    # Same but without order
+    # Method overrided
+    # Same scope but without order
     def meetings
       return unless meeting_component.published? || !meeting_component.presence
 
