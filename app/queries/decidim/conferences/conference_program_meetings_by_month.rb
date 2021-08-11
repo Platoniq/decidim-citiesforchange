@@ -18,7 +18,6 @@ module Decidim
   end
 end
 
-
 # def conference_meetings_by_months
 #   meetings = filtered_meetings? ? filtered_collection : collection
 #   meetings_by_month = Decidim::Conferences::ConferenceProgramMeetingsByMonth.new(meetings, months).query

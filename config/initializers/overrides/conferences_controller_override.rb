@@ -11,8 +11,23 @@ Rails.application.config.to_prepare do
 
     private
 
+    def collection
+      order(meetings)
+    end
+
+    # Same but without order
+    def meetings
+      return unless meeting_component.published? || !meeting_component.presence
+
+      @meetings ||= Decidim::Meetings::Meeting.where(component: meeting_component).visible_meeting_for(current_user)
+    end
+
+    def order(relation)
+      relation.order(:start_time)
+    end
+
     def filtered_collection
-      search.results
+      order(search.results)
     end
 
     def search_klass
@@ -62,7 +77,7 @@ Rails.application.config.to_prepare do
     end
 
     def meetings_months
-      @meetings_months ||= meetings.map { |m| [m.start_time.beginning_of_month] }.uniq.flatten
+      @meetings_months ||= collection.map { |m| [m.start_time.beginning_of_month] }.uniq.flatten
     end
 
     def meetings_by_month
