@@ -47,6 +47,47 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     expect(page).to have_content(/Program/i)
   end
 
+  describe "hero banner" do
+    include Decidim::Conferences::ConferenceHelper
+    include ActionView::Helpers::TranslationHelper
+
+    context "when in degrowth instance" do
+      let(:stubs) do
+        stub_organization(:degrowth?, true)
+      end
+
+      it "renders custom hero banner" do
+        within "#content > .extended.hero" do
+          expect(page).to have_content(translated(conference.slogan))
+          expect(page).to have_link("Program (PDF)", href: Rails.application.secrets.degrowth[:pdf_program_url])
+
+          expect(page).not_to have_content(translated(conference.title))
+          expect(page).not_to have_content(render_date(conference))
+          expect(page).not_to have_content(conference.location)
+          expect(page).not_to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
+        end
+      end
+    end
+
+    context "when in citiesforchange instance" do
+      let(:stubs) do
+        stub_organization(:citiesforchange?, true)
+      end
+
+      it "renders custom hero banner" do
+        within "#content > .extended.hero" do
+          expect(page).to have_content(translated(conference.title))
+          expect(page).to have_content(translated(conference.slogan))
+          expect(page).to have_content(render_date(conference))
+          expect(page).to have_content(conference.location)
+          expect(page).to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
+
+          expect(page).not_to have_link("Program (PDF)", href: Rails.application.secrets.degrowth[:pdf_program_url])
+        end
+      end
+    end
+  end
+
   context "when conference program has RESTRICTED ACCESS" do
     let(:stubs) do
       stub_organization(:restricted_conference_program_access?, true)
@@ -78,6 +119,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     context "when user is NOT logged in" do
       it "shows only the hero banner" do
         expect(page).to have_css("#content > .extended.hero")
+
         expect(page).not_to have_css("#content > .row.expanded")
         expect(page).not_to have_css("#content > .wrapper")
       end

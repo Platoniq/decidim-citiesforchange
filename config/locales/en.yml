@@ -40,6 +40,8 @@ en:
         title: Title
   layouts:
     decidim:
+      conference_hero:
+        pdf_program: Program (PDF)
       footer:
         made_with_open_source: Website made with <a target="_blank" href="https://github.com/Platoniq/decidim-citiesforchange">free
           software</a>.
