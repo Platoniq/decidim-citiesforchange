@@ -34,7 +34,8 @@ checksums = [
       # views
       "/app/views/decidim/conferences/conference_program/show.html.erb" => "e4d32ccc41adea7d9689b9021ef83694",
       "/app/views/decidim/conferences/conference_program/_program_meeting.html.erb" => "0b810b92d4a4fe7a47d19b73739b0494",
-      "/app/views/layouts/decidim/_conference_hero.html.erb" => "80a466727d353089e21988a5c72e52bd"
+      "/app/views/layouts/decidim/_conference_hero.html.erb" => "80a466727d353089e21988a5c72e52bd",
+      "/app/views/layouts/decidim/conference.html.erb" => "b88c1d25f165281ffcf0c5d7abd80bbf"
     }
   },
   {

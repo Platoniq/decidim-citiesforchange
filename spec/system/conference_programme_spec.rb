@@ -25,7 +25,9 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     ]
   end
 
-  let(:stubs) { nil }
+  let(:stubs) do
+    stub_organization(:restricted_conference_program_access?, false)
+  end
   let(:setup) { nil }
 
   # rubocop:disable RSpec/AnyInstance
@@ -43,6 +45,45 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
 
   it "renders the program page" do
     expect(page).to have_content(/Program/i)
+  end
+
+  context "when conference program has RESTRICTED ACCESS" do
+    let(:stubs) do
+      stub_organization(:restricted_conference_program_access?, true)
+    end
+
+    context "when user is logged in" do
+      let(:setup) do
+        sign_in(user)
+      end
+      let(:user) { create(:user, :confirmed, organization: organization) }
+
+      it "shows all the content" do
+        expect(page).to have_css("#content > .extended.hero")
+        expect(page).to have_css("#content > .row.expanded")
+        expect(page).to have_css("#content > .wrapper")
+      end
+    end
+
+    context "when user is NOT logged in" do
+      it "shows only the hero banner" do
+        expect(page).to have_css("#content > .extended.hero")
+        expect(page).not_to have_css("#content > .row.expanded")
+        expect(page).not_to have_css("#content > .wrapper")
+      end
+
+      context "when visiting another page belonging to the conference" do
+        before do
+          visit main_component_path(component) # meetings#index
+        end
+
+        it "shows unauthorized error" do
+          within_flash_messages do
+            expect(page).to have_content("You are not authorized to perform this action")
+          end
+        end
+      end
+    end
   end
 
   shared_examples "showing filtered program meetings" do
@@ -143,6 +184,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
 
   context "when grouping by MONTH" do
     let(:stubs) do
+      super() # run stubs from parent context
       stub_organization(:conference_program_meetings_group_by, :month)
     end
 
@@ -180,6 +222,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
 
   context "when grouping by DAY" do
     let(:stubs) do
+      super() # run stubs from parent context
       stub_organization(:conference_program_meetings_group_by, :day)
     end
 
