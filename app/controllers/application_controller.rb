@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :restrict_conference_program_access, if: -> { current_organization.restricted_conference_program_access? }
+  before_action :restrict_conference_program_access, if: lambda {
+    current_organization.restricted_conference_program_access? && current_user.nil?
+  }
 
   private
 
