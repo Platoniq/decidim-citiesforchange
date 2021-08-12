@@ -63,6 +63,16 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
         expect(page).to have_css("#content > .row.expanded")
         expect(page).to have_css("#content > .wrapper")
       end
+
+      context "when visiting another page belonging to the conference" do
+        before do
+          visit main_component_path(component) # meetings#index
+        end
+
+        it "does not show unauthorized error" do
+          expect(page).not_to have_content("You are not authorized to perform this action")
+        end
+      end
     end
 
     context "when user is NOT logged in" do
