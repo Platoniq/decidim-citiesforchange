@@ -1,3 +1,27 @@
+<% if current_organization.degrowth? %>
+
+<section class="extended hero degrowth"
+  style="background-image:url(<%= current_participatory_space.banner_image.url %>);">
+  <div class="hero__container degrowth">
+    <div class="row">
+      <div class="columns large-10 text-left">
+        <h2 class="text-highlight">
+          <%= translated_attribute(current_participatory_space.slogan) %>
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row column medium-12 text-left mt-m">
+        <div class="column medium-3 end">
+          <%= link_to t(".pdf_program"), Rails.application.secrets.degrowth[:pdf_program_url], class:"button button--sc light hollow expanded" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% else %>
+
 <section class="extended hero"
   style="background-image:url(<%= current_participatory_space.banner_image.url %>);">
   <div class="hero__container">
@@ -40,3 +64,5 @@
     </div>
   </div>
 </section>
+
+<% end %>
