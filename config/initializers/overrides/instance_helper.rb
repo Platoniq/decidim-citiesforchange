@@ -32,4 +32,8 @@ Decidim::Organization.class_eval do
   def conference_program_meetings_group_by
     degrowth? ? :day : :month
   end
+
+  def restricted_conference_program_access?
+    degrowth?
+  end
 end
