@@ -30,12 +30,6 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
   end
   let(:setup) { nil }
 
-  # rubocop:disable RSpec/AnyInstance
-  def stub_organization(method, value)
-    allow_any_instance_of(Decidim::Organization).to receive(method).and_return(value)
-  end
-  # rubocop:enable RSpec/AnyInstance
-
   before do
     stubs
     setup
@@ -56,7 +50,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
         stub_organization(:degrowth?, true)
       end
 
-      it "renders custom hero banner" do
+      it "renders expected hero banner" do
         within "#content > .extended.hero" do
           expect(page).to have_content(translated(conference.slogan))
           expect(page).to have_link("Program (PDF)", href: Rails.application.secrets.degrowth[:pdf_program_url])
@@ -74,7 +68,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
         stub_organization(:citiesforchange?, true)
       end
 
-      it "renders custom hero banner" do
+      it "renders expected hero banner" do
         within "#content > .extended.hero" do
           expect(page).to have_content(translated(conference.title))
           expect(page).to have_content(translated(conference.slogan))
