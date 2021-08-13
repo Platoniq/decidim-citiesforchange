@@ -5,11 +5,9 @@ require "rails_helper"
 describe "Visit the conference programme page", type: :system, perform_enqueued: true do
   let!(:organization) { create :organization }
   let!(:conference) { create(:conference, organization: organization) }
-
   let!(:component) do
     create(:component, manifest_name: :meetings, participatory_space: conference)
   end
-
   # rubocop:disable Rails/TimeZone
   let!(:meeting_1) { create(:meeting, component: component, start_time: Time.new(2021, 12, 31, 14, 30), end_time: Time.new(2022, 12, 31, 18, 45)) }
   let!(:meeting_2) { create(:meeting, component: component, start_time: Time.new(2022, 0o3, 0o5, 14, 30), end_time: Time.new(2022, 0o3, 0o5, 18, 45)) }
@@ -24,7 +22,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
       meeting_4
     ]
   end
-
+  let(:user) { create(:user, :confirmed, organization: organization) }
   let(:stubs) do
     stub_organization(:restricted_conference_program_access?, false)
   end
@@ -84,6 +82,50 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     end
   end
 
+  describe "navigation bar" do
+    let(:setup) do
+      speaker
+    end
+    let(:speaker) { create(:conference_speaker, conference: conference) }
+
+    context "when in degrowth instance" do
+      let(:stubs) do
+        super() # run stubs from parent context
+        stub_organization(:degrowth?, true)
+      end
+
+      it "renders expected navigation bar" do
+        within "#process-nav-content" do
+          links = find_all("a")
+
+          expect(links.size).to eq(3)
+          expect(links[0].text).to eq(translated(component.name).upcase)
+          expect(links[1].text).to eq("SPEAKERS")
+          expect(links[2].text).to eq("VENUES")
+        end
+      end
+    end
+
+    context "when in citiesforchange instance" do
+      let(:stubs) do
+        super() # run stubs from parent context
+        stub_organization(:citiesforchange?, true)
+      end
+
+      it "renders expected navigation bar" do
+        within "#process-nav-content" do
+          links = find_all("a")
+
+          expect(links.size).to eq(4)
+          expect(links[0].text).to eq("INFORMATION")
+          expect(links[1].text).to eq("SPEAKERS")
+          expect(links[2].text).to eq(translated(component.name).upcase)
+          expect(links[3].text).to eq("VENUES")
+        end
+      end
+    end
+  end
+
   context "when conference program has RESTRICTED ACCESS" do
     let(:stubs) do
       stub_organization(:restricted_conference_program_access?, true)
@@ -93,7 +135,6 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
       let(:setup) do
         sign_in(user)
       end
-      let(:user) { create(:user, :confirmed, organization: organization) }
 
       it "shows all the content" do
         expect(page).to have_css("#content > .extended.hero")
