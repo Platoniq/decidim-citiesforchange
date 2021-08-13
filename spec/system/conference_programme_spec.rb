@@ -102,6 +102,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
           expect(links[0].text).to eq(translated(component.name).upcase)
           expect(links[1].text).to eq("SPEAKERS")
           expect(links[2].text).to eq("VENUES")
+          expect(links[2].matches_css?("a[href='#{decidim_conferences.conference_path(conference)}']")).to eq(true)
         end
       end
     end
@@ -121,6 +122,52 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
           expect(links[1].text).to eq("SPEAKERS")
           expect(links[2].text).to eq(translated(component.name).upcase)
           expect(links[3].text).to eq("VENUES")
+          expect(links[3].matches_css?("a[href='#{decidim_conferences.conference_path(conference)}#venues']")).to eq(true)
+        end
+      end
+    end
+  end
+
+  describe "venues" do
+    let(:setup) do
+      conference.update(show_statistics: false)
+    end
+
+    before do
+      within "#process-nav-content" do
+        click_link("Venues")
+      end
+    end
+
+    context "when in degrowth instance" do
+      let(:stubs) do
+        super() # run stubs from parent context
+        stub_organization(:degrowth?, true)
+      end
+
+      it "renders expected sections" do
+        within ".wrapper" do
+          expect(page).to have_css("section#venues")
+
+          expect(page).not_to have_css("h3", text: "INTRODUCTION")
+          expect(page).not_to have_css("h3", text: "DETAILS")
+          expect(page).not_to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
+        end
+      end
+    end
+
+    context "when in citiesforchange instance" do
+      let(:stubs) do
+        super() # run stubs from parent context
+        stub_organization(:citiesforchange?, true)
+      end
+
+      it "renders expected sections" do
+        within ".wrapper" do
+          expect(page).to have_css("h3", text: "INTRODUCTION")
+          expect(page).to have_css("h3", text: "DETAILS")
+          expect(page).to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
+          expect(page).to have_css("section#venues")
         end
       end
     end
