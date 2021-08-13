@@ -52,10 +52,11 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
 
       it "renders expected hero banner" do
         within "#content > .extended.hero" do
-          expect(page).to have_content(translated(conference.slogan))
+          expect(page).to have_css(:h1, text: translated(conference.slogan))
           expect(page).to have_link("Program (PDF)", href: Rails.application.secrets.degrowth[:pdf_program_url])
 
-          expect(page).not_to have_content(translated(conference.title))
+          expect(page).not_to have_css(:h1, text: translated(conference.title))
+          expect(page).not_to have_css(:h2, text: translated(conference.slogan))
           expect(page).not_to have_content(render_date(conference))
           expect(page).not_to have_content(conference.location)
           expect(page).not_to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
@@ -70,12 +71,13 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
 
       it "renders expected hero banner" do
         within "#content > .extended.hero" do
-          expect(page).to have_content(translated(conference.title))
-          expect(page).to have_content(translated(conference.slogan))
+          expect(page).to have_css(:h1, text: translated(conference.title))
+          expect(page).to have_css(:h2, text: translated(conference.slogan))
           expect(page).to have_content(render_date(conference))
           expect(page).to have_content(conference.location)
           expect(page).to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
 
+          expect(page).not_to have_css(:h1, text: translated(conference.slogan))
           expect(page).not_to have_link("Program (PDF)", href: Rails.application.secrets.degrowth[:pdf_program_url])
         end
       end
