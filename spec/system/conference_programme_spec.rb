@@ -275,10 +275,10 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     it "renders tabs with days" do
       within "#conference-day-tabs" do
         expect(page).to have_selector(".tabs-title", count: 4)
-        expect(page).to have_content(/11 May/i)
-        expect(page).to have_content(/11 Mar/i)
-        expect(page).to have_content(/05 Mar/i)
-        expect(page).to have_content(/31 Dec/i)
+        expect(page).to have_content(/Fri 31/i)
+        expect(page).to have_content(/Sat 05/i)
+        expect(page).to have_content(/Fri 11/i)
+        expect(page).to have_content(/Wed 11/i)
       end
     end
 
