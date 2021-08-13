@@ -22,7 +22,9 @@ checksums = [
       # emails
       "/app/cells/decidim/newsletter_templates/image_text_cta/show.erb" => "bbdfded0065ce4c2ac93f6358853b887",
       "/app/cells/decidim/newsletter_templates/image_text_cta_settings_form/show.erb" => "2d3acf3d142dd85d150583bce65fbb1c",
-      "/app/cells/decidim/newsletter_templates/basic_only_text/show.erb" => "1f3020690377a48dd6bd1f75db3f2254"
+      "/app/cells/decidim/newsletter_templates/basic_only_text/show.erb" => "1f3020690377a48dd6bd1f75db3f2254",
+      # models
+      "/app/models/decidim/organization.rb" => "c3ff5577629b71676dc1cfb70289149a"
     }
   },
   {
@@ -54,7 +56,9 @@ checksums = [
       # helpers
       "/app/helpers/decidim/meetings/map_helper.rb" => "66522037a27b89459bbc00f74cba98b6",
       # models
-      "/app/models/decidim/meetings/meeting.rb" => "92ec0cc608c342bfdd95eeeceb9cf749"
+      "/app/models/decidim/meetings/meeting.rb" => "92ec0cc608c342bfdd95eeeceb9cf749",
+      # serializers
+      "/lib/decidim/meetings/meeting_serializer.rb" => "bb9b455a2fd8f3e1a5103f2110d65581"
     }
   },
   {
