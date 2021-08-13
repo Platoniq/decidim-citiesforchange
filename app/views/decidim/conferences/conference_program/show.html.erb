@@ -34,8 +34,7 @@ end
             <!-- Wrap the anchor inside a div to keep correct button styling -->
             <div>
               <a data-tabs-target="conference-day-tab-<%= index %>" href="#conference-day-tab-<%= index %>" class="button button--nomargin">
-                <% # HANDLE FORMAT! %>
-                <%== l period, format: period_localization_format(period) %>
+                <%== l period, format: period_localization_format %>
               </a>
             </div>
           </li>

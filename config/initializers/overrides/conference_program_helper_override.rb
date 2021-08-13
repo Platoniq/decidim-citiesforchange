@@ -55,8 +55,8 @@ Rails.application.config.to_prepare do
       Time.current.send("beginning_of_#{meetings_group_by_period}")
     end
 
-    def period_localization_format(_period)
-      meetings_group_by_period == :month ? :month_and_year : "%d %b"
+    def period_localization_format
+      meetings_group_by_period == :month ? :month_and_year : "%a %d"
     end
 
     # Returns the following data structure:
