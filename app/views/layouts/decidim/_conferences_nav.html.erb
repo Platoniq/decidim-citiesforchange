@@ -31,7 +31,7 @@
 
   venues_menu_item = {
     name: t(".venues"),
-    url: decidim_conferences.conference_path(current_participatory_space, anchor: "venues")
+    url: decidim_conferences.conference_path(current_participatory_space, ({ anchor: "venues" } unless current_organization.degrowth?))
   } if meeting_components.any?
 
   media_menu_item =  {
