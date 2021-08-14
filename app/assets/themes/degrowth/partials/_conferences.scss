@@ -157,3 +157,30 @@
     border-bottom: $border-thin;
   }
 }
+
+.extended.hero {
+  /* Reduce conference banner height */
+  .hero__container {
+    padding: 3rem 0;
+  }
+
+  &::after {
+    content: none;
+  }
+
+  .text-highlight {
+    font-family: Esteban;
+    color: black;
+    text-shadow: none;
+    font-size: 2.25rem;
+    max-width: 42rem;
+
+    &.hero-heading {
+      font-size: 3.5rem;
+    }
+  }
+
+  .mt-m {
+    margin-top: 1rem !important;
+  }
+}
