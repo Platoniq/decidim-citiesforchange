@@ -38,30 +38,18 @@
       display: inline-block;
       height: 36px;
       width: auto;
-
-      &.fossielvrij-logo {
-        width: 8rem;
-        height: max-content;
-      }
-
-      &.ua-logo {
-        height: 64px;
-      }
     }
 
     .grid-x {
-      align-items: center;
       justify-content: center;
       gap: 1rem;
 
       &:first-child {
+        margin-bottom: 1rem;
+
         img {
           height: 56px;
         }
-      }
-
-      &:not(:last-child) {
-        margin-bottom: 1rem;
       }
     }
   }
