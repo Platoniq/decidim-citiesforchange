@@ -1,6 +1,27 @@
 ---
 en:
   decidim:
+    admin:
+      bulk_invitations:
+        bulk_invitations:
+          create:
+            success: The file was uploaded successfully and processing will begin shortly
+            error: "The file could not be uploaded because %{error}"
+        form:
+          help_text:
+          title: Bulk invitations
+          submit: Upload file
+          submitting: Uploading...
+          csv_file: CSV file
+          csv_col_sep: CSV column separator
+          help_text: "CSV must contain the following columns in the same order: <strong>%{csv_columns}</strong>."
+          csv_col_sep_options:
+            comma: Comma
+            semicolon: Semicolon
+          bulk_invite_mode: Bulk invite mode
+          bulk_invite_mode_options:
+            send_new_invitations: Send new invitations (ignores old users)
+            resend_old_invitations: Resend old invitations (ignores new users)
     conferences:
       conference_program:
         show:
