@@ -55,6 +55,8 @@ checksums = [
   {
     package: "decidim-meetings",
     files: {
+      # controllers
+      "/app/controllers/decidim/meetings/meetings_controller.rb" => "9b5f2673ac38699c86c89fbd0d6e326f",
       # helpers
       "/app/helpers/decidim/meetings/map_helper.rb" => "66522037a27b89459bbc00f74cba98b6",
       # models

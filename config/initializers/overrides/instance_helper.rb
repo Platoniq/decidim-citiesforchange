@@ -40,4 +40,8 @@ Decidim::Organization.class_eval do
   def bulk_invitations_enabled?
     degrowth?
   end
+
+  def redirect_meetings_index_to_conference_program?
+    degrowth?
+  end
 end
