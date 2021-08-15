@@ -43,12 +43,16 @@
         <div class="column medium-12">
           <strong><%= t(".location") %></strong>
           <br>
-          <% if meeting.respond_to? :location %>
-            <u><%= translated_attribute meeting.location %></u>&nbsp;
-          <% end %>
-          <span><%= meeting.address %></span>
-          <% if meeting.respond_to? :location_hints %>
-            <span>&nbsp;<%= translated_attribute meeting.location_hints %></span>
+          <% if meeting.online_meeting? %>
+            <u><%= link_to(meeting.online_meeting_url, meeting.online_meeting_url, target: "_blank") %></u>&nbsp;
+          <% else %>
+            <% if meeting.respond_to? :location %>
+              <u><%= translated_attribute meeting.location %></u>&nbsp;
+            <% end %>
+            <span><%= meeting.address %></span>
+            <% if meeting.respond_to? :location_hints %>
+              <span>&nbsp;<%= translated_attribute meeting.location_hints %></span>
+            <% end %>
           <% end %>
         </div>
       </div>
