@@ -62,7 +62,10 @@ checksums = [
       # models
       "/app/models/decidim/meetings/meeting.rb" => "92ec0cc608c342bfdd95eeeceb9cf749",
       # serializers
-      "/lib/decidim/meetings/meeting_serializer.rb" => "bb9b455a2fd8f3e1a5103f2110d65581"
+      "/lib/decidim/meetings/meeting_serializer.rb" => "bb9b455a2fd8f3e1a5103f2110d65581",
+      # views
+      "/app/views/decidim/meetings/meetings/show.html.erb" => "f10b79ff2fbb714470fd7eef6f3a0056"
+
     }
   },
   {
