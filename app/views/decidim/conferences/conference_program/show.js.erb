@@ -1,10 +1,6 @@
-<% time_periods.each_with_index do |month, index| %>
-  <% meetings_by_time(month).each do |time, meetings| %>
-    var id = '<%= "#conference-day-tab-#{index}" %>';
-    var html = '<%= j(render partial: "program_item", locals: { start_time: time[:start_time], end_time: time[:end_time], meetings: meetings.pluck(:meeting) }).strip.html_safe if meetings %>';
+var id = '<%= "#conference-program" %>';
+var html = '<%= j(render partial: "conference_program") %>';
 
-    $(id).html(html);
-  <% end %>
-<% end %>
+$(id).html(html);
 
 $(document).foundation();
