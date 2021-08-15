@@ -323,6 +323,32 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     end
   end
 
+  describe "events location" do
+    let(:setup) do
+      meeting_2.update!(
+        type_of_meeting: "online",
+        online_meeting_url: "http://not.zoom/secret"
+      )
+      meeting_3.update!(
+        type_of_meeting: "in_person",
+        location: { en: "secret_location" },
+        address: "secret_address",
+        location_hints: { en: "secret_hints" }
+      )
+    end
+
+    before do
+      page.find("#conference-day-tab-1-label").click
+    end
+
+    it "renders only meetings for that month" do
+      expect(page).to have_content translated(meeting_2.online_meeting_url)
+      expect(page).to have_content translated(meeting_3.location)
+      expect(page).to have_content translated(meeting_3.address)
+      expect(page).to have_content translated(meeting_3.location_hints)
+    end
+  end
+
   shared_examples "showing filtered program meetings" do
     it "shows only filtered meetings", :slow do
       expect(page).to have_content translated(filtered_meeting.title)
@@ -435,19 +461,13 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     end
 
     context "when clicking on a tab with a month" do
-      let(:setup) do
-        meeting_2.update(type_of_meeting: "online", online_meeting_url: "http://topsecret.com/")
-      end
-
       before do
         page.find("#conference-day-tab-1-label").click
       end
 
       it "renders only meetings for that month" do
         expect(page).to have_content translated(meeting_2.title)
-        expect(page).to have_content translated(meeting_2.online_meeting_url)
         expect(page).to have_content translated(meeting_3.title)
-        expect(page).to have_content translated(meeting_3.address)
 
         expect(page).not_to have_content translated(meeting_1.title)
         expect(page).not_to have_content translated(meeting_4.title)
