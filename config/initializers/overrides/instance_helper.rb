@@ -36,4 +36,8 @@ Decidim::Organization.class_eval do
   def restricted_conference_program_access?
     degrowth?
   end
+
+  def bulk_invitations_enabled?
+    degrowth?
+  end
 end

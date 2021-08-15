@@ -67,7 +67,8 @@ checksums = [
     package: "decidim-admin",
     files: {
       # views
-      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "725fc77b4c80f885b7b4191a75a06949"
+      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "725fc77b4c80f885b7b4191a75a06949",
+      "/app/views/decidim/admin/officializations/index.html.erb" => "f1911b896b0832e7233f6a4674278371"
     }
   }
 ]

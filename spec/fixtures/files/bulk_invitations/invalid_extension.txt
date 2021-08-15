@@ -1,0 +1,9 @@
+name;email
+Aitor;aitor@platoniq.net
+Ivan;ivan@platoniq.net
+Pau;pau@platoniq.net
+Vera;vera@platoniq.net
+;
+;
+;
+;
