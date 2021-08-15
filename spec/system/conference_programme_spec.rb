@@ -27,12 +27,13 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
     stub_organization(:restricted_conference_program_access?, false)
   end
   let(:setup) { nil }
+  let(:conference_conference_program_path) { decidim_conferences.conference_conference_program_path(conference, component) }
 
   before do
     stubs
     setup
     switch_to_host(organization.host)
-    visit decidim_conferences.conference_conference_program_path(conference, component)
+    visit conference_conference_program_path
   end
 
   it "renders the program page" do
@@ -57,7 +58,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
           expect(page).not_to have_css("h2", text: translated(conference.slogan))
           expect(page).not_to have_content(render_date(conference))
           expect(page).not_to have_content(conference.location)
-          expect(page).not_to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
+          expect(page).not_to have_link(translated(component.name), href: conference_conference_program_path)
         end
       end
     end
@@ -73,7 +74,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
           expect(page).to have_css("h2", text: translated(conference.slogan))
           expect(page).to have_content(render_date(conference))
           expect(page).to have_content(conference.location)
-          expect(page).to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
+          expect(page).to have_link(translated(component.name), href: conference_conference_program_path)
 
           expect(page).not_to have_css("h1", text: translated(conference.slogan))
           expect(page).not_to have_css("a[href='#{Rails.application.secrets.degrowth[:pdf_program_url]}'][target='_blank']", text: "PROGRAM (PDF)")
@@ -151,7 +152,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
 
           expect(page).not_to have_css("h3", text: "INTRODUCTION")
           expect(page).not_to have_css("h3", text: "DETAILS")
-          expect(page).not_to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
+          expect(page).not_to have_link(translated(component.name), href: conference_conference_program_path)
         end
       end
     end
@@ -166,7 +167,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
         within ".wrapper" do
           expect(page).to have_css("h3", text: "INTRODUCTION")
           expect(page).to have_css("h3", text: "DETAILS")
-          expect(page).to have_link(translated(component.name), href: decidim_conferences.conference_conference_program_path(conference, component))
+          expect(page).to have_link(translated(component.name), href: conference_conference_program_path)
           expect(page).to have_css("section#venues")
         end
       end
@@ -217,6 +218,106 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
           within_flash_messages do
             expect(page).to have_content("You are not authorized to perform this action")
           end
+        end
+      end
+    end
+  end
+
+  describe "event page redirections" do
+    before do
+      page.find("#conference-day-tab-1-label").click
+      click_link translated(filtered_meeting.title)
+    end
+
+    let(:filtered_meeting) { meeting_2 }
+
+    let(:setup) do
+      component.update(settings: { scopes_enabled: true })
+      meeting_2.decidim_scope_id = scope_1.id
+      meeting_2.category = category_1
+      meeting_2.save
+      meeting_3.decidim_scope_id = scope_2.id
+      meeting_3.category = category_2
+      meeting_3.save
+    end
+
+    let(:scope_1) { create(:scope, organization: organization) }
+    let(:scope_2) { create(:scope, organization: organization) }
+    let(:category_1) { create(:category, participatory_space: conference) }
+    let(:category_2) { create(:category, participatory_space: conference) }
+
+    context "when meetings index is set to REDIRECT to conference program" do
+      let(:stubs) do
+        stub_organization(:redirect_meetings_index_to_conference_program?, true)
+      end
+
+      context "when going back to list" do
+        before do
+          click_link "Back to list"
+        end
+
+        it "renders the program page" do
+          expect(page).to have_current_path(/#{conference_conference_program_path}/i)
+        end
+      end
+
+      context "when clicking on a category name" do
+        before do
+          click_link translated(category_1.name)
+        end
+
+        it "renders the program page" do
+          expect(page).to have_current_path(/#{conference_conference_program_path}/i)
+          expect(page).to have_current_path(/filter%5Bcategory_id%5D%5B%5D=#{category_1.id}/i)
+        end
+      end
+
+      context "when clicking on a scope name" do
+        before do
+          click_link translated(scope_1.name)
+        end
+
+        it "renders the program page" do
+          expect(page).to have_current_path(/#{conference_conference_program_path}/i)
+          expect(page).to have_current_path(/filter%5Bscope_id%5D%5B%5D=#{scope_1.id}/i)
+        end
+      end
+    end
+
+    context "when meetings index is NOT set to REDIRECT to conference program" do
+      let(:stubs) do
+        stub_organization(:redirect_meetings_index_to_conference_program?, false)
+      end
+
+      context "when going back to list" do
+        before do
+          click_link "Back to list"
+        end
+
+        it "renders the meetings index" do
+          expect(page).to have_current_path(/#{main_component_path(component)}/i)
+        end
+      end
+
+      context "when clicking on a category name" do
+        before do
+          click_link translated(category_1.name)
+        end
+
+        it "renders the program page" do
+          expect(page).to have_current_path(/#{main_component_path(component)}/i)
+          expect(page).to have_current_path(/filter%5Bcategory_id%5D%5B%5D=#{category_1.id}/i)
+        end
+      end
+
+      context "when clicking on a scope name" do
+        before do
+          click_link translated(scope_1.name)
+        end
+
+        it "renders the program page" do
+          expect(page).to have_current_path(/#{main_component_path(component)}/i)
+          expect(page).to have_current_path(/filter%5Bscope_id%5D%5B%5D=#{scope_1.id}/i)
         end
       end
     end
@@ -295,7 +396,7 @@ describe "Visit the conference programme page", type: :system, perform_enqueued:
         meeting_2.category = category_1
         meeting_2.save
         meeting_3.category = category_2
-        meeting_2.save
+        meeting_3.save
       end
 
       let(:category_1) { create(:category, participatory_space: conference) }
