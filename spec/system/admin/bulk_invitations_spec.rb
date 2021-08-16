@@ -228,35 +228,36 @@ describe "Bulk invitations", type: :system do
       perform_enqueued_jobs { submit_form }
     end
 
-    it "sends reset password instructions email" do
-      expect(last_email.body.encoded).to include(decidim.edit_user_password_path)
+    it "sends invitation email" do
+      expect(last_email.body.encoded).to include("/users/invitation/accept")
     end
 
-    context "when following reset password instructions email link and updating the password" do
+    context "when following the email link and submitting the form" do
       before do
         logout(:user)
-        visit(decidim.edit_user_password_path(reset_password_token: reset_password_token))
-        submit_password_form
+        visit(accept_invitation_url)
+        submit_invitation_form
       end
 
-      let(:reset_password_token) do
+      let(:accept_invitation_url) do
         text = last_email.text_part.decoded
-        regex = %r{.*http://#{organization.host}/users/password/edit\?reset_password_token=}
-        match = text.match(regex)
+        regex = %r{http://#{organization.host}/users/invitation/accept\?invitation_token=.+?(?=invite_redirect)}
 
-        match.post_match.split.first
+        text.match(regex).to_s
       end
-      let(:submit_password_form) do
-        within("form#password_new_user") do
-          fill_in(:password_user_password, with: "decidim123456")
-          fill_in(:password_user_password_confirmation, with: "decidim123456")
+      let(:submit_invitation_form) do
+        within("form#invitation_edit_user") do
+          fill_in(:invitation_user_nickname, with: "el_duderino")
+          fill_in(:invitation_user_password, with: "decidim123456")
+          fill_in(:invitation_user_password_confirmation, with: "decidim123456")
+          check(:invitation_user_tos_agreement)
           find("*[type=submit]").click
         end
       end
 
       it "logs the user and redirects to account page" do
         within(".flash.callout.success") do
-          expect(page).to have_content("Your password has been successfully changed. You are now signed in.")
+          expect(page).to have_content("Your password was set successfully. You are now signed in.")
         end
 
         expect(page).to have_current_path(decidim.root_path)
