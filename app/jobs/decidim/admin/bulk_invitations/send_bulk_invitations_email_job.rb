@@ -11,17 +11,16 @@ module Decidim
         def perform(user_id)
           user = Decidim::User.find(user_id)
 
-          user.confirm
-
           deliver_email(user)
         end
 
         private
 
         def deliver_email(user)
-          token = user.send(:set_reset_password_token)
+          invited_by = nil
+          options = {}
 
-          Decidim::DecidimDeviseMailer.reset_password_instructions(user, token).deliver_now
+          user.invite!(invited_by, options)
         end
       end
     end
