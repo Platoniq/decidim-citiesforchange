@@ -24,4 +24,24 @@ Decidim::Organization.class_eval do
   def degrowth?
     host.match?("degrowth") || host.match?("localhost") # DEBUG
   end
+
+  def filtered_conference_program_meetings?
+    degrowth?
+  end
+
+  def conference_program_meetings_group_by
+    degrowth? ? :day : :month
+  end
+
+  def restricted_conference_program_access?
+    degrowth?
+  end
+
+  def bulk_invitations_enabled?
+    degrowth?
+  end
+
+  def redirect_meetings_index_to_conference_program?
+    degrowth?
+  end
 end

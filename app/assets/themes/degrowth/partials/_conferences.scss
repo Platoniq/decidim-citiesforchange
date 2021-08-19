@@ -7,7 +7,8 @@
   border: $border-thin;
 
   @include small-screen {
-    margin-top: 2em;
+    margin-top: 0;
+    padding: 0.5rem;
   }
 
   .tabs-title .button {
@@ -61,6 +62,7 @@
 .conference_program-controller {
   .section-heading {
     @include font-heading-big;
+    font-size: 2rem;
     margin-bottom: 0;
     border-bottom: none;
   }
@@ -136,5 +138,49 @@
 
   .button.hollow.light {
     @include button;
+  }
+}
+
+.programme-day.tabs-panel {
+  border: none;
+  padding: 0;
+
+  .column.medium-10.medium-push-2 {
+    left: 0;
+  }
+}
+
+.tabs-panel.is-active:not(.programme-day) {
+  border: none;
+
+  &:not(:last-child) {
+    border-bottom: $border-thin;
+  }
+}
+
+.extended.hero {
+  /* Reduce conference banner height */
+  .hero__container {
+    padding: 3rem 0;
+  }
+
+  &::after {
+    content: none;
+  }
+
+  .text-highlight {
+    font-family: Esteban;
+    color: black;
+    text-shadow: none;
+    font-size: 2.25rem;
+    max-width: 42rem;
+
+    &.hero-heading {
+      font-size: 3.5rem;
+    }
+  }
+
+  .mt-m {
+    margin-top: 1rem !important;
   }
 }

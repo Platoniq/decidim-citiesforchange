@@ -67,4 +67,14 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  module RspecHelpers
+    # rubocop:disable RSpec/AnyInstance
+    def stub_organization(method, value)
+      allow_any_instance_of(Decidim::Organization).to receive(method).and_return(value)
+    end
+    # rubocop:enable RSpec/AnyInstance
+  end
+
+  config.include RspecHelpers, type: :system
 end

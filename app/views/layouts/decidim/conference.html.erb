@@ -1,0 +1,31 @@
+<% add_decidim_page_title(translated_attribute(current_component.name)) if try(:current_component) %>
+<% add_decidim_page_title(translated_attribute(current_participatory_space.title)) %>
+<% add_decidim_meta_tags(
+  image_url: current_participatory_space.banner_image.url,
+  description: translated_attribute(current_participatory_space.short_description),
+) %>
+
+<%= render "layouts/decidim/application" do %>
+  <%= render partial: "layouts/decidim/conference_hero" %>
+
+  <% if (not current_organization.restricted_conference_program_access?) || current_user %>
+    <%# Show the rest of the view when conference program is not restricted or there is a registered user %>
+    <%= render partial: "layouts/decidim/conferences_nav" %>
+    <%= cell "decidim/translation_bar", current_organization %>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
+
+    <% if content_for? :expanded %>
+      <div class="expanded">
+        <div class="wrapper wrapper--inner">
+          <div class="row">
+            <%= yield :expanded %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% provide :meta_image_url, current_participatory_space.banner_image.url %>

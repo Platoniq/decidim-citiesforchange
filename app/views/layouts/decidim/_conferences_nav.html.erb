@@ -1,0 +1,65 @@
+<%
+  components = current_participatory_space.components.published.where.not(manifest_name: "meetings")
+  meeting_components = current_participatory_space.components.published.where(manifest_name: "meetings")
+%>
+
+<%
+  conference_menu_item = {
+    name: t(".conference_menu_item"),
+    url: decidim_conferences.conference_path(current_participatory_space),
+    active: is_active_link?(decidim_conferences.conference_path(current_participatory_space), :exclusive)
+  }
+
+  conference_speaker_menu_item = {
+    name: t(".conference_speaker_menu_item"),
+    url: decidim_conferences.conference_conference_speakers_path(current_participatory_space),
+    active: is_active_link?(decidim_conferences.conference_conference_speakers_path(current_participatory_space), :inclusive)
+  } if current_participatory_space.speakers.any?
+
+  meeting_components_menu_items = meeting_components.map do |component|
+    {
+      name: translated_attribute(component.name),
+      url: decidim_conferences.conference_conference_program_path(current_participatory_space, id: component.id),
+      active: is_active_link?(decidim_conferences.conference_conference_program_path(current_participatory_space, id: component.id), :inclusive)
+    } if Decidim::Meetings::Meeting.visible_meeting_for(current_user).where(component: component).any?
+  end
+
+  conference_partners_menu_item = {
+    name: t(".conference_partners_menu_item"),
+    url: decidim_conferences.conference_path(current_participatory_space, anchor: "conference-partners"),
+  } if current_participatory_space.partners.any?
+
+  venues_menu_item = {
+    name: t(".venues"),
+    url: decidim_conferences.conference_path(current_participatory_space, ({ anchor: "venues" } unless current_organization.degrowth?))
+  } if meeting_components.any?
+
+  media_menu_item =  {
+    name: t(".media"),
+    url: decidim_conferences.conference_media_path(current_participatory_space),
+    active: is_active_link?(decidim_conferences.conference_media_path(current_participatory_space), :inclusive)
+  } if current_participatory_space.attachments.any? || current_participatory_space.media_links.any?
+%>
+
+<%=
+  if current_organization.degrowth?
+    extended_navigation_bar(
+      [
+        *meeting_components_menu_items,
+        conference_speaker_menu_item,
+        venues_menu_item,
+      ].compact
+    )
+  else # original items
+    extended_navigation_bar(
+      [
+        conference_menu_item,
+        conference_speaker_menu_item,
+        *meeting_components_menu_items,
+        conference_partners_menu_item,
+        venues_menu_item,
+        media_menu_item,
+      ].compact
+    )
+  end
+%>

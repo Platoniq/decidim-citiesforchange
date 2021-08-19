@@ -17,7 +17,7 @@ Decidim.configure do |config|
   # Sets the default locale for new organizations. When creating a new
   # organization from the System area, system admins will be able to overwrite
   # this value for that specific organization.
-  config.default_locale = :nl
+  config.default_locale = :en
 
   # Restrict access to the system part with an authorized ip list.
   # You can use a single ip like ("1.2.3.4"), or an ip subnet like ("1.2.3.4/24")
@@ -301,6 +301,7 @@ Decidim.configure do |config|
       settings.attribute :link_text, type: :text, translated: true
       settings.attribute :link_url, type: :text, translated: true
       settings.attribute :count, type: :integer, default: 3
+      settings.attribute :component_id, type: :integer
     end
 
     content_block.default!
