@@ -23,7 +23,7 @@ module Decidim
 
       def meetings
         @meetings ||= Meetings::Meeting.upcoming.where(
-          component: meeting_components
+          component: meeting_components.find_by(id: model.settings.component_id) || meeting_components
         ).limit(meetings_to_show).order(start_time: :asc)
       end
 
@@ -41,7 +41,7 @@ module Decidim
       end
 
       def meeting_components
-        @meeting_components ||= Component.published.where(manifest_name: "meetings")
+        @meeting_components ||= Component.published.where(participatory_space: participatory_spaces, manifest_name: "meetings")
       end
 
       def meetings_to_show
@@ -56,6 +56,17 @@ module Decidim
         link_to translated_attribute(model.settings.link_url) do
           translated_attribute(model.settings.link_text)
         end
+      end
+
+      def participatory_spaces
+        @participatory_spaces ||= [
+          Decidim::Assembly.where(organization: current_organization),
+          Decidim::ParticipatoryProcess.where(organization: current_organization),
+          (Decidim::Conference.where(organization: current_organization) if defined? Decidim::Conference),
+          (Decidim::Consultation.where(organization: current_organization) if defined? Decidim::Consultation),
+          (Decidim::Election.where(organization: current_organization) if defined? Decidim::Election),
+          (Decidim::Initiative.where(organization: current_organization) if defined? Decidim::Initiative)
+        ].flatten.compact
       end
     end
   end
